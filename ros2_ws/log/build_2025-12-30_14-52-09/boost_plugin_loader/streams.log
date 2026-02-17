@@ -1,0 +1,51 @@
+[0.007s] Invoking command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader': CMAKE_PREFIX_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PKG_CONFIG_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig /usr/bin/cmake /home/tetripick/UR10_Pick_ws/ros2_ws/src/boost_plugin_loader -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader
+[0.014s] -- clang-tidy not found!
+[0.016s] -- cppcheck found: /usr/bin/cppcheck
+[0.016s] -- include-what-you-use found: /usr/bin/include-what-you-use
+[0.025s] -- No package config template file found, creating default one
+[0.026s] -- Configuring done (0.0s)
+[0.033s] -- Generating done (0.0s)
+[0.035s] -- Build files have been written to: /home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader
+[0.037s] Invoked command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader' returned '0': CMAKE_PREFIX_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PKG_CONFIG_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig /usr/bin/cmake /home/tetripick/UR10_Pick_ws/ros2_ws/src/boost_plugin_loader -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader
+[0.038s] Invoking command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader': CMAKE_PREFIX_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PKG_CONFIG_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig /usr/bin/cmake --build /home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader -- -j8 -l8
+[0.094s] [  9%] [32mBuilding CXX object CMakeFiles/boost_plugin_loader.dir/src/utils.cpp.o[0m
+[2.243s] [ 18%] [32m[1mLinking CXX shared library libboost_plugin_loader.so[0m
+[2.315s] [ 18%] Built target boost_plugin_loader
+[2.350s] [ 27%] [32mBuilding CXX object examples/CMakeFiles/boost_plugin_loader_example_plugin.dir/plugin.cpp.o[0m
+[4.091s] [ 36%] [32m[1mLinking CXX shared library libboost_plugin_loader_example_plugin.so[0m
+[4.149s] [ 36%] Built target boost_plugin_loader_example_plugin
+[4.178s] [ 45%] [32mBuilding CXX object examples/CMakeFiles/boost_plugin_loader_example.dir/example.cpp.o[0m
+[4.184s] [ 54%] [32mBuilding CXX object examples/CMakeFiles/boost_plugin_loader_example_plugin_impl.dir/printer/console_printer.cpp.o[0m
+[4.187s] [ 63%] [32mBuilding CXX object examples/CMakeFiles/boost_plugin_loader_example_plugin_impl.dir/shape/triangle.cpp.o[0m
+[4.188s] [ 72%] [32mBuilding CXX object examples/CMakeFiles/boost_plugin_loader_example_plugin_impl.dir/printer/hello_world_printer.cpp.o[0m
+[4.189s] [ 81%] [32mBuilding CXX object examples/CMakeFiles/boost_plugin_loader_example_plugin_impl.dir/shape/square.cpp.o[0m
+[5.053s] [ 90%] [32m[1mLinking CXX shared library libboost_plugin_loader_example_plugin_impl.so[0m
+[5.117s] [ 90%] Built target boost_plugin_loader_example_plugin_impl
+[5.393s] [100%] [32m[1mLinking CXX executable boost_plugin_loader_example[0m
+[5.459s] [100%] Built target boost_plugin_loader_example
+[5.467s] Invoked command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader' returned '0': CMAKE_PREFIX_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PKG_CONFIG_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig /usr/bin/cmake --build /home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader -- -j8 -l8
+[5.468s] Invoking command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader': CMAKE_PREFIX_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PKG_CONFIG_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig /usr/bin/cmake --install /home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader
+[5.474s] -- Install configuration: "Release"
+[5.474s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/include/boost_plugin_loader
+[5.474s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/include/boost_plugin_loader/plugin_loader.h
+[5.474s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/include/boost_plugin_loader/fwd.h
+[5.474s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/include/boost_plugin_loader/utils.h
+[5.474s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/include/boost_plugin_loader/macros.h
+[5.474s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/include/boost_plugin_loader/plugin_loader.hpp
+[5.474s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/boost_plugin_loader/package.xml
+[5.474s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/libboost_plugin_loader.so
+[5.475s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/cmake/boost_plugin_loader/boost_plugin_loader-targets.cmake
+[5.475s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/cmake/boost_plugin_loader/boost_plugin_loader-targets-release.cmake
+[5.475s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/cmake/boost_plugin_loader/boost_plugin_loader-config.cmake
+[5.475s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/cmake/boost_plugin_loader/boost_plugin_loader-config-version.cmake
+[5.475s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/ament_index/resource_index/packages/boost_plugin_loader
+[5.475s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/boost_plugin_loader/hook/ament_prefix_path.dsv
+[5.475s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/boost_plugin_loader/hook/ros_package_path.dsv
+[5.475s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/boost_plugin_loader/hook/python_path.dsv
+[5.475s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/libboost_plugin_loader_example_plugin.so
+[5.476s] -- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/libboost_plugin_loader_example_plugin.so" to ""
+[5.476s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/libboost_plugin_loader_example_plugin_impl.so
+[5.477s] -- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/libboost_plugin_loader_example_plugin_impl.so" to ""
+[5.477s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/boost_plugin_loader/boost_plugin_loader_example
+[5.477s] -- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/boost_plugin_loader/boost_plugin_loader_example" to ""
+[5.478s] Invoked command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader' returned '0': CMAKE_PREFIX_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PKG_CONFIG_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig /usr/bin/cmake --install /home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader

@@ -1,0 +1,32 @@
+[0.007s] Invoking command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration_ros': CMAKE_PREFIX_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration:/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib:/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin:${PATH} PKG_CONFIG_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig /usr/bin/cmake /home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration_ros2 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros
+[0.060s] -- The C compiler identification is GNU 13.3.0
+[0.104s] -- The CXX compiler identification is GNU 13.3.0
+[0.122s] -- Detecting C compiler ABI info
+[0.232s] -- Detecting C compiler ABI info - done
+[0.248s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.249s] -- Detecting C compile features
+[0.249s] -- Detecting C compile features - done
+[0.263s] -- Detecting CXX compiler ABI info
+[0.368s] -- Detecting CXX compiler ABI info - done
+[0.374s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.375s] -- Detecting CXX compile features
+[0.375s] -- Detecting CXX compile features - done
+[0.382s] [31mCMake Error at CMakeLists.txt:4 (find_package):
+[0.382s]   By not providing "Findament_cmake.cmake" in CMAKE_MODULE_PATH this project
+[0.382s]   has asked CMake to find a package configuration file provided by
+[0.382s]   "ament_cmake", but CMake did not find one.
+[0.382s] 
+[0.382s]   Could not find a package configuration file provided by "ament_cmake" with
+[0.382s]   any of the following names:
+[0.382s] 
+[0.382s]     ament_cmakeConfig.cmake
+[0.383s]     ament_cmake-config.cmake
+[0.383s] 
+[0.383s]   Add the installation prefix of "ament_cmake" to CMAKE_PREFIX_PATH or set
+[0.383s]   "ament_cmake_DIR" to a directory containing one of the above files.  If
+[0.383s]   "ament_cmake" provides a separate development package or SDK, be sure it
+[0.383s]   has been installed.
+[0.383s] 
+[0.383s] [0m
+[0.384s] -- Configuring incomplete, errors occurred!
+[0.384s] Invoked command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration_ros' returned '1': CMAKE_PREFIX_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration:/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib:/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin:${PATH} PKG_CONFIG_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig /usr/bin/cmake /home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration_ros2 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros

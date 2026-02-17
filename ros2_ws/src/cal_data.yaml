@@ -1,0 +1,27 @@
+data:
+  - image: /home/tetripick/UR10_Pick_ws/ros2_ws/src/images/image_001.png
+    pose:  /home/tetripick/UR10_Pick_ws/ros2_ws/src/poses/pose_001.yaml
+  - image: /home/tetripick/UR10_Pick_ws/ros2_ws/src/images/image_002.png
+    pose:  /home/tetripick/UR10_Pick_ws/ros2_ws/src/poses/pose_002.yaml
+  - image: /home/tetripick/UR10_Pick_ws/ros2_ws/src/images/image_003.png
+    pose:  /home/tetripick/UR10_Pick_ws/ros2_ws/src/poses/pose_003.yaml
+  - image: /home/tetripick/UR10_Pick_ws/ros2_ws/src/images/image_004.png
+    pose:  /home/tetripick/UR10_Pick_ws/ros2_ws/src/poses/pose_004.yaml
+  - image: /home/tetripick/UR10_Pick_ws/ros2_ws/src/images/image_005.png
+    pose:  /home/tetripick/UR10_Pick_ws/ros2_ws/src/poses/pose_005.yaml
+  - image: /home/tetripick/UR10_Pick_ws/ros2_ws/src/images/image_006.png
+    pose:  /home/tetripick/UR10_Pick_ws/ros2_ws/src/poses/pose_006.yaml
+  - image: /home/tetripick/UR10_Pick_ws/ros2_ws/src/images/image_007.png
+    pose:  /home/tetripick/UR10_Pick_ws/ros2_ws/src/poses/pose_007.yaml
+  - image: /home/tetripick/UR10_Pick_ws/ros2_ws/src/images/image_008.png
+    pose:  /home/tetripick/UR10_Pick_ws/ros2_ws/src/poses/pose_008.yaml
+  - image: /home/tetripick/UR10_Pick_ws/ros2_ws/src/images/image_009.png
+    pose:  /home/tetripick/UR10_Pick_ws/ros2_ws/src/poses/pose_009.yaml
+  - image: /home/tetripick/UR10_Pick_ws/ros2_ws/src/images/image_010.png
+    pose:  /home/tetripick/UR10_Pick_ws/ros2_ws/src/poses/pose_010.yaml
+  - image: /home/tetripick/UR10_Pick_ws/ros2_ws/src/images/image_011.png
+    pose:  /home/tetripick/UR10_Pick_ws/ros2_ws/src/poses/pose_011.yaml
+  - image: /home/tetripick/UR10_Pick_ws/ros2_ws/src/images/image_012.png
+    pose:  /home/tetripick/UR10_Pick_ws/ros2_ws/src/poses/pose_012.yaml
+  - image: /home/tetripick/UR10_Pick_ws/ros2_ws/src/images/image_013.png
+    pose:  /home/tetripick/UR10_Pick_ws/ros2_ws/src/poses/pose_013.yaml

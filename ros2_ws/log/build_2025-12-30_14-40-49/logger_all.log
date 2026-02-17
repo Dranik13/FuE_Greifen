@@ -1,0 +1,291 @@
+[0.060s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[0.060s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x746674150080>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x746674274aa0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x746674274aa0>>)
+[0.086s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.086s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.086s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.086s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.086s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.086s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.086s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/tetripick/UR10_Pick_ws/ros2_ws'
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(src/boost_plugin_loader) by extensions ['ignore', 'ignore_ament_install']
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(src/boost_plugin_loader) by extension 'ignore'
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(src/boost_plugin_loader) by extension 'ignore_ament_install'
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(src/boost_plugin_loader) by extensions ['colcon_pkg']
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(src/boost_plugin_loader) by extension 'colcon_pkg'
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(src/boost_plugin_loader) by extensions ['colcon_meta']
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(src/boost_plugin_loader) by extension 'colcon_meta'
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(src/boost_plugin_loader) by extensions ['ros']
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(src/boost_plugin_loader) by extension 'ros'
+[0.107s] DEBUG:colcon.colcon_core.package_identification:Package 'src/boost_plugin_loader' with type 'ros.cmake' and name 'boost_plugin_loader'
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/images) by extensions ['ignore', 'ignore_ament_install']
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/images) by extension 'ignore'
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/images) by extension 'ignore_ament_install'
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/images) by extensions ['colcon_pkg']
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/images) by extension 'colcon_pkg'
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/images) by extensions ['colcon_meta']
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/images) by extension 'colcon_meta'
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/images) by extensions ['ros']
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/images) by extension 'ros'
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/images) by extensions ['cmake', 'python']
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/images) by extension 'cmake'
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/images) by extension 'python'
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/images) by extensions ['python_setup_py']
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/images) by extension 'python_setup_py'
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/industrial_calibration) by extensions ['ignore', 'ignore_ament_install']
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/industrial_calibration) by extension 'ignore'
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/industrial_calibration) by extension 'ignore_ament_install'
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/industrial_calibration) by extensions ['colcon_pkg']
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/industrial_calibration) by extension 'colcon_pkg'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/industrial_calibration) by extensions ['colcon_meta']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/industrial_calibration) by extension 'colcon_meta'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/industrial_calibration) by extensions ['ros']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/industrial_calibration) by extension 'ros'
+[0.108s] DEBUG:colcon.colcon_core.package_identification:Package 'src/industrial_calibration' with type 'ros.cmake' and name 'industrial_calibration'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/industrial_calibration_ros2) by extensions ['ignore', 'ignore_ament_install']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/industrial_calibration_ros2) by extension 'ignore'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/industrial_calibration_ros2) by extension 'ignore_ament_install'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/industrial_calibration_ros2) by extensions ['colcon_pkg']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/industrial_calibration_ros2) by extension 'colcon_pkg'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/industrial_calibration_ros2) by extensions ['colcon_meta']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/industrial_calibration_ros2) by extension 'colcon_meta'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/industrial_calibration_ros2) by extensions ['ros']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/industrial_calibration_ros2) by extension 'ros'
+[0.109s] DEBUG:colcon.colcon_core.package_identification:Package 'src/industrial_calibration_ros2' with type 'ros.ament_cmake' and name 'industrial_calibration_ros'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/poses) by extensions ['ignore', 'ignore_ament_install']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/poses) by extension 'ignore'
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(src/poses) by extension 'ignore_ament_install'
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(src/poses) by extensions ['colcon_pkg']
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(src/poses) by extension 'colcon_pkg'
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(src/poses) by extensions ['colcon_meta']
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(src/poses) by extension 'colcon_meta'
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(src/poses) by extensions ['ros']
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(src/poses) by extension 'ros'
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(src/poses) by extensions ['cmake', 'python']
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(src/poses) by extension 'cmake'
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(src/poses) by extension 'python'
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(src/poses) by extensions ['python_setup_py']
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(src/poses) by extension 'python_setup_py'
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros_industrial_cmake_boilerplate) by extensions ['ignore', 'ignore_ament_install']
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros_industrial_cmake_boilerplate) by extension 'ignore'
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros_industrial_cmake_boilerplate) by extension 'ignore_ament_install'
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros_industrial_cmake_boilerplate) by extensions ['colcon_pkg']
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros_industrial_cmake_boilerplate) by extension 'colcon_pkg'
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros_industrial_cmake_boilerplate) by extensions ['colcon_meta']
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros_industrial_cmake_boilerplate) by extension 'colcon_meta'
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros_industrial_cmake_boilerplate) by extensions ['ros']
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros_industrial_cmake_boilerplate) by extension 'ros'
+[0.111s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ros_industrial_cmake_boilerplate' with type 'ros.cmake' and name 'ros_industrial_cmake_boilerplate'
+[0.111s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.111s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.111s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.111s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.111s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.123s] INFO:colcon.colcon_metadata.metadata.colcon_pkg:Updating descriptor of package 'src/ros_industrial_cmake_boilerplate' from colcon.pkg: {'hooks': ['share/ros_industrial_cmake_boilerplate/hook/ament_prefix_path.dsv', 'share/ros_industrial_cmake_boilerplate/hook/ros_package_path.dsv']}
+[0.123s] INFO:colcon.colcon_metadata.metadata.colcon_pkg:Updating descriptor of package 'src/industrial_calibration' from colcon.pkg: {'hooks': ['share/industrial_calibration/hook/ament_prefix_path.dsv', 'share/industrial_calibration/hook/ros_package_path.dsv', 'share/industrial_calibration/hook/python_path.dsv']}
+[0.123s] INFO:colcon.colcon_metadata.metadata.colcon_pkg:Updating descriptor of package 'src/boost_plugin_loader' from colcon.pkg: {'hooks': ['share/boost_plugin_loader/hook/ament_prefix_path.dsv', 'share/boost_plugin_loader/hook/ros_package_path.dsv']}
+[0.124s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.124s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.125s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.125s] Level 5:colcon.colcon_core.verb:set package 'ros_industrial_cmake_boilerplate' build argument 'cmake_args' from command line to 'None'
+[0.125s] Level 5:colcon.colcon_core.verb:set package 'ros_industrial_cmake_boilerplate' build argument 'cmake_target' from command line to 'None'
+[0.125s] Level 5:colcon.colcon_core.verb:set package 'ros_industrial_cmake_boilerplate' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.125s] Level 5:colcon.colcon_core.verb:set package 'ros_industrial_cmake_boilerplate' build argument 'cmake_clean_cache' from command line to 'False'
+[0.125s] Level 5:colcon.colcon_core.verb:set package 'ros_industrial_cmake_boilerplate' build argument 'cmake_clean_first' from command line to 'False'
+[0.125s] Level 5:colcon.colcon_core.verb:set package 'ros_industrial_cmake_boilerplate' build argument 'cmake_force_configure' from command line to 'False'
+[0.125s] Level 5:colcon.colcon_core.verb:set package 'ros_industrial_cmake_boilerplate' build argument 'ament_cmake_args' from command line to 'None'
+[0.125s] Level 5:colcon.colcon_core.verb:set package 'ros_industrial_cmake_boilerplate' build argument 'catkin_cmake_args' from command line to 'None'
+[0.125s] Level 5:colcon.colcon_core.verb:set package 'ros_industrial_cmake_boilerplate' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.125s] DEBUG:colcon.colcon_core.verb:Building package 'ros_industrial_cmake_boilerplate' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate', 'merge_install': False, 'path': '/home/tetripick/UR10_Pick_ws/ros2_ws/src/ros_industrial_cmake_boilerplate', 'symlink_install': True, 'test_result_base': None}
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'boost_plugin_loader' build argument 'cmake_args' from command line to 'None'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'boost_plugin_loader' build argument 'cmake_target' from command line to 'None'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'boost_plugin_loader' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'boost_plugin_loader' build argument 'cmake_clean_cache' from command line to 'False'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'boost_plugin_loader' build argument 'cmake_clean_first' from command line to 'False'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'boost_plugin_loader' build argument 'cmake_force_configure' from command line to 'False'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'boost_plugin_loader' build argument 'ament_cmake_args' from command line to 'None'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'boost_plugin_loader' build argument 'catkin_cmake_args' from command line to 'None'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'boost_plugin_loader' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.126s] DEBUG:colcon.colcon_core.verb:Building package 'boost_plugin_loader' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader', 'merge_install': False, 'path': '/home/tetripick/UR10_Pick_ws/ros2_ws/src/boost_plugin_loader', 'symlink_install': True, 'test_result_base': None}
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'industrial_calibration' build argument 'cmake_args' from command line to 'None'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'industrial_calibration' build argument 'cmake_target' from command line to 'None'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'industrial_calibration' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'industrial_calibration' build argument 'cmake_clean_cache' from command line to 'False'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'industrial_calibration' build argument 'cmake_clean_first' from command line to 'False'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'industrial_calibration' build argument 'cmake_force_configure' from command line to 'False'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'industrial_calibration' build argument 'ament_cmake_args' from command line to 'None'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'industrial_calibration' build argument 'catkin_cmake_args' from command line to 'None'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'industrial_calibration' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.126s] DEBUG:colcon.colcon_core.verb:Building package 'industrial_calibration' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration', 'merge_install': False, 'path': '/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration', 'symlink_install': True, 'test_result_base': None}
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'industrial_calibration_ros' build argument 'cmake_args' from command line to 'None'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'industrial_calibration_ros' build argument 'cmake_target' from command line to 'None'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'industrial_calibration_ros' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'industrial_calibration_ros' build argument 'cmake_clean_cache' from command line to 'False'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'industrial_calibration_ros' build argument 'cmake_clean_first' from command line to 'False'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'industrial_calibration_ros' build argument 'cmake_force_configure' from command line to 'False'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'industrial_calibration_ros' build argument 'ament_cmake_args' from command line to 'None'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'industrial_calibration_ros' build argument 'catkin_cmake_args' from command line to 'None'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'industrial_calibration_ros' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.126s] DEBUG:colcon.colcon_core.verb:Building package 'industrial_calibration_ros' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration_ros', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros', 'merge_install': False, 'path': '/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration_ros2', 'symlink_install': True, 'test_result_base': None}
+[0.126s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.127s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.128s] INFO:colcon.colcon_ros.task.cmake.build:Building ROS package in '/home/tetripick/UR10_Pick_ws/ros2_ws/src/ros_industrial_cmake_boilerplate' with build type 'cmake'
+[0.128s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/tetripick/UR10_Pick_ws/ros2_ws/src/ros_industrial_cmake_boilerplate'
+[0.130s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.130s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.130s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.135s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/tetripick/UR10_Pick_ws/ros2_ws/src/ros_industrial_cmake_boilerplate -DCMAKE_INSTALL_PREFIX=/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate
+[0.492s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/tetripick/UR10_Pick_ws/ros2_ws/src/ros_industrial_cmake_boilerplate -DCMAKE_INSTALL_PREFIX=/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate
+[0.494s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate -- -j8 -l8
+[0.531s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate -- -j8 -l8
+[0.545s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate
+[0.558s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate
+[0.559s] Level 1:colcon.colcon_core.shell:create_environment_hook('ros_industrial_cmake_boilerplate', 'pkg_config_path')
+[0.559s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/share/ros_industrial_cmake_boilerplate/hook/pkg_config_path.ps1'
+[0.560s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/share/ros_industrial_cmake_boilerplate/hook/pkg_config_path.dsv'
+[0.560s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/share/ros_industrial_cmake_boilerplate/hook/pkg_config_path.sh'
+[0.563s] Level 1:colcon.colcon_core.shell:create_environment_hook('ros_industrial_cmake_boilerplate', 'pkg_config_path_multiarch')
+[0.563s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/share/ros_industrial_cmake_boilerplate/hook/pkg_config_path_multiarch.ps1'
+[0.564s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/share/ros_industrial_cmake_boilerplate/hook/pkg_config_path_multiarch.dsv'
+[0.564s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/share/ros_industrial_cmake_boilerplate/hook/pkg_config_path_multiarch.sh'
+[0.565s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ros_industrial_cmake_boilerplate)
+[0.567s] Level 1:colcon.colcon_core.environment:checking '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate' for CMake module files
+[0.568s] Level 1:colcon.colcon_core.environment:checking '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate' for CMake config files
+[0.568s] Level 1:colcon.colcon_core.shell:create_environment_hook('ros_industrial_cmake_boilerplate', 'cmake_prefix_path')
+[0.568s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/share/ros_industrial_cmake_boilerplate/hook/cmake_prefix_path.ps1'
+[0.569s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/share/ros_industrial_cmake_boilerplate/hook/cmake_prefix_path.dsv'
+[0.569s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/share/ros_industrial_cmake_boilerplate/hook/cmake_prefix_path.sh'
+[0.570s] Level 1:colcon.colcon_core.environment:checking '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib'
+[0.570s] Level 1:colcon.colcon_core.environment:checking '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/bin'
+[0.570s] Level 1:colcon.colcon_core.environment:checking '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig/ros_industrial_cmake_boilerplate.pc'
+[0.572s] Level 1:colcon.colcon_core.environment:checking '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/python3.12/site-packages'
+[0.572s] Level 1:colcon.colcon_core.environment:checking '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/bin'
+[0.572s] INFO:colcon.colcon_core.shell:Creating package script '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/share/ros_industrial_cmake_boilerplate/package.ps1'
+[0.573s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/share/ros_industrial_cmake_boilerplate/package.dsv'
+[0.573s] INFO:colcon.colcon_core.shell:Creating package script '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/share/ros_industrial_cmake_boilerplate/package.sh'
+[0.574s] INFO:colcon.colcon_core.shell:Creating package script '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/share/ros_industrial_cmake_boilerplate/package.bash'
+[0.574s] INFO:colcon.colcon_core.shell:Creating package script '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/share/ros_industrial_cmake_boilerplate/package.zsh'
+[0.574s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/share/colcon-core/packages/ros_industrial_cmake_boilerplate)
+[0.574s] INFO:colcon.colcon_ros.task.cmake.build:Building ROS package in '/home/tetripick/UR10_Pick_ws/ros2_ws/src/boost_plugin_loader' with build type 'cmake'
+[0.574s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/tetripick/UR10_Pick_ws/ros2_ws/src/boost_plugin_loader'
+[0.575s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.575s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.580s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader': CMAKE_PREFIX_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PKG_CONFIG_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig /usr/bin/cmake /home/tetripick/UR10_Pick_ws/ros2_ws/src/boost_plugin_loader -DCMAKE_INSTALL_PREFIX=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader
+[0.808s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader' returned '0': CMAKE_PREFIX_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PKG_CONFIG_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig /usr/bin/cmake /home/tetripick/UR10_Pick_ws/ros2_ws/src/boost_plugin_loader -DCMAKE_INSTALL_PREFIX=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader
+[0.808s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader': CMAKE_PREFIX_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PKG_CONFIG_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig /usr/bin/cmake --build /home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader -- -j8 -l8
+[4.104s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader' returned '0': CMAKE_PREFIX_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PKG_CONFIG_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig /usr/bin/cmake --build /home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader -- -j8 -l8
+[4.105s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader': CMAKE_PREFIX_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PKG_CONFIG_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig /usr/bin/cmake --install /home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader
+[4.120s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader' returned '0': CMAKE_PREFIX_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PKG_CONFIG_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig /usr/bin/cmake --install /home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader
+[4.120s] Level 1:colcon.colcon_core.shell:create_environment_hook('boost_plugin_loader', 'pkg_config_path')
+[4.121s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/boost_plugin_loader/hook/pkg_config_path.ps1'
+[4.121s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/boost_plugin_loader/hook/pkg_config_path.dsv'
+[4.121s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/boost_plugin_loader/hook/pkg_config_path.sh'
+[4.121s] Level 1:colcon.colcon_core.shell:create_environment_hook('boost_plugin_loader', 'pkg_config_path_multiarch')
+[4.121s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/boost_plugin_loader/hook/pkg_config_path_multiarch.ps1'
+[4.122s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/boost_plugin_loader/hook/pkg_config_path_multiarch.dsv'
+[4.122s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/boost_plugin_loader/hook/pkg_config_path_multiarch.sh'
+[4.122s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(boost_plugin_loader)
+[4.122s] Level 1:colcon.colcon_core.environment:checking '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader' for CMake module files
+[4.123s] Level 1:colcon.colcon_core.environment:checking '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader' for CMake config files
+[4.123s] Level 1:colcon.colcon_core.shell:create_environment_hook('boost_plugin_loader', 'cmake_prefix_path')
+[4.123s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/boost_plugin_loader/hook/cmake_prefix_path.ps1'
+[4.123s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/boost_plugin_loader/hook/cmake_prefix_path.dsv'
+[4.124s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/boost_plugin_loader/hook/cmake_prefix_path.sh'
+[4.124s] Level 1:colcon.colcon_core.environment:checking '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib'
+[4.124s] Level 1:colcon.colcon_core.shell:create_environment_hook('boost_plugin_loader', 'ld_library_path_lib')
+[4.124s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/boost_plugin_loader/hook/ld_library_path_lib.ps1'
+[4.125s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/boost_plugin_loader/hook/ld_library_path_lib.dsv'
+[4.125s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/boost_plugin_loader/hook/ld_library_path_lib.sh'
+[4.125s] Level 1:colcon.colcon_core.environment:checking '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/bin'
+[4.125s] Level 1:colcon.colcon_core.environment:checking '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/pkgconfig/boost_plugin_loader.pc'
+[4.125s] Level 1:colcon.colcon_core.environment:checking '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/python3.12/site-packages'
+[4.126s] Level 1:colcon.colcon_core.environment:checking '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/bin'
+[4.126s] INFO:colcon.colcon_core.shell:Creating package script '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/boost_plugin_loader/package.ps1'
+[4.126s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/boost_plugin_loader/package.dsv'
+[4.127s] INFO:colcon.colcon_core.shell:Creating package script '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/boost_plugin_loader/package.sh'
+[4.127s] INFO:colcon.colcon_core.shell:Creating package script '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/boost_plugin_loader/package.bash'
+[4.127s] INFO:colcon.colcon_core.shell:Creating package script '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/boost_plugin_loader/package.zsh'
+[4.127s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/colcon-core/packages/boost_plugin_loader)
+[4.127s] INFO:colcon.colcon_ros.task.cmake.build:Building ROS package in '/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration' with build type 'cmake'
+[4.128s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration'
+[4.128s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.128s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.133s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration': CMAKE_PREFIX_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib PKG_CONFIG_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig /usr/bin/cmake /home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration -DCMAKE_INSTALL_PREFIX=/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration
+[5.172s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration' returned '0': CMAKE_PREFIX_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib PKG_CONFIG_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig /usr/bin/cmake /home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration -DCMAKE_INSTALL_PREFIX=/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration
+[5.172s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration': CMAKE_PREFIX_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib PKG_CONFIG_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig /usr/bin/cmake --build /home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration -- -j8 -l8
+[36.346s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration' returned '2': CMAKE_PREFIX_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib PKG_CONFIG_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig /usr/bin/cmake --build /home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration -- -j8 -l8
+[36.346s] Level 1:colcon.colcon_core.shell:create_environment_hook('industrial_calibration', 'pkg_config_path')
+[36.346s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/hook/pkg_config_path.ps1'
+[36.347s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/hook/pkg_config_path.dsv'
+[36.347s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/hook/pkg_config_path.sh'
+[36.347s] Level 1:colcon.colcon_core.shell:create_environment_hook('industrial_calibration', 'pkg_config_path_multiarch')
+[36.347s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/hook/pkg_config_path_multiarch.ps1'
+[36.347s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/hook/pkg_config_path_multiarch.dsv'
+[36.348s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/hook/pkg_config_path_multiarch.sh'
+[36.348s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(industrial_calibration)
+[36.348s] Level 1:colcon.colcon_core.environment:checking '/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration' for CMake module files
+[36.348s] Level 1:colcon.colcon_core.environment:checking '/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration' for CMake config files
+[36.348s] Level 1:colcon.colcon_core.environment:checking '/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin'
+[36.348s] Level 1:colcon.colcon_core.environment:checking '/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/pkgconfig/industrial_calibration.pc'
+[36.348s] Level 1:colcon.colcon_core.environment:checking '/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/python3.12/site-packages'
+[36.349s] Level 1:colcon.colcon_core.environment:checking '/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin'
+[36.349s] INFO:colcon.colcon_core.shell:Creating package script '/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/package.ps1'
+[36.349s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/package.dsv'
+[36.349s] INFO:colcon.colcon_core.shell:Creating package script '/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/package.sh'
+[36.350s] INFO:colcon.colcon_core.shell:Creating package script '/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/package.bash'
+[36.350s] INFO:colcon.colcon_core.shell:Creating package script '/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/package.zsh'
+[36.350s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/colcon-core/packages/industrial_calibration)
+[36.360s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[36.360s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[36.360s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '2'
+[36.360s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[36.365s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[36.365s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[36.365s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[36.382s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[36.382s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/tetripick/UR10_Pick_ws/ros2_ws/install/local_setup.ps1'
+[36.383s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/tetripick/UR10_Pick_ws/ros2_ws/install/_local_setup_util_ps1.py'
+[36.384s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/tetripick/UR10_Pick_ws/ros2_ws/install/setup.ps1'
+[36.384s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/tetripick/UR10_Pick_ws/ros2_ws/install/local_setup.sh'
+[36.384s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/tetripick/UR10_Pick_ws/ros2_ws/install/_local_setup_util_sh.py'
+[36.385s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/tetripick/UR10_Pick_ws/ros2_ws/install/setup.sh'
+[36.385s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/tetripick/UR10_Pick_ws/ros2_ws/install/local_setup.bash'
+[36.385s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/tetripick/UR10_Pick_ws/ros2_ws/install/setup.bash'
+[36.386s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/tetripick/UR10_Pick_ws/ros2_ws/install/local_setup.zsh'
+[36.386s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/tetripick/UR10_Pick_ws/ros2_ws/install/setup.zsh'

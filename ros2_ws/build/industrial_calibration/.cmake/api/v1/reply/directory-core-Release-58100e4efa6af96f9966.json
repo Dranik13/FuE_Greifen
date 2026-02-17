@@ -1,0 +1,126 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install",
+			"install_targets",
+			"configure_component",
+			"generate_package_config"
+		],
+		"files" : 
+		[
+			"core/CMakeLists.txt",
+			"/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/cmake_tools.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 36,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 41,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 406,
+				"parent" : 2
+			},
+			{
+				"command" : 0,
+				"file" : 1,
+				"line" : 56,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 408,
+				"parent" : 2
+			},
+			{
+				"command" : 0,
+				"file" : 1,
+				"line" : 246,
+				"parent" : 5
+			},
+			{
+				"command" : 0,
+				"file" : 1,
+				"line" : 292,
+				"parent" : 5
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "include",
+			"paths" : 
+			[
+				{
+					"from" : "core/include",
+					"to" : "."
+				}
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "core",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"core/libindustrial_calibration_core.so"
+			],
+			"targetId" : "industrial_calibration_core::@57760688d1f824db5d9c",
+			"targetIndex" : 5,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 6,
+			"component" : "core",
+			"destination" : "lib/cmake/industrial_calibration",
+			"exportName" : "core-targets",
+			"exportTargets" : 
+			[
+				{
+					"id" : "industrial_calibration_core::@57760688d1f824db5d9c",
+					"index" : 5
+				}
+			],
+			"paths" : 
+			[
+				"core/CMakeFiles/Export/bc51a25c8508dde3eb5d6e5e2260811e/core-targets.cmake"
+			],
+			"type" : "export"
+		},
+		{
+			"backtrace" : 7,
+			"component" : "core",
+			"destination" : "lib/cmake/industrial_calibration",
+			"paths" : 
+			[
+				"/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration/core-config.cmake"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "core",
+		"source" : "core"
+	}
+}

@@ -1,0 +1,3 @@
+/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/lib/libindustrial_calibration_ros_extrinsic_hand_eye_calibration_panel.so
+/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/share/industrial_calibration_ros/cmake/industrial_calibration_ros-targetsExport.cmake
+/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/share/industrial_calibration_ros/cmake/industrial_calibration_ros-targetsExport-release.cmake

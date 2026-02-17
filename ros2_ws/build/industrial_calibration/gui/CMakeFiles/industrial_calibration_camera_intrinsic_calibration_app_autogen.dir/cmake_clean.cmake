@@ -1,0 +1,17 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/industrial_calibration_camera_intrinsic_calibration_app_autogen"
+  "industrial_calibration_camera_intrinsic_calibration_app_autogen/include/src/ui_aruco_grid_target_finder.h"
+  "industrial_calibration_camera_intrinsic_calibration_app_autogen/include/src/ui_camera_calibration_data_manager_widget.h"
+  "industrial_calibration_camera_intrinsic_calibration_app_autogen/include/src/ui_camera_intrinsics.h"
+  "industrial_calibration_camera_intrinsic_calibration_app_autogen/include/src/ui_charuco_grid_target_finder.h"
+  "industrial_calibration_camera_intrinsic_calibration_app_autogen/include/src/ui_modified_circle_grid_target_finder.h"
+  "industrial_calibration_camera_intrinsic_calibration_app_autogen/include/src/ui_target_finder.h"
+  "industrial_calibration_camera_intrinsic_calibration_app_autogen/include/src/ui_transform_guess.h"
+  "industrial_calibration_camera_intrinsic_calibration_app_autogen/mocs_compilation.cpp"
+  "industrial_calibration_camera_intrinsic_calibration_app_autogen/timestamp"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang )
+  include(CMakeFiles/industrial_calibration_camera_intrinsic_calibration_app_autogen.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

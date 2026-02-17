@@ -1,0 +1,75 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"examples/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 26,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 33,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"examples/libboost_plugin_loader_example_plugin.so"
+			],
+			"targetId" : "boost_plugin_loader_example_plugin::@714eac15f71a94114fdf",
+			"targetIndex" : 2,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"examples/libboost_plugin_loader_example_plugin_impl.so"
+			],
+			"targetId" : "boost_plugin_loader_example_plugin_impl::@714eac15f71a94114fdf",
+			"targetIndex" : 3,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "lib/boost_plugin_loader",
+			"paths" : 
+			[
+				"examples/boost_plugin_loader_example"
+			],
+			"targetId" : "boost_plugin_loader_example::@714eac15f71a94114fdf",
+			"targetIndex" : 1,
+			"type" : "target"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "examples",
+		"source" : "examples"
+	}
+}

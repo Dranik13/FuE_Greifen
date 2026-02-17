@@ -1,0 +1,23 @@
+# Default *-config.cmake file created by ros-industrial-cmake-boilerplate
+
+@PACKAGE_INIT@
+
+set(@PROJECT_NAME@_FOUND ON)
+
+# These variables are needed so catkin packages can be located. 
+if (EXISTS "@PACKAGE_PREFIX_DIR@/include")
+  set(@PROJECT_NAME@_INCLUDE_DIRS "@PACKAGE_PREFIX_DIR@/include")
+else()
+  set(@PROJECT_NAME@_INCLUDE_DIRS)
+endif()
+set(@PROJECT_NAME@_LIBRARIES)
+
+# Targets
+list(APPEND @PROJECT_NAME@_LIBRARIES boost_plugin_loader::boost_plugin_loader)
+
+# Dependencies
+include(CMakeFindDependencyMacro)
+find_dependency(Boost REQUIRED COMPONENTS filesystem)
+
+# Targets
+include("${CMAKE_CURRENT_LIST_DIR}/boost_plugin_loader-targets.cmake")

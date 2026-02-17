@@ -1,0 +1,97 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-cd80eb2a9526764b2131.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "industrial_calibration_ros",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "industrial_calibration_ros_extrinsic_hand_eye_calibration_panel::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-industrial_calibration_ros_extrinsic_hand_eye_calibration_panel-Release-c54078a81bc2bdb3f766.json",
+					"name" : "industrial_calibration_ros_extrinsic_hand_eye_calibration_panel",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "industrial_calibration_ros_pnp_validation_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-industrial_calibration_ros_pnp_validation_node-Release-a4a5247c1f01810e0e5e.json",
+					"name" : "industrial_calibration_ros_pnp_validation_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "industrial_calibration_ros_target_detector::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-industrial_calibration_ros_target_detector-Release-1b6c1ec9115de3c32347.json",
+					"name" : "industrial_calibration_ros_target_detector",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "industrial_calibration_ros_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-industrial_calibration_ros_uninstall-Release-982b88101bac693d8b89.json",
+					"name" : "industrial_calibration_ros_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-Release-5ae40f56bbca8faea43e.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration_ros",
+		"source" : "/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration_ros2"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

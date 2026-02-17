@@ -1,0 +1,39 @@
+[0.007s] Invoking command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/tetripick/UR10_Pick_ws/ros2_ws/src/ros_industrial_cmake_boilerplate -DCMAKE_INSTALL_PREFIX=/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate
+[0.064s] -- The C compiler identification is GNU 13.3.0
+[0.116s] -- The CXX compiler identification is GNU 13.3.0
+[0.130s] -- Detecting C compiler ABI info
+[0.238s] -- Detecting C compiler ABI info - done
+[0.245s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.245s] -- Detecting C compile features
+[0.246s] -- Detecting C compile features - done
+[0.254s] -- Detecting CXX compiler ABI info
+[0.350s] -- Detecting CXX compiler ABI info - done
+[0.357s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.358s] -- Detecting CXX compile features
+[0.358s] -- Detecting CXX compile features - done
+[0.359s] -- No package config template file found, creating default one
+[0.360s] -- Configuring done (0.3s)
+[0.361s] -- Generating done (0.0s)
+[0.362s] -- Build files have been written to: /home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate
+[0.364s] Invoked command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/tetripick/UR10_Pick_ws/ros2_ws/src/ros_industrial_cmake_boilerplate -DCMAKE_INSTALL_PREFIX=/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate
+[0.366s] Invoking command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate -- -j8 -l8
+[0.403s] Invoked command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate -- -j8 -l8
+[0.417s] Invoking command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate
+[0.426s] -- Install configuration: ""
+[0.427s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/create_debian_changelog.py
+[0.427s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/share/ros_industrial_cmake_boilerplate/package.xml
+[0.427s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/clang_tidy_tools.cmake
+[0.427s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/cmake_tools.cmake
+[0.427s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/code_coverage.cmake
+[0.427s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/cpack_tools.cmake
+[0.428s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/cppcheck_tools.cmake
+[0.428s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/extract_package_metadata.cmake
+[0.428s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/iwyu_tools.cmake
+[0.428s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/sanitizers.cmake
+[0.428s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/ros_industrial_cmake_boilerplate-config.cmake
+[0.428s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/ros_industrial_cmake_boilerplate-config-version.cmake
+[0.429s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/share/ament_index/resource_index/packages/ros_industrial_cmake_boilerplate
+[0.429s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/share/ros_industrial_cmake_boilerplate/hook/ament_prefix_path.dsv
+[0.429s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/share/ros_industrial_cmake_boilerplate/hook/ros_package_path.dsv
+[0.429s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/share/ros_industrial_cmake_boilerplate/hook/python_path.dsv
+[0.431s] Invoked command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate

@@ -1,0 +1,213 @@
+[33mCMake Warning at /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/clang_tidy_tools.cmake:115 (message):
+  Using target_clang_tidy but clang tidy executable was not found!
+Call Stack (most recent call first):
+  core/CMakeLists.txt:22 (target_clang_tidy)
+
+[0m
+[33mCMake Warning at /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/clang_tidy_tools.cmake:115 (message):
+  Using target_clang_tidy but clang tidy executable was not found!
+Call Stack (most recent call first):
+  optimizations/CMakeLists.txt:20 (target_clang_tidy)
+
+[0m
+[33mCMake Warning at /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/clang_tidy_tools.cmake:115 (message):
+  Using target_clang_tidy but clang tidy executable was not found!
+Call Stack (most recent call first):
+  analysis/CMakeLists.txt:13 (target_clang_tidy)
+
+[0m
+[0mBuilding OpenCV target finders[0m
+[33mCMake Warning at /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/clang_tidy_tools.cmake:115 (message):
+  Using target_clang_tidy but clang tidy executable was not found!
+Call Stack (most recent call first):
+  target_finders/opencv/CMakeLists.txt:28 (target_clang_tidy)
+
+[0m
+[33mCMake Warning at /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/clang_tidy_tools.cmake:115 (message):
+  Using target_clang_tidy but clang tidy executable was not found!
+Call Stack (most recent call first):
+  target_finders/opencv/CMakeLists.txt:46 (target_clang_tidy)
+
+[0m
+[0mBuilding GUI[0m
+[0mBuilding examples[0m
+[01m[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/pnp.cpp:[m[K In function ‘[01m[Kstd::tuple<industrial_calibration::PnPResult, Eigen::Transform<double, 3, 1, 0> >[01;32m[K run[m[K(const path&)[m[K’:
+[01m[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/pnp.cpp:74:33:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kstd::vector<std::__cxx11::basic_string<char> >::insert(const char [38])[m[K’
+   74 |   [01;31m[Kloader.search_libraries.insert(INDUSTRIAL_CALIBRATION_PLUGIN_LIBRARIES)[m[K;
+      |   [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/13/vector:66[m[K,
+                 from [01m[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/core/include/industrial_calibration/core/types.h:3[m[K,
+                 from [01m[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/optimizations/include/industrial_calibration/optimizations/pnp.h:3[m[K,
+                 from [01m[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/pnp.cpp:1[m[K:
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1482:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _InputIterator, class> std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::[01;32m[Kinsert[m[K(const_iterator, _InputIterator, _InputIterator) [35m[K[with <template-parameter-2-2> = _InputIterator; _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >][m[K[m[K’
+ 1482 |         [01;36m[Kinsert[m[K(const_iterator __position, _InputIterator __first,
+      |         [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1482:9:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/pnp.cpp:74:33:[m[K [01;36m[Knote: [m[K  candidate expects 3 arguments, 1 provided
+   74 |   [01;36m[Kloader.search_libraries.insert(INDUSTRIAL_CALIBRATION_PLUGIN_LIBRARIES)[m[K;
+      |   [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/13/vector:72[m[K:
+[01m[K/usr/include/c++/13/bits/vector.tcc:133:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::[01;32m[Kinsert[m[K(const_iterator, const value_type&) [35m[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; value_type = std::__cxx11::basic_string<char>][m[K[m[K’
+  133 |     [01;36m[Kvector<_Tp, _Alloc>[m[K::
+      |     [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/usr/include/c++/13/bits/vector.tcc:133:5:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1393:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::[01;32m[Kinsert[m[K(const_iterator, value_type&&) [35m[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; value_type = std::__cxx11::basic_string<char>][m[K[m[K’
+ 1393 |       [01;36m[Kinsert[m[K(const_iterator __position, value_type&& __x)
+      |       [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1393:7:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1411:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::[01;32m[Kinsert[m[K(const_iterator, std::initializer_list<_Tp>) [35m[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator][m[K[m[K’
+ 1411 |       [01;36m[Kinsert[m[K(const_iterator __position, initializer_list<value_type> __l)
+      |       [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1411:7:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1437:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::[01;32m[Kinsert[m[K(const_iterator, size_type, const value_type&) [35m[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; size_type = long unsigned int; value_type = std::__cxx11::basic_string<char>][m[K[m[K’
+ 1437 |       [01;36m[Kinsert[m[K(const_iterator __position, size_type __n, const value_type& __x)
+      |       [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1437:7:[m[K [01;36m[Knote: [m[K  candidate expects 3 arguments, 1 provided
+[01m[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/noise_qualification_2d.cpp:[m[K In function ‘[01m[Kindustrial_calibration::PnPNoiseStat[01;32m[K run[m[K(const path&)[m[K’:
+[01m[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/noise_qualification_2d.cpp:31:33:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kstd::vector<std::__cxx11::basic_string<char> >::insert(const char [38])[m[K’
+   31 |   [01;31m[Kloader.search_libraries.insert(INDUSTRIAL_CALIBRATION_PLUGIN_LIBRARIES)[m[K;
+      |   [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/13/vector:66[m[K,
+                 from [01m[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/core/include/industrial_calibration/core/types.h:3[m[K,
+                 from [01m[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/analysis/include/industrial_calibration/analysis/noise_qualification.h:3[m[K,
+                 from [01m[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/noise_qualification_2d.cpp:1[m[K:
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1482:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _InputIterator, class> std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::[01;32m[Kinsert[m[K(const_iterator, _InputIterator, _InputIterator) [35m[K[with <template-parameter-2-2> = _InputIterator; _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >][m[K[m[K’
+ 1482 |         [01;36m[Kinsert[m[K(const_iterator __position, _InputIterator __first,
+      |         [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1482:9:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/noise_qualification_2d.cpp:31:33:[m[K [01;36m[Knote: [m[K  candidate expects 3 arguments, 1 provided
+   31 |   [01;36m[Kloader.search_libraries.insert(INDUSTRIAL_CALIBRATION_PLUGIN_LIBRARIES)[m[K;
+      |   [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/13/vector:72[m[K:
+[01m[K/usr/include/c++/13/bits/vector.tcc:133:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::[01;32m[Kinsert[m[K(const_iterator, const value_type&) [35m[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; value_type = std::__cxx11::basic_string<char>][m[K[m[K’
+  133 |     [01;36m[Kvector<_Tp, _Alloc>[m[K::
+      |     [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/usr/include/c++/13/bits/vector.tcc:133:5:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1393:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::[01;32m[Kinsert[m[K(const_iterator, value_type&&) [35m[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; value_type = std::__cxx11::basic_string<char>][m[K[m[K’
+ 1393 |       [01;36m[Kinsert[m[K(const_iterator __position, value_type&& __x)
+      |       [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1393:7:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1411:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::[01;32m[Kinsert[m[K(const_iterator, std::initializer_list<_Tp>) [35m[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator][m[K[m[K’
+ 1411 |       [01;36m[Kinsert[m[K(const_iterator __position, initializer_list<value_type> __l)
+      |       [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1411:7:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1437:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::[01;32m[Kinsert[m[K(const_iterator, size_type, const value_type&) [35m[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; size_type = long unsigned int; value_type = std::__cxx11::basic_string<char>][m[K[m[K’
+ 1437 |       [01;36m[Kinsert[m[K(const_iterator __position, size_type __n, const value_type& __x)
+      |       [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1437:7:[m[K [01;36m[Knote: [m[K  candidate expects 3 arguments, 1 provided
+[01m[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/camera_intrinsic.cpp:[m[K In function ‘[01m[Kstd::pair<industrial_calibration::CameraIntrinsicResult, industrial_calibration::IntrinsicCalibrationAccuracyResult>[01;32m[K run[m[K(const path&)[m[K’:
+[01m[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/camera_intrinsic.cpp:96:33:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kstd::vector<std::__cxx11::basic_string<char> >::insert(const char [38])[m[K’
+   96 |   [01;31m[Kloader.search_libraries.insert(INDUSTRIAL_CALIBRATION_PLUGIN_LIBRARIES)[m[K;
+      |   [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/13/vector:66[m[K,
+                 from [01m[K/usr/include/c++/13/functional:64[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Core:85[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+                 from [01m[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/optimizations/include/industrial_calibration/optimizations/covariance_types.h:3[m[K,
+                 from [01m[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/optimizations/include/industrial_calibration/optimizations/camera_intrinsic.h:3[m[K,
+                 from [01m[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/camera_intrinsic.cpp:1[m[K:
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1482:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _InputIterator, class> std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::[01;32m[Kinsert[m[K(const_iterator, _InputIterator, _InputIterator) [35m[K[with <template-parameter-2-2> = _InputIterator; _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >][m[K[m[K’
+ 1482 |         [01;36m[Kinsert[m[K(const_iterator __position, _InputIterator __first,
+      |         [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1482:9:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/camera_intrinsic.cpp:96:33:[m[K [01;36m[Knote: [m[K  candidate expects 3 arguments, 1 provided
+   96 |   [01;36m[Kloader.search_libraries.insert(INDUSTRIAL_CALIBRATION_PLUGIN_LIBRARIES)[m[K;
+      |   [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/13/vector:72[m[K:
+[01m[K/usr/include/c++/13/bits/vector.tcc:133:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::[01;32m[Kinsert[m[K(const_iterator, const value_type&) [35m[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; value_type = std::__cxx11::basic_string<char>][m[K[m[K’
+  133 |     [01;36m[Kvector<_Tp, _Alloc>[m[K::
+      |     [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/usr/include/c++/13/bits/vector.tcc:133:5:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1393:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::[01;32m[Kinsert[m[K(const_iterator, value_type&&) [35m[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; value_type = std::__cxx11::basic_string<char>][m[K[m[K’
+ 1393 |       [01;36m[Kinsert[m[K(const_iterator __position, value_type&& __x)
+      |       [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1393:7:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1411:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::[01;32m[Kinsert[m[K(const_iterator, std::initializer_list<_Tp>) [35m[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator][m[K[m[K’
+ 1411 |       [01;36m[Kinsert[m[K(const_iterator __position, initializer_list<value_type> __l)
+      |       [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1411:7:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1437:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::[01;32m[Kinsert[m[K(const_iterator, size_type, const value_type&) [35m[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; size_type = long unsigned int; value_type = std::__cxx11::basic_string<char>][m[K[m[K’
+ 1437 |       [01;36m[Kinsert[m[K(const_iterator __position, size_type __n, const value_type& __x)
+      |       [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1437:7:[m[K [01;36m[Knote: [m[K  candidate expects 3 arguments, 1 provided
+[01m[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/extrinsic_hand_eye.cpp:[m[K In function ‘[01m[Kstd::tuple<industrial_calibration::ExtrinsicHandEyeResult, industrial_calibration::ExtrinsicHandEyeAnalysisStats>[01;32m[K run[m[K(const path&)[m[K’:
+[01m[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/extrinsic_hand_eye.cpp:99:33:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kstd::vector<std::__cxx11::basic_string<char> >::insert(const char [38])[m[K’
+   99 |   [01;31m[Kloader.search_libraries.insert(INDUSTRIAL_CALIBRATION_PLUGIN_LIBRARIES)[m[K;
+      |   [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/13/vector:66[m[K,
+                 from [01m[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/core/include/industrial_calibration/core/types.h:3[m[K,
+                 from [01m[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/optimizations/include/industrial_calibration/optimizations/extrinsic_hand_eye.h:19[m[K,
+                 from [01m[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/extrinsic_hand_eye.cpp:1[m[K:
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1482:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _InputIterator, class> std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::[01;32m[Kinsert[m[K(const_iterator, _InputIterator, _InputIterator) [35m[K[with <template-parameter-2-2> = _InputIterator; _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >][m[K[m[K’
+ 1482 |         [01;36m[Kinsert[m[K(const_iterator __position, _InputIterator __first,
+      |         [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1482:9:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/extrinsic_hand_eye.cpp:99:33:[m[K [01;36m[Knote: [m[K  candidate expects 3 arguments, 1 provided
+   99 |   [01;36m[Kloader.search_libraries.insert(INDUSTRIAL_CALIBRATION_PLUGIN_LIBRARIES)[m[K;
+      |   [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/13/vector:72[m[K:
+[01m[K/usr/include/c++/13/bits/vector.tcc:133:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::[01;32m[Kinsert[m[K(const_iterator, const value_type&) [35m[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; value_type = std::__cxx11::basic_string<char>][m[K[m[K’
+  133 |     [01;36m[Kvector<_Tp, _Alloc>[m[K::
+      |     [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/usr/include/c++/13/bits/vector.tcc:133:5:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1393:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::[01;32m[Kinsert[m[K(const_iterator, value_type&&) [35m[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; value_type = std::__cxx11::basic_string<char>][m[K[m[K’
+ 1393 |       [01;36m[Kinsert[m[K(const_iterator __position, value_type&& __x)
+      |       [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1393:7:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1411:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::[01;32m[Kinsert[m[K(const_iterator, std::initializer_list<_Tp>) [35m[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator][m[K[m[K’
+ 1411 |       [01;36m[Kinsert[m[K(const_iterator __position, initializer_list<value_type> __l)
+      |       [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1411:7:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1437:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::[01;32m[Kinsert[m[K(const_iterator, size_type, const value_type&) [35m[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; size_type = long unsigned int; value_type = std::__cxx11::basic_string<char>][m[K[m[K’
+ 1437 |       [01;36m[Kinsert[m[K(const_iterator __position, size_type __n, const value_type& __x)
+      |       [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1437:7:[m[K [01;36m[Knote: [m[K  candidate expects 3 arguments, 1 provided
+gmake[2]: *** [examples/CMakeFiles/industrial_calibration_noise_qualification_2d.dir/build.make:76: examples/CMakeFiles/industrial_calibration_noise_qualification_2d.dir/noise_qualification_2d.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:697: examples/CMakeFiles/industrial_calibration_noise_qualification_2d.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake[2]: *** [examples/CMakeFiles/industrial_calibration_pnp.dir/build.make:76: examples/CMakeFiles/industrial_calibration_pnp.dir/pnp.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:726: examples/CMakeFiles/industrial_calibration_pnp.dir/all] Error 2
+gmake[2]: *** [examples/CMakeFiles/industrial_calibration_camera_intrinsic.dir/build.make:76: examples/CMakeFiles/industrial_calibration_camera_intrinsic.dir/camera_intrinsic.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:610: examples/CMakeFiles/industrial_calibration_camera_intrinsic.dir/all] Error 2
+gmake[2]: *** [examples/CMakeFiles/industrial_calibration_extrinsic_hand_eye.dir/build.make:76: examples/CMakeFiles/industrial_calibration_extrinsic_hand_eye.dir/extrinsic_hand_eye.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:639: examples/CMakeFiles/industrial_calibration_extrinsic_hand_eye.dir/all] Error 2
+[01m[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/gui/src/camera_calibration_data_manager_widget.cpp:[m[K In constructor ‘[01m[Kindustrial_calibration::CameraCalibrationDataManagerWidget::[01;32m[KCameraCalibrationDataManagerWidget[m[K(QWidget*)[m[K’:
+[01m[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/gui/src/camera_calibration_data_manager_widget.cpp:102:34:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kstd::vector<std::__cxx11::basic_string<char> >::insert(const char [38])[m[K’
+  102 |   [01;31m[Kloader_.search_libraries.insert(INDUSTRIAL_CALIBRATION_PLUGIN_LIBRARIES)[m[K;
+      |   [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/13/vector:66[m[K,
+                 from [01m[K/usr/include/c++/13/functional:64[m[K,
+                 from [01m[K/usr/include/x86_64-linux-gnu/qt5/QtCore/qhashfunctions.h:48[m[K,
+                 from [01m[K/usr/include/x86_64-linux-gnu/qt5/QtCore/qlist.h:47[m[K,
+                 from [01m[K/usr/include/x86_64-linux-gnu/qt5/QtCore/qvariant.h:45[m[K,
+                 from [01m[K/usr/include/x86_64-linux-gnu/qt5/QtCore/QVariant:1[m[K,
+                 from [01m[K/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration/gui/industrial_calibration_gui_autogen/include/ui_camera_calibration_data_manager_widget.h:12[m[K,
+                 from [01m[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/gui/src/camera_calibration_data_manager_widget.cpp:1[m[K:
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1482:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _InputIterator, class> std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::[01;32m[Kinsert[m[K(const_iterator, _InputIterator, _InputIterator) [35m[K[with <template-parameter-2-2> = _InputIterator; _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >][m[K[m[K’
+ 1482 |         [01;36m[Kinsert[m[K(const_iterator __position, _InputIterator __first,
+      |         [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1482:9:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/gui/src/camera_calibration_data_manager_widget.cpp:102:34:[m[K [01;36m[Knote: [m[K  candidate expects 3 arguments, 1 provided
+  102 |   [01;36m[Kloader_.search_libraries.insert(INDUSTRIAL_CALIBRATION_PLUGIN_LIBRARIES)[m[K;
+      |   [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/13/vector:72[m[K:
+[01m[K/usr/include/c++/13/bits/vector.tcc:133:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::[01;32m[Kinsert[m[K(const_iterator, const value_type&) [35m[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; value_type = std::__cxx11::basic_string<char>][m[K[m[K’
+  133 |     [01;36m[Kvector<_Tp, _Alloc>[m[K::
+      |     [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/usr/include/c++/13/bits/vector.tcc:133:5:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1393:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::[01;32m[Kinsert[m[K(const_iterator, value_type&&) [35m[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; value_type = std::__cxx11::basic_string<char>][m[K[m[K’
+ 1393 |       [01;36m[Kinsert[m[K(const_iterator __position, value_type&& __x)
+      |       [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1393:7:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1411:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::[01;32m[Kinsert[m[K(const_iterator, std::initializer_list<_Tp>) [35m[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator][m[K[m[K’
+ 1411 |       [01;36m[Kinsert[m[K(const_iterator __position, initializer_list<value_type> __l)
+      |       [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1411:7:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1437:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::[01;32m[Kinsert[m[K(const_iterator, size_type, const value_type&) [35m[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; size_type = long unsigned int; value_type = std::__cxx11::basic_string<char>][m[K[m[K’
+ 1437 |       [01;36m[Kinsert[m[K(const_iterator __position, size_type __n, const value_type& __x)
+      |       [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/c++/13/bits/stl_vector.h:1437:7:[m[K [01;36m[Knote: [m[K  candidate expects 3 arguments, 1 provided
+gmake[2]: *** [gui/CMakeFiles/industrial_calibration_gui.dir/build.make:219: gui/CMakeFiles/industrial_calibration_gui.dir/src/camera_calibration_data_manager_widget.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[1]: *** [CMakeFiles/Makefile2:360: gui/CMakeFiles/industrial_calibration_gui.dir/all] Error 2
+gmake: *** [Makefile:136: all] Error 2

@@ -1,0 +1,342 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						6,
+						7
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-eb5a9a6fd199c441e0f4.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.1"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "core",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-core-Release-58100e4efa6af96f9966.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "core",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "optimizations",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-optimizations-Release-ba00f05b39b8f5fd338f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "optimizations",
+					"targetIndexes" : 
+					[
+						15
+					]
+				},
+				{
+					"build" : "analysis",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-analysis-Release-e7fc8bdbaa590a2b3b9a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "analysis",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "target_finders",
+					"childIndexes" : 
+					[
+						5
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-target_finders-Release-c8dde817000be0d73941.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "target_finders"
+				},
+				{
+					"build" : "target_finders/opencv",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-target_finders.opencv-Release-bad979035799aaefcf6e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.1"
+					},
+					"parentIndex" : 4,
+					"projectIndex" : 0,
+					"source" : "target_finders/opencv",
+					"targetIndexes" : 
+					[
+						16,
+						18
+					]
+				},
+				{
+					"build" : "gui",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-gui-Release-b029a26f5ecb661a41d3.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "gui",
+					"targetIndexes" : 
+					[
+						2,
+						3,
+						4,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12
+					]
+				},
+				{
+					"build" : "examples",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-examples-Release-53da5fa2849f8c31e387.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "examples",
+					"targetIndexes" : 
+					[
+						1,
+						6,
+						13,
+						14,
+						17
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					],
+					"name" : "industrial_calibration",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 3,
+					"id" : "industrial_calibration_analysis::@4b5217a7eb86c50cc232",
+					"jsonFile" : "target-industrial_calibration_analysis-Release-d8f586d56ee3056f580a.json",
+					"name" : "industrial_calibration_analysis",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "industrial_calibration_camera_intrinsic::@714eac15f71a94114fdf",
+					"jsonFile" : "target-industrial_calibration_camera_intrinsic-Release-1b8f5dd7256cd9ec6bb7.json",
+					"name" : "industrial_calibration_camera_intrinsic",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "industrial_calibration_camera_intrinsic_calibration_app::@35f413a6cfe5475b20aa",
+					"jsonFile" : "target-industrial_calibration_camera_intrinsic_calibration_app-Release-9bbb1d4c8fd8289ae9c0.json",
+					"name" : "industrial_calibration_camera_intrinsic_calibration_app",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "industrial_calibration_camera_intrinsic_calibration_app_autogen::@35f413a6cfe5475b20aa",
+					"jsonFile" : "target-industrial_calibration_camera_intrinsic_calibration_app_autogen-Release-82e0af8e17441abd9661.json",
+					"name" : "industrial_calibration_camera_intrinsic_calibration_app_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "industrial_calibration_camera_intrinsic_calibration_app_autogen_timestamp_deps::@35f413a6cfe5475b20aa",
+					"jsonFile" : "target-industrial_calibration_camera_intrinsic_calibration_app_autogen_timestamp_deps-Release-cc4e17186b22c479283d.json",
+					"name" : "industrial_calibration_camera_intrinsic_calibration_app_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "industrial_calibration_core::@57760688d1f824db5d9c",
+					"jsonFile" : "target-industrial_calibration_core-Release-3d686210039bac4fef14.json",
+					"name" : "industrial_calibration_core",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "industrial_calibration_extrinsic_hand_eye::@714eac15f71a94114fdf",
+					"jsonFile" : "target-industrial_calibration_extrinsic_hand_eye-Release-d2bad65e6d48516d0c15.json",
+					"name" : "industrial_calibration_extrinsic_hand_eye",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "industrial_calibration_extrinsic_hand_eye_calibration_app::@35f413a6cfe5475b20aa",
+					"jsonFile" : "target-industrial_calibration_extrinsic_hand_eye_calibration_app-Release-e08f4853abf7ef297589.json",
+					"name" : "industrial_calibration_extrinsic_hand_eye_calibration_app",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "industrial_calibration_extrinsic_hand_eye_calibration_app_autogen::@35f413a6cfe5475b20aa",
+					"jsonFile" : "target-industrial_calibration_extrinsic_hand_eye_calibration_app_autogen-Release-8dfa59657114344ca4a8.json",
+					"name" : "industrial_calibration_extrinsic_hand_eye_calibration_app_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "industrial_calibration_extrinsic_hand_eye_calibration_app_autogen_timestamp_deps::@35f413a6cfe5475b20aa",
+					"jsonFile" : "target-industrial_calibration_extrinsic_hand_eye_calibration_app_autogen_timestamp_deps-Release-4b5d7e31dad83fbf80d3.json",
+					"name" : "industrial_calibration_extrinsic_hand_eye_calibration_app_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "industrial_calibration_gui::@35f413a6cfe5475b20aa",
+					"jsonFile" : "target-industrial_calibration_gui-Release-ac3f240aa1a5dd1df313.json",
+					"name" : "industrial_calibration_gui",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "industrial_calibration_gui_autogen::@35f413a6cfe5475b20aa",
+					"jsonFile" : "target-industrial_calibration_gui_autogen-Release-ea0524dc6c682c160ad9.json",
+					"name" : "industrial_calibration_gui_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "industrial_calibration_gui_autogen_timestamp_deps::@35f413a6cfe5475b20aa",
+					"jsonFile" : "target-industrial_calibration_gui_autogen_timestamp_deps-Release-6db841099ce9905a5073.json",
+					"name" : "industrial_calibration_gui_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "industrial_calibration_kinematic_calibration::@714eac15f71a94114fdf",
+					"jsonFile" : "target-industrial_calibration_kinematic_calibration-Release-4edf0fc673f380283fe3.json",
+					"name" : "industrial_calibration_kinematic_calibration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "industrial_calibration_noise_qualification_2d::@714eac15f71a94114fdf",
+					"jsonFile" : "target-industrial_calibration_noise_qualification_2d-Release-b12824c6933fb1bdc6af.json",
+					"name" : "industrial_calibration_noise_qualification_2d",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "industrial_calibration_optimizations::@a3898604fcb13ac3dd92",
+					"jsonFile" : "target-industrial_calibration_optimizations-Release-29c834d2b6f3651fe422.json",
+					"name" : "industrial_calibration_optimizations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "industrial_calibration_plugins_opencv::@983ce25b89ca89720431",
+					"jsonFile" : "target-industrial_calibration_plugins_opencv-Release-3f34f13ac29f1759b471.json",
+					"name" : "industrial_calibration_plugins_opencv",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "industrial_calibration_pnp::@714eac15f71a94114fdf",
+					"jsonFile" : "target-industrial_calibration_pnp-Release-76cf7a195ccc7e16b9af.json",
+					"name" : "industrial_calibration_pnp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "industrial_calibration_target_finders_opencv::@983ce25b89ca89720431",
+					"jsonFile" : "target-industrial_calibration_target_finders_opencv-Release-01003e5d6e0ab5745a53.json",
+					"name" : "industrial_calibration_target_finders_opencv",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration",
+		"source" : "/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

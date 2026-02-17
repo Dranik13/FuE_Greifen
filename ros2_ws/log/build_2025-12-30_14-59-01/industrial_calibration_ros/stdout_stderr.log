@@ -1,0 +1,43 @@
+[ 16%] [32mBuilding CXX object CMakeFiles/industrial_calibration_ros_target_detector.dir/src/target_detector.cpp.o[0m
+[ 50%] Built target industrial_calibration_ros_extrinsic_hand_eye_calibration_panel
+[ 66%] [32mBuilding CXX object CMakeFiles/industrial_calibration_ros_pnp_validation_node.dir/src/pnp_validation_node.cpp.o[0m
+[ 83%] [32m[1mLinking CXX executable industrial_calibration_ros_target_detector[0m
+[ 83%] Built target industrial_calibration_ros_target_detector
+[100%] [32m[1mLinking CXX executable industrial_calibration_ros_pnp_validation_node[0m
+[100%] Built target industrial_calibration_ros_pnp_validation_node
+-- Install configuration: "Release"
+-- Execute custom install script
+-- Symlinking: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/share/industrial_calibration_ros/environment/library_path.sh
+-- Symlinking: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/share/industrial_calibration_ros/environment/library_path.dsv
+-- Symlinking: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/share/industrial_calibration_ros//plugin_description.xml
+-- Symlinking: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/lib/industrial_calibration_ros/industrial_calibration_ros_target_detector
+-- Symlinking: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/lib/industrial_calibration_ros/industrial_calibration_ros_pnp_validation_node
+-- Symlinking: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/share/industrial_calibration_ros//launch/3d_data_collection.launch.xml
+-- Symlinking: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/share/industrial_calibration_ros//launch/data_collection.launch.xml
+-- Symlinking: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/share/industrial_calibration_ros//config/extrinsic_hand_eye_calibration.rviz
+-- Symlinking: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/share/industrial_calibration_ros//config/target_detector_config.yaml
+-- Symlinking: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/lib/industrial_calibration_ros/data_collection_node.py
+-- Symlinking: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/lib/industrial_calibration_ros/3d_data_collection_node.py
+-- Symlinking: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/lib/industrial_calibration_ros/image_trigger.py
+-- Symlinking: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/share/ament_index/resource_index/package_run_dependencies/industrial_calibration_ros
+-- Symlinking: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/share/ament_index/resource_index/parent_prefix_path/industrial_calibration_ros
+-- Symlinking: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/share/industrial_calibration_ros/environment/ament_prefix_path.sh
+-- Symlinking: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/share/industrial_calibration_ros/environment/ament_prefix_path.dsv
+-- Symlinking: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/share/industrial_calibration_ros/environment/path.sh
+-- Symlinking: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/share/industrial_calibration_ros/environment/path.dsv
+-- Symlinking: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/share/industrial_calibration_ros/local_setup.bash
+-- Symlinking: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/share/industrial_calibration_ros/local_setup.sh
+-- Symlinking: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/share/industrial_calibration_ros/local_setup.zsh
+-- Symlinking: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/share/industrial_calibration_ros/local_setup.dsv
+-- Symlinking: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/share/industrial_calibration_ros/package.dsv
+-- Symlinking: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/share/ament_index/resource_index/packages/industrial_calibration_ros
+-- Symlinking: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/share/ament_index/resource_index/rviz_common__pluginlib__plugin/industrial_calibration_ros
+-- Symlinking: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/share/industrial_calibration_ros/cmake/ament_cmake_export_targets-extras.cmake
+-- Symlinking: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/share/industrial_calibration_ros/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Symlinking: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/share/industrial_calibration_ros/cmake/industrial_calibration_rosConfig.cmake
+-- Symlinking: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/share/industrial_calibration_ros/cmake/industrial_calibration_rosConfig-version.cmake
+-- Symlinking: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/share/industrial_calibration_ros/package.xml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/lib/libindustrial_calibration_ros_extrinsic_hand_eye_calibration_panel.so
+-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/lib/libindustrial_calibration_ros_extrinsic_hand_eye_calibration_panel.so" to ""
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/share/industrial_calibration_ros/cmake/industrial_calibration_ros-targetsExport.cmake
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros/share/industrial_calibration_ros/cmake/industrial_calibration_ros-targetsExport-release.cmake

@@ -1,0 +1,1246 @@
+[0.000000] (-) TimerEvent: {}
+[0.000540] (ros_industrial_cmake_boilerplate) JobQueued: {'identifier': 'ros_industrial_cmake_boilerplate', 'dependencies': OrderedDict()}
+[0.000601] (boost_plugin_loader) JobQueued: {'identifier': 'boost_plugin_loader', 'dependencies': OrderedDict({'ros_industrial_cmake_boilerplate': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate'})}
+[0.000658] (industrial_calibration) JobQueued: {'identifier': 'industrial_calibration', 'dependencies': OrderedDict({'ros_industrial_cmake_boilerplate': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate', 'boost_plugin_loader': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader'})}
+[0.000783] (industrial_calibration_ros) JobQueued: {'identifier': 'industrial_calibration_ros', 'dependencies': OrderedDict({'ros_industrial_cmake_boilerplate': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate', 'boost_plugin_loader': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader', 'industrial_calibration': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration'})}
+[0.001179] (ros_industrial_cmake_boilerplate) JobStarted: {'identifier': 'ros_industrial_cmake_boilerplate'}
+[0.006264] (ros_industrial_cmake_boilerplate) JobProgress: {'identifier': 'ros_industrial_cmake_boilerplate', 'progress': 'cmake'}
+[0.007220] (ros_industrial_cmake_boilerplate) Command: {'cmd': ['/usr/bin/cmake', '/home/tetripick/UR10_Pick_ws/ros2_ws/src/ros_industrial_cmake_boilerplate', '-DCMAKE_BUILD_TYPE=Release', '-DCMAKE_INSTALL_PREFIX=/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate'], 'cwd': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'tetripick', 'XDG_SESSION_TYPE': 'x11', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/tetripick', 'OLDPWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '3018', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1001/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'tetripick', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1001.slice/user@1001.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'tetripick', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'WINDOWPATH': '2', 'PATH': '/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/tetrisort-UR10E:@/tmp/.ICE-unix/2949,unix/tetrisort-UR10E:/tmp/.ICE-unix/2949', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/af13336b_e86b_4980_a99b_e921a0be9264', 'XDG_RUNTIME_DIR': '/run/user/1001', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1001/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.144', 'SSH_AUTH_SOCK': '/run/user/1001/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1001/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.019240] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- No package config template file found, creating default one\n'}
+[0.020141] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Configuring done (0.0s)\n'}
+[0.020785] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[0.021383] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Build files have been written to: /home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate\n'}
+[0.023239] (ros_industrial_cmake_boilerplate) CommandEnded: {'returncode': 0}
+[0.023738] (ros_industrial_cmake_boilerplate) JobProgress: {'identifier': 'ros_industrial_cmake_boilerplate', 'progress': 'build'}
+[0.024581] (ros_industrial_cmake_boilerplate) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate', '--', '-j8', '-l8'], 'cwd': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'tetripick', 'XDG_SESSION_TYPE': 'x11', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/tetripick', 'OLDPWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '3018', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1001/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'tetripick', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1001.slice/user@1001.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'tetripick', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'WINDOWPATH': '2', 'PATH': '/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/tetrisort-UR10E:@/tmp/.ICE-unix/2949,unix/tetrisort-UR10E:/tmp/.ICE-unix/2949', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/af13336b_e86b_4980_a99b_e921a0be9264', 'XDG_RUNTIME_DIR': '/run/user/1001', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1001/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.144', 'SSH_AUTH_SOCK': '/run/user/1001/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1001/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.076517] (ros_industrial_cmake_boilerplate) CommandEnded: {'returncode': 0}
+[0.077463] (ros_industrial_cmake_boilerplate) JobProgress: {'identifier': 'ros_industrial_cmake_boilerplate', 'progress': 'install'}
+[0.090163] (ros_industrial_cmake_boilerplate) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate'], 'cwd': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'tetripick', 'XDG_SESSION_TYPE': 'x11', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/tetripick', 'OLDPWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '3018', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1001/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'tetripick', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1001.slice/user@1001.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'tetripick', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'WINDOWPATH': '2', 'PATH': '/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/tetrisort-UR10E:@/tmp/.ICE-unix/2949,unix/tetrisort-UR10E:/tmp/.ICE-unix/2949', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/af13336b_e86b_4980_a99b_e921a0be9264', 'XDG_RUNTIME_DIR': '/run/user/1001', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1001/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.144', 'SSH_AUTH_SOCK': '/run/user/1001/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1001/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.099795] (-) TimerEvent: {}
+[0.101450] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Install configuration: "Release"\n'}
+[0.101824] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/create_debian_changelog.py\n'}
+[0.102090] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/share/ros_industrial_cmake_boilerplate/package.xml\n'}
+[0.102314] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/clang_tidy_tools.cmake\n'}
+[0.102464] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/cmake_tools.cmake\n'}
+[0.102607] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/code_coverage.cmake\n'}
+[0.102741] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/cpack_tools.cmake\n'}
+[0.102872] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/cppcheck_tools.cmake\n'}
+[0.103004] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/extract_package_metadata.cmake\n'}
+[0.103145] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/iwyu_tools.cmake\n'}
+[0.103273] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/sanitizers.cmake\n'}
+[0.103417] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/ros_industrial_cmake_boilerplate-config.cmake\n'}
+[0.103554] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/ros_industrial_cmake_boilerplate-config-version.cmake\n'}
+[0.104003] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/share/ament_index/resource_index/packages/ros_industrial_cmake_boilerplate\n'}
+[0.104592] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/share/ros_industrial_cmake_boilerplate/hook/ament_prefix_path.dsv\n'}
+[0.105447] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/share/ros_industrial_cmake_boilerplate/hook/ros_package_path.dsv\n'}
+[0.105725] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/share/ros_industrial_cmake_boilerplate/hook/python_path.dsv\n'}
+[0.106284] (ros_industrial_cmake_boilerplate) CommandEnded: {'returncode': 0}
+[0.125192] (ros_industrial_cmake_boilerplate) JobEnded: {'identifier': 'ros_industrial_cmake_boilerplate', 'rc': 0}
+[0.126607] (boost_plugin_loader) JobStarted: {'identifier': 'boost_plugin_loader'}
+[0.131138] (boost_plugin_loader) JobProgress: {'identifier': 'boost_plugin_loader', 'progress': 'cmake'}
+[0.132178] (boost_plugin_loader) Command: {'cmd': ['/usr/bin/cmake', '/home/tetripick/UR10_Pick_ws/ros2_ws/src/boost_plugin_loader', '-DCMAKE_BUILD_TYPE=Release', '-DCMAKE_INSTALL_PREFIX=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader'], 'cwd': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'tetripick', 'XDG_SESSION_TYPE': 'x11', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/tetripick', 'OLDPWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '3018', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1001/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'tetripick', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1001.slice/user@1001.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'PKG_CONFIG_PATH': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig', 'USERNAME': 'tetripick', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'WINDOWPATH': '2', 'PATH': '/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/tetrisort-UR10E:@/tmp/.ICE-unix/2949,unix/tetrisort-UR10E:/tmp/.ICE-unix/2949', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/af13336b_e86b_4980_a99b_e921a0be9264', 'XDG_RUNTIME_DIR': '/run/user/1001', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1001/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.144', 'SSH_AUTH_SOCK': '/run/user/1001/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1001/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.140848] (boost_plugin_loader) StdoutLine: {'line': b'-- clang-tidy not found!\n'}
+[0.142737] (boost_plugin_loader) StdoutLine: {'line': b'-- cppcheck found: /usr/bin/cppcheck\n'}
+[0.142945] (boost_plugin_loader) StdoutLine: {'line': b'-- include-what-you-use found: /usr/bin/include-what-you-use\n'}
+[0.151799] (boost_plugin_loader) StdoutLine: {'line': b'-- No package config template file found, creating default one\n'}
+[0.152840] (boost_plugin_loader) StdoutLine: {'line': b'-- Configuring done (0.0s)\n'}
+[0.159323] (boost_plugin_loader) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[0.161310] (boost_plugin_loader) StdoutLine: {'line': b'-- Build files have been written to: /home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader\n'}
+[0.163372] (boost_plugin_loader) CommandEnded: {'returncode': 0}
+[0.163841] (boost_plugin_loader) JobProgress: {'identifier': 'boost_plugin_loader', 'progress': 'build'}
+[0.164120] (boost_plugin_loader) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader', '--', '-j8', '-l8'], 'cwd': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'tetripick', 'XDG_SESSION_TYPE': 'x11', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/tetripick', 'OLDPWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '3018', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1001/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'tetripick', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1001.slice/user@1001.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'PKG_CONFIG_PATH': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig', 'USERNAME': 'tetripick', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'WINDOWPATH': '2', 'PATH': '/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/tetrisort-UR10E:@/tmp/.ICE-unix/2949,unix/tetrisort-UR10E:/tmp/.ICE-unix/2949', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/af13336b_e86b_4980_a99b_e921a0be9264', 'XDG_RUNTIME_DIR': '/run/user/1001', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1001/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.144', 'SSH_AUTH_SOCK': '/run/user/1001/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1001/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.199904] (-) TimerEvent: {}
+[0.220613] (boost_plugin_loader) StdoutLine: {'line': b'[  9%] \x1b[32mBuilding CXX object CMakeFiles/boost_plugin_loader.dir/src/utils.cpp.o\x1b[0m\n'}
+[0.300032] (-) TimerEvent: {}
+[0.400338] (-) TimerEvent: {}
+[0.500656] (-) TimerEvent: {}
+[0.600924] (-) TimerEvent: {}
+[0.701260] (-) TimerEvent: {}
+[0.801526] (-) TimerEvent: {}
+[0.901847] (-) TimerEvent: {}
+[1.002149] (-) TimerEvent: {}
+[1.102513] (-) TimerEvent: {}
+[1.202843] (-) TimerEvent: {}
+[1.303158] (-) TimerEvent: {}
+[1.403519] (-) TimerEvent: {}
+[1.503793] (-) TimerEvent: {}
+[1.604055] (-) TimerEvent: {}
+[1.704425] (-) TimerEvent: {}
+[1.804695] (-) TimerEvent: {}
+[1.904968] (-) TimerEvent: {}
+[2.005314] (-) TimerEvent: {}
+[2.105621] (-) TimerEvent: {}
+[2.205899] (-) TimerEvent: {}
+[2.306233] (-) TimerEvent: {}
+[2.369287] (boost_plugin_loader) StdoutLine: {'line': b'[ 18%] \x1b[32m\x1b[1mLinking CXX shared library libboost_plugin_loader.so\x1b[0m\n'}
+[2.406473] (-) TimerEvent: {}
+[2.441233] (boost_plugin_loader) StdoutLine: {'line': b'[ 18%] Built target boost_plugin_loader\n'}
+[2.476715] (boost_plugin_loader) StdoutLine: {'line': b'[ 27%] \x1b[32mBuilding CXX object examples/CMakeFiles/boost_plugin_loader_example_plugin.dir/plugin.cpp.o\x1b[0m\n'}
+[2.506627] (-) TimerEvent: {}
+[2.606941] (-) TimerEvent: {}
+[2.707314] (-) TimerEvent: {}
+[2.807715] (-) TimerEvent: {}
+[2.908027] (-) TimerEvent: {}
+[3.008388] (-) TimerEvent: {}
+[3.108702] (-) TimerEvent: {}
+[3.208975] (-) TimerEvent: {}
+[3.309270] (-) TimerEvent: {}
+[3.409593] (-) TimerEvent: {}
+[3.509869] (-) TimerEvent: {}
+[3.610161] (-) TimerEvent: {}
+[3.710427] (-) TimerEvent: {}
+[3.810695] (-) TimerEvent: {}
+[3.910980] (-) TimerEvent: {}
+[4.011338] (-) TimerEvent: {}
+[4.111729] (-) TimerEvent: {}
+[4.212014] (-) TimerEvent: {}
+[4.217460] (boost_plugin_loader) StdoutLine: {'line': b'[ 36%] \x1b[32m\x1b[1mLinking CXX shared library libboost_plugin_loader_example_plugin.so\x1b[0m\n'}
+[4.275722] (boost_plugin_loader) StdoutLine: {'line': b'[ 36%] Built target boost_plugin_loader_example_plugin\n'}
+[4.304289] (boost_plugin_loader) StdoutLine: {'line': b'[ 45%] \x1b[32mBuilding CXX object examples/CMakeFiles/boost_plugin_loader_example.dir/example.cpp.o\x1b[0m\n'}
+[4.310201] (boost_plugin_loader) StdoutLine: {'line': b'[ 54%] \x1b[32mBuilding CXX object examples/CMakeFiles/boost_plugin_loader_example_plugin_impl.dir/printer/console_printer.cpp.o\x1b[0m\n'}
+[4.312141] (-) TimerEvent: {}
+[4.313261] (boost_plugin_loader) StdoutLine: {'line': b'[ 63%] \x1b[32mBuilding CXX object examples/CMakeFiles/boost_plugin_loader_example_plugin_impl.dir/shape/triangle.cpp.o\x1b[0m\n'}
+[4.314854] (boost_plugin_loader) StdoutLine: {'line': b'[ 72%] \x1b[32mBuilding CXX object examples/CMakeFiles/boost_plugin_loader_example_plugin_impl.dir/printer/hello_world_printer.cpp.o\x1b[0m\n'}
+[4.315278] (boost_plugin_loader) StdoutLine: {'line': b'[ 81%] \x1b[32mBuilding CXX object examples/CMakeFiles/boost_plugin_loader_example_plugin_impl.dir/shape/square.cpp.o\x1b[0m\n'}
+[4.412243] (-) TimerEvent: {}
+[4.512605] (-) TimerEvent: {}
+[4.612899] (-) TimerEvent: {}
+[4.714232] (-) TimerEvent: {}
+[4.814565] (-) TimerEvent: {}
+[4.914874] (-) TimerEvent: {}
+[5.015160] (-) TimerEvent: {}
+[5.115436] (-) TimerEvent: {}
+[5.179191] (boost_plugin_loader) StdoutLine: {'line': b'[ 90%] \x1b[32m\x1b[1mLinking CXX shared library libboost_plugin_loader_example_plugin_impl.so\x1b[0m\n'}
+[5.215543] (-) TimerEvent: {}
+[5.242981] (boost_plugin_loader) StdoutLine: {'line': b'[ 90%] Built target boost_plugin_loader_example_plugin_impl\n'}
+[5.315697] (-) TimerEvent: {}
+[5.415987] (-) TimerEvent: {}
+[5.516277] (-) TimerEvent: {}
+[5.519043] (boost_plugin_loader) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable boost_plugin_loader_example\x1b[0m\n'}
+[5.585135] (boost_plugin_loader) StdoutLine: {'line': b'[100%] Built target boost_plugin_loader_example\n'}
+[5.593398] (boost_plugin_loader) CommandEnded: {'returncode': 0}
+[5.594017] (boost_plugin_loader) JobProgress: {'identifier': 'boost_plugin_loader', 'progress': 'install'}
+[5.594188] (boost_plugin_loader) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader'], 'cwd': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'tetripick', 'XDG_SESSION_TYPE': 'x11', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/tetripick', 'OLDPWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '3018', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1001/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'tetripick', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1001.slice/user@1001.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'PKG_CONFIG_PATH': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig', 'USERNAME': 'tetripick', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'WINDOWPATH': '2', 'PATH': '/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/tetrisort-UR10E:@/tmp/.ICE-unix/2949,unix/tetrisort-UR10E:/tmp/.ICE-unix/2949', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/af13336b_e86b_4980_a99b_e921a0be9264', 'XDG_RUNTIME_DIR': '/run/user/1001', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1001/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.144', 'SSH_AUTH_SOCK': '/run/user/1001/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1001/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[5.600318] (boost_plugin_loader) StdoutLine: {'line': b'-- Install configuration: "Release"\n'}
+[5.600445] (boost_plugin_loader) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/include/boost_plugin_loader\n'}
+[5.600528] (boost_plugin_loader) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/include/boost_plugin_loader/plugin_loader.h\n'}
+[5.600572] (boost_plugin_loader) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/include/boost_plugin_loader/fwd.h\n'}
+[5.600618] (boost_plugin_loader) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/include/boost_plugin_loader/utils.h\n'}
+[5.600659] (boost_plugin_loader) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/include/boost_plugin_loader/macros.h\n'}
+[5.600699] (boost_plugin_loader) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/include/boost_plugin_loader/plugin_loader.hpp\n'}
+[5.600737] (boost_plugin_loader) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/boost_plugin_loader/package.xml\n'}
+[5.600775] (boost_plugin_loader) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/libboost_plugin_loader.so\n'}
+[5.601057] (boost_plugin_loader) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/cmake/boost_plugin_loader/boost_plugin_loader-targets.cmake\n'}
+[5.601184] (boost_plugin_loader) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/cmake/boost_plugin_loader/boost_plugin_loader-targets-release.cmake\n'}
+[5.601236] (boost_plugin_loader) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/cmake/boost_plugin_loader/boost_plugin_loader-config.cmake\n'}
+[5.601325] (boost_plugin_loader) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/cmake/boost_plugin_loader/boost_plugin_loader-config-version.cmake\n'}
+[5.601373] (boost_plugin_loader) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/ament_index/resource_index/packages/boost_plugin_loader\n'}
+[5.601418] (boost_plugin_loader) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/boost_plugin_loader/hook/ament_prefix_path.dsv\n'}
+[5.601487] (boost_plugin_loader) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/boost_plugin_loader/hook/ros_package_path.dsv\n'}
+[5.601546] (boost_plugin_loader) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/boost_plugin_loader/hook/python_path.dsv\n'}
+[5.602051] (boost_plugin_loader) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/libboost_plugin_loader_example_plugin.so\n'}
+[5.602490] (boost_plugin_loader) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/libboost_plugin_loader_example_plugin.so" to ""\n'}
+[5.602691] (boost_plugin_loader) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/libboost_plugin_loader_example_plugin_impl.so\n'}
+[5.603022] (boost_plugin_loader) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/libboost_plugin_loader_example_plugin_impl.so" to ""\n'}
+[5.603213] (boost_plugin_loader) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/boost_plugin_loader/boost_plugin_loader_example\n'}
+[5.603354] (boost_plugin_loader) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/boost_plugin_loader/boost_plugin_loader_example" to ""\n'}
+[5.604727] (boost_plugin_loader) CommandEnded: {'returncode': 0}
+[5.614274] (boost_plugin_loader) JobEnded: {'identifier': 'boost_plugin_loader', 'rc': 0}
+[5.615184] (industrial_calibration) JobStarted: {'identifier': 'industrial_calibration'}
+[5.616432] (-) TimerEvent: {}
+[5.622461] (industrial_calibration) JobProgress: {'identifier': 'industrial_calibration', 'progress': 'cmake'}
+[5.623490] (industrial_calibration) Command: {'cmd': ['/usr/bin/cmake', '/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration', '-DCMAKE_BUILD_TYPE=Release', '-DCMAKE_INSTALL_PREFIX=/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration'], 'cwd': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'tetripick', 'XDG_SESSION_TYPE': 'x11', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/tetripick', 'OLDPWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '3018', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1001/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'tetripick', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1001.slice/user@1001.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'PKG_CONFIG_PATH': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig', 'USERNAME': 'tetripick', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'WINDOWPATH': '2', 'PATH': '/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/tetrisort-UR10E:@/tmp/.ICE-unix/2949,unix/tetrisort-UR10E:/tmp/.ICE-unix/2949', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/af13336b_e86b_4980_a99b_e921a0be9264', 'XDG_RUNTIME_DIR': '/run/user/1001', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1001/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.144', 'SSH_AUTH_SOCK': '/run/user/1001/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1001/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[5.632321] (industrial_calibration) StdoutLine: {'line': b'-- clang-tidy not found!\n'}
+[5.634255] (industrial_calibration) StdoutLine: {'line': b'-- cppcheck found: /usr/bin/cppcheck\n'}
+[5.634426] (industrial_calibration) StdoutLine: {'line': b'-- include-what-you-use found: /usr/bin/include-what-you-use\n'}
+[5.638473] (industrial_calibration) StderrLine: {'line': b'\x1b[33mCMake Warning at /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/clang_tidy_tools.cmake:115 (message):\n'}
+[5.638691] (industrial_calibration) StderrLine: {'line': b'  Using target_clang_tidy but clang tidy executable was not found!\n'}
+[5.638823] (industrial_calibration) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[5.638937] (industrial_calibration) StderrLine: {'line': b'  core/CMakeLists.txt:22 (target_clang_tidy)\n'}
+[5.639049] (industrial_calibration) StderrLine: {'line': b'\n'}
+[5.639159] (industrial_calibration) StderrLine: {'line': b'\x1b[0m\n'}
+[5.639268] (industrial_calibration) StdoutLine: {'line': b'-- No package config template file found, creating default one\n'}
+[5.716625] (-) TimerEvent: {}
+[5.742275] (industrial_calibration) StdoutLine: {'line': b'-- Found AMD headers in: /usr/include/suitesparse\n'}
+[5.742632] (industrial_calibration) StdoutLine: {'line': b'-- Found AMD library: /usr/lib/x86_64-linux-gnu/libamd.so\n'}
+[5.742887] (industrial_calibration) StdoutLine: {'line': b'-- Found CAMD headers in: /usr/include/suitesparse\n'}
+[5.743027] (industrial_calibration) StdoutLine: {'line': b'-- Found CAMD library: /usr/lib/x86_64-linux-gnu/libcamd.so\n'}
+[5.743142] (industrial_calibration) StdoutLine: {'line': b'-- Found CCOLAMD headers in: /usr/include/suitesparse\n'}
+[5.743287] (industrial_calibration) StdoutLine: {'line': b'-- Found CCOLAMD library: /usr/lib/x86_64-linux-gnu/libccolamd.so\n'}
+[5.743400] (industrial_calibration) StdoutLine: {'line': b'-- Found CHOLMOD headers in: /usr/include/suitesparse\n'}
+[5.743509] (industrial_calibration) StdoutLine: {'line': b'-- Found CHOLMOD library: /usr/lib/x86_64-linux-gnu/libcholmod.so\n'}
+[5.743625] (industrial_calibration) StdoutLine: {'line': b'-- Found COLAMD headers in: /usr/include/suitesparse\n'}
+[5.743733] (industrial_calibration) StdoutLine: {'line': b'-- Found COLAMD library: /usr/lib/x86_64-linux-gnu/libcolamd.so\n'}
+[5.743840] (industrial_calibration) StdoutLine: {'line': b'-- Found SPQR headers in: /usr/include/suitesparse\n'}
+[5.743945] (industrial_calibration) StdoutLine: {'line': b'-- Found SPQR library: /usr/lib/x86_64-linux-gnu/libspqr.so\n'}
+[5.744050] (industrial_calibration) StdoutLine: {'line': b'-- Found Config headers in: /usr/include/suitesparse\n'}
+[5.744151] (industrial_calibration) StdoutLine: {'line': b'-- Found Config library: /usr/lib/x86_64-linux-gnu/libsuitesparseconfig.so\n'}
+[5.744256] (industrial_calibration) StdoutLine: {'line': b'-- Found Intel Thread Building Blocks (TBB) library (2021.11 / ) include location: . Assuming SuiteSparseQR was compiled with TBB.\n'}
+[5.744360] (industrial_calibration) StdoutLine: {'line': b'-- Adding librt to SuiteSparse_config libraries (required on Linux & Unix [not OSX] if SuiteSparse is compiled with timing).\n'}
+[5.746364] (industrial_calibration) StdoutLine: {'line': b'-- Could NOT find METIS (missing: METIS_INCLUDE_DIR METIS_LIBRARY) \n'}
+[5.748566] (industrial_calibration) StdoutLine: {'line': b'-- Found required Ceres dependency: Eigen version 3.4.0 in /usr/share/eigen3/cmake\n'}
+[5.750821] (industrial_calibration) StdoutLine: {'line': b'-- Found required Ceres dependency: glog\n'}
+[5.751193] (industrial_calibration) StdoutLine: {'line': b'-- Found required Ceres dependency: gflags\n'}
+[5.751399] (industrial_calibration) StdoutLine: {'line': b'-- Found Ceres version: 2.2.0 installed in: /usr with components: [EigenSparse, SparseLinearAlgebraLibrary, LAPACK, SuiteSparse, SchurSpecializations]\n'}
+[5.751781] (industrial_calibration) StderrLine: {'line': b'\x1b[33mCMake Warning at /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/clang_tidy_tools.cmake:115 (message):\n'}
+[5.751948] (industrial_calibration) StderrLine: {'line': b'  Using target_clang_tidy but clang tidy executable was not found!\n'}
+[5.752058] (industrial_calibration) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[5.752160] (industrial_calibration) StderrLine: {'line': b'  optimizations/CMakeLists.txt:20 (target_clang_tidy)\n'}
+[5.752259] (industrial_calibration) StderrLine: {'line': b'\n'}
+[5.752356] (industrial_calibration) StderrLine: {'line': b'\x1b[0m\n'}
+[5.752452] (industrial_calibration) StdoutLine: {'line': b'-- No package config template file found, creating default one\n'}
+[5.752979] (industrial_calibration) StderrLine: {'line': b'\x1b[33mCMake Warning at /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/clang_tidy_tools.cmake:115 (message):\n'}
+[5.753147] (industrial_calibration) StderrLine: {'line': b'  Using target_clang_tidy but clang tidy executable was not found!\n'}
+[5.753269] (industrial_calibration) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[5.753374] (industrial_calibration) StderrLine: {'line': b'  analysis/CMakeLists.txt:13 (target_clang_tidy)\n'}
+[5.753474] (industrial_calibration) StderrLine: {'line': b'\n'}
+[5.753570] (industrial_calibration) StderrLine: {'line': b'\x1b[0m\n'}
+[5.753680] (industrial_calibration) StdoutLine: {'line': b'-- No package config template file found, creating default one\n'}
+[5.753814] (industrial_calibration) StderrLine: {'line': b'\x1b[0mBuilding OpenCV target finders\x1b[0m\n'}
+[5.764380] (industrial_calibration) StderrLine: {'line': b'\x1b[33mCMake Warning at /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/clang_tidy_tools.cmake:115 (message):\n'}
+[5.764529] (industrial_calibration) StderrLine: {'line': b'  Using target_clang_tidy but clang tidy executable was not found!\n'}
+[5.764768] (industrial_calibration) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[5.764922] (industrial_calibration) StderrLine: {'line': b'  target_finders/opencv/CMakeLists.txt:28 (target_clang_tidy)\n'}
+[5.765028] (industrial_calibration) StderrLine: {'line': b'\n'}
+[5.765128] (industrial_calibration) StderrLine: {'line': b'\x1b[0m\n'}
+[5.765225] (industrial_calibration) StderrLine: {'line': b'\x1b[33mCMake Warning at /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/clang_tidy_tools.cmake:115 (message):\n'}
+[5.765323] (industrial_calibration) StderrLine: {'line': b'  Using target_clang_tidy but clang tidy executable was not found!\n'}
+[5.765421] (industrial_calibration) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[5.765540] (industrial_calibration) StderrLine: {'line': b'  target_finders/opencv/CMakeLists.txt:46 (target_clang_tidy)\n'}
+[5.765655] (industrial_calibration) StderrLine: {'line': b'\n'}
+[5.765752] (industrial_calibration) StderrLine: {'line': b'\x1b[0m\n'}
+[5.765849] (industrial_calibration) StdoutLine: {'line': b'-- No package config template file found, creating default one\n'}
+[5.765955] (industrial_calibration) StderrLine: {'line': b'\x1b[0mBuilding GUI\x1b[0m\n'}
+[5.777357] (industrial_calibration) StdoutLine: {'line': b'-- No package config template file found, creating default one\n'}
+[5.778077] (industrial_calibration) StderrLine: {'line': b'\x1b[0mBuilding examples\x1b[0m\n'}
+[5.783989] (industrial_calibration) StdoutLine: {'line': b'-- No package config template file found, creating default one\n'}
+[5.784662] (industrial_calibration) StdoutLine: {'line': b'-- No package config template file found, creating default one\n'}
+[5.785777] (industrial_calibration) StdoutLine: {'line': b'-- Configuring done (0.2s)\n'}
+[5.816731] (-) TimerEvent: {}
+[5.841096] (industrial_calibration) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[5.849389] (industrial_calibration) StdoutLine: {'line': b'-- Build files have been written to: /home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration\n'}
+[5.854333] (industrial_calibration) CommandEnded: {'returncode': 0}
+[5.854921] (industrial_calibration) JobProgress: {'identifier': 'industrial_calibration', 'progress': 'build'}
+[5.855446] (industrial_calibration) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration', '--', '-j8', '-l8'], 'cwd': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'tetripick', 'XDG_SESSION_TYPE': 'x11', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/tetripick', 'OLDPWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '3018', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1001/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'tetripick', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1001.slice/user@1001.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'PKG_CONFIG_PATH': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig', 'USERNAME': 'tetripick', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'WINDOWPATH': '2', 'PATH': '/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/tetrisort-UR10E:@/tmp/.ICE-unix/2949,unix/tetrisort-UR10E:/tmp/.ICE-unix/2949', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/af13336b_e86b_4980_a99b_e921a0be9264', 'XDG_RUNTIME_DIR': '/run/user/1001', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1001/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.144', 'SSH_AUTH_SOCK': '/run/user/1001/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1001/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[5.916838] (-) TimerEvent: {}
+[5.929469] (industrial_calibration) StdoutLine: {'line': b'[  1%] \x1b[32mBuilding CXX object core/CMakeFiles/industrial_calibration_core.dir/src/camera_intrinsics.cpp.o\x1b[0m\n'}
+[5.934181] (industrial_calibration) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding CXX object core/CMakeFiles/industrial_calibration_core.dir/src/types.cpp.o\x1b[0m\n'}
+[5.934673] (industrial_calibration) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding CXX object core/CMakeFiles/industrial_calibration_core.dir/src/dh_chain.cpp.o\x1b[0m\n'}
+[5.935690] (industrial_calibration) StdoutLine: {'line': b'[  5%] \x1b[32mBuilding CXX object core/CMakeFiles/industrial_calibration_core.dir/src/utils.cpp.o\x1b[0m\n'}
+[6.016978] (-) TimerEvent: {}
+[6.123028] (-) TimerEvent: {}
+[6.223380] (-) TimerEvent: {}
+[6.324607] (-) TimerEvent: {}
+[6.424893] (-) TimerEvent: {}
+[6.525185] (-) TimerEvent: {}
+[6.625518] (-) TimerEvent: {}
+[6.725817] (-) TimerEvent: {}
+[6.826104] (-) TimerEvent: {}
+[6.926442] (-) TimerEvent: {}
+[7.026749] (-) TimerEvent: {}
+[7.127037] (-) TimerEvent: {}
+[7.227328] (-) TimerEvent: {}
+[7.327638] (-) TimerEvent: {}
+[7.427932] (-) TimerEvent: {}
+[7.528253] (-) TimerEvent: {}
+[7.628545] (-) TimerEvent: {}
+[7.728891] (-) TimerEvent: {}
+[7.829196] (-) TimerEvent: {}
+[7.929499] (-) TimerEvent: {}
+[8.029820] (-) TimerEvent: {}
+[8.130105] (-) TimerEvent: {}
+[8.230439] (-) TimerEvent: {}
+[8.330765] (-) TimerEvent: {}
+[8.431085] (-) TimerEvent: {}
+[8.531413] (-) TimerEvent: {}
+[8.631714] (-) TimerEvent: {}
+[8.731987] (-) TimerEvent: {}
+[8.832307] (-) TimerEvent: {}
+[8.932610] (-) TimerEvent: {}
+[9.032893] (-) TimerEvent: {}
+[9.133203] (-) TimerEvent: {}
+[9.233481] (-) TimerEvent: {}
+[9.333804] (-) TimerEvent: {}
+[9.434080] (-) TimerEvent: {}
+[9.534379] (-) TimerEvent: {}
+[9.634682] (-) TimerEvent: {}
+[9.734974] (-) TimerEvent: {}
+[9.835249] (-) TimerEvent: {}
+[9.935540] (-) TimerEvent: {}
+[10.035826] (-) TimerEvent: {}
+[10.136147] (-) TimerEvent: {}
+[10.168456] (industrial_calibration) StdoutLine: {'line': b'[  7%] \x1b[32m\x1b[1mLinking CXX shared library libindustrial_calibration_core.so\x1b[0m\n'}
+[10.230768] (industrial_calibration) StdoutLine: {'line': b'[  7%] Built target industrial_calibration_core\n'}
+[10.236269] (-) TimerEvent: {}
+[10.263322] (industrial_calibration) StdoutLine: {'line': b'[  8%] \x1b[32mBuilding CXX object optimizations/CMakeFiles/industrial_calibration_optimizations.dir/src/covariance_types.cpp.o\x1b[0m\n'}
+[10.265681] (industrial_calibration) StdoutLine: {'line': b'[ 10%] \x1b[32mBuilding CXX object optimizations/CMakeFiles/industrial_calibration_optimizations.dir/src/camera_intrinsic.cpp.o\x1b[0m\n'}
+[10.266724] (industrial_calibration) StdoutLine: {'line': b'[ 11%] \x1b[32mBuilding CXX object optimizations/CMakeFiles/industrial_calibration_optimizations.dir/src/pnp.cpp.o\x1b[0m\n'}
+[10.267529] (industrial_calibration) StdoutLine: {'line': b'[ 14%] \x1b[32mBuilding CXX object optimizations/CMakeFiles/industrial_calibration_optimizations.dir/src/dh_chain_kinematic_calibration.cpp.o\x1b[0m\n'}
+[10.268106] (industrial_calibration) StdoutLine: {'line': b'[ 14%] \x1b[32mBuilding CXX object optimizations/CMakeFiles/industrial_calibration_optimizations.dir/src/covariance_analysis.cpp.o\x1b[0m\n'}
+[10.268955] (industrial_calibration) StdoutLine: {'line': b'[ 16%] \x1b[32mBuilding CXX object optimizations/CMakeFiles/industrial_calibration_optimizations.dir/src/extrinsic_hand_eye.cpp.o\x1b[0m\n'}
+[10.270810] (industrial_calibration) StdoutLine: {'line': b'[ 17%] \x1b[32mBuilding CXX object optimizations/CMakeFiles/industrial_calibration_optimizations.dir/src/extrinsic_multi_static_camera.cpp.o\x1b[0m\n'}
+[10.271128] (industrial_calibration) StdoutLine: {'line': b'[ 19%] \x1b[32mBuilding CXX object target_finders/opencv/CMakeFiles/industrial_calibration_target_finders_opencv.dir/src/utils.cpp.o\x1b[0m\n'}
+[10.336645] (-) TimerEvent: {}
+[10.436946] (-) TimerEvent: {}
+[10.538789] (-) TimerEvent: {}
+[10.640655] (-) TimerEvent: {}
+[10.742091] (-) TimerEvent: {}
+[10.844777] (-) TimerEvent: {}
+[10.945137] (-) TimerEvent: {}
+[11.045492] (-) TimerEvent: {}
+[11.145848] (-) TimerEvent: {}
+[11.246181] (-) TimerEvent: {}
+[11.346523] (-) TimerEvent: {}
+[11.446871] (-) TimerEvent: {}
+[11.550670] (-) TimerEvent: {}
+[11.654649] (-) TimerEvent: {}
+[11.754989] (-) TimerEvent: {}
+[11.860653] (-) TimerEvent: {}
+[11.973357] (-) TimerEvent: {}
+[12.073724] (-) TimerEvent: {}
+[12.174249] (-) TimerEvent: {}
+[12.277829] (-) TimerEvent: {}
+[12.378169] (-) TimerEvent: {}
+[12.478520] (-) TimerEvent: {}
+[12.578860] (-) TimerEvent: {}
+[12.671122] (industrial_calibration) StdoutLine: {'line': b'[ 20%] \x1b[32mBuilding CXX object optimizations/CMakeFiles/industrial_calibration_optimizations.dir/src/multi_camera_pnp.cpp.o\x1b[0m\n'}
+[12.679661] (-) TimerEvent: {}
+[12.781025] (-) TimerEvent: {}
+[12.881654] (-) TimerEvent: {}
+[12.982652] (-) TimerEvent: {}
+[13.082997] (-) TimerEvent: {}
+[13.100863] (industrial_calibration) StdoutLine: {'line': b'[ 22%] \x1b[32mBuilding CXX object target_finders/opencv/CMakeFiles/industrial_calibration_target_finders_opencv.dir/src/circle_detector.cpp.o\x1b[0m\n'}
+[13.183112] (-) TimerEvent: {}
+[13.256852] (industrial_calibration) StdoutLine: {'line': b'[ 23%] \x1b[32mBuilding CXX object target_finders/opencv/CMakeFiles/industrial_calibration_target_finders_opencv.dir/src/target_finder.cpp.o\x1b[0m\n'}
+[13.283223] (-) TimerEvent: {}
+[13.383498] (-) TimerEvent: {}
+[13.485668] (-) TimerEvent: {}
+[13.586108] (-) TimerEvent: {}
+[13.686550] (-) TimerEvent: {}
+[13.788986] (-) TimerEvent: {}
+[13.889294] (-) TimerEvent: {}
+[13.991649] (-) TimerEvent: {}
+[14.091962] (-) TimerEvent: {}
+[14.193433] (-) TimerEvent: {}
+[14.295954] (-) TimerEvent: {}
+[14.396268] (-) TimerEvent: {}
+[14.496711] (-) TimerEvent: {}
+[14.597645] (-) TimerEvent: {}
+[14.697930] (-) TimerEvent: {}
+[14.798361] (-) TimerEvent: {}
+[14.902649] (-) TimerEvent: {}
+[15.005564] (-) TimerEvent: {}
+[15.106644] (-) TimerEvent: {}
+[15.207065] (-) TimerEvent: {}
+[15.309646] (-) TimerEvent: {}
+[15.409955] (-) TimerEvent: {}
+[15.510265] (-) TimerEvent: {}
+[15.610574] (-) TimerEvent: {}
+[15.711016] (-) TimerEvent: {}
+[15.811319] (-) TimerEvent: {}
+[15.911628] (-) TimerEvent: {}
+[16.013655] (-) TimerEvent: {}
+[16.114271] (-) TimerEvent: {}
+[16.131994] (industrial_calibration) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object target_finders/opencv/CMakeFiles/industrial_calibration_target_finders_opencv.dir/src/modified_circle_grid_target_finder.cpp.o\x1b[0m\n'}
+[16.214385] (-) TimerEvent: {}
+[16.275039] (industrial_calibration) StdoutLine: {'line': b'[ 26%] \x1b[32mBuilding CXX object target_finders/opencv/CMakeFiles/industrial_calibration_target_finders_opencv.dir/src/aruco_grid_target_finder.cpp.o\x1b[0m\n'}
+[16.314497] (-) TimerEvent: {}
+[16.416371] (-) TimerEvent: {}
+[16.516859] (-) TimerEvent: {}
+[16.617372] (-) TimerEvent: {}
+[16.718937] (-) TimerEvent: {}
+[16.819287] (-) TimerEvent: {}
+[16.821197] (industrial_calibration) StdoutLine: {'line': b'[ 28%] \x1b[32mBuilding CXX object target_finders/opencv/CMakeFiles/industrial_calibration_target_finders_opencv.dir/src/charuco_grid_target_finder.cpp.o\x1b[0m\n'}
+[16.919655] (-) TimerEvent: {}
+[17.021788] (-) TimerEvent: {}
+[17.123876] (-) TimerEvent: {}
+[17.225929] (-) TimerEvent: {}
+[17.326451] (-) TimerEvent: {}
+[17.431026] (-) TimerEvent: {}
+[17.531338] (-) TimerEvent: {}
+[17.631817] (-) TimerEvent: {}
+[17.732283] (-) TimerEvent: {}
+[17.833799] (-) TimerEvent: {}
+[17.934149] (-) TimerEvent: {}
+[18.036534] (-) TimerEvent: {}
+[18.136877] (-) TimerEvent: {}
+[18.237190] (-) TimerEvent: {}
+[18.338651] (-) TimerEvent: {}
+[18.438971] (-) TimerEvent: {}
+[18.539283] (-) TimerEvent: {}
+[18.640651] (-) TimerEvent: {}
+[18.740963] (-) TimerEvent: {}
+[18.841275] (-) TimerEvent: {}
+[18.942810] (-) TimerEvent: {}
+[19.043121] (-) TimerEvent: {}
+[19.143429] (-) TimerEvent: {}
+[19.244652] (-) TimerEvent: {}
+[19.344963] (-) TimerEvent: {}
+[19.445293] (-) TimerEvent: {}
+[19.545623] (-) TimerEvent: {}
+[19.646652] (-) TimerEvent: {}
+[19.746970] (-) TimerEvent: {}
+[19.847334] (-) TimerEvent: {}
+[19.948186] (-) TimerEvent: {}
+[20.048514] (-) TimerEvent: {}
+[20.148959] (-) TimerEvent: {}
+[20.249200] (-) TimerEvent: {}
+[20.349455] (-) TimerEvent: {}
+[20.449727] (-) TimerEvent: {}
+[20.549990] (-) TimerEvent: {}
+[20.650258] (-) TimerEvent: {}
+[20.750522] (-) TimerEvent: {}
+[20.850781] (-) TimerEvent: {}
+[20.951042] (-) TimerEvent: {}
+[21.021918] (industrial_calibration) StdoutLine: {'line': b'[ 29%] \x1b[32m\x1b[1mLinking CXX shared library libindustrial_calibration_target_finders_opencv.so\x1b[0m\n'}
+[21.051168] (-) TimerEvent: {}
+[21.095334] (industrial_calibration) StdoutLine: {'line': b'[ 29%] Built target industrial_calibration_target_finders_opencv\n'}
+[21.118170] (industrial_calibration) StdoutLine: {'line': b'[ 31%] \x1b[32mBuilding CXX object target_finders/opencv/CMakeFiles/industrial_calibration_plugins_opencv.dir/src/plugins.cpp.o\x1b[0m\n'}
+[21.151277] (-) TimerEvent: {}
+[21.251530] (-) TimerEvent: {}
+[21.351885] (-) TimerEvent: {}
+[21.452221] (-) TimerEvent: {}
+[21.552619] (-) TimerEvent: {}
+[21.652886] (-) TimerEvent: {}
+[21.753196] (-) TimerEvent: {}
+[21.853530] (-) TimerEvent: {}
+[21.953820] (-) TimerEvent: {}
+[22.054104] (-) TimerEvent: {}
+[22.154437] (-) TimerEvent: {}
+[22.254725] (-) TimerEvent: {}
+[22.355032] (-) TimerEvent: {}
+[22.455298] (-) TimerEvent: {}
+[22.496247] (industrial_calibration) StdoutLine: {'line': b'[ 32%] \x1b[32m\x1b[1mLinking CXX shared library libindustrial_calibration_plugins_opencv.so\x1b[0m\n'}
+[22.555437] (-) TimerEvent: {}
+[22.561385] (industrial_calibration) StdoutLine: {'line': b'[ 32%] Built target industrial_calibration_plugins_opencv\n'}
+[22.593794] (industrial_calibration) StdoutLine: {'line': b'[ 34%] \x1b[32m\x1b[1mLinking CXX shared library libindustrial_calibration_optimizations.so\x1b[0m\n'}
+[22.655603] (-) TimerEvent: {}
+[22.671681] (industrial_calibration) StdoutLine: {'line': b'[ 34%] Built target industrial_calibration_optimizations\n'}
+[22.704236] (industrial_calibration) StdoutLine: {'line': b'[ 37%] \x1b[32mBuilding CXX object analysis/CMakeFiles/industrial_calibration_analysis.dir/src/extrinsic_hand_eye_calibration_analysis.cpp.o\x1b[0m\n'}
+[22.704525] (industrial_calibration) StdoutLine: {'line': b'[ 37%] \x1b[32mBuilding CXX object analysis/CMakeFiles/industrial_calibration_analysis.dir/src/projection.cpp.o\x1b[0m\n'}
+[22.706801] (industrial_calibration) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding CXX object analysis/CMakeFiles/industrial_calibration_analysis.dir/src/camera_intrinsic_calibration_analysis.cpp.o\x1b[0m\n'}
+[22.707730] (industrial_calibration) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding CXX object analysis/CMakeFiles/industrial_calibration_analysis.dir/src/homography_analysis.cpp.o\x1b[0m\n'}
+[22.708052] (industrial_calibration) StdoutLine: {'line': b'[ 41%] \x1b[32mBuilding CXX object analysis/CMakeFiles/industrial_calibration_analysis.dir/src/noise_qualification.cpp.o\x1b[0m\n'}
+[22.709022] (industrial_calibration) StdoutLine: {'line': b'[ 43%] \x1b[32mBuilding CXX object analysis/CMakeFiles/industrial_calibration_analysis.dir/src/statistics.cpp.o\x1b[0m\n'}
+[22.755688] (-) TimerEvent: {}
+[22.856007] (-) TimerEvent: {}
+[22.956263] (-) TimerEvent: {}
+[23.057242] (-) TimerEvent: {}
+[23.157505] (-) TimerEvent: {}
+[23.257787] (-) TimerEvent: {}
+[23.359144] (-) TimerEvent: {}
+[23.459415] (-) TimerEvent: {}
+[23.559654] (-) TimerEvent: {}
+[23.659925] (-) TimerEvent: {}
+[23.760203] (-) TimerEvent: {}
+[23.860492] (-) TimerEvent: {}
+[23.960780] (-) TimerEvent: {}
+[24.061050] (-) TimerEvent: {}
+[24.161326] (-) TimerEvent: {}
+[24.261581] (-) TimerEvent: {}
+[24.361843] (-) TimerEvent: {}
+[24.462060] (-) TimerEvent: {}
+[24.562322] (-) TimerEvent: {}
+[24.662592] (-) TimerEvent: {}
+[24.762851] (-) TimerEvent: {}
+[24.863125] (-) TimerEvent: {}
+[24.963462] (-) TimerEvent: {}
+[25.063745] (-) TimerEvent: {}
+[25.164069] (-) TimerEvent: {}
+[25.264372] (-) TimerEvent: {}
+[25.364678] (-) TimerEvent: {}
+[25.464957] (-) TimerEvent: {}
+[25.565356] (-) TimerEvent: {}
+[25.665778] (-) TimerEvent: {}
+[25.766107] (-) TimerEvent: {}
+[25.866476] (-) TimerEvent: {}
+[25.966759] (-) TimerEvent: {}
+[26.067074] (-) TimerEvent: {}
+[26.167368] (-) TimerEvent: {}
+[26.267696] (-) TimerEvent: {}
+[26.290844] (industrial_calibration) StdoutLine: {'line': b'[ 44%] \x1b[32m\x1b[1mLinking CXX shared library libindustrial_calibration_analysis.so\x1b[0m\n'}
+[26.364468] (industrial_calibration) StdoutLine: {'line': b'[ 44%] Built target industrial_calibration_analysis\n'}
+[26.367807] (-) TimerEvent: {}
+[26.394085] (industrial_calibration) StdoutLine: {'line': b'[ 44%] Built target industrial_calibration_gui_autogen_timestamp_deps\n'}
+[26.407656] (industrial_calibration) StdoutLine: {'line': b'[ 46%] \x1b[32mBuilding CXX object examples/CMakeFiles/industrial_calibration_kinematic_calibration.dir/kinematic_calibration.cpp.o\x1b[0m\n'}
+[26.408057] (industrial_calibration) StdoutLine: {'line': b'[ 47%] \x1b[32mBuilding CXX object examples/CMakeFiles/industrial_calibration_noise_qualification_2d.dir/noise_qualification_2d.cpp.o\x1b[0m\n'}
+[26.412765] (industrial_calibration) StdoutLine: {'line': b'[ 49%] \x1b[32mBuilding CXX object examples/CMakeFiles/industrial_calibration_extrinsic_hand_eye.dir/extrinsic_hand_eye.cpp.o\x1b[0m\n'}
+[26.413126] (industrial_calibration) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object examples/CMakeFiles/industrial_calibration_camera_intrinsic.dir/camera_intrinsic.cpp.o\x1b[0m\n'}
+[26.418125] (industrial_calibration) StdoutLine: {'line': b'[ 52%] \x1b[32mBuilding CXX object examples/CMakeFiles/industrial_calibration_pnp.dir/pnp.cpp.o\x1b[0m\n'}
+[26.431773] (industrial_calibration) StdoutLine: {'line': b'[ 53%] \x1b[34m\x1b[1mAutomatic MOC and UIC for target industrial_calibration_gui\x1b[0m\n'}
+[26.463380] (industrial_calibration) StdoutLine: {'line': b'[ 53%] Built target industrial_calibration_gui_autogen\n'}
+[26.467904] (-) TimerEvent: {}
+[26.475433] (industrial_calibration) StdoutLine: {'line': b'[ 55%] \x1b[34m\x1b[1mAutomatic RCC for resources/resources.qrc\x1b[0m\n'}
+[26.564567] (industrial_calibration) StdoutLine: {'line': b'[ 58%] \x1b[32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/configurable_widget.cpp.o\x1b[0m\n'}
+[26.564762] (industrial_calibration) StdoutLine: {'line': b'[ 58%] \x1b[32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/aspect_ratio_pixmap_label.cpp.o\x1b[0m\n'}
+[26.565579] (industrial_calibration) StdoutLine: {'line': b'[ 59%] \x1b[32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/industrial_calibration_gui_autogen/mocs_compilation.cpp.o\x1b[0m\n'}
+[26.568250] (-) TimerEvent: {}
+[26.668518] (-) TimerEvent: {}
+[26.769843] (-) TimerEvent: {}
+[26.870098] (-) TimerEvent: {}
+[26.970564] (-) TimerEvent: {}
+[27.071462] (-) TimerEvent: {}
+[27.172696] (-) TimerEvent: {}
+[27.274256] (-) TimerEvent: {}
+[27.374549] (-) TimerEvent: {}
+[27.474860] (-) TimerEvent: {}
+[27.575650] (-) TimerEvent: {}
+[27.676640] (-) TimerEvent: {}
+[27.776920] (-) TimerEvent: {}
+[27.877643] (-) TimerEvent: {}
+[27.978074] (-) TimerEvent: {}
+[28.079907] (-) TimerEvent: {}
+[28.092654] (industrial_calibration) StdoutLine: {'line': b'[ 61%] \x1b[32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/camera_intrinsics.cpp.o\x1b[0m\n'}
+[28.180013] (-) TimerEvent: {}
+[28.280289] (-) TimerEvent: {}
+[28.380621] (-) TimerEvent: {}
+[28.482807] (-) TimerEvent: {}
+[28.583112] (-) TimerEvent: {}
+[28.619697] (industrial_calibration) StdoutLine: {'line': b'[ 62%] \x1b[32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/transform_guess.cpp.o\x1b[0m\n'}
+[28.683226] (-) TimerEvent: {}
+[28.783525] (-) TimerEvent: {}
+[28.883849] (-) TimerEvent: {}
+[28.984159] (-) TimerEvent: {}
+[29.086804] (-) TimerEvent: {}
+[29.188020] (-) TimerEvent: {}
+[29.288343] (-) TimerEvent: {}
+[29.391569] (-) TimerEvent: {}
+[29.497887] (-) TimerEvent: {}
+[29.598200] (-) TimerEvent: {}
+[29.698507] (-) TimerEvent: {}
+[29.798810] (-) TimerEvent: {}
+[29.899100] (-) TimerEvent: {}
+[29.999393] (-) TimerEvent: {}
+[30.099654] (-) TimerEvent: {}
+[30.199946] (-) TimerEvent: {}
+[30.246035] (industrial_calibration) StdoutLine: {'line': b'[ 64%] \x1b[32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/charuco_grid_target_finder.cpp.o\x1b[0m\n'}
+[30.300653] (-) TimerEvent: {}
+[30.402118] (-) TimerEvent: {}
+[30.505656] (-) TimerEvent: {}
+[30.606144] (-) TimerEvent: {}
+[30.709661] (-) TimerEvent: {}
+[30.809997] (-) TimerEvent: {}
+[30.913555] (-) TimerEvent: {}
+[31.013922] (-) TimerEvent: {}
+[31.114432] (-) TimerEvent: {}
+[31.214929] (-) TimerEvent: {}
+[31.316539] (-) TimerEvent: {}
+[31.418111] (-) TimerEvent: {}
+[31.521775] (-) TimerEvent: {}
+[31.622108] (-) TimerEvent: {}
+[31.722451] (-) TimerEvent: {}
+[31.822947] (-) TimerEvent: {}
+[31.925285] (-) TimerEvent: {}
+[32.025654] (-) TimerEvent: {}
+[32.126127] (-) TimerEvent: {}
+[32.226635] (-) TimerEvent: {}
+[32.329703] (-) TimerEvent: {}
+[32.431654] (-) TimerEvent: {}
+[32.531969] (-) TimerEvent: {}
+[32.560482] (industrial_calibration) StdoutLine: {'line': b'[ 65%] \x1b[32m\x1b[1mLinking CXX executable industrial_calibration_noise_qualification_2d\x1b[0m\n'}
+[32.632082] (-) TimerEvent: {}
+[32.732431] (-) TimerEvent: {}
+[32.832803] (-) TimerEvent: {}
+[32.933304] (-) TimerEvent: {}
+[33.033998] (-) TimerEvent: {}
+[33.061786] (industrial_calibration) StdoutLine: {'line': b'[ 65%] Built target industrial_calibration_noise_qualification_2d\n'}
+[33.071907] (industrial_calibration) StdoutLine: {'line': b'[ 67%] \x1b[32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/aruco_grid_target_finder.cpp.o\x1b[0m\n'}
+[33.134102] (-) TimerEvent: {}
+[33.234490] (-) TimerEvent: {}
+[33.334862] (-) TimerEvent: {}
+[33.435654] (-) TimerEvent: {}
+[33.535999] (-) TimerEvent: {}
+[33.604402] (industrial_calibration) StdoutLine: {'line': b'[ 68%] \x1b[32m\x1b[1mLinking CXX executable industrial_calibration_pnp\x1b[0m\n'}
+[33.636111] (-) TimerEvent: {}
+[33.706929] (industrial_calibration) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Core:257\x1b[m\x1b[K,\n'}
+[33.707192] (industrial_calibration) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Geometry:11\x1b[m\x1b[K,\n'}
+[33.707330] (industrial_calibration) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/analysis/include/industrial_calibration/analysis/statistics.h:3\x1b[m\x1b[K,\n'}
+[33.707456] (industrial_calibration) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/kinematic_calibration.cpp:2\x1b[m\x1b[K:\n'}
+[33.707574] (industrial_calibration) StderrLine: {'line': b'In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid Eigen::internal::assign_op<DstScalar, SrcScalar>::\x1b[01;32m\x1b[KassignCoeff\x1b[m\x1b[K(DstScalar&, const SrcScalar&) const \x1b[35m\x1b[K[with DstScalar = bool; SrcScalar = bool]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99,\n'}
+[33.707711] (industrial_calibration) StderrLine: {'line': b'    inlined from \xe2\x80\x98\x1b[01m\x1b[Kvoid Eigen::internal::generic_dense_assignment_kernel<DstEvaluatorTypeT, SrcEvaluatorTypeT, Functor, Version>::\x1b[01;32m\x1b[KassignCoeff\x1b[m\x1b[K(Eigen::Index) \x1b[35m\x1b[K[with DstEvaluatorTypeT = Eigen::internal::evaluator<Eigen::Array<bool, -1, 4> >; SrcEvaluatorTypeT = Eigen::internal::evaluator<Eigen::Matrix<bool, -1, 4, 0, -1, 4> >; Functor = Eigen::internal::assign_op<bool, bool>; int Version = 0]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99 at \x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:660:26\x1b[m\x1b[K,\n'}
+[33.707829] (industrial_calibration) StderrLine: {'line': b'    inlined from \xe2\x80\x98\x1b[01m\x1b[Kstatic void Eigen::internal::unaligned_dense_assignment_loop<false>::\x1b[01;32m\x1b[Krun\x1b[m\x1b[K(Kernel&, Eigen::Index, Eigen::Index) \x1b[35m\x1b[K[with Kernel = Eigen::internal::generic_dense_assignment_kernel<Eigen::internal::evaluator<Eigen::Array<bool, -1, 4> >, Eigen::internal::evaluator<Eigen::Matrix<bool, -1, 4, 0, -1, 4> >, Eigen::internal::assign_op<bool, bool>, 0>]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99 at \x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:411:25\x1b[m\x1b[K,\n'}
+[33.707963] (industrial_calibration) StderrLine: {'line': b'    inlined from \xe2\x80\x98\x1b[01m\x1b[Kstatic void Eigen::internal::dense_assignment_loop<Kernel, 3, 0>::\x1b[01;32m\x1b[Krun\x1b[m\x1b[K(Kernel&) \x1b[35m\x1b[K[with Kernel = Eigen::internal::generic_dense_assignment_kernel<Eigen::internal::evaluator<Eigen::Array<bool, -1, 4> >, Eigen::internal::evaluator<Eigen::Matrix<bool, -1, 4, 0, -1, 4> >, Eigen::internal::assign_op<bool, bool>, 0>]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99 at \x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:439:43\x1b[m\x1b[K,\n'}
+[33.708081] (industrial_calibration) StderrLine: {'line': b'    inlined from \xe2\x80\x98\x1b[01m\x1b[Kvoid Eigen::internal::\x1b[01;32m\x1b[Kcall_dense_assignment_loop\x1b[m\x1b[K(DstXprType&, const SrcXprType&, const Functor&) \x1b[35m\x1b[K[with DstXprType = Eigen::Array<bool, -1, 4>; SrcXprType = Eigen::Matrix<bool, -1, 4, 0, -1, 4>; Functor = assign_op<bool, bool>]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99 at \x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:785:37\x1b[m\x1b[K,\n'}
+[33.708204] (industrial_calibration) StderrLine: {'line': b'    inlined from \xe2\x80\x98\x1b[01m\x1b[Kstatic void Eigen::internal::Assignment<DstXprType, SrcXprType, Functor, Eigen::internal::Dense2Dense, Weak>::\x1b[01;32m\x1b[Krun\x1b[m\x1b[K(DstXprType&, const SrcXprType&, const Functor&) \x1b[35m\x1b[K[with DstXprType = Eigen::Array<bool, -1, 4>; SrcXprType = Eigen::Matrix<bool, -1, 4, 0, -1, 4>; Functor = Eigen::internal::assign_op<bool, bool>; Weak = void]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99 at \x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:954:31\x1b[m\x1b[K,\n'}
+[33.708315] (industrial_calibration) StderrLine: {'line': b'    inlined from \xe2\x80\x98\x1b[01m\x1b[Kvoid Eigen::internal::\x1b[01;32m\x1b[Kcall_assignment_no_alias\x1b[m\x1b[K(Dst&, const Src&, const Func&) \x1b[35m\x1b[K[with Dst = Eigen::Array<bool, -1, 4>; Src = Eigen::Matrix<bool, -1, 4, 0, -1, 4>; Func = assign_op<bool, bool>]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99 at \x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:890:49\x1b[m\x1b[K,\n'}
+[33.708425] (industrial_calibration) StderrLine: {'line': b'    inlined from \xe2\x80\x98\x1b[01m\x1b[KDerived& Eigen::PlainObjectBase<Derived>::\x1b[01;32m\x1b[K_set_noalias\x1b[m\x1b[K(const Eigen::DenseBase<OtherDerived>&) \x1b[35m\x1b[K[with OtherDerived = Eigen::Matrix<bool, -1, 4, 0, -1, 4>; Derived = Eigen::Array<bool, -1, 4>]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99 at \x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/PlainObjectBase.h:797:41\x1b[m\x1b[K,\n'}
+[33.708531] (industrial_calibration) StderrLine: {'line': b'    inlined from \xe2\x80\x98\x1b[01m\x1b[KEigen::PlainObjectBase<Derived>::\x1b[01;32m\x1b[KPlainObjectBase\x1b[m\x1b[K(const Eigen::DenseBase<OtherDerived>&) \x1b[35m\x1b[K[with OtherDerived = Eigen::Matrix<bool, -1, 4, 0, -1, 4>; Derived = Eigen::Array<bool, -1, 4>]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99 at \x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/PlainObjectBase.h:594:19\x1b[m\x1b[K,\n'}
+[33.710743] (industrial_calibration) StderrLine: {'line': b'    inlined from \xe2\x80\x98\x1b[01m\x1b[KEigen::Array<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>::\x1b[01;32m\x1b[KArray\x1b[m\x1b[K(const Eigen::EigenBase<OtherDerived>&, typename Eigen::internal::enable_if<std::is_convertible<typename OtherDerived::Scalar, typename Eigen::internal::traits<Eigen::Array<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols> >::Scalar>::value, PrivateType>::type) \x1b[35m\x1b[K[with OtherDerived = Eigen::Matrix<bool, -1, 4, 0, -1, 4>; _Scalar = bool; int _Rows = -1; int _Cols = 4; int _Options = 0; int _MaxRows = -1; int _MaxCols = 4]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99 at \x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/Array.h:288:29\x1b[m\x1b[K,\n'}
+[33.710984] (industrial_calibration) StderrLine: {'line': b'    inlined from \xe2\x80\x98\x1b[01m\x1b[Kstd::tuple<industrial_calibration::KinematicCalibrationResult, Stats, Stats>\x1b[01;32m\x1b[K run\x1b[m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99 at \x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/kinematic_calibration.cpp:285:38\x1b[m\x1b[K:\n'}
+[33.711133] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/functors/AssignmentFunctors.h:24:102:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kvoid*\x1b[01;32m\x1b[K __builtin_memcpy\x1b[m\x1b[K(void*, const void*, long unsigned int)\x1b[m\x1b[K\xe2\x80\x99 specified size between 18446744073709551601 and 18446744073709551615 exceeds maximum object size 9223372036854775807 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wstringop-overflow=\x07-Wstringop-overflow=\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[33.711255] (industrial_calibration) StderrLine: {'line': b'   24 |   EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE void assignCoeff(DstScalar& a, const SrcScalar& b) const { \x1b[01;35m\x1b[Ka = b\x1b[m\x1b[K; }\n'}
+[33.711366] (industrial_calibration) StderrLine: {'line': b'      |                                                                                                    \x1b[01;35m\x1b[K~~^~~\x1b[m\x1b[K\n'}
+[33.736660] (-) TimerEvent: {}
+[33.837031] (-) TimerEvent: {}
+[33.939175] (-) TimerEvent: {}
+[34.021645] (industrial_calibration) StdoutLine: {'line': b'[ 70%] \x1b[32m\x1b[1mLinking CXX executable industrial_calibration_kinematic_calibration\x1b[0m\n'}
+[34.039295] (-) TimerEvent: {}
+[34.105723] (industrial_calibration) StdoutLine: {'line': b'[ 71%] \x1b[32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/modified_circle_grid_target_finder.cpp.o\x1b[0m\n'}
+[34.118766] (industrial_calibration) StdoutLine: {'line': b'[ 71%] Built target industrial_calibration_pnp\n'}
+[34.128953] (industrial_calibration) StdoutLine: {'line': b'[ 73%] \x1b[32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/target_finder.cpp.o\x1b[0m\n'}
+[34.139591] (-) TimerEvent: {}
+[34.172955] (industrial_calibration) StdoutLine: {'line': b'[ 73%] Built target industrial_calibration_kinematic_calibration\n'}
+[34.185941] (industrial_calibration) StdoutLine: {'line': b'[ 74%] \x1b[32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/camera_calibration_data_manager_widget.cpp.o\x1b[0m\n'}
+[34.239649] (-) TimerEvent: {}
+[34.340643] (-) TimerEvent: {}
+[34.440915] (-) TimerEvent: {}
+[34.541219] (-) TimerEvent: {}
+[34.642668] (-) TimerEvent: {}
+[34.743004] (-) TimerEvent: {}
+[34.818721] (industrial_calibration) StdoutLine: {'line': b'[ 76%] \x1b[32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/extrinsic_hand_eye_calibration_widget.cpp.o\x1b[0m\n'}
+[34.843645] (-) TimerEvent: {}
+[34.943934] (-) TimerEvent: {}
+[35.044644] (-) TimerEvent: {}
+[35.144940] (-) TimerEvent: {}
+[35.245648] (-) TimerEvent: {}
+[35.346655] (-) TimerEvent: {}
+[35.446975] (-) TimerEvent: {}
+[35.547456] (-) TimerEvent: {}
+[35.555100] (industrial_calibration) StdoutLine: {'line': b'[ 77%] \x1b[32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/camera_intrinsic_calibration_widget.cpp.o\x1b[0m\n'}
+[35.647553] (-) TimerEvent: {}
+[35.690781] (industrial_calibration) StdoutLine: {'line': b'[ 79%] \x1b[32m\x1b[1mLinking CXX executable industrial_calibration_camera_intrinsic\x1b[0m\n'}
+[35.747650] (-) TimerEvent: {}
+[35.847956] (-) TimerEvent: {}
+[35.949193] (-) TimerEvent: {}
+[36.049614] (-) TimerEvent: {}
+[36.152922] (-) TimerEvent: {}
+[36.235980] (industrial_calibration) StdoutLine: {'line': b'[ 79%] Built target industrial_calibration_camera_intrinsic\n'}
+[36.245149] (industrial_calibration) StdoutLine: {'line': b'[ 80%] \x1b[32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/industrial_calibration_gui_autogen/3YJK5W5UP7/qrc_resources.cpp.o\x1b[0m\n'}
+[36.253045] (-) TimerEvent: {}
+[36.353546] (-) TimerEvent: {}
+[36.454656] (-) TimerEvent: {}
+[36.555175] (-) TimerEvent: {}
+[36.655660] (-) TimerEvent: {}
+[36.759905] (-) TimerEvent: {}
+[36.779875] (industrial_calibration) StdoutLine: {'line': b'[ 82%] \x1b[32m\x1b[1mLinking CXX executable industrial_calibration_extrinsic_hand_eye\x1b[0m\n'}
+[36.860018] (-) TimerEvent: {}
+[36.960368] (-) TimerEvent: {}
+[37.060708] (-) TimerEvent: {}
+[37.161054] (-) TimerEvent: {}
+[37.261409] (-) TimerEvent: {}
+[37.312313] (industrial_calibration) StdoutLine: {'line': b'[ 82%] Built target industrial_calibration_extrinsic_hand_eye\n'}
+[37.361523] (-) TimerEvent: {}
+[37.461834] (-) TimerEvent: {}
+[37.562088] (-) TimerEvent: {}
+[37.662355] (-) TimerEvent: {}
+[37.762635] (-) TimerEvent: {}
+[37.862906] (-) TimerEvent: {}
+[37.963178] (-) TimerEvent: {}
+[38.063456] (-) TimerEvent: {}
+[38.163752] (-) TimerEvent: {}
+[38.265098] (-) TimerEvent: {}
+[38.365414] (-) TimerEvent: {}
+[38.465643] (-) TimerEvent: {}
+[38.565912] (-) TimerEvent: {}
+[38.666180] (-) TimerEvent: {}
+[38.766449] (-) TimerEvent: {}
+[38.866727] (-) TimerEvent: {}
+[38.966998] (-) TimerEvent: {}
+[39.067265] (-) TimerEvent: {}
+[39.167539] (-) TimerEvent: {}
+[39.267819] (-) TimerEvent: {}
+[39.368091] (-) TimerEvent: {}
+[39.468353] (-) TimerEvent: {}
+[39.568626] (-) TimerEvent: {}
+[39.668922] (-) TimerEvent: {}
+[39.769241] (-) TimerEvent: {}
+[39.869529] (-) TimerEvent: {}
+[39.969828] (-) TimerEvent: {}
+[40.070119] (-) TimerEvent: {}
+[40.170444] (-) TimerEvent: {}
+[40.270744] (-) TimerEvent: {}
+[40.371034] (-) TimerEvent: {}
+[40.471316] (-) TimerEvent: {}
+[40.571628] (-) TimerEvent: {}
+[40.671912] (-) TimerEvent: {}
+[40.772211] (-) TimerEvent: {}
+[40.872479] (-) TimerEvent: {}
+[40.972760] (-) TimerEvent: {}
+[41.073029] (-) TimerEvent: {}
+[41.173363] (-) TimerEvent: {}
+[41.273701] (-) TimerEvent: {}
+[41.373978] (-) TimerEvent: {}
+[41.414521] (industrial_calibration) StdoutLine: {'line': b'[ 83%] \x1b[32m\x1b[1mLinking CXX shared library libindustrial_calibration_gui.so\x1b[0m\n'}
+[41.474080] (-) TimerEvent: {}
+[41.574445] (-) TimerEvent: {}
+[41.674774] (-) TimerEvent: {}
+[41.751930] (industrial_calibration) StdoutLine: {'line': b'[ 85%] Built target industrial_calibration_gui\n'}
+[41.772500] (industrial_calibration) StdoutLine: {'line': b'[ 85%] Built target industrial_calibration_camera_intrinsic_calibration_app_autogen_timestamp_deps\n'}
+[41.774870] (-) TimerEvent: {}
+[41.775711] (industrial_calibration) StdoutLine: {'line': b'[ 85%] Built target industrial_calibration_extrinsic_hand_eye_calibration_app_autogen_timestamp_deps\n'}
+[41.794236] (industrial_calibration) StdoutLine: {'line': b'[ 86%] \x1b[34m\x1b[1mAutomatic MOC and UIC for target industrial_calibration_camera_intrinsic_calibration_app\x1b[0m\n'}
+[41.797068] (industrial_calibration) StdoutLine: {'line': b'[ 88%] \x1b[34m\x1b[1mAutomatic MOC and UIC for target industrial_calibration_extrinsic_hand_eye_calibration_app\x1b[0m\n'}
+[41.823203] (industrial_calibration) StdoutLine: {'line': b'[ 88%] Built target industrial_calibration_camera_intrinsic_calibration_app_autogen\n'}
+[41.824361] (industrial_calibration) StdoutLine: {'line': b'[ 88%] Built target industrial_calibration_extrinsic_hand_eye_calibration_app_autogen\n'}
+[41.848546] (industrial_calibration) StdoutLine: {'line': b'[ 89%] \x1b[32mBuilding CXX object gui/CMakeFiles/industrial_calibration_camera_intrinsic_calibration_app.dir/src/app/camera_intrinsic_calibration_app.cpp.o\x1b[0m\n'}
+[41.849016] (industrial_calibration) StdoutLine: {'line': b'[ 91%] \x1b[32mBuilding CXX object gui/CMakeFiles/industrial_calibration_extrinsic_hand_eye_calibration_app.dir/industrial_calibration_extrinsic_hand_eye_calibration_app_autogen/mocs_compilation.cpp.o\x1b[0m\n'}
+[41.849382] (industrial_calibration) StdoutLine: {'line': b'[ 92%] \x1b[32mBuilding CXX object gui/CMakeFiles/industrial_calibration_camera_intrinsic_calibration_app.dir/industrial_calibration_camera_intrinsic_calibration_app_autogen/mocs_compilation.cpp.o\x1b[0m\n'}
+[41.855893] (industrial_calibration) StdoutLine: {'line': b'[ 94%] \x1b[32mBuilding CXX object gui/CMakeFiles/industrial_calibration_extrinsic_hand_eye_calibration_app.dir/src/app/extrinsic_hand_eye_calibration_app.cpp.o\x1b[0m\n'}
+[41.875008] (-) TimerEvent: {}
+[41.975334] (-) TimerEvent: {}
+[42.075697] (-) TimerEvent: {}
+[42.175980] (-) TimerEvent: {}
+[42.276359] (-) TimerEvent: {}
+[42.376771] (-) TimerEvent: {}
+[42.477050] (-) TimerEvent: {}
+[42.577412] (-) TimerEvent: {}
+[42.677643] (-) TimerEvent: {}
+[42.777916] (-) TimerEvent: {}
+[42.878196] (-) TimerEvent: {}
+[42.978499] (-) TimerEvent: {}
+[43.078787] (-) TimerEvent: {}
+[43.179092] (-) TimerEvent: {}
+[43.279455] (-) TimerEvent: {}
+[43.379766] (-) TimerEvent: {}
+[43.480130] (-) TimerEvent: {}
+[43.580405] (-) TimerEvent: {}
+[43.620073] (industrial_calibration) StdoutLine: {'line': b'[ 95%] \x1b[32m\x1b[1mLinking CXX executable industrial_calibration_camera_intrinsic_calibration_app\x1b[0m\n'}
+[43.637161] (industrial_calibration) StdoutLine: {'line': b'[ 97%] \x1b[32m\x1b[1mLinking CXX executable industrial_calibration_extrinsic_hand_eye_calibration_app\x1b[0m\n'}
+[43.680574] (-) TimerEvent: {}
+[43.780993] (-) TimerEvent: {}
+[43.881580] (-) TimerEvent: {}
+[43.982086] (-) TimerEvent: {}
+[44.082471] (-) TimerEvent: {}
+[44.178706] (industrial_calibration) StdoutLine: {'line': b'[ 98%] Built target industrial_calibration_camera_intrinsic_calibration_app\n'}
+[44.182627] (-) TimerEvent: {}
+[44.212432] (industrial_calibration) StdoutLine: {'line': b'[100%] Built target industrial_calibration_extrinsic_hand_eye_calibration_app\n'}
+[44.223870] (industrial_calibration) CommandEnded: {'returncode': 0}
+[44.224519] (industrial_calibration) JobProgress: {'identifier': 'industrial_calibration', 'progress': 'install'}
+[44.224976] (industrial_calibration) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration'], 'cwd': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'tetripick', 'XDG_SESSION_TYPE': 'x11', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/tetripick', 'OLDPWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '3018', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1001/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'tetripick', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1001.slice/user@1001.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'PKG_CONFIG_PATH': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig', 'USERNAME': 'tetripick', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'WINDOWPATH': '2', 'PATH': '/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/tetrisort-UR10E:@/tmp/.ICE-unix/2949,unix/tetrisort-UR10E:/tmp/.ICE-unix/2949', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/af13336b_e86b_4980_a99b_e921a0be9264', 'XDG_RUNTIME_DIR': '/run/user/1001', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1001/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.144', 'SSH_AUTH_SOCK': '/run/user/1001/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1001/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[44.231888] (industrial_calibration) StdoutLine: {'line': b'-- Install configuration: "Release"\n'}
+[44.232207] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/package.xml\n'}
+[44.232394] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/industrial_calibration-config.cmake\n'}
+[44.232544] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/industrial_calibration-config-version.cmake\n'}
+[44.232765] (industrial_calibration) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/ament_index/resource_index/packages/industrial_calibration\n'}
+[44.232946] (industrial_calibration) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/hook/ament_prefix_path.dsv\n'}
+[44.233084] (industrial_calibration) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/hook/ros_package_path.dsv\n'}
+[44.233239] (industrial_calibration) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/hook/python_path.dsv\n'}
+[44.233402] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include\n'}
+[44.233542] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration\n'}
+[44.233706] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/core\n'}
+[44.233846] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/core/exceptions.h\n'}
+[44.233985] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/core/camera_intrinsics.h\n'}
+[44.234142] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/core/target_finder.h\n'}
+[44.234302] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/core/pose_6d.h\n'}
+[44.234458] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/core/utils.h\n'}
+[44.234912] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/core/serialization.h\n'}
+[44.235145] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/core/dh_chain.h\n'}
+[44.235297] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/core/types.h\n'}
+[44.235438] (industrial_calibration) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/libindustrial_calibration_core.so\n'}
+[44.235580] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/core-targets.cmake\n'}
+[44.235734] (industrial_calibration) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/core-targets-release.cmake\n'}
+[44.235868] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/core-config.cmake\n'}
+[44.236003] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include\n'}
+[44.236148] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration\n'}
+[44.236285] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations\n'}
+[44.236451] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/extrinsic_hand_eye.h\n'}
+[44.236594] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/covariance_analysis.h\n'}
+[44.236795] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/dh_chain_kinematic_calibration.h\n'}
+[44.236932] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/maximum_likelihood.h\n'}
+[44.237132] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/camera_intrinsic_cost.h\n'}
+[44.237273] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/pnp.h\n'}
+[44.237419] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/covariance_types.h\n'}
+[44.237549] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/extrinsic_hand_eye_cost.h\n'}
+[44.237689] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/multi_camera_pnp_cost.h\n'}
+[44.237943] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/dh_chain_kinematic_calibration_cost.h\n'}
+[44.238153] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/camera_intrinsic.h\n'}
+[44.238287] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/ceres_math_utilities.h\n'}
+[44.238419] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/extrinsic_multi_static_camera.h\n'}
+[44.238608] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/local_parameterization.h\n'}
+[44.238760] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/extrinsic_multi_static_camera_cost.h\n'}
+[44.238876] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/pnp_cost.h\n'}
+[44.239034] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/multi_camera_pnp.h\n'}
+[44.239154] (industrial_calibration) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/libindustrial_calibration_optimizations.so\n'}
+[44.239274] (industrial_calibration) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/libindustrial_calibration_optimizations.so" to ""\n'}
+[44.239398] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/optimizations-targets.cmake\n'}
+[44.239533] (industrial_calibration) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/optimizations-targets-release.cmake\n'}
+[44.239714] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/optimizations-config.cmake\n'}
+[44.239785] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include\n'}
+[44.239839] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration\n'}
+[44.239890] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/analysis\n'}
+[44.239967] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/analysis/camera_intrinsic_calibration_analysis.h\n'}
+[44.240015] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/analysis/projection.h\n'}
+[44.240059] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/analysis/statistics.h\n'}
+[44.240103] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/analysis/extrinsic_hand_eye_calibration_analysis.h\n'}
+[44.240146] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/analysis/noise_qualification.h\n'}
+[44.240189] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/analysis/homography_analysis.h\n'}
+[44.240235] (industrial_calibration) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/libindustrial_calibration_analysis.so\n'}
+[44.240277] (industrial_calibration) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/libindustrial_calibration_analysis.so" to ""\n'}
+[44.240321] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/analysis-targets.cmake\n'}
+[44.240365] (industrial_calibration) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/analysis-targets-release.cmake\n'}
+[44.240408] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/analysis-config.cmake\n'}
+[44.240452] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include\n'}
+[44.240494] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration\n'}
+[44.240538] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/target_finders\n'}
+[44.240582] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/target_finders/opencv\n'}
+[44.240630] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/target_finders/opencv/charuco_grid_target_finder.h\n'}
+[44.240673] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/target_finders/opencv/target_finder.h\n'}
+[44.240737] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/target_finders/opencv/modified_circle_grid_target_finder.h\n'}
+[44.240782] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/target_finders/opencv/circle_detector.h\n'}
+[44.240823] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/target_finders/opencv/aruco_grid_target_finder.h\n'}
+[44.240862] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/target_finders/opencv/utils.h\n'}
+[44.240901] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/modified_circle_grid_target_generator.py\n'}
+[44.240942] (industrial_calibration) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/libindustrial_calibration_target_finders_opencv.so\n'}
+[44.240985] (industrial_calibration) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/libindustrial_calibration_target_finders_opencv.so" to ""\n'}
+[44.241025] (industrial_calibration) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/libindustrial_calibration_plugins_opencv.so\n'}
+[44.241064] (industrial_calibration) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/libindustrial_calibration_plugins_opencv.so" to ""\n'}
+[44.241135] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/target_finders_opencv-targets.cmake\n'}
+[44.241177] (industrial_calibration) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/target_finders_opencv-targets-release.cmake\n'}
+[44.241245] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/target_finders_opencv-config.cmake\n'}
+[44.241309] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include\n'}
+[44.241380] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration\n'}
+[44.241425] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui\n'}
+[44.241489] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui/camera_intrinsic_calibration_widget.h\n'}
+[44.241559] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui/charuco_grid_target_finder.h\n'}
+[44.241605] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui/camera_intrinsics.h\n'}
+[44.241645] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui/target_finder.h\n'}
+[44.241716] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui/extrinsic_hand_eye_calibration_widget.h\n'}
+[44.241759] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui/modified_circle_grid_target_finder.h\n'}
+[44.241799] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui/aruco_grid_target_finder.h\n'}
+[44.241846] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui/aspect_ratio_pixmap_label.h\n'}
+[44.241897] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui/configurable_widget.h\n'}
+[44.241977] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui/camera_calibration_data_manager_widget.h\n'}
+[44.242032] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui/transform_guess.h\n'}
+[44.242110] (industrial_calibration) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/libindustrial_calibration_gui.so\n'}
+[44.243649] (industrial_calibration) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/libindustrial_calibration_gui.so" to ""\n'}
+[44.243929] (industrial_calibration) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_extrinsic_hand_eye_calibration_app\n'}
+[44.244469] (industrial_calibration) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_extrinsic_hand_eye_calibration_app" to ""\n'}
+[44.244764] (industrial_calibration) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_camera_intrinsic_calibration_app\n'}
+[44.245270] (industrial_calibration) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_camera_intrinsic_calibration_app" to ""\n'}
+[44.245504] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/gui-targets.cmake\n'}
+[44.245571] (industrial_calibration) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/gui-targets-release.cmake\n'}
+[44.245726] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/gui-config.cmake\n'}
+[44.245989] (industrial_calibration) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_extrinsic_hand_eye_calibration_app\n'}
+[44.246506] (industrial_calibration) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_extrinsic_hand_eye_calibration_app" to ""\n'}
+[44.246824] (industrial_calibration) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_camera_intrinsic_calibration_app\n'}
+[44.247339] (industrial_calibration) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_camera_intrinsic_calibration_app" to ""\n'}
+[44.247845] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data\n'}
+[44.247913] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10\n'}
+[44.247971] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses\n'}
+[44.248030] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/8.yaml\n'}
+[44.248071] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/5.yaml\n'}
+[44.248147] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/3.yaml\n'}
+[44.248439] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/0.yaml\n'}
+[44.248663] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/12.yaml\n'}
+[44.248997] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/11.yaml\n'}
+[44.249147] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/13.yaml\n'}
+[44.249250] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/10.yaml\n'}
+[44.249368] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/7.yaml\n'}
+[44.249479] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/9.yaml\n'}
+[44.249625] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/4.yaml\n'}
+[44.249782] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/2.yaml\n'}
+[44.249937] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/6.yaml\n'}
+[44.250074] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/14.yaml\n'}
+[44.250186] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/1.yaml\n'}
+[44.250287] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images\n'}
+[44.250396] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/14.png\n'}
+[44.250496] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/7.png\n'}
+[44.250618] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/13.png\n'}
+[44.250724] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/12.png\n'}
+[44.250847] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/11.png\n'}
+[44.250963] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/2.png\n'}
+[44.251064] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/4.png\n'}
+[44.251163] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/10.png\n'}
+[44.251277] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/6.png\n'}
+[44.251377] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/9.png\n'}
+[44.251497] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/1.png\n'}
+[44.251607] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/5.png\n'}
+[44.251711] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/0.png\n'}
+[44.251813] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/8.png\n'}
+[44.251913] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/3.png\n'}
+[44.252014] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/cal_data.yaml\n'}
+[44.252111] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco\n'}
+[44.252231] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses\n'}
+[44.252334] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/8.yaml\n'}
+[44.252440] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/5.yaml\n'}
+[44.252574] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/3.yaml\n'}
+[44.252689] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/0.yaml\n'}
+[44.252807] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/12.yaml\n'}
+[44.252909] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/11.yaml\n'}
+[44.253025] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/13.yaml\n'}
+[44.253127] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/10.yaml\n'}
+[44.253233] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/7.yaml\n'}
+[44.253335] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/9.yaml\n'}
+[44.253437] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/4.yaml\n'}
+[44.253535] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/15.yaml\n'}
+[44.253654] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/2.yaml\n'}
+[44.253772] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/6.yaml\n'}
+[44.253875] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/14.yaml\n'}
+[44.253976] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/1.yaml\n'}
+[44.254093] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images\n'}
+[44.254197] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/14.png\n'}
+[44.254298] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/7.png\n'}
+[44.254400] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/13.png\n'}
+[44.254501] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/12.png\n'}
+[44.254615] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/15.png\n'}
+[44.254719] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/11.png\n'}
+[44.254842] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/2.png\n'}
+[44.254940] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/4.png\n'}
+[44.255038] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/10.png\n'}
+[44.255155] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/6.png\n'}
+[44.255256] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/9.png\n'}
+[44.255358] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/1.png\n'}
+[44.255456] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/5.png\n'}
+[44.255557] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/0.png\n'}
+[44.255668] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/8.png\n'}
+[44.255784] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/3.png\n'}
+[44.255887] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/cal_data.yaml\n'}
+[44.255984] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/kinematic_calibration\n'}
+[44.256101] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/kinematic_calibration/pose_initial_guesses.yaml\n'}
+[44.256212] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/kinematic_calibration/measurements.yaml\n'}
+[44.256311] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/noise_qualification\n'}
+[44.256418] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/noise_qualification/images\n'}
+[44.256521] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/noise_qualification/images/0.png\n'}
+[44.256644] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/noise_qualification/cal_data.yaml\n'}
+[44.256767] (industrial_calibration) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_camera_intrinsic\n'}
+[44.256867] (industrial_calibration) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_camera_intrinsic" to ""\n'}
+[44.256980] (industrial_calibration) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_extrinsic_hand_eye\n'}
+[44.257080] (industrial_calibration) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_extrinsic_hand_eye" to ""\n'}
+[44.257179] (industrial_calibration) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_kinematic_calibration\n'}
+[44.257295] (industrial_calibration) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_kinematic_calibration" to ""\n'}
+[44.257397] (industrial_calibration) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_noise_qualification_2d\n'}
+[44.257496] (industrial_calibration) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_noise_qualification_2d" to ""\n'}
+[44.257606] (industrial_calibration) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_pnp\n'}
+[44.257713] (industrial_calibration) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_pnp" to ""\n'}
+[44.257814] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/examples-targets.cmake\n'}
+[44.257914] (industrial_calibration) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/examples-targets-release.cmake\n'}
+[44.258019] (industrial_calibration) StdoutLine: {'line': b'-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/examples-config.cmake\n'}
+[44.258193] (industrial_calibration) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_camera_intrinsic\n'}
+[44.258554] (industrial_calibration) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_camera_intrinsic" to ""\n'}
+[44.258908] (industrial_calibration) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_extrinsic_hand_eye\n'}
+[44.259030] (industrial_calibration) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_extrinsic_hand_eye" to ""\n'}
+[44.259138] (industrial_calibration) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_kinematic_calibration\n'}
+[44.259340] (industrial_calibration) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_kinematic_calibration" to ""\n'}
+[44.259448] (industrial_calibration) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_noise_qualification_2d\n'}
+[44.259551] (industrial_calibration) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_noise_qualification_2d" to ""\n'}
+[44.259785] (industrial_calibration) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_pnp\n'}
+[44.260294] (industrial_calibration) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_pnp" to ""\n'}
+[44.260400] (industrial_calibration) CommandEnded: {'returncode': 0}
+[44.270763] (industrial_calibration) JobEnded: {'identifier': 'industrial_calibration', 'rc': 0}
+[44.271460] (industrial_calibration_ros) JobStarted: {'identifier': 'industrial_calibration_ros'}
+[44.282234] (industrial_calibration_ros) JobProgress: {'identifier': 'industrial_calibration_ros', 'progress': 'cmake'}
+[44.282687] (-) TimerEvent: {}
+[44.283359] (industrial_calibration_ros) Command: {'cmd': ['/usr/bin/cmake', '/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration_ros2', '-DCMAKE_BUILD_TYPE=Release', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration_ros'], 'cwd': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration_ros', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'tetripick', 'XDG_SESSION_TYPE': 'x11', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib:/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/tetripick', 'OLDPWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '3018', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1001/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'tetripick', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1001.slice/user@1001.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'PKG_CONFIG_PATH': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig', 'USERNAME': 'tetripick', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'WINDOWPATH': '2', 'PATH': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/tetrisort-UR10E:@/tmp/.ICE-unix/2949,unix/tetrisort-UR10E:/tmp/.ICE-unix/2949', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/af13336b_e86b_4980_a99b_e921a0be9264', 'XDG_RUNTIME_DIR': '/run/user/1001', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1001/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.144', 'SSH_AUTH_SOCK': '/run/user/1001/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1001/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration_ros', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration:/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[44.298229] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[44.382789] (-) TimerEvent: {}
+[44.438785] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[44.482926] (-) TimerEvent: {}
+[44.499211] (industrial_calibration_ros) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[44.533152] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found rclcpp: 28.1.13 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[44.566203] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[44.576507] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[44.583117] (-) TimerEvent: {}
+[44.589749] (industrial_calibration_ros) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[44.603841] (industrial_calibration_ros) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[44.665730] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[44.667905] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[44.683222] (-) TimerEvent: {}
+[44.756887] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  \n'}
+[44.783454] (-) TimerEvent: {}
+[44.783790] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") \n'}
+[44.810723] (industrial_calibration_ros) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[44.874400] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found image_transport: 5.1.7 (/opt/ros/jazzy/share/image_transport/cmake)\n'}
+[44.883617] (-) TimerEvent: {}
+[44.941349] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found cv_bridge: 4.1.0 (/opt/ros/jazzy/share/cv_bridge/cmake)\n'}
+[44.953910] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found std_srvs: 5.3.6 (/opt/ros/jazzy/share/std_srvs/cmake)\n'}
+[44.975903] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: filesystem \n'}
+[44.983775] (-) TimerEvent: {}
+[45.084075] (-) TimerEvent: {}
+[45.091699] (industrial_calibration_ros) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[45.182067] (industrial_calibration_ros) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[45.183481] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[45.184166] (-) TimerEvent: {}
+[45.284446] (-) TimerEvent: {}
+[45.384840] (-) TimerEvent: {}
+[45.485145] (-) TimerEvent: {}
+[45.585481] (-) TimerEvent: {}
+[45.616391] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found AMD headers in: /usr/include/suitesparse\n'}
+[45.618327] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found AMD library: /usr/lib/x86_64-linux-gnu/libamd.so\n'}
+[45.618802] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found CAMD headers in: /usr/include/suitesparse\n'}
+[45.620159] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found CAMD library: /usr/lib/x86_64-linux-gnu/libcamd.so\n'}
+[45.620457] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found CCOLAMD headers in: /usr/include/suitesparse\n'}
+[45.621262] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found CCOLAMD library: /usr/lib/x86_64-linux-gnu/libccolamd.so\n'}
+[45.621502] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found CHOLMOD headers in: /usr/include/suitesparse\n'}
+[45.622317] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found CHOLMOD library: /usr/lib/x86_64-linux-gnu/libcholmod.so\n'}
+[45.622512] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found COLAMD headers in: /usr/include/suitesparse\n'}
+[45.623330] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found COLAMD library: /usr/lib/x86_64-linux-gnu/libcolamd.so\n'}
+[45.623805] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found SPQR headers in: /usr/include/suitesparse\n'}
+[45.624325] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found SPQR library: /usr/lib/x86_64-linux-gnu/libspqr.so\n'}
+[45.624545] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found Config headers in: /usr/include/suitesparse\n'}
+[45.625262] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found Config library: /usr/lib/x86_64-linux-gnu/libsuitesparseconfig.so\n'}
+[45.627428] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found Intel Thread Building Blocks (TBB) library (2021.11 / ) include location: . Assuming SuiteSparseQR was compiled with TBB.\n'}
+[45.627541] (industrial_calibration_ros) StdoutLine: {'line': b'-- Looking for shm_open in rt\n'}
+[45.685604] (-) TimerEvent: {}
+[45.715153] (industrial_calibration_ros) StdoutLine: {'line': b'-- Looking for shm_open in rt - found\n'}
+[45.715312] (industrial_calibration_ros) StdoutLine: {'line': b'-- Adding librt to SuiteSparse_config libraries (required on Linux & Unix [not OSX] if SuiteSparse is compiled with timing).\n'}
+[45.721708] (industrial_calibration_ros) StdoutLine: {'line': b'-- Could NOT find METIS (missing: METIS_INCLUDE_DIR METIS_LIBRARY) \n'}
+[45.722546] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found SuiteSparse: /usr/include/suitesparse (found suitable version "7.6.1", minimum required is "7.6.1") found components: AMD CAMD CCOLAMD CHOLMOD COLAMD SPQR Config \n'}
+[45.724103] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found required Ceres dependency: Eigen version 3.4.0 in /usr/share/eigen3/cmake\n'}
+[45.730125] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found required Ceres dependency: glog\n'}
+[45.730468] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found required Ceres dependency: gflags\n'}
+[45.730767] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found Ceres version: 2.2.0 installed in: /usr with components: [EigenSparse, SparseLinearAlgebraLibrary, LAPACK, SuiteSparse, SchurSpecializations]\n'}
+[45.735724] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found OpenCV: /usr (found version "4.6.0") \n'}
+[45.749703] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found rviz_common: 14.1.17 (/opt/ros/jazzy/share/rviz_common/cmake)\n'}
+[45.753963] (industrial_calibration_ros) StdoutLine: {'line': b"-- Setting OGRE_DIR to: '/opt/ros/jazzy/share/rviz_ogre_vendor/cmake/../../../opt/rviz_ogre_vendor/lib/OGRE/cmake'\n"}
+[45.755258] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found OGRE\n'}
+[45.755480] (industrial_calibration_ros) StdoutLine: {'line': b'--   static     : OFF\n'}
+[45.755611] (industrial_calibration_ros) StdoutLine: {'line': b'--   components : MeshLodGenerator;Overlay;Paging;Property;RTShaderSystem;Terrain;Volume\n'}
+[45.755727] (industrial_calibration_ros) StdoutLine: {'line': b'--   plugins    : Plugin_BSPSceneManager;Plugin_OctreeSceneManager;Plugin_PCZSceneManager;Plugin_ParticleFX;RenderSystem_GL;RenderSystem_GL3Plus;Codec_STBI\n'}
+[45.755835] (industrial_calibration_ros) StdoutLine: {'line': b'--   media      : /opt/ros/jazzy/opt/rviz_ogre_vendor/share/OGRE/Media\n'}
+[45.755944] (industrial_calibration_ros) StdoutLine: {'line': b'-- OGRE_LIBRARIES: OgreMeshLodGenerator;OgreOverlay;OgrePaging;OgreProperty;OgreRTShaderSystem;OgreTerrain;OgreVolume;OgreMain\n'}
+[45.756052] (industrial_calibration_ros) StdoutLine: {'line': b'-- OGRE_LIBRARY_DIRS: /opt/ros/jazzy/opt/rviz_ogre_vendor/lib\n'}
+[45.756156] (industrial_calibration_ros) StdoutLine: {'line': b'-- OGRE_PLUGINS: Plugin_BSPSceneManager;Plugin_OctreeSceneManager;Plugin_PCZSceneManager;Plugin_ParticleFX;RenderSystem_GL;RenderSystem_GL3Plus;Codec_STBI\n'}
+[45.756288] (industrial_calibration_ros) StdoutLine: {'line': b'-- OGRE_PLUGIN_DIR: /opt/ros/jazzy/opt/rviz_ogre_vendor/lib/OGRE\n'}
+[45.756394] (industrial_calibration_ros) StdoutLine: {'line': b'-- rviz_ogre_vendor::OgreOverlay for IMPORTED_LOCATION_RELEASE: /opt/ros/jazzy/opt/rviz_ogre_vendor/lib/libOgreOverlay.so\n'}
+[45.756562] (industrial_calibration_ros) StdoutLine: {'line': b'-- rviz_ogre_vendor::OgreOverlay for IMPORTED_LOCATION_DEBUG: /opt/ros/jazzy/opt/rviz_ogre_vendor/lib/libOgreOverlay.so\n'}
+[45.756652] (industrial_calibration_ros) StdoutLine: {'line': b'-- rviz_ogre_vendor::OgreMain for IMPORTED_LOCATION_RELEASE: /opt/ros/jazzy/opt/rviz_ogre_vendor/lib/libOgreMain.so\n'}
+[45.756694] (industrial_calibration_ros) StdoutLine: {'line': b'-- rviz_ogre_vendor::OgreMain for IMPORTED_LOCATION_DEBUG: /opt/ros/jazzy/opt/rviz_ogre_vendor/lib/libOgreMain.so\n'}
+[45.756731] (industrial_calibration_ros) StdoutLine: {'line': b'-- Could not find freeimage library\n'}
+[45.780439] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found ZLIB: /usr/lib/x86_64-linux-gnu/libz.so (found version "1.3")  \n'}
+[45.785751] (-) TimerEvent: {}
+[45.787114] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so   \n'}
+[45.885882] (-) TimerEvent: {}
+[45.922793] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found X11: /usr/include   \n'}
+[45.923121] (industrial_calibration_ros) StdoutLine: {'line': b'-- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so\n'}
+[45.986006] (-) TimerEvent: {}
+[46.023311] (industrial_calibration_ros) StdoutLine: {'line': b'-- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so - found\n'}
+[46.023528] (industrial_calibration_ros) StdoutLine: {'line': b'-- Looking for gethostbyname\n'}
+[46.086158] (-) TimerEvent: {}
+[46.119020] (industrial_calibration_ros) StdoutLine: {'line': b'-- Looking for gethostbyname - found\n'}
+[46.119263] (industrial_calibration_ros) StdoutLine: {'line': b'-- Looking for connect\n'}
+[46.186253] (-) TimerEvent: {}
+[46.205103] (industrial_calibration_ros) StdoutLine: {'line': b'-- Looking for connect - found\n'}
+[46.205334] (industrial_calibration_ros) StdoutLine: {'line': b'-- Looking for remove\n'}
+[46.286437] (-) TimerEvent: {}
+[46.293388] (industrial_calibration_ros) StdoutLine: {'line': b'-- Looking for remove - found\n'}
+[46.293626] (industrial_calibration_ros) StdoutLine: {'line': b'-- Looking for shmat\n'}
+[46.379436] (industrial_calibration_ros) StdoutLine: {'line': b'-- Looking for shmat - found\n'}
+[46.379687] (industrial_calibration_ros) StdoutLine: {'line': b'-- Looking for IceConnectionNumber in ICE\n'}
+[46.386532] (-) TimerEvent: {}
+[46.467077] (industrial_calibration_ros) StdoutLine: {'line': b'-- Looking for IceConnectionNumber in ICE - found\n'}
+[46.486710] (-) TimerEvent: {}
+[46.586987] (-) TimerEvent: {}
+[46.591372] (industrial_calibration_ros) StdoutLine: {'line': b"-- Setting yaml-cpp_DIR to: '/opt/ros/jazzy/share/yaml_cpp_vendor/cmake/../../../opt/yaml_cpp_vendor/share/cmake/yaml-cpp'\n"}
+[46.595859] (industrial_calibration_ros) StdoutLine: {'line': b'-- Found tf2_eigen: 0.36.16 (/opt/ros/jazzy/share/tf2_eigen/cmake)\n'}
+[46.676292] (industrial_calibration_ros) StdoutLine: {'line': b'-- Configuring done (2.4s)\n'}
+[46.687101] (-) TimerEvent: {}
+[46.700737] (industrial_calibration_ros) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[46.706651] (industrial_calibration_ros) StdoutLine: {'line': b'-- Build files have been written to: /home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration_ros\n'}
+[46.715284] (industrial_calibration_ros) CommandEnded: {'returncode': 0}
+[46.716200] (industrial_calibration_ros) JobProgress: {'identifier': 'industrial_calibration_ros', 'progress': 'build'}
+[46.716833] (industrial_calibration_ros) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration_ros', '--', '-j8', '-l8'], 'cwd': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration_ros', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'tetripick', 'XDG_SESSION_TYPE': 'x11', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib:/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/tetripick', 'OLDPWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '3018', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1001/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'tetripick', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1001.slice/user@1001.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'PKG_CONFIG_PATH': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig', 'USERNAME': 'tetripick', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'WINDOWPATH': '2', 'PATH': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/tetrisort-UR10E:@/tmp/.ICE-unix/2949,unix/tetrisort-UR10E:/tmp/.ICE-unix/2949', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/af13336b_e86b_4980_a99b_e921a0be9264', 'XDG_RUNTIME_DIR': '/run/user/1001', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1001/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.144', 'SSH_AUTH_SOCK': '/run/user/1001/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1001/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration_ros', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration:/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[46.773564] (industrial_calibration_ros) StdoutLine: {'line': b'[ 16%] \x1b[32mBuilding CXX object CMakeFiles/industrial_calibration_ros_pnp_validation_node.dir/src/pnp_validation_node.cpp.o\x1b[0m\n'}
+[46.776609] (industrial_calibration_ros) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/industrial_calibration_ros_extrinsic_hand_eye_calibration_panel.dir/src/extrinsic_hand_eye_calibration_panel.cpp.o\x1b[0m\n'}
+[46.780091] (industrial_calibration_ros) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/industrial_calibration_ros_target_detector.dir/src/target_detector.cpp.o\x1b[0m\n'}
+[46.787212] (-) TimerEvent: {}
+[46.887500] (-) TimerEvent: {}
+[46.987785] (-) TimerEvent: {}
+[47.088096] (-) TimerEvent: {}
+[47.188404] (-) TimerEvent: {}
+[47.288647] (-) TimerEvent: {}
+[47.389012] (-) TimerEvent: {}
+[47.489280] (-) TimerEvent: {}
+[47.589595] (-) TimerEvent: {}
+[47.689880] (-) TimerEvent: {}
+[47.790218] (-) TimerEvent: {}
+[47.890501] (-) TimerEvent: {}
+[47.990795] (-) TimerEvent: {}
+[48.091078] (-) TimerEvent: {}
+[48.191358] (-) TimerEvent: {}
+[48.291668] (-) TimerEvent: {}
+[48.391958] (-) TimerEvent: {}
+[48.492278] (-) TimerEvent: {}
+[48.592568] (-) TimerEvent: {}
+[48.692880] (-) TimerEvent: {}
+[48.793213] (-) TimerEvent: {}
+[48.893515] (-) TimerEvent: {}
+[48.993821] (-) TimerEvent: {}
+[49.094105] (-) TimerEvent: {}
+[49.194422] (-) TimerEvent: {}
+[49.294682] (-) TimerEvent: {}
+[49.395010] (-) TimerEvent: {}
+[49.495328] (-) TimerEvent: {}
+[49.595619] (-) TimerEvent: {}
+[49.695900] (-) TimerEvent: {}
+[49.796183] (-) TimerEvent: {}
+[49.829903] (industrial_calibration_ros) StderrLine: {'line': b'\x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration_ros2/src/pnp_validation_node.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KPnPValidator::\x1b[01;32m\x1b[KPnPValidator\x1b[m\x1b[K(rclcpp::Node::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[49.830340] (industrial_calibration_ros) StderrLine: {'line': b'\x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration_ros2/src/pnp_validation_node.cpp:37:36:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<std::__cxx11::basic_string<char> >::insert(const char [38])\x1b[m\x1b[K\xe2\x80\x99\n'}
+[49.830470] (industrial_calibration_ros) StderrLine: {'line': b'   37 |     \x1b[01;31m\x1b[Kloader_.search_libraries.insert(INDUSTRIAL_CALIBRATION_PLUGIN_LIBRARIES)\x1b[m\x1b[K;\n'}
+[49.830575] (industrial_calibration_ros) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[49.830700] (industrial_calibration_ros) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/13/vector:66\x1b[m\x1b[K,\n'}
+[49.830803] (industrial_calibration_ros) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/opencv4/opencv2/core/types.hpp:53\x1b[m\x1b[K,\n'}
+[49.830908] (industrial_calibration_ros) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/opencv4/opencv2/core.hpp:57\x1b[m\x1b[K,\n'}
+[49.831009] (industrial_calibration_ros) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration_ros2/src/utils.h:3\x1b[m\x1b[K,\n'}
+[49.831110] (industrial_calibration_ros) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration_ros2/src/pnp_validation_node.cpp:1\x1b[m\x1b[K:\n'}
+[49.831209] (industrial_calibration_ros) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1482:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _InputIterator, class> std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::\x1b[01;32m\x1b[Kinsert\x1b[m\x1b[K(const_iterator, _InputIterator, _InputIterator) \x1b[35m\x1b[K[with <template-parameter-2-2> = _InputIterator; _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[49.831316] (industrial_calibration_ros) StderrLine: {'line': b' 1482 |         \x1b[01;36m\x1b[Kinsert\x1b[m\x1b[K(const_iterator __position, _InputIterator __first,\n'}
+[49.831415] (industrial_calibration_ros) StderrLine: {'line': b'      |         \x1b[01;36m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[49.831514] (industrial_calibration_ros) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1482:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[49.831634] (industrial_calibration_ros) StderrLine: {'line': b'\x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration_ros2/src/pnp_validation_node.cpp:37:36:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 3 arguments, 1 provided\n'}
+[49.831759] (industrial_calibration_ros) StderrLine: {'line': b'   37 |     \x1b[01;36m\x1b[Kloader_.search_libraries.insert(INDUSTRIAL_CALIBRATION_PLUGIN_LIBRARIES)\x1b[m\x1b[K;\n'}
+[49.831867] (industrial_calibration_ros) StderrLine: {'line': b'      |     \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[49.831967] (industrial_calibration_ros) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/13/vector:72\x1b[m\x1b[K:\n'}
+[49.832067] (industrial_calibration_ros) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/vector.tcc:133:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::\x1b[01;32m\x1b[Kinsert\x1b[m\x1b[K(const_iterator, const value_type&) \x1b[35m\x1b[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; value_type = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[49.832173] (industrial_calibration_ros) StderrLine: {'line': b'  133 |     \x1b[01;36m\x1b[Kvector<_Tp, _Alloc>\x1b[m\x1b[K::\n'}
+[49.832274] (industrial_calibration_ros) StderrLine: {'line': b'      |     \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[49.832371] (industrial_calibration_ros) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/vector.tcc:133:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 1 provided\n'}
+[49.832473] (industrial_calibration_ros) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1393:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::\x1b[01;32m\x1b[Kinsert\x1b[m\x1b[K(const_iterator, value_type&&) \x1b[35m\x1b[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; value_type = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[49.832602] (industrial_calibration_ros) StderrLine: {'line': b' 1393 |       \x1b[01;36m\x1b[Kinsert\x1b[m\x1b[K(const_iterator __position, value_type&& __x)\n'}
+[49.832708] (industrial_calibration_ros) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[49.832807] (industrial_calibration_ros) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1393:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 1 provided\n'}
+[49.832909] (industrial_calibration_ros) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1411:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::\x1b[01;32m\x1b[Kinsert\x1b[m\x1b[K(const_iterator, std::initializer_list<_Tp>) \x1b[35m\x1b[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[49.833023] (industrial_calibration_ros) StderrLine: {'line': b' 1411 |       \x1b[01;36m\x1b[Kinsert\x1b[m\x1b[K(const_iterator __position, initializer_list<value_type> __l)\n'}
+[49.833121] (industrial_calibration_ros) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[49.833220] (industrial_calibration_ros) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1411:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 1 provided\n'}
+[49.833325] (industrial_calibration_ros) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1437:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::\x1b[01;32m\x1b[Kinsert\x1b[m\x1b[K(const_iterator, size_type, const value_type&) \x1b[35m\x1b[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; size_type = long unsigned int; value_type = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[49.833431] (industrial_calibration_ros) StderrLine: {'line': b' 1437 |       \x1b[01;36m\x1b[Kinsert\x1b[m\x1b[K(const_iterator __position, size_type __n, const value_type& __x)\n'}
+[49.833530] (industrial_calibration_ros) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[49.833637] (industrial_calibration_ros) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1437:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 3 arguments, 1 provided\n'}
+[49.896324] (-) TimerEvent: {}
+[49.996662] (-) TimerEvent: {}
+[50.096958] (-) TimerEvent: {}
+[50.197248] (-) TimerEvent: {}
+[50.297913] (-) TimerEvent: {}
+[50.398287] (-) TimerEvent: {}
+[50.498565] (-) TimerEvent: {}
+[50.598851] (-) TimerEvent: {}
+[50.699143] (-) TimerEvent: {}
+[50.799429] (-) TimerEvent: {}
+[50.899725] (-) TimerEvent: {}
+[51.000015] (-) TimerEvent: {}
+[51.100332] (-) TimerEvent: {}
+[51.200616] (-) TimerEvent: {}
+[51.300906] (-) TimerEvent: {}
+[51.401193] (-) TimerEvent: {}
+[51.441339] (industrial_calibration_ros) StderrLine: {'line': b'\x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration_ros2/src/target_detector.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KTargetDetector::\x1b[01;32m\x1b[KTargetDetector\x1b[m\x1b[K(std::shared_ptr<rclcpp::Node>)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[51.441642] (industrial_calibration_ros) StderrLine: {'line': b'\x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration_ros2/src/target_detector.cpp:25:36:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<std::__cxx11::basic_string<char> >::insert(const char [38])\x1b[m\x1b[K\xe2\x80\x99\n'}
+[51.441865] (industrial_calibration_ros) StderrLine: {'line': b'   25 |     \x1b[01;31m\x1b[Kloader_.search_libraries.insert(INDUSTRIAL_CALIBRATION_PLUGIN_LIBRARIES)\x1b[m\x1b[K;\n'}
+[51.441985] (industrial_calibration_ros) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[51.442097] (industrial_calibration_ros) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/13/vector:66\x1b[m\x1b[K,\n'}
+[51.442200] (industrial_calibration_ros) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/opencv4/opencv2/core/types.hpp:53\x1b[m\x1b[K,\n'}
+[51.442302] (industrial_calibration_ros) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/opencv4/opencv2/core.hpp:57\x1b[m\x1b[K,\n'}
+[51.442401] (industrial_calibration_ros) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration_ros2/src/utils.h:3\x1b[m\x1b[K,\n'}
+[51.442501] (industrial_calibration_ros) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration_ros2/src/target_detector.cpp:1\x1b[m\x1b[K:\n'}
+[51.442606] (industrial_calibration_ros) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1482:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _InputIterator, class> std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::\x1b[01;32m\x1b[Kinsert\x1b[m\x1b[K(const_iterator, _InputIterator, _InputIterator) \x1b[35m\x1b[K[with <template-parameter-2-2> = _InputIterator; _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[51.442713] (industrial_calibration_ros) StderrLine: {'line': b' 1482 |         \x1b[01;36m\x1b[Kinsert\x1b[m\x1b[K(const_iterator __position, _InputIterator __first,\n'}
+[51.442811] (industrial_calibration_ros) StderrLine: {'line': b'      |         \x1b[01;36m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[51.442910] (industrial_calibration_ros) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1482:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[51.443007] (industrial_calibration_ros) StderrLine: {'line': b'\x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration_ros2/src/target_detector.cpp:25:36:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 3 arguments, 1 provided\n'}
+[51.443113] (industrial_calibration_ros) StderrLine: {'line': b'   25 |     \x1b[01;36m\x1b[Kloader_.search_libraries.insert(INDUSTRIAL_CALIBRATION_PLUGIN_LIBRARIES)\x1b[m\x1b[K;\n'}
+[51.443215] (industrial_calibration_ros) StderrLine: {'line': b'      |     \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[51.443312] (industrial_calibration_ros) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/13/vector:72\x1b[m\x1b[K:\n'}
+[51.443409] (industrial_calibration_ros) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/vector.tcc:133:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::\x1b[01;32m\x1b[Kinsert\x1b[m\x1b[K(const_iterator, const value_type&) \x1b[35m\x1b[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; value_type = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[51.443529] (industrial_calibration_ros) StderrLine: {'line': b'  133 |     \x1b[01;36m\x1b[Kvector<_Tp, _Alloc>\x1b[m\x1b[K::\n'}
+[51.443643] (industrial_calibration_ros) StderrLine: {'line': b'      |     \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[51.443744] (industrial_calibration_ros) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/vector.tcc:133:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 1 provided\n'}
+[51.443844] (industrial_calibration_ros) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1393:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::\x1b[01;32m\x1b[Kinsert\x1b[m\x1b[K(const_iterator, value_type&&) \x1b[35m\x1b[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; value_type = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[51.443948] (industrial_calibration_ros) StderrLine: {'line': b' 1393 |       \x1b[01;36m\x1b[Kinsert\x1b[m\x1b[K(const_iterator __position, value_type&& __x)\n'}
+[51.444046] (industrial_calibration_ros) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[51.444144] (industrial_calibration_ros) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1393:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 1 provided\n'}
+[51.444242] (industrial_calibration_ros) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1411:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::\x1b[01;32m\x1b[Kinsert\x1b[m\x1b[K(const_iterator, std::initializer_list<_Tp>) \x1b[35m\x1b[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[51.444348] (industrial_calibration_ros) StderrLine: {'line': b' 1411 |       \x1b[01;36m\x1b[Kinsert\x1b[m\x1b[K(const_iterator __position, initializer_list<value_type> __l)\n'}
+[51.444447] (industrial_calibration_ros) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[51.444544] (industrial_calibration_ros) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1411:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 1 provided\n'}
+[51.444661] (industrial_calibration_ros) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1437:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::\x1b[01;32m\x1b[Kinsert\x1b[m\x1b[K(const_iterator, size_type, const value_type&) \x1b[35m\x1b[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; size_type = long unsigned int; value_type = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[51.444766] (industrial_calibration_ros) StderrLine: {'line': b' 1437 |       \x1b[01;36m\x1b[Kinsert\x1b[m\x1b[K(const_iterator __position, size_type __n, const value_type& __x)\n'}
+[51.444864] (industrial_calibration_ros) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[51.444961] (industrial_calibration_ros) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1437:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 3 arguments, 1 provided\n'}
+[51.492911] (industrial_calibration_ros) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/industrial_calibration_ros_pnp_validation_node.dir/build.make:76: CMakeFiles/industrial_calibration_ros_pnp_validation_node.dir/src/pnp_validation_node.cpp.o] Error 1\n'}
+[51.493092] (industrial_calibration_ros) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:167: CMakeFiles/industrial_calibration_ros_pnp_validation_node.dir/all] Error 2\n'}
+[51.493168] (industrial_calibration_ros) StderrLine: {'line': b'gmake[1]: *** Waiting for unfinished jobs....\n'}
+[51.501310] (-) TimerEvent: {}
+[51.601608] (-) TimerEvent: {}
+[51.701900] (-) TimerEvent: {}
+[51.802305] (-) TimerEvent: {}
+[51.902619] (-) TimerEvent: {}
+[52.002922] (-) TimerEvent: {}
+[52.103235] (-) TimerEvent: {}
+[52.203610] (-) TimerEvent: {}
+[52.303874] (-) TimerEvent: {}
+[52.404148] (-) TimerEvent: {}
+[52.485465] (industrial_calibration_ros) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/industrial_calibration_ros_target_detector.dir/build.make:76: CMakeFiles/industrial_calibration_ros_target_detector.dir/src/target_detector.cpp.o] Error 1\n'}
+[52.485641] (industrial_calibration_ros) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:141: CMakeFiles/industrial_calibration_ros_target_detector.dir/all] Error 2\n'}
+[52.504326] (-) TimerEvent: {}
+[52.604649] (-) TimerEvent: {}
+[52.704987] (-) TimerEvent: {}
+[52.805336] (-) TimerEvent: {}
+[52.905706] (-) TimerEvent: {}
+[53.006062] (-) TimerEvent: {}
+[53.106401] (-) TimerEvent: {}
+[53.206739] (-) TimerEvent: {}
+[53.307090] (-) TimerEvent: {}
+[53.407355] (-) TimerEvent: {}
+[53.507686] (-) TimerEvent: {}
+[53.608010] (-) TimerEvent: {}
+[53.708354] (-) TimerEvent: {}
+[53.808687] (-) TimerEvent: {}
+[53.908902] (-) TimerEvent: {}
+[54.009125] (-) TimerEvent: {}
+[54.109336] (-) TimerEvent: {}
+[54.209661] (-) TimerEvent: {}
+[54.309890] (-) TimerEvent: {}
+[54.410158] (-) TimerEvent: {}
+[54.510472] (-) TimerEvent: {}
+[54.610754] (-) TimerEvent: {}
+[54.711056] (-) TimerEvent: {}
+[54.811378] (-) TimerEvent: {}
+[54.911686] (-) TimerEvent: {}
+[55.011956] (-) TimerEvent: {}
+[55.112215] (-) TimerEvent: {}
+[55.212515] (-) TimerEvent: {}
+[55.312835] (-) TimerEvent: {}
+[55.413132] (-) TimerEvent: {}
+[55.513513] (-) TimerEvent: {}
+[55.613848] (-) TimerEvent: {}
+[55.714121] (-) TimerEvent: {}
+[55.814517] (-) TimerEvent: {}
+[55.914792] (-) TimerEvent: {}
+[56.015101] (-) TimerEvent: {}
+[56.115405] (-) TimerEvent: {}
+[56.215774] (-) TimerEvent: {}
+[56.316053] (-) TimerEvent: {}
+[56.416446] (-) TimerEvent: {}
+[56.516770] (-) TimerEvent: {}
+[56.617073] (-) TimerEvent: {}
+[56.717411] (-) TimerEvent: {}
+[56.817706] (-) TimerEvent: {}
+[56.917987] (-) TimerEvent: {}
+[57.018346] (-) TimerEvent: {}
+[57.118651] (-) TimerEvent: {}
+[57.219015] (-) TimerEvent: {}
+[57.319331] (-) TimerEvent: {}
+[57.419664] (-) TimerEvent: {}
+[57.519992] (-) TimerEvent: {}
+[57.620230] (-) TimerEvent: {}
+[57.720482] (-) TimerEvent: {}
+[57.820734] (-) TimerEvent: {}
+[57.920993] (-) TimerEvent: {}
+[58.021242] (-) TimerEvent: {}
+[58.121495] (-) TimerEvent: {}
+[58.221753] (-) TimerEvent: {}
+[58.322077] (-) TimerEvent: {}
+[58.422377] (-) TimerEvent: {}
+[58.522706] (-) TimerEvent: {}
+[58.623015] (-) TimerEvent: {}
+[58.723285] (-) TimerEvent: {}
+[58.823670] (-) TimerEvent: {}
+[58.872474] (industrial_calibration_ros) StdoutLine: {'line': b'[ 66%] \x1b[32m\x1b[1mLinking CXX shared library libindustrial_calibration_ros_extrinsic_hand_eye_calibration_panel.so\x1b[0m\n'}
+[58.923780] (-) TimerEvent: {}
+[59.024122] (-) TimerEvent: {}
+[59.124609] (-) TimerEvent: {}
+[59.225009] (-) TimerEvent: {}
+[59.325354] (-) TimerEvent: {}
+[59.425711] (-) TimerEvent: {}
+[59.526068] (-) TimerEvent: {}
+[59.626427] (-) TimerEvent: {}
+[59.726804] (-) TimerEvent: {}
+[59.827142] (-) TimerEvent: {}
+[59.927580] (-) TimerEvent: {}
+[60.027937] (-) TimerEvent: {}
+[60.128253] (-) TimerEvent: {}
+[60.228602] (-) TimerEvent: {}
+[60.302896] (industrial_calibration_ros) StdoutLine: {'line': b'[ 66%] Built target industrial_calibration_ros_extrinsic_hand_eye_calibration_panel\n'}
+[60.303819] (industrial_calibration_ros) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[60.305591] (industrial_calibration_ros) CommandEnded: {'returncode': 2}
+[60.310299] (industrial_calibration_ros) JobEnded: {'identifier': 'industrial_calibration_ros', 'rc': 2}
+[60.320765] (-) EventReactorShutdown: {}

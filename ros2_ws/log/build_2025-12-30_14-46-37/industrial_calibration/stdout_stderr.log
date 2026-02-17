@@ -1,0 +1,246 @@
+[  7%] Built target industrial_calibration_core
+[ 17%] Built target industrial_calibration_target_finders_opencv
+[ 31%] Built target industrial_calibration_optimizations
+[ 34%] Built target industrial_calibration_plugins_opencv
+[ 44%] Built target industrial_calibration_analysis
+[ 44%] Built target industrial_calibration_gui_autogen_timestamp_deps
+[ 47%] Built target industrial_calibration_kinematic_calibration
+[ 49%] [32mBuilding CXX object examples/CMakeFiles/industrial_calibration_noise_qualification_2d.dir/noise_qualification_2d.cpp.o[0m
+[ 52%] [32mBuilding CXX object examples/CMakeFiles/industrial_calibration_pnp.dir/pnp.cpp.o[0m
+[ 52%] [32mBuilding CXX object examples/CMakeFiles/industrial_calibration_camera_intrinsic.dir/camera_intrinsic.cpp.o[0m
+[ 53%] [32mBuilding CXX object examples/CMakeFiles/industrial_calibration_extrinsic_hand_eye.dir/extrinsic_hand_eye.cpp.o[0m
+[ 55%] [34m[1mAutomatic MOC and UIC for target industrial_calibration_gui[0m
+[ 55%] Built target industrial_calibration_gui_autogen
+[ 56%] [32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/camera_calibration_data_manager_widget.cpp.o[0m
+[ 58%] [32m[1mLinking CXX executable industrial_calibration_camera_intrinsic[0m
+[ 58%] Built target industrial_calibration_camera_intrinsic
+[ 59%] [32m[1mLinking CXX shared library libindustrial_calibration_gui.so[0m
+[ 61%] [32m[1mLinking CXX executable industrial_calibration_extrinsic_hand_eye[0m
+[ 62%] [32m[1mLinking CXX executable industrial_calibration_noise_qualification_2d[0m
+[ 83%] Built target industrial_calibration_gui
+[ 83%] Built target industrial_calibration_camera_intrinsic_calibration_app_autogen_timestamp_deps
+[ 83%] Built target industrial_calibration_extrinsic_hand_eye_calibration_app_autogen_timestamp_deps
+[ 85%] [34m[1mAutomatic MOC and UIC for target industrial_calibration_camera_intrinsic_calibration_app[0m
+[ 86%] [34m[1mAutomatic MOC and UIC for target industrial_calibration_extrinsic_hand_eye_calibration_app[0m
+[ 86%] Built target industrial_calibration_extrinsic_hand_eye_calibration_app_autogen
+[ 86%] Built target industrial_calibration_camera_intrinsic_calibration_app_autogen
+[ 88%] [32mBuilding CXX object gui/CMakeFiles/industrial_calibration_extrinsic_hand_eye_calibration_app.dir/industrial_calibration_extrinsic_hand_eye_calibration_app_autogen/mocs_compilation.cpp.o[0m
+[ 89%] [32mBuilding CXX object gui/CMakeFiles/industrial_calibration_extrinsic_hand_eye_calibration_app.dir/src/app/extrinsic_hand_eye_calibration_app.cpp.o[0m
+[ 92%] [32mBuilding CXX object gui/CMakeFiles/industrial_calibration_camera_intrinsic_calibration_app.dir/src/app/camera_intrinsic_calibration_app.cpp.o[0m
+[ 92%] [32mBuilding CXX object gui/CMakeFiles/industrial_calibration_camera_intrinsic_calibration_app.dir/industrial_calibration_camera_intrinsic_calibration_app_autogen/mocs_compilation.cpp.o[0m
+[ 92%] Built target industrial_calibration_noise_qualification_2d
+[ 92%] Built target industrial_calibration_extrinsic_hand_eye
+[ 94%] [32m[1mLinking CXX executable industrial_calibration_pnp[0m
+[ 95%] [32m[1mLinking CXX executable industrial_calibration_extrinsic_hand_eye_calibration_app[0m
+[ 97%] [32m[1mLinking CXX executable industrial_calibration_camera_intrinsic_calibration_app[0m
+[ 97%] Built target industrial_calibration_pnp
+[ 98%] Built target industrial_calibration_extrinsic_hand_eye_calibration_app
+[100%] Built target industrial_calibration_camera_intrinsic_calibration_app
+-- Install configuration: ""
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/package.xml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/industrial_calibration-config.cmake
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/industrial_calibration-config-version.cmake
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/ament_index/resource_index/packages/industrial_calibration
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/hook/ament_prefix_path.dsv
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/hook/ros_package_path.dsv
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/hook/python_path.dsv
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/core
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/core/exceptions.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/core/camera_intrinsics.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/core/target_finder.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/core/pose_6d.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/core/utils.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/core/serialization.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/core/dh_chain.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/core/types.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/libindustrial_calibration_core.so
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/core-targets.cmake
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/core-targets-noconfig.cmake
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/core-config.cmake
+-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include
+-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/extrinsic_hand_eye.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/covariance_analysis.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/dh_chain_kinematic_calibration.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/maximum_likelihood.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/camera_intrinsic_cost.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/pnp.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/covariance_types.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/extrinsic_hand_eye_cost.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/multi_camera_pnp_cost.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/dh_chain_kinematic_calibration_cost.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/camera_intrinsic.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/ceres_math_utilities.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/extrinsic_multi_static_camera.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/local_parameterization.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/extrinsic_multi_static_camera_cost.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/pnp_cost.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/multi_camera_pnp.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/libindustrial_calibration_optimizations.so
+-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/libindustrial_calibration_optimizations.so" to ""
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/optimizations-targets.cmake
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/optimizations-targets-noconfig.cmake
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/optimizations-config.cmake
+-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include
+-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/analysis
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/analysis/camera_intrinsic_calibration_analysis.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/analysis/projection.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/analysis/statistics.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/analysis/extrinsic_hand_eye_calibration_analysis.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/analysis/noise_qualification.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/analysis/homography_analysis.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/libindustrial_calibration_analysis.so
+-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/libindustrial_calibration_analysis.so" to ""
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/analysis-targets.cmake
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/analysis-targets-noconfig.cmake
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/analysis-config.cmake
+-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include
+-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/target_finders
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/target_finders/opencv
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/target_finders/opencv/charuco_grid_target_finder.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/target_finders/opencv/target_finder.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/target_finders/opencv/modified_circle_grid_target_finder.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/target_finders/opencv/circle_detector.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/target_finders/opencv/aruco_grid_target_finder.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/target_finders/opencv/utils.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/modified_circle_grid_target_generator.py
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/libindustrial_calibration_target_finders_opencv.so
+-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/libindustrial_calibration_target_finders_opencv.so" to ""
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/libindustrial_calibration_plugins_opencv.so
+-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/libindustrial_calibration_plugins_opencv.so" to ""
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/target_finders_opencv-targets.cmake
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/target_finders_opencv-targets-noconfig.cmake
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/target_finders_opencv-config.cmake
+-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include
+-- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui/camera_intrinsic_calibration_widget.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui/charuco_grid_target_finder.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui/camera_intrinsics.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui/target_finder.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui/extrinsic_hand_eye_calibration_widget.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui/modified_circle_grid_target_finder.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui/aruco_grid_target_finder.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui/aspect_ratio_pixmap_label.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui/configurable_widget.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui/camera_calibration_data_manager_widget.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui/transform_guess.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/libindustrial_calibration_gui.so
+-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/libindustrial_calibration_gui.so" to ""
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_extrinsic_hand_eye_calibration_app
+-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_extrinsic_hand_eye_calibration_app" to ""
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_camera_intrinsic_calibration_app
+-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_camera_intrinsic_calibration_app" to ""
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/gui-targets.cmake
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/gui-targets-noconfig.cmake
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/gui-config.cmake
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_extrinsic_hand_eye_calibration_app
+-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_extrinsic_hand_eye_calibration_app" to ""
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_camera_intrinsic_calibration_app
+-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_camera_intrinsic_calibration_app" to ""
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/8.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/5.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/3.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/0.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/12.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/11.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/13.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/10.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/7.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/9.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/4.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/2.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/6.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/14.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/1.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/14.png
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/7.png
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/13.png
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/12.png
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/11.png
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/2.png
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/4.png
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/10.png
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/6.png
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/9.png
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/1.png
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/5.png
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/0.png
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/8.png
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/3.png
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/cal_data.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/8.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/5.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/3.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/0.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/12.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/11.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/13.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/10.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/7.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/9.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/4.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/15.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/2.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/6.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/14.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/1.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/14.png
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/7.png
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/13.png
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/12.png
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/15.png
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/11.png
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/2.png
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/4.png
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/10.png
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/6.png
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/9.png
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/1.png
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/5.png
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/0.png
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/8.png
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/3.png
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/cal_data.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/kinematic_calibration
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/kinematic_calibration/pose_initial_guesses.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/kinematic_calibration/measurements.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/noise_qualification
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/noise_qualification/images
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/noise_qualification/images/0.png
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/noise_qualification/cal_data.yaml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_camera_intrinsic
+-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_camera_intrinsic" to ""
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_extrinsic_hand_eye
+-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_extrinsic_hand_eye" to ""
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_kinematic_calibration
+-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_kinematic_calibration" to ""
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_noise_qualification_2d
+-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_noise_qualification_2d" to ""
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_pnp
+-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_pnp" to ""
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/examples-targets.cmake
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/examples-targets-noconfig.cmake
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/examples-config.cmake
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_camera_intrinsic
+-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_camera_intrinsic" to ""
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_extrinsic_hand_eye
+-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_extrinsic_hand_eye" to ""
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_kinematic_calibration
+-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_kinematic_calibration" to ""
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_noise_qualification_2d
+-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_noise_qualification_2d" to ""
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_pnp
+-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_pnp" to ""

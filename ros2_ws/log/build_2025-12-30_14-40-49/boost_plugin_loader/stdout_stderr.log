@@ -1,0 +1,52 @@
+-- clang-tidy not found!
+-- cppcheck found: /usr/bin/cppcheck
+-- include-what-you-use not found!
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: filesystem 
+-- No package config template file found, creating default one
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader
+[  9%] [32mBuilding CXX object CMakeFiles/boost_plugin_loader.dir/src/utils.cpp.o[0m
+[ 18%] [32m[1mLinking CXX shared library libboost_plugin_loader.so[0m
+[ 18%] Built target boost_plugin_loader
+[ 27%] [32mBuilding CXX object examples/CMakeFiles/boost_plugin_loader_example_plugin.dir/plugin.cpp.o[0m
+[ 36%] [32m[1mLinking CXX shared library libboost_plugin_loader_example_plugin.so[0m
+[ 36%] Built target boost_plugin_loader_example_plugin
+[ 45%] [32mBuilding CXX object examples/CMakeFiles/boost_plugin_loader_example_plugin_impl.dir/printer/hello_world_printer.cpp.o[0m
+[ 54%] [32mBuilding CXX object examples/CMakeFiles/boost_plugin_loader_example_plugin_impl.dir/printer/console_printer.cpp.o[0m
+[ 63%] [32mBuilding CXX object examples/CMakeFiles/boost_plugin_loader_example_plugin_impl.dir/shape/triangle.cpp.o[0m
+[ 72%] [32mBuilding CXX object examples/CMakeFiles/boost_plugin_loader_example_plugin_impl.dir/shape/square.cpp.o[0m
+[ 81%] [32mBuilding CXX object examples/CMakeFiles/boost_plugin_loader_example.dir/example.cpp.o[0m
+[ 90%] [32m[1mLinking CXX shared library libboost_plugin_loader_example_plugin_impl.so[0m
+[ 90%] Built target boost_plugin_loader_example_plugin_impl
+[100%] [32m[1mLinking CXX executable boost_plugin_loader_example[0m
+[100%] Built target boost_plugin_loader_example
+-- Install configuration: ""
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/include/boost_plugin_loader
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/include/boost_plugin_loader/plugin_loader.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/include/boost_plugin_loader/fwd.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/include/boost_plugin_loader/utils.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/include/boost_plugin_loader/macros.h
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/include/boost_plugin_loader/plugin_loader.hpp
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/boost_plugin_loader/package.xml
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/libboost_plugin_loader.so
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/cmake/boost_plugin_loader/boost_plugin_loader-targets.cmake
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/cmake/boost_plugin_loader/boost_plugin_loader-targets-noconfig.cmake
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/cmake/boost_plugin_loader/boost_plugin_loader-config.cmake
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/cmake/boost_plugin_loader/boost_plugin_loader-config-version.cmake
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/ament_index/resource_index/packages/boost_plugin_loader
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/boost_plugin_loader/hook/ament_prefix_path.dsv
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/boost_plugin_loader/hook/ros_package_path.dsv
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/boost_plugin_loader/hook/python_path.dsv
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/libboost_plugin_loader_example_plugin.so
+-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/libboost_plugin_loader_example_plugin.so" to ""
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/libboost_plugin_loader_example_plugin_impl.so
+-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/libboost_plugin_loader_example_plugin_impl.so" to ""
+-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/boost_plugin_loader/boost_plugin_loader_example
+-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/boost_plugin_loader/boost_plugin_loader_example" to ""

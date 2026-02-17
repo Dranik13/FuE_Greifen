@@ -1,0 +1,26 @@
+{
+	"BUILD_DIR" : "/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration/gui/industrial_calibration_gui_autogen",
+	"CMAKE_BINARY_DIR" : "/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration/gui",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/gui",
+	"CMAKE_SOURCE_DIR" : "/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration",
+	"GENERATOR" : "Unix Makefiles",
+	"INCLUDE_DIR" : "/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration/gui/industrial_calibration_gui_autogen/include",
+	"INPUTS" : 
+	[
+		"/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/gui/resources/icons/opencv.svg",
+		"/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/gui/resources/icons/icon.jpg",
+		"/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/gui/resources/icons/frame_target.png",
+		"/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/gui/resources/icons/frame_camera.png"
+	],
+	"LOCK_FILE" : "/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration/gui/CMakeFiles/industrial_calibration_gui_autogen.dir/AutoRcc_resources_3YJK5W5UP7_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "resources" ],
+	"OUTPUT_CHECKSUM" : "3YJK5W5UP7",
+	"OUTPUT_NAME" : "qrc_resources.cpp",
+	"RCC_EXECUTABLE" : "/usr/lib/qt5/bin/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration/gui/CMakeFiles/industrial_calibration_gui_autogen.dir/AutoRcc_resources_3YJK5W5UP7_Used.txt",
+	"SOURCE" : "/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/gui/resources/resources.qrc",
+	"VERBOSITY" : 0
+}

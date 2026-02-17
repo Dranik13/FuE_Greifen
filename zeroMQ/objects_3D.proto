@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+message Object3D_msg {
+  float x = 1;
+  float y = 2;
+  float z = 3;
+  float orientation = 4;
+  float width = 5;
+  float length = 6;
+  float height = 7;
+  string label = 8;
+}
+
+message Objects3D_msg {
+  repeated Object3D_msg objects = 1;
+}

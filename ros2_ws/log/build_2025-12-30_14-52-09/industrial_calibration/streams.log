@@ -1,0 +1,382 @@
+[0.010s] Invoking command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration': CMAKE_PREFIX_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig /usr/bin/cmake /home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration
+[0.017s] -- clang-tidy not found!
+[0.019s] -- cppcheck found: /usr/bin/cppcheck
+[0.019s] -- include-what-you-use found: /usr/bin/include-what-you-use
+[0.023s] [33mCMake Warning at /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/clang_tidy_tools.cmake:115 (message):
+[0.024s]   Using target_clang_tidy but clang tidy executable was not found!
+[0.024s] Call Stack (most recent call first):
+[0.024s]   core/CMakeLists.txt:22 (target_clang_tidy)
+[0.024s] 
+[0.024s] [0m
+[0.024s] -- No package config template file found, creating default one
+[0.127s] -- Found AMD headers in: /usr/include/suitesparse
+[0.128s] -- Found AMD library: /usr/lib/x86_64-linux-gnu/libamd.so
+[0.128s] -- Found CAMD headers in: /usr/include/suitesparse
+[0.128s] -- Found CAMD library: /usr/lib/x86_64-linux-gnu/libcamd.so
+[0.128s] -- Found CCOLAMD headers in: /usr/include/suitesparse
+[0.128s] -- Found CCOLAMD library: /usr/lib/x86_64-linux-gnu/libccolamd.so
+[0.128s] -- Found CHOLMOD headers in: /usr/include/suitesparse
+[0.128s] -- Found CHOLMOD library: /usr/lib/x86_64-linux-gnu/libcholmod.so
+[0.128s] -- Found COLAMD headers in: /usr/include/suitesparse
+[0.129s] -- Found COLAMD library: /usr/lib/x86_64-linux-gnu/libcolamd.so
+[0.129s] -- Found SPQR headers in: /usr/include/suitesparse
+[0.129s] -- Found SPQR library: /usr/lib/x86_64-linux-gnu/libspqr.so
+[0.129s] -- Found Config headers in: /usr/include/suitesparse
+[0.129s] -- Found Config library: /usr/lib/x86_64-linux-gnu/libsuitesparseconfig.so
+[0.129s] -- Found Intel Thread Building Blocks (TBB) library (2021.11 / ) include location: . Assuming SuiteSparseQR was compiled with TBB.
+[0.129s] -- Adding librt to SuiteSparse_config libraries (required on Linux & Unix [not OSX] if SuiteSparse is compiled with timing).
+[0.131s] -- Could NOT find METIS (missing: METIS_INCLUDE_DIR METIS_LIBRARY) 
+[0.133s] -- Found required Ceres dependency: Eigen version 3.4.0 in /usr/share/eigen3/cmake
+[0.136s] -- Found required Ceres dependency: glog
+[0.136s] -- Found required Ceres dependency: gflags
+[0.136s] -- Found Ceres version: 2.2.0 installed in: /usr with components: [EigenSparse, SparseLinearAlgebraLibrary, LAPACK, SuiteSparse, SchurSpecializations]
+[0.137s] [33mCMake Warning at /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/clang_tidy_tools.cmake:115 (message):
+[0.137s]   Using target_clang_tidy but clang tidy executable was not found!
+[0.137s] Call Stack (most recent call first):
+[0.137s]   optimizations/CMakeLists.txt:20 (target_clang_tidy)
+[0.137s] 
+[0.137s] [0m
+[0.137s] -- No package config template file found, creating default one
+[0.138s] [33mCMake Warning at /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/clang_tidy_tools.cmake:115 (message):
+[0.138s]   Using target_clang_tidy but clang tidy executable was not found!
+[0.138s] Call Stack (most recent call first):
+[0.138s]   analysis/CMakeLists.txt:13 (target_clang_tidy)
+[0.138s] 
+[0.138s] [0m
+[0.139s] -- No package config template file found, creating default one
+[0.139s] [0mBuilding OpenCV target finders[0m
+[0.149s] [33mCMake Warning at /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/clang_tidy_tools.cmake:115 (message):
+[0.150s]   Using target_clang_tidy but clang tidy executable was not found!
+[0.150s] Call Stack (most recent call first):
+[0.150s]   target_finders/opencv/CMakeLists.txt:28 (target_clang_tidy)
+[0.150s] 
+[0.150s] [0m
+[0.150s] [33mCMake Warning at /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/clang_tidy_tools.cmake:115 (message):
+[0.150s]   Using target_clang_tidy but clang tidy executable was not found!
+[0.150s] Call Stack (most recent call first):
+[0.150s]   target_finders/opencv/CMakeLists.txt:46 (target_clang_tidy)
+[0.151s] 
+[0.151s] [0m
+[0.151s] -- No package config template file found, creating default one
+[0.151s] [0mBuilding GUI[0m
+[0.162s] -- No package config template file found, creating default one
+[0.163s] [0mBuilding examples[0m
+[0.169s] -- No package config template file found, creating default one
+[0.170s] -- No package config template file found, creating default one
+[0.171s] -- Configuring done (0.2s)
+[0.226s] -- Generating done (0.0s)
+[0.234s] -- Build files have been written to: /home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration
+[0.239s] Invoked command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration' returned '0': CMAKE_PREFIX_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig /usr/bin/cmake /home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration
+[0.241s] Invoking command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration': CMAKE_PREFIX_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig /usr/bin/cmake --build /home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration -- -j8 -l8
+[0.315s] [  1%] [32mBuilding CXX object core/CMakeFiles/industrial_calibration_core.dir/src/camera_intrinsics.cpp.o[0m
+[0.319s] [  4%] [32mBuilding CXX object core/CMakeFiles/industrial_calibration_core.dir/src/types.cpp.o[0m
+[0.320s] [  4%] [32mBuilding CXX object core/CMakeFiles/industrial_calibration_core.dir/src/dh_chain.cpp.o[0m
+[0.321s] [  5%] [32mBuilding CXX object core/CMakeFiles/industrial_calibration_core.dir/src/utils.cpp.o[0m
+[4.553s] [  7%] [32m[1mLinking CXX shared library libindustrial_calibration_core.so[0m
+[4.616s] [  7%] Built target industrial_calibration_core
+[4.648s] [  8%] [32mBuilding CXX object optimizations/CMakeFiles/industrial_calibration_optimizations.dir/src/covariance_types.cpp.o[0m
+[4.651s] [ 10%] [32mBuilding CXX object optimizations/CMakeFiles/industrial_calibration_optimizations.dir/src/camera_intrinsic.cpp.o[0m
+[4.652s] [ 11%] [32mBuilding CXX object optimizations/CMakeFiles/industrial_calibration_optimizations.dir/src/pnp.cpp.o[0m
+[4.652s] [ 14%] [32mBuilding CXX object optimizations/CMakeFiles/industrial_calibration_optimizations.dir/src/dh_chain_kinematic_calibration.cpp.o[0m
+[4.653s] [ 14%] [32mBuilding CXX object optimizations/CMakeFiles/industrial_calibration_optimizations.dir/src/covariance_analysis.cpp.o[0m
+[4.654s] [ 16%] [32mBuilding CXX object optimizations/CMakeFiles/industrial_calibration_optimizations.dir/src/extrinsic_hand_eye.cpp.o[0m
+[4.656s] [ 17%] [32mBuilding CXX object optimizations/CMakeFiles/industrial_calibration_optimizations.dir/src/extrinsic_multi_static_camera.cpp.o[0m
+[4.656s] [ 19%] [32mBuilding CXX object target_finders/opencv/CMakeFiles/industrial_calibration_target_finders_opencv.dir/src/utils.cpp.o[0m
+[7.056s] [ 20%] [32mBuilding CXX object optimizations/CMakeFiles/industrial_calibration_optimizations.dir/src/multi_camera_pnp.cpp.o[0m
+[7.486s] [ 22%] [32mBuilding CXX object target_finders/opencv/CMakeFiles/industrial_calibration_target_finders_opencv.dir/src/circle_detector.cpp.o[0m
+[7.642s] [ 23%] [32mBuilding CXX object target_finders/opencv/CMakeFiles/industrial_calibration_target_finders_opencv.dir/src/target_finder.cpp.o[0m
+[10.517s] [ 25%] [32mBuilding CXX object target_finders/opencv/CMakeFiles/industrial_calibration_target_finders_opencv.dir/src/modified_circle_grid_target_finder.cpp.o[0m
+[10.660s] [ 26%] [32mBuilding CXX object target_finders/opencv/CMakeFiles/industrial_calibration_target_finders_opencv.dir/src/aruco_grid_target_finder.cpp.o[0m
+[11.207s] [ 28%] [32mBuilding CXX object target_finders/opencv/CMakeFiles/industrial_calibration_target_finders_opencv.dir/src/charuco_grid_target_finder.cpp.o[0m
+[15.407s] [ 29%] [32m[1mLinking CXX shared library libindustrial_calibration_target_finders_opencv.so[0m
+[15.480s] [ 29%] Built target industrial_calibration_target_finders_opencv
+[15.503s] [ 31%] [32mBuilding CXX object target_finders/opencv/CMakeFiles/industrial_calibration_plugins_opencv.dir/src/plugins.cpp.o[0m
+[16.881s] [ 32%] [32m[1mLinking CXX shared library libindustrial_calibration_plugins_opencv.so[0m
+[16.946s] [ 32%] Built target industrial_calibration_plugins_opencv
+[16.979s] [ 34%] [32m[1mLinking CXX shared library libindustrial_calibration_optimizations.so[0m
+[17.057s] [ 34%] Built target industrial_calibration_optimizations
+[17.089s] [ 37%] [32mBuilding CXX object analysis/CMakeFiles/industrial_calibration_analysis.dir/src/extrinsic_hand_eye_calibration_analysis.cpp.o[0m
+[17.089s] [ 37%] [32mBuilding CXX object analysis/CMakeFiles/industrial_calibration_analysis.dir/src/projection.cpp.o[0m
+[17.092s] [ 38%] [32mBuilding CXX object analysis/CMakeFiles/industrial_calibration_analysis.dir/src/camera_intrinsic_calibration_analysis.cpp.o[0m
+[17.093s] [ 40%] [32mBuilding CXX object analysis/CMakeFiles/industrial_calibration_analysis.dir/src/homography_analysis.cpp.o[0m
+[17.093s] [ 41%] [32mBuilding CXX object analysis/CMakeFiles/industrial_calibration_analysis.dir/src/noise_qualification.cpp.o[0m
+[17.094s] [ 43%] [32mBuilding CXX object analysis/CMakeFiles/industrial_calibration_analysis.dir/src/statistics.cpp.o[0m
+[20.676s] [ 44%] [32m[1mLinking CXX shared library libindustrial_calibration_analysis.so[0m
+[20.749s] [ 44%] Built target industrial_calibration_analysis
+[20.779s] [ 44%] Built target industrial_calibration_gui_autogen_timestamp_deps
+[20.793s] [ 46%] [32mBuilding CXX object examples/CMakeFiles/industrial_calibration_kinematic_calibration.dir/kinematic_calibration.cpp.o[0m
+[20.793s] [ 47%] [32mBuilding CXX object examples/CMakeFiles/industrial_calibration_noise_qualification_2d.dir/noise_qualification_2d.cpp.o[0m
+[20.798s] [ 49%] [32mBuilding CXX object examples/CMakeFiles/industrial_calibration_extrinsic_hand_eye.dir/extrinsic_hand_eye.cpp.o[0m
+[20.798s] [ 50%] [32mBuilding CXX object examples/CMakeFiles/industrial_calibration_camera_intrinsic.dir/camera_intrinsic.cpp.o[0m
+[20.803s] [ 52%] [32mBuilding CXX object examples/CMakeFiles/industrial_calibration_pnp.dir/pnp.cpp.o[0m
+[20.817s] [ 53%] [34m[1mAutomatic MOC and UIC for target industrial_calibration_gui[0m
+[20.848s] [ 53%] Built target industrial_calibration_gui_autogen
+[20.860s] [ 55%] [34m[1mAutomatic RCC for resources/resources.qrc[0m
+[20.949s] [ 58%] [32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/configurable_widget.cpp.o[0m
+[20.950s] [ 58%] [32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/aspect_ratio_pixmap_label.cpp.o[0m
+[20.950s] [ 59%] [32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/industrial_calibration_gui_autogen/mocs_compilation.cpp.o[0m
+[22.478s] [ 61%] [32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/camera_intrinsics.cpp.o[0m
+[23.005s] [ 62%] [32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/transform_guess.cpp.o[0m
+[24.631s] [ 64%] [32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/charuco_grid_target_finder.cpp.o[0m
+[26.945s] [ 65%] [32m[1mLinking CXX executable industrial_calibration_noise_qualification_2d[0m
+[27.447s] [ 65%] Built target industrial_calibration_noise_qualification_2d
+[27.457s] [ 67%] [32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/aruco_grid_target_finder.cpp.o[0m
+[27.989s] [ 68%] [32m[1mLinking CXX executable industrial_calibration_pnp[0m
+[28.092s] In file included from [01m[K/usr/include/eigen3/Eigen/Core:257[m[K,
+[28.092s]                  from [01m[K/usr/include/eigen3/Eigen/Geometry:11[m[K,
+[28.092s]                  from [01m[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/analysis/include/industrial_calibration/analysis/statistics.h:3[m[K,
+[28.092s]                  from [01m[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/kinematic_calibration.cpp:2[m[K:
+[28.092s] In member function ‘[01m[Kvoid Eigen::internal::assign_op<DstScalar, SrcScalar>::[01;32m[KassignCoeff[m[K(DstScalar&, const SrcScalar&) const [35m[K[with DstScalar = bool; SrcScalar = bool][m[K[m[K’,
+[28.093s]     inlined from ‘[01m[Kvoid Eigen::internal::generic_dense_assignment_kernel<DstEvaluatorTypeT, SrcEvaluatorTypeT, Functor, Version>::[01;32m[KassignCoeff[m[K(Eigen::Index) [35m[K[with DstEvaluatorTypeT = Eigen::internal::evaluator<Eigen::Array<bool, -1, 4> >; SrcEvaluatorTypeT = Eigen::internal::evaluator<Eigen::Matrix<bool, -1, 4, 0, -1, 4> >; Functor = Eigen::internal::assign_op<bool, bool>; int Version = 0][m[K[m[K’ at [01m[K/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:660:26[m[K,
+[28.093s]     inlined from ‘[01m[Kstatic void Eigen::internal::unaligned_dense_assignment_loop<false>::[01;32m[Krun[m[K(Kernel&, Eigen::Index, Eigen::Index) [35m[K[with Kernel = Eigen::internal::generic_dense_assignment_kernel<Eigen::internal::evaluator<Eigen::Array<bool, -1, 4> >, Eigen::internal::evaluator<Eigen::Matrix<bool, -1, 4, 0, -1, 4> >, Eigen::internal::assign_op<bool, bool>, 0>][m[K[m[K’ at [01m[K/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:411:25[m[K,
+[28.093s]     inlined from ‘[01m[Kstatic void Eigen::internal::dense_assignment_loop<Kernel, 3, 0>::[01;32m[Krun[m[K(Kernel&) [35m[K[with Kernel = Eigen::internal::generic_dense_assignment_kernel<Eigen::internal::evaluator<Eigen::Array<bool, -1, 4> >, Eigen::internal::evaluator<Eigen::Matrix<bool, -1, 4, 0, -1, 4> >, Eigen::internal::assign_op<bool, bool>, 0>][m[K[m[K’ at [01m[K/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:439:43[m[K,
+[28.093s]     inlined from ‘[01m[Kvoid Eigen::internal::[01;32m[Kcall_dense_assignment_loop[m[K(DstXprType&, const SrcXprType&, const Functor&) [35m[K[with DstXprType = Eigen::Array<bool, -1, 4>; SrcXprType = Eigen::Matrix<bool, -1, 4, 0, -1, 4>; Functor = assign_op<bool, bool>][m[K[m[K’ at [01m[K/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:785:37[m[K,
+[28.093s]     inlined from ‘[01m[Kstatic void Eigen::internal::Assignment<DstXprType, SrcXprType, Functor, Eigen::internal::Dense2Dense, Weak>::[01;32m[Krun[m[K(DstXprType&, const SrcXprType&, const Functor&) [35m[K[with DstXprType = Eigen::Array<bool, -1, 4>; SrcXprType = Eigen::Matrix<bool, -1, 4, 0, -1, 4>; Functor = Eigen::internal::assign_op<bool, bool>; Weak = void][m[K[m[K’ at [01m[K/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:954:31[m[K,
+[28.093s]     inlined from ‘[01m[Kvoid Eigen::internal::[01;32m[Kcall_assignment_no_alias[m[K(Dst&, const Src&, const Func&) [35m[K[with Dst = Eigen::Array<bool, -1, 4>; Src = Eigen::Matrix<bool, -1, 4, 0, -1, 4>; Func = assign_op<bool, bool>][m[K[m[K’ at [01m[K/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:890:49[m[K,
+[28.093s]     inlined from ‘[01m[KDerived& Eigen::PlainObjectBase<Derived>::[01;32m[K_set_noalias[m[K(const Eigen::DenseBase<OtherDerived>&) [35m[K[with OtherDerived = Eigen::Matrix<bool, -1, 4, 0, -1, 4>; Derived = Eigen::Array<bool, -1, 4>][m[K[m[K’ at [01m[K/usr/include/eigen3/Eigen/src/Core/PlainObjectBase.h:797:41[m[K,
+[28.093s]     inlined from ‘[01m[KEigen::PlainObjectBase<Derived>::[01;32m[KPlainObjectBase[m[K(const Eigen::DenseBase<OtherDerived>&) [35m[K[with OtherDerived = Eigen::Matrix<bool, -1, 4, 0, -1, 4>; Derived = Eigen::Array<bool, -1, 4>][m[K[m[K’ at [01m[K/usr/include/eigen3/Eigen/src/Core/PlainObjectBase.h:594:19[m[K,
+[28.096s]     inlined from ‘[01m[KEigen::Array<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>::[01;32m[KArray[m[K(const Eigen::EigenBase<OtherDerived>&, typename Eigen::internal::enable_if<std::is_convertible<typename OtherDerived::Scalar, typename Eigen::internal::traits<Eigen::Array<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols> >::Scalar>::value, PrivateType>::type) [35m[K[with OtherDerived = Eigen::Matrix<bool, -1, 4, 0, -1, 4>; _Scalar = bool; int _Rows = -1; int _Cols = 4; int _Options = 0; int _MaxRows = -1; int _MaxCols = 4][m[K[m[K’ at [01m[K/usr/include/eigen3/Eigen/src/Core/Array.h:288:29[m[K,
+[28.096s]     inlined from ‘[01m[Kstd::tuple<industrial_calibration::KinematicCalibrationResult, Stats, Stats>[01;32m[K run[m[K()[m[K’ at [01m[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/kinematic_calibration.cpp:285:38[m[K:
+[28.096s] [01m[K/usr/include/eigen3/Eigen/src/Core/functors/AssignmentFunctors.h:24:102:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid*[01;32m[K __builtin_memcpy[m[K(void*, const void*, long unsigned int)[m[K’ specified size between 18446744073709551601 and 18446744073709551615 exceeds maximum object size 9223372036854775807 [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wstringop-overflow=-Wstringop-overflow=]8;;[m[K]
+[28.096s]    24 |   EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE void assignCoeff(DstScalar& a, const SrcScalar& b) const { [01;35m[Ka = b[m[K; }
+[28.096s]       |                                                                                                    [01;35m[K~~^~~[m[K
+[28.407s] [ 70%] [32m[1mLinking CXX executable industrial_calibration_kinematic_calibration[0m
+[28.491s] [ 71%] [32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/modified_circle_grid_target_finder.cpp.o[0m
+[28.504s] [ 71%] Built target industrial_calibration_pnp
+[28.514s] [ 73%] [32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/target_finder.cpp.o[0m
+[28.559s] [ 73%] Built target industrial_calibration_kinematic_calibration
+[28.571s] [ 74%] [32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/camera_calibration_data_manager_widget.cpp.o[0m
+[29.204s] [ 76%] [32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/extrinsic_hand_eye_calibration_widget.cpp.o[0m
+[29.940s] [ 77%] [32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/camera_intrinsic_calibration_widget.cpp.o[0m
+[30.076s] [ 79%] [32m[1mLinking CXX executable industrial_calibration_camera_intrinsic[0m
+[30.621s] [ 79%] Built target industrial_calibration_camera_intrinsic
+[30.630s] [ 80%] [32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/industrial_calibration_gui_autogen/3YJK5W5UP7/qrc_resources.cpp.o[0m
+[31.165s] [ 82%] [32m[1mLinking CXX executable industrial_calibration_extrinsic_hand_eye[0m
+[31.697s] [ 82%] Built target industrial_calibration_extrinsic_hand_eye
+[35.799s] [ 83%] [32m[1mLinking CXX shared library libindustrial_calibration_gui.so[0m
+[36.137s] [ 85%] Built target industrial_calibration_gui
+[36.158s] [ 85%] Built target industrial_calibration_camera_intrinsic_calibration_app_autogen_timestamp_deps
+[36.161s] [ 85%] Built target industrial_calibration_extrinsic_hand_eye_calibration_app_autogen_timestamp_deps
+[36.179s] [ 86%] [34m[1mAutomatic MOC and UIC for target industrial_calibration_camera_intrinsic_calibration_app[0m
+[36.182s] [ 88%] [34m[1mAutomatic MOC and UIC for target industrial_calibration_extrinsic_hand_eye_calibration_app[0m
+[36.208s] [ 88%] Built target industrial_calibration_camera_intrinsic_calibration_app_autogen
+[36.209s] [ 88%] Built target industrial_calibration_extrinsic_hand_eye_calibration_app_autogen
+[36.234s] [ 89%] [32mBuilding CXX object gui/CMakeFiles/industrial_calibration_camera_intrinsic_calibration_app.dir/src/app/camera_intrinsic_calibration_app.cpp.o[0m
+[36.234s] [ 91%] [32mBuilding CXX object gui/CMakeFiles/industrial_calibration_extrinsic_hand_eye_calibration_app.dir/industrial_calibration_extrinsic_hand_eye_calibration_app_autogen/mocs_compilation.cpp.o[0m
+[36.234s] [ 92%] [32mBuilding CXX object gui/CMakeFiles/industrial_calibration_camera_intrinsic_calibration_app.dir/industrial_calibration_camera_intrinsic_calibration_app_autogen/mocs_compilation.cpp.o[0m
+[36.241s] [ 94%] [32mBuilding CXX object gui/CMakeFiles/industrial_calibration_extrinsic_hand_eye_calibration_app.dir/src/app/extrinsic_hand_eye_calibration_app.cpp.o[0m
+[38.005s] [ 95%] [32m[1mLinking CXX executable industrial_calibration_camera_intrinsic_calibration_app[0m
+[38.022s] [ 97%] [32m[1mLinking CXX executable industrial_calibration_extrinsic_hand_eye_calibration_app[0m
+[38.564s] [ 98%] Built target industrial_calibration_camera_intrinsic_calibration_app
+[38.597s] [100%] Built target industrial_calibration_extrinsic_hand_eye_calibration_app
+[38.609s] Invoked command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration' returned '0': CMAKE_PREFIX_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig /usr/bin/cmake --build /home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration -- -j8 -l8
+[38.610s] Invoking command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration': CMAKE_PREFIX_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig /usr/bin/cmake --install /home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration
+[38.617s] -- Install configuration: "Release"
+[38.617s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/package.xml
+[38.617s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/industrial_calibration-config.cmake
+[38.617s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/industrial_calibration-config-version.cmake
+[38.618s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/ament_index/resource_index/packages/industrial_calibration
+[38.618s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/hook/ament_prefix_path.dsv
+[38.618s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/hook/ros_package_path.dsv
+[38.618s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/hook/python_path.dsv
+[38.618s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include
+[38.618s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration
+[38.619s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/core
+[38.619s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/core/exceptions.h
+[38.619s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/core/camera_intrinsics.h
+[38.619s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/core/target_finder.h
+[38.619s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/core/pose_6d.h
+[38.620s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/core/utils.h
+[38.620s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/core/serialization.h
+[38.620s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/core/dh_chain.h
+[38.620s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/core/types.h
+[38.620s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/libindustrial_calibration_core.so
+[38.620s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/core-targets.cmake
+[38.621s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/core-targets-release.cmake
+[38.621s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/core-config.cmake
+[38.621s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include
+[38.621s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration
+[38.621s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations
+[38.621s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/extrinsic_hand_eye.h
+[38.622s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/covariance_analysis.h
+[38.622s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/dh_chain_kinematic_calibration.h
+[38.622s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/maximum_likelihood.h
+[38.622s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/camera_intrinsic_cost.h
+[38.622s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/pnp.h
+[38.622s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/covariance_types.h
+[38.622s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/extrinsic_hand_eye_cost.h
+[38.623s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/multi_camera_pnp_cost.h
+[38.623s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/dh_chain_kinematic_calibration_cost.h
+[38.623s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/camera_intrinsic.h
+[38.623s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/ceres_math_utilities.h
+[38.623s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/extrinsic_multi_static_camera.h
+[38.624s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/local_parameterization.h
+[38.624s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/extrinsic_multi_static_camera_cost.h
+[38.624s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/pnp_cost.h
+[38.624s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/optimizations/multi_camera_pnp.h
+[38.624s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/libindustrial_calibration_optimizations.so
+[38.624s] -- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/libindustrial_calibration_optimizations.so" to ""
+[38.624s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/optimizations-targets.cmake
+[38.624s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/optimizations-targets-release.cmake
+[38.625s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/optimizations-config.cmake
+[38.625s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include
+[38.625s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration
+[38.625s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/analysis
+[38.625s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/analysis/camera_intrinsic_calibration_analysis.h
+[38.625s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/analysis/projection.h
+[38.625s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/analysis/statistics.h
+[38.625s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/analysis/extrinsic_hand_eye_calibration_analysis.h
+[38.625s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/analysis/noise_qualification.h
+[38.625s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/analysis/homography_analysis.h
+[38.625s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/libindustrial_calibration_analysis.so
+[38.625s] -- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/libindustrial_calibration_analysis.so" to ""
+[38.625s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/analysis-targets.cmake
+[38.625s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/analysis-targets-release.cmake
+[38.625s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/analysis-config.cmake
+[38.625s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include
+[38.625s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration
+[38.625s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/target_finders
+[38.625s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/target_finders/opencv
+[38.625s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/target_finders/opencv/charuco_grid_target_finder.h
+[38.626s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/target_finders/opencv/target_finder.h
+[38.626s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/target_finders/opencv/modified_circle_grid_target_finder.h
+[38.626s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/target_finders/opencv/circle_detector.h
+[38.626s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/target_finders/opencv/aruco_grid_target_finder.h
+[38.626s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/target_finders/opencv/utils.h
+[38.626s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/modified_circle_grid_target_generator.py
+[38.626s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/libindustrial_calibration_target_finders_opencv.so
+[38.626s] -- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/libindustrial_calibration_target_finders_opencv.so" to ""
+[38.626s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/libindustrial_calibration_plugins_opencv.so
+[38.626s] -- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/libindustrial_calibration_plugins_opencv.so" to ""
+[38.626s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/target_finders_opencv-targets.cmake
+[38.626s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/target_finders_opencv-targets-release.cmake
+[38.626s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/target_finders_opencv-config.cmake
+[38.626s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include
+[38.626s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration
+[38.626s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui
+[38.626s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui/camera_intrinsic_calibration_widget.h
+[38.626s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui/charuco_grid_target_finder.h
+[38.626s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui/camera_intrinsics.h
+[38.626s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui/target_finder.h
+[38.627s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui/extrinsic_hand_eye_calibration_widget.h
+[38.627s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui/modified_circle_grid_target_finder.h
+[38.627s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui/aruco_grid_target_finder.h
+[38.627s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui/aspect_ratio_pixmap_label.h
+[38.627s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui/configurable_widget.h
+[38.627s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui/camera_calibration_data_manager_widget.h
+[38.627s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/include/industrial_calibration/gui/transform_guess.h
+[38.627s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/libindustrial_calibration_gui.so
+[38.628s] -- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/libindustrial_calibration_gui.so" to ""
+[38.629s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_extrinsic_hand_eye_calibration_app
+[38.629s] -- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_extrinsic_hand_eye_calibration_app" to ""
+[38.630s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_camera_intrinsic_calibration_app
+[38.630s] -- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_camera_intrinsic_calibration_app" to ""
+[38.630s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/gui-targets.cmake
+[38.630s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/gui-targets-release.cmake
+[38.631s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/gui-config.cmake
+[38.631s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_extrinsic_hand_eye_calibration_app
+[38.631s] -- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_extrinsic_hand_eye_calibration_app" to ""
+[38.632s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_camera_intrinsic_calibration_app
+[38.632s] -- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_camera_intrinsic_calibration_app" to ""
+[38.633s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data
+[38.633s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10
+[38.633s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses
+[38.633s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/8.yaml
+[38.633s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/5.yaml
+[38.633s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/3.yaml
+[38.633s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/0.yaml
+[38.634s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/12.yaml
+[38.634s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/11.yaml
+[38.634s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/13.yaml
+[38.634s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/10.yaml
+[38.634s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/7.yaml
+[38.634s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/9.yaml
+[38.635s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/4.yaml
+[38.635s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/2.yaml
+[38.635s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/6.yaml
+[38.635s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/14.yaml
+[38.635s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/poses/1.yaml
+[38.635s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images
+[38.635s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/14.png
+[38.635s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/7.png
+[38.635s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/13.png
+[38.636s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/12.png
+[38.636s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/11.png
+[38.636s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/2.png
+[38.636s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/4.png
+[38.636s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/10.png
+[38.636s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/6.png
+[38.636s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/9.png
+[38.636s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/1.png
+[38.636s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/5.png
+[38.637s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/0.png
+[38.637s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/8.png
+[38.637s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/images/3.png
+[38.637s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_10x10/cal_data.yaml
+[38.637s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco
+[38.637s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses
+[38.637s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/8.yaml
+[38.637s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/5.yaml
+[38.637s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/3.yaml
+[38.638s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/0.yaml
+[38.638s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/12.yaml
+[38.638s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/11.yaml
+[38.638s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/13.yaml
+[38.638s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/10.yaml
+[38.638s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/7.yaml
+[38.638s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/9.yaml
+[38.638s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/4.yaml
+[38.638s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/15.yaml
+[38.639s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/2.yaml
+[38.639s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/6.yaml
+[38.639s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/14.yaml
+[38.639s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/poses/1.yaml
+[38.639s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images
+[38.639s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/14.png
+[38.639s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/7.png
+[38.639s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/13.png
+[38.639s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/12.png
+[38.639s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/15.png
+[38.640s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/11.png
+[38.640s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/2.png
+[38.640s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/4.png
+[38.640s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/10.png
+[38.640s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/6.png
+[38.640s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/9.png
+[38.640s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/1.png
+[38.640s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/5.png
+[38.640s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/0.png
+[38.641s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/8.png
+[38.641s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/images/3.png
+[38.641s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/test_set_charuco/cal_data.yaml
+[38.641s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/kinematic_calibration
+[38.641s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/kinematic_calibration/pose_initial_guesses.yaml
+[38.641s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/kinematic_calibration/measurements.yaml
+[38.641s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/noise_qualification
+[38.641s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/noise_qualification/images
+[38.641s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/noise_qualification/images/0.png
+[38.642s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/share/industrial_calibration/data/noise_qualification/cal_data.yaml
+[38.642s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_camera_intrinsic
+[38.642s] -- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_camera_intrinsic" to ""
+[38.642s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_extrinsic_hand_eye
+[38.642s] -- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_extrinsic_hand_eye" to ""
+[38.642s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_kinematic_calibration
+[38.642s] -- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_kinematic_calibration" to ""
+[38.642s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_noise_qualification_2d
+[38.642s] -- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_noise_qualification_2d" to ""
+[38.642s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_pnp
+[38.643s] -- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/bin/industrial_calibration_pnp" to ""
+[38.643s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/examples-targets.cmake
+[38.643s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/examples-targets-release.cmake
+[38.643s] -- Up-to-date: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/cmake/industrial_calibration/examples-config.cmake
+[38.643s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_camera_intrinsic
+[38.644s] -- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_camera_intrinsic" to ""
+[38.644s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_extrinsic_hand_eye
+[38.644s] -- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_extrinsic_hand_eye" to ""
+[38.644s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_kinematic_calibration
+[38.644s] -- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_kinematic_calibration" to ""
+[38.644s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_noise_qualification_2d
+[38.645s] -- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_noise_qualification_2d" to ""
+[38.645s] -- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_pnp
+[38.645s] -- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration/lib/industrial_calibration/industrial_calibration_pnp" to ""
+[38.645s] Invoked command in '/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration' returned '0': CMAKE_PREFIX_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig /usr/bin/cmake --install /home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration

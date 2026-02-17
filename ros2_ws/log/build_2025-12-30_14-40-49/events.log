@@ -1,0 +1,802 @@
+[0.000000] (-) TimerEvent: {}
+[0.000313] (ros_industrial_cmake_boilerplate) JobQueued: {'identifier': 'ros_industrial_cmake_boilerplate', 'dependencies': OrderedDict()}
+[0.000336] (boost_plugin_loader) JobQueued: {'identifier': 'boost_plugin_loader', 'dependencies': OrderedDict({'ros_industrial_cmake_boilerplate': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate'})}
+[0.000354] (industrial_calibration) JobQueued: {'identifier': 'industrial_calibration', 'dependencies': OrderedDict({'ros_industrial_cmake_boilerplate': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate', 'boost_plugin_loader': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader'})}
+[0.000367] (industrial_calibration_ros) JobQueued: {'identifier': 'industrial_calibration_ros', 'dependencies': OrderedDict({'ros_industrial_cmake_boilerplate': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate', 'boost_plugin_loader': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader', 'industrial_calibration': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration'})}
+[0.000381] (ros_industrial_cmake_boilerplate) JobStarted: {'identifier': 'ros_industrial_cmake_boilerplate'}
+[0.006014] (ros_industrial_cmake_boilerplate) JobProgress: {'identifier': 'ros_industrial_cmake_boilerplate', 'progress': 'cmake'}
+[0.006731] (ros_industrial_cmake_boilerplate) Command: {'cmd': ['/usr/bin/cmake', '/home/tetripick/UR10_Pick_ws/ros2_ws/src/ros_industrial_cmake_boilerplate', '-DCMAKE_INSTALL_PREFIX=/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate'], 'cwd': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'tetripick', 'XDG_SESSION_TYPE': 'x11', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'HOME': '/home/tetripick', 'OLDPWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '3018', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1001/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'LOGNAME': 'tetripick', '_': '/usr/bin/colcon', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1001.slice/user@1001.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'tetripick', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'WINDOWPATH': '2', 'PATH': '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/tetrisort-UR10E:@/tmp/.ICE-unix/2949,unix/tetrisort-UR10E:/tmp/.ICE-unix/2949', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/af13336b_e86b_4980_a99b_e921a0be9264', 'XDG_RUNTIME_DIR': '/run/user/1001', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1001/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.144', 'SSH_AUTH_SOCK': '/run/user/1001/keyring/ssh', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1001/gnupg/S.gpg-agent:0:1', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600'}), 'shell': False}
+[0.064517] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.3.0\n'}
+[0.099557] (-) TimerEvent: {}
+[0.116496] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[0.130016] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.199676] (-) TimerEvent: {}
+[0.238313] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.245464] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.245714] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.245923] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.254441] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.299800] (-) TimerEvent: {}
+[0.350541] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.357606] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.357847] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.358070] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.359562] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- No package config template file found, creating default one\n'}
+[0.360540] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Configuring done (0.3s)\n'}
+[0.361131] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[0.361783] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Build files have been written to: /home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate\n'}
+[0.364569] (ros_industrial_cmake_boilerplate) CommandEnded: {'returncode': 0}
+[0.365070] (ros_industrial_cmake_boilerplate) JobProgress: {'identifier': 'ros_industrial_cmake_boilerplate', 'progress': 'build'}
+[0.365892] (ros_industrial_cmake_boilerplate) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate', '--', '-j8', '-l8'], 'cwd': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'tetripick', 'XDG_SESSION_TYPE': 'x11', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'HOME': '/home/tetripick', 'OLDPWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '3018', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1001/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'LOGNAME': 'tetripick', '_': '/usr/bin/colcon', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1001.slice/user@1001.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'tetripick', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'WINDOWPATH': '2', 'PATH': '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/tetrisort-UR10E:@/tmp/.ICE-unix/2949,unix/tetrisort-UR10E:/tmp/.ICE-unix/2949', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/af13336b_e86b_4980_a99b_e921a0be9264', 'XDG_RUNTIME_DIR': '/run/user/1001', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1001/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.144', 'SSH_AUTH_SOCK': '/run/user/1001/keyring/ssh', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1001/gnupg/S.gpg-agent:0:1', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600'}), 'shell': False}
+[0.399915] (-) TimerEvent: {}
+[0.403469] (ros_industrial_cmake_boilerplate) CommandEnded: {'returncode': 0}
+[0.404025] (ros_industrial_cmake_boilerplate) JobProgress: {'identifier': 'ros_industrial_cmake_boilerplate', 'progress': 'install'}
+[0.416726] (ros_industrial_cmake_boilerplate) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate'], 'cwd': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'tetripick', 'XDG_SESSION_TYPE': 'x11', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'HOME': '/home/tetripick', 'OLDPWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '3018', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1001/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'LOGNAME': 'tetripick', '_': '/usr/bin/colcon', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1001.slice/user@1001.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'tetripick', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'WINDOWPATH': '2', 'PATH': '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/tetrisort-UR10E:@/tmp/.ICE-unix/2949,unix/tetrisort-UR10E:/tmp/.ICE-unix/2949', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/af13336b_e86b_4980_a99b_e921a0be9264', 'XDG_RUNTIME_DIR': '/run/user/1001', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1001/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.144', 'SSH_AUTH_SOCK': '/run/user/1001/keyring/ssh', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1001/gnupg/S.gpg-agent:0:1', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/ros_industrial_cmake_boilerplate', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600'}), 'shell': False}
+[0.426343] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.426721] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/create_debian_changelog.py\n'}
+[0.427010] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/share/ros_industrial_cmake_boilerplate/package.xml\n'}
+[0.427194] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/clang_tidy_tools.cmake\n'}
+[0.427396] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/cmake_tools.cmake\n'}
+[0.427568] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/code_coverage.cmake\n'}
+[0.427733] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/cpack_tools.cmake\n'}
+[0.427880] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/cppcheck_tools.cmake\n'}
+[0.428031] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/extract_package_metadata.cmake\n'}
+[0.428223] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/iwyu_tools.cmake\n'}
+[0.428416] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/sanitizers.cmake\n'}
+[0.428593] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/ros_industrial_cmake_boilerplate-config.cmake\n'}
+[0.428743] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/ros_industrial_cmake_boilerplate-config-version.cmake\n'}
+[0.428875] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/share/ament_index/resource_index/packages/ros_industrial_cmake_boilerplate\n'}
+[0.429000] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/share/ros_industrial_cmake_boilerplate/hook/ament_prefix_path.dsv\n'}
+[0.429126] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/share/ros_industrial_cmake_boilerplate/hook/ros_package_path.dsv\n'}
+[0.429251] (ros_industrial_cmake_boilerplate) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/share/ros_industrial_cmake_boilerplate/hook/python_path.dsv\n'}
+[0.430747] (ros_industrial_cmake_boilerplate) CommandEnded: {'returncode': 0}
+[0.447475] (ros_industrial_cmake_boilerplate) JobEnded: {'identifier': 'ros_industrial_cmake_boilerplate', 'rc': 0}
+[0.448275] (boost_plugin_loader) JobStarted: {'identifier': 'boost_plugin_loader'}
+[0.450922] (boost_plugin_loader) JobProgress: {'identifier': 'boost_plugin_loader', 'progress': 'cmake'}
+[0.451649] (boost_plugin_loader) Command: {'cmd': ['/usr/bin/cmake', '/home/tetripick/UR10_Pick_ws/ros2_ws/src/boost_plugin_loader', '-DCMAKE_INSTALL_PREFIX=/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader'], 'cwd': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'tetripick', 'XDG_SESSION_TYPE': 'x11', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'HOME': '/home/tetripick', 'OLDPWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '3018', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1001/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'LOGNAME': 'tetripick', '_': '/usr/bin/colcon', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1001.slice/user@1001.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'PKG_CONFIG_PATH': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig', 'USERNAME': 'tetripick', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'WINDOWPATH': '2', 'PATH': '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/tetrisort-UR10E:@/tmp/.ICE-unix/2949,unix/tetrisort-UR10E:/tmp/.ICE-unix/2949', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/af13336b_e86b_4980_a99b_e921a0be9264', 'XDG_RUNTIME_DIR': '/run/user/1001', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1001/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.144', 'SSH_AUTH_SOCK': '/run/user/1001/keyring/ssh', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1001/gnupg/S.gpg-agent:0:1', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate'}), 'shell': False}
+[0.460612] (boost_plugin_loader) StdoutLine: {'line': b'-- clang-tidy not found!\n'}
+[0.462253] (boost_plugin_loader) StdoutLine: {'line': b'-- cppcheck found: /usr/bin/cppcheck\n'}
+[0.462685] (boost_plugin_loader) StdoutLine: {'line': b'-- include-what-you-use not found!\n'}
+[0.500054] (-) TimerEvent: {}
+[0.519272] (boost_plugin_loader) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[0.538180] (boost_plugin_loader) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.600168] (-) TimerEvent: {}
+[0.648995] (boost_plugin_loader) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.660540] (boost_plugin_loader) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.660827] (boost_plugin_loader) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.661066] (boost_plugin_loader) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.666581] (boost_plugin_loader) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: filesystem \n'}
+[0.668233] (boost_plugin_loader) StdoutLine: {'line': b'-- No package config template file found, creating default one\n'}
+[0.669316] (boost_plugin_loader) StdoutLine: {'line': b'-- Configuring done (0.2s)\n'}
+[0.675450] (boost_plugin_loader) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[0.677260] (boost_plugin_loader) StdoutLine: {'line': b'-- Build files have been written to: /home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader\n'}
+[0.680029] (boost_plugin_loader) CommandEnded: {'returncode': 0}
+[0.680616] (boost_plugin_loader) JobProgress: {'identifier': 'boost_plugin_loader', 'progress': 'build'}
+[0.680917] (boost_plugin_loader) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader', '--', '-j8', '-l8'], 'cwd': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'tetripick', 'XDG_SESSION_TYPE': 'x11', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'HOME': '/home/tetripick', 'OLDPWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '3018', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1001/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'LOGNAME': 'tetripick', '_': '/usr/bin/colcon', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1001.slice/user@1001.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'PKG_CONFIG_PATH': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig', 'USERNAME': 'tetripick', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'WINDOWPATH': '2', 'PATH': '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/tetrisort-UR10E:@/tmp/.ICE-unix/2949,unix/tetrisort-UR10E:/tmp/.ICE-unix/2949', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/af13336b_e86b_4980_a99b_e921a0be9264', 'XDG_RUNTIME_DIR': '/run/user/1001', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1001/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.144', 'SSH_AUTH_SOCK': '/run/user/1001/keyring/ssh', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1001/gnupg/S.gpg-agent:0:1', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate'}), 'shell': False}
+[0.700362] (-) TimerEvent: {}
+[0.735765] (boost_plugin_loader) StdoutLine: {'line': b'[  9%] \x1b[32mBuilding CXX object CMakeFiles/boost_plugin_loader.dir/src/utils.cpp.o\x1b[0m\n'}
+[0.800456] (-) TimerEvent: {}
+[0.900710] (-) TimerEvent: {}
+[1.001021] (-) TimerEvent: {}
+[1.101343] (-) TimerEvent: {}
+[1.201555] (-) TimerEvent: {}
+[1.301783] (-) TimerEvent: {}
+[1.402017] (-) TimerEvent: {}
+[1.502326] (-) TimerEvent: {}
+[1.602537] (-) TimerEvent: {}
+[1.702762] (-) TimerEvent: {}
+[1.803058] (-) TimerEvent: {}
+[1.892481] (boost_plugin_loader) StdoutLine: {'line': b'[ 18%] \x1b[32m\x1b[1mLinking CXX shared library libboost_plugin_loader.so\x1b[0m\n'}
+[1.903263] (-) TimerEvent: {}
+[1.957877] (boost_plugin_loader) StdoutLine: {'line': b'[ 18%] Built target boost_plugin_loader\n'}
+[1.980158] (boost_plugin_loader) StdoutLine: {'line': b'[ 27%] \x1b[32mBuilding CXX object examples/CMakeFiles/boost_plugin_loader_example_plugin.dir/plugin.cpp.o\x1b[0m\n'}
+[2.003392] (-) TimerEvent: {}
+[2.103640] (-) TimerEvent: {}
+[2.203926] (-) TimerEvent: {}
+[2.304237] (-) TimerEvent: {}
+[2.404473] (-) TimerEvent: {}
+[2.504690] (-) TimerEvent: {}
+[2.605037] (-) TimerEvent: {}
+[2.705360] (-) TimerEvent: {}
+[2.805620] (-) TimerEvent: {}
+[2.848277] (boost_plugin_loader) StdoutLine: {'line': b'[ 36%] \x1b[32m\x1b[1mLinking CXX shared library libboost_plugin_loader_example_plugin.so\x1b[0m\n'}
+[2.905769] (-) TimerEvent: {}
+[2.920903] (boost_plugin_loader) StdoutLine: {'line': b'[ 36%] Built target boost_plugin_loader_example_plugin\n'}
+[2.941884] (boost_plugin_loader) StdoutLine: {'line': b'[ 45%] \x1b[32mBuilding CXX object examples/CMakeFiles/boost_plugin_loader_example_plugin_impl.dir/printer/hello_world_printer.cpp.o\x1b[0m\n'}
+[2.942688] (boost_plugin_loader) StdoutLine: {'line': b'[ 54%] \x1b[32mBuilding CXX object examples/CMakeFiles/boost_plugin_loader_example_plugin_impl.dir/printer/console_printer.cpp.o\x1b[0m\n'}
+[2.944689] (boost_plugin_loader) StdoutLine: {'line': b'[ 63%] \x1b[32mBuilding CXX object examples/CMakeFiles/boost_plugin_loader_example_plugin_impl.dir/shape/triangle.cpp.o\x1b[0m\n'}
+[2.945418] (boost_plugin_loader) StdoutLine: {'line': b'[ 72%] \x1b[32mBuilding CXX object examples/CMakeFiles/boost_plugin_loader_example_plugin_impl.dir/shape/square.cpp.o\x1b[0m\n'}
+[2.947060] (boost_plugin_loader) StdoutLine: {'line': b'[ 81%] \x1b[32mBuilding CXX object examples/CMakeFiles/boost_plugin_loader_example.dir/example.cpp.o\x1b[0m\n'}
+[3.005883] (-) TimerEvent: {}
+[3.106151] (-) TimerEvent: {}
+[3.206483] (-) TimerEvent: {}
+[3.306775] (-) TimerEvent: {}
+[3.407100] (-) TimerEvent: {}
+[3.507400] (-) TimerEvent: {}
+[3.607671] (-) TimerEvent: {}
+[3.707973] (-) TimerEvent: {}
+[3.763844] (boost_plugin_loader) StdoutLine: {'line': b'[ 90%] \x1b[32m\x1b[1mLinking CXX shared library libboost_plugin_loader_example_plugin_impl.so\x1b[0m\n'}
+[3.808100] (-) TimerEvent: {}
+[3.828210] (boost_plugin_loader) StdoutLine: {'line': b'[ 90%] Built target boost_plugin_loader_example_plugin_impl\n'}
+[3.891394] (boost_plugin_loader) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable boost_plugin_loader_example\x1b[0m\n'}
+[3.908241] (-) TimerEvent: {}
+[3.963092] (boost_plugin_loader) StdoutLine: {'line': b'[100%] Built target boost_plugin_loader_example\n'}
+[3.975894] (boost_plugin_loader) CommandEnded: {'returncode': 0}
+[3.976715] (boost_plugin_loader) JobProgress: {'identifier': 'boost_plugin_loader', 'progress': 'install'}
+[3.976883] (boost_plugin_loader) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader'], 'cwd': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'tetripick', 'XDG_SESSION_TYPE': 'x11', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'HOME': '/home/tetripick', 'OLDPWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '3018', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1001/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'LOGNAME': 'tetripick', '_': '/usr/bin/colcon', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1001.slice/user@1001.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'PKG_CONFIG_PATH': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig', 'USERNAME': 'tetripick', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'WINDOWPATH': '2', 'PATH': '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/tetrisort-UR10E:@/tmp/.ICE-unix/2949,unix/tetrisort-UR10E:/tmp/.ICE-unix/2949', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/af13336b_e86b_4980_a99b_e921a0be9264', 'XDG_RUNTIME_DIR': '/run/user/1001', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1001/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.144', 'SSH_AUTH_SOCK': '/run/user/1001/keyring/ssh', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1001/gnupg/S.gpg-agent:0:1', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/boost_plugin_loader', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate'}), 'shell': False}
+[3.986981] (boost_plugin_loader) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[3.987303] (boost_plugin_loader) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/include/boost_plugin_loader\n'}
+[3.987497] (boost_plugin_loader) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/include/boost_plugin_loader/plugin_loader.h\n'}
+[3.987658] (boost_plugin_loader) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/include/boost_plugin_loader/fwd.h\n'}
+[3.987794] (boost_plugin_loader) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/include/boost_plugin_loader/utils.h\n'}
+[3.987946] (boost_plugin_loader) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/include/boost_plugin_loader/macros.h\n'}
+[3.988071] (boost_plugin_loader) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/include/boost_plugin_loader/plugin_loader.hpp\n'}
+[3.988197] (boost_plugin_loader) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/boost_plugin_loader/package.xml\n'}
+[3.988356] (boost_plugin_loader) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/libboost_plugin_loader.so\n'}
+[3.988510] (boost_plugin_loader) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/cmake/boost_plugin_loader/boost_plugin_loader-targets.cmake\n'}
+[3.988738] (boost_plugin_loader) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/cmake/boost_plugin_loader/boost_plugin_loader-targets-noconfig.cmake\n'}
+[3.988897] (boost_plugin_loader) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/cmake/boost_plugin_loader/boost_plugin_loader-config.cmake\n'}
+[3.989066] (boost_plugin_loader) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/cmake/boost_plugin_loader/boost_plugin_loader-config-version.cmake\n'}
+[3.989220] (boost_plugin_loader) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/ament_index/resource_index/packages/boost_plugin_loader\n'}
+[3.989361] (boost_plugin_loader) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/boost_plugin_loader/hook/ament_prefix_path.dsv\n'}
+[3.989485] (boost_plugin_loader) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/boost_plugin_loader/hook/ros_package_path.dsv\n'}
+[3.989641] (boost_plugin_loader) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/share/boost_plugin_loader/hook/python_path.dsv\n'}
+[3.989782] (boost_plugin_loader) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/libboost_plugin_loader_example_plugin.so\n'}
+[3.990036] (boost_plugin_loader) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/libboost_plugin_loader_example_plugin.so" to ""\n'}
+[3.990246] (boost_plugin_loader) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/libboost_plugin_loader_example_plugin_impl.so\n'}
+[3.990492] (boost_plugin_loader) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/libboost_plugin_loader_example_plugin_impl.so" to ""\n'}
+[3.990626] (boost_plugin_loader) StdoutLine: {'line': b'-- Installing: /home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/boost_plugin_loader/boost_plugin_loader_example\n'}
+[3.991224] (boost_plugin_loader) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/boost_plugin_loader/boost_plugin_loader_example" to ""\n'}
+[3.992672] (boost_plugin_loader) CommandEnded: {'returncode': 0}
+[4.000169] (boost_plugin_loader) JobEnded: {'identifier': 'boost_plugin_loader', 'rc': 0}
+[4.001262] (industrial_calibration) JobStarted: {'identifier': 'industrial_calibration'}
+[4.004279] (industrial_calibration) JobProgress: {'identifier': 'industrial_calibration', 'progress': 'cmake'}
+[4.004734] (industrial_calibration) Command: {'cmd': ['/usr/bin/cmake', '/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration', '-DCMAKE_INSTALL_PREFIX=/home/tetripick/UR10_Pick_ws/ros2_ws/install/industrial_calibration'], 'cwd': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'tetripick', 'XDG_SESSION_TYPE': 'x11', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib', 'HOME': '/home/tetripick', 'OLDPWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '3018', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1001/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'LOGNAME': 'tetripick', '_': '/usr/bin/colcon', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1001.slice/user@1001.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'PKG_CONFIG_PATH': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig', 'USERNAME': 'tetripick', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'WINDOWPATH': '2', 'PATH': '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/tetrisort-UR10E:@/tmp/.ICE-unix/2949,unix/tetrisort-UR10E:/tmp/.ICE-unix/2949', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/af13336b_e86b_4980_a99b_e921a0be9264', 'XDG_RUNTIME_DIR': '/run/user/1001', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1001/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.144', 'SSH_AUTH_SOCK': '/run/user/1001/keyring/ssh', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1001/gnupg/S.gpg-agent:0:1', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate'}), 'shell': False}
+[4.008335] (-) TimerEvent: {}
+[4.011548] (industrial_calibration) StdoutLine: {'line': b'-- clang-tidy not found!\n'}
+[4.013962] (industrial_calibration) StdoutLine: {'line': b'-- cppcheck found: /usr/bin/cppcheck\n'}
+[4.014196] (industrial_calibration) StdoutLine: {'line': b'-- include-what-you-use not found!\n'}
+[4.073506] (industrial_calibration) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[4.091635] (industrial_calibration) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[4.108420] (-) TimerEvent: {}
+[4.208783] (-) TimerEvent: {}
+[4.217913] (industrial_calibration) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[4.236019] (industrial_calibration) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[4.236264] (industrial_calibration) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[4.237066] (industrial_calibration) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[4.244794] (industrial_calibration) StderrLine: {'line': b'\x1b[33mCMake Warning at /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/clang_tidy_tools.cmake:115 (message):\n'}
+[4.244907] (industrial_calibration) StderrLine: {'line': b'  Using target_clang_tidy but clang tidy executable was not found!\n'}
+[4.244957] (industrial_calibration) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[4.245000] (industrial_calibration) StderrLine: {'line': b'  core/CMakeLists.txt:22 (target_clang_tidy)\n'}
+[4.245048] (industrial_calibration) StderrLine: {'line': b'\n'}
+[4.245091] (industrial_calibration) StderrLine: {'line': b'\x1b[0m\n'}
+[4.245174] (industrial_calibration) StdoutLine: {'line': b'-- No package config template file found, creating default one\n'}
+[4.308925] (-) TimerEvent: {}
+[4.352847] (industrial_calibration) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[4.409114] (-) TimerEvent: {}
+[4.460721] (industrial_calibration) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[4.462049] (industrial_calibration) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[4.509251] (-) TimerEvent: {}
+[4.609592] (-) TimerEvent: {}
+[4.709885] (-) TimerEvent: {}
+[4.810351] (-) TimerEvent: {}
+[4.836087] (industrial_calibration) StdoutLine: {'line': b'-- Found AMD headers in: /usr/include/suitesparse\n'}
+[4.836947] (industrial_calibration) StdoutLine: {'line': b'-- Found AMD library: /usr/lib/x86_64-linux-gnu/libamd.so\n'}
+[4.837093] (industrial_calibration) StdoutLine: {'line': b'-- Found CAMD headers in: /usr/include/suitesparse\n'}
+[4.837795] (industrial_calibration) StdoutLine: {'line': b'-- Found CAMD library: /usr/lib/x86_64-linux-gnu/libcamd.so\n'}
+[4.837972] (industrial_calibration) StdoutLine: {'line': b'-- Found CCOLAMD headers in: /usr/include/suitesparse\n'}
+[4.838571] (industrial_calibration) StdoutLine: {'line': b'-- Found CCOLAMD library: /usr/lib/x86_64-linux-gnu/libccolamd.so\n'}
+[4.838787] (industrial_calibration) StdoutLine: {'line': b'-- Found CHOLMOD headers in: /usr/include/suitesparse\n'}
+[4.839355] (industrial_calibration) StdoutLine: {'line': b'-- Found CHOLMOD library: /usr/lib/x86_64-linux-gnu/libcholmod.so\n'}
+[4.839595] (industrial_calibration) StdoutLine: {'line': b'-- Found COLAMD headers in: /usr/include/suitesparse\n'}
+[4.840139] (industrial_calibration) StdoutLine: {'line': b'-- Found COLAMD library: /usr/lib/x86_64-linux-gnu/libcolamd.so\n'}
+[4.840289] (industrial_calibration) StdoutLine: {'line': b'-- Found SPQR headers in: /usr/include/suitesparse\n'}
+[4.840883] (industrial_calibration) StdoutLine: {'line': b'-- Found SPQR library: /usr/lib/x86_64-linux-gnu/libspqr.so\n'}
+[4.841057] (industrial_calibration) StdoutLine: {'line': b'-- Found Config headers in: /usr/include/suitesparse\n'}
+[4.841668] (industrial_calibration) StdoutLine: {'line': b'-- Found Config library: /usr/lib/x86_64-linux-gnu/libsuitesparseconfig.so\n'}
+[4.842482] (industrial_calibration) StdoutLine: {'line': b'-- Found Intel Thread Building Blocks (TBB) library (2021.11 / ) include location: . Assuming SuiteSparseQR was compiled with TBB.\n'}
+[4.842552] (industrial_calibration) StdoutLine: {'line': b'-- Looking for shm_open in rt\n'}
+[4.910490] (-) TimerEvent: {}
+[4.925730] (industrial_calibration) StdoutLine: {'line': b'-- Looking for shm_open in rt - found\n'}
+[4.925881] (industrial_calibration) StdoutLine: {'line': b'-- Adding librt to SuiteSparse_config libraries (required on Linux & Unix [not OSX] if SuiteSparse is compiled with timing).\n'}
+[4.931826] (industrial_calibration) StdoutLine: {'line': b'-- Could NOT find METIS (missing: METIS_INCLUDE_DIR METIS_LIBRARY) \n'}
+[4.932716] (industrial_calibration) StdoutLine: {'line': b'-- Found SuiteSparse: /usr/include/suitesparse (found suitable version "7.6.1", minimum required is "7.6.1") found components: AMD CAMD CCOLAMD CHOLMOD COLAMD SPQR Config \n'}
+[4.934344] (industrial_calibration) StdoutLine: {'line': b'-- Found required Ceres dependency: Eigen version 3.4.0 in /usr/share/eigen3/cmake\n'}
+[4.937790] (industrial_calibration) StdoutLine: {'line': b'-- Found required Ceres dependency: glog\n'}
+[4.938166] (industrial_calibration) StdoutLine: {'line': b'-- Found required Ceres dependency: gflags\n'}
+[4.938436] (industrial_calibration) StdoutLine: {'line': b'-- Found Ceres version: 2.2.0 installed in: /usr with components: [EigenSparse, SparseLinearAlgebraLibrary, LAPACK, SuiteSparse, SchurSpecializations]\n'}
+[4.938793] (industrial_calibration) StderrLine: {'line': b'\x1b[33mCMake Warning at /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/clang_tidy_tools.cmake:115 (message):\n'}
+[4.938921] (industrial_calibration) StderrLine: {'line': b'  Using target_clang_tidy but clang tidy executable was not found!\n'}
+[4.939022] (industrial_calibration) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[4.939143] (industrial_calibration) StderrLine: {'line': b'  optimizations/CMakeLists.txt:20 (target_clang_tidy)\n'}
+[4.939243] (industrial_calibration) StderrLine: {'line': b'\n'}
+[4.939355] (industrial_calibration) StderrLine: {'line': b'\x1b[0m\n'}
+[4.939456] (industrial_calibration) StdoutLine: {'line': b'-- No package config template file found, creating default one\n'}
+[4.940206] (industrial_calibration) StderrLine: {'line': b'\x1b[33mCMake Warning at /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/clang_tidy_tools.cmake:115 (message):\n'}
+[4.940318] (industrial_calibration) StderrLine: {'line': b'  Using target_clang_tidy but clang tidy executable was not found!\n'}
+[4.940433] (industrial_calibration) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[4.940527] (industrial_calibration) StderrLine: {'line': b'  analysis/CMakeLists.txt:13 (target_clang_tidy)\n'}
+[4.940620] (industrial_calibration) StderrLine: {'line': b'\n'}
+[4.940712] (industrial_calibration) StderrLine: {'line': b'\x1b[0m\n'}
+[4.940803] (industrial_calibration) StdoutLine: {'line': b'-- No package config template file found, creating default one\n'}
+[4.941186] (industrial_calibration) StderrLine: {'line': b'\x1b[0mBuilding OpenCV target finders\x1b[0m\n'}
+[4.947239] (industrial_calibration) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: filesystem \n'}
+[4.953322] (industrial_calibration) StdoutLine: {'line': b'-- Found OpenCV: /usr (found version "4.6.0") \n'}
+[4.953600] (industrial_calibration) StderrLine: {'line': b'\x1b[33mCMake Warning at /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/clang_tidy_tools.cmake:115 (message):\n'}
+[4.953760] (industrial_calibration) StderrLine: {'line': b'  Using target_clang_tidy but clang tidy executable was not found!\n'}
+[4.953877] (industrial_calibration) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[4.954154] (industrial_calibration) StderrLine: {'line': b'  target_finders/opencv/CMakeLists.txt:28 (target_clang_tidy)\n'}
+[4.954271] (industrial_calibration) StderrLine: {'line': b'\n'}
+[4.954398] (industrial_calibration) StderrLine: {'line': b'\x1b[0m\n'}
+[4.954506] (industrial_calibration) StderrLine: {'line': b'\x1b[33mCMake Warning at /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/clang_tidy_tools.cmake:115 (message):\n'}
+[4.954627] (industrial_calibration) StderrLine: {'line': b'  Using target_clang_tidy but clang tidy executable was not found!\n'}
+[4.954765] (industrial_calibration) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[4.954860] (industrial_calibration) StderrLine: {'line': b'  target_finders/opencv/CMakeLists.txt:46 (target_clang_tidy)\n'}
+[4.954962] (industrial_calibration) StderrLine: {'line': b'\n'}
+[4.955062] (industrial_calibration) StderrLine: {'line': b'\x1b[0m\n'}
+[4.955162] (industrial_calibration) StdoutLine: {'line': b'-- No package config template file found, creating default one\n'}
+[4.955269] (industrial_calibration) StderrLine: {'line': b'\x1b[0mBuilding GUI\x1b[0m\n'}
+[4.966791] (industrial_calibration) StdoutLine: {'line': b'-- No package config template file found, creating default one\n'}
+[4.967382] (industrial_calibration) StderrLine: {'line': b'\x1b[0mBuilding examples\x1b[0m\n'}
+[4.973496] (industrial_calibration) StdoutLine: {'line': b'-- No package config template file found, creating default one\n'}
+[4.974128] (industrial_calibration) StdoutLine: {'line': b'-- No package config template file found, creating default one\n'}
+[4.975272] (industrial_calibration) StdoutLine: {'line': b'-- Configuring done (1.0s)\n'}
+[5.010593] (-) TimerEvent: {}
+[5.029845] (industrial_calibration) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[5.037708] (industrial_calibration) StdoutLine: {'line': b'-- Build files have been written to: /home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration\n'}
+[5.043848] (industrial_calibration) CommandEnded: {'returncode': 0}
+[5.044725] (industrial_calibration) JobProgress: {'identifier': 'industrial_calibration', 'progress': 'build'}
+[5.044758] (industrial_calibration) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration', '--', '-j8', '-l8'], 'cwd': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'tetripick', 'XDG_SESSION_TYPE': 'x11', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib', 'HOME': '/home/tetripick', 'OLDPWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '3018', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1001/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'LOGNAME': 'tetripick', '_': '/usr/bin/colcon', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1001.slice/user@1001.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'PKG_CONFIG_PATH': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader/lib/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/x86_64-linux-gnu/pkgconfig:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/pkgconfig', 'USERNAME': 'tetripick', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'WINDOWPATH': '2', 'PATH': '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/tetrisort-UR10E:@/tmp/.ICE-unix/2949,unix/tetrisort-UR10E:/tmp/.ICE-unix/2949', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/af13336b_e86b_4980_a99b_e921a0be9264', 'XDG_RUNTIME_DIR': '/run/user/1001', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1001/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.144', 'SSH_AUTH_SOCK': '/run/user/1001/keyring/ssh', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1001/gnupg/S.gpg-agent:0:1', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/tetripick/UR10_Pick_ws/ros2_ws/install/boost_plugin_loader:/home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate'}), 'shell': False}
+[5.089832] (industrial_calibration) StdoutLine: {'line': b'[  1%] \x1b[32mBuilding CXX object core/CMakeFiles/industrial_calibration_core.dir/src/dh_chain.cpp.o\x1b[0m\n'}
+[5.090236] (industrial_calibration) StdoutLine: {'line': b'[  2%] \x1b[32mBuilding CXX object core/CMakeFiles/industrial_calibration_core.dir/src/utils.cpp.o\x1b[0m\n'}
+[5.091595] (industrial_calibration) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding CXX object core/CMakeFiles/industrial_calibration_core.dir/src/camera_intrinsics.cpp.o\x1b[0m\n'}
+[5.092333] (industrial_calibration) StdoutLine: {'line': b'[  5%] \x1b[32mBuilding CXX object core/CMakeFiles/industrial_calibration_core.dir/src/types.cpp.o\x1b[0m\n'}
+[5.110729] (-) TimerEvent: {}
+[5.211070] (-) TimerEvent: {}
+[5.311337] (-) TimerEvent: {}
+[5.411629] (-) TimerEvent: {}
+[5.511947] (-) TimerEvent: {}
+[5.612222] (-) TimerEvent: {}
+[5.712509] (-) TimerEvent: {}
+[5.812785] (-) TimerEvent: {}
+[5.913058] (-) TimerEvent: {}
+[6.013448] (-) TimerEvent: {}
+[6.113722] (-) TimerEvent: {}
+[6.214031] (-) TimerEvent: {}
+[6.314302] (-) TimerEvent: {}
+[6.414617] (-) TimerEvent: {}
+[6.514884] (-) TimerEvent: {}
+[6.615203] (-) TimerEvent: {}
+[6.715484] (-) TimerEvent: {}
+[6.815751] (-) TimerEvent: {}
+[6.916052] (-) TimerEvent: {}
+[7.016355] (-) TimerEvent: {}
+[7.116617] (-) TimerEvent: {}
+[7.216872] (-) TimerEvent: {}
+[7.317130] (-) TimerEvent: {}
+[7.417355] (-) TimerEvent: {}
+[7.517632] (-) TimerEvent: {}
+[7.617903] (-) TimerEvent: {}
+[7.718249] (-) TimerEvent: {}
+[7.818523] (-) TimerEvent: {}
+[7.918792] (-) TimerEvent: {}
+[8.019088] (-) TimerEvent: {}
+[8.119355] (-) TimerEvent: {}
+[8.219640] (-) TimerEvent: {}
+[8.319903] (-) TimerEvent: {}
+[8.420286] (-) TimerEvent: {}
+[8.520567] (-) TimerEvent: {}
+[8.620816] (-) TimerEvent: {}
+[8.721076] (-) TimerEvent: {}
+[8.821388] (-) TimerEvent: {}
+[8.921665] (-) TimerEvent: {}
+[9.022025] (-) TimerEvent: {}
+[9.122397] (-) TimerEvent: {}
+[9.222708] (-) TimerEvent: {}
+[9.322991] (-) TimerEvent: {}
+[9.423319] (-) TimerEvent: {}
+[9.487943] (industrial_calibration) StdoutLine: {'line': b'[  7%] \x1b[32m\x1b[1mLinking CXX shared library libindustrial_calibration_core.so\x1b[0m\n'}
+[9.523419] (-) TimerEvent: {}
+[9.623697] (-) TimerEvent: {}
+[9.628320] (industrial_calibration) StdoutLine: {'line': b'[  7%] Built target industrial_calibration_core\n'}
+[9.651846] (industrial_calibration) StdoutLine: {'line': b'[  8%] \x1b[32mBuilding CXX object optimizations/CMakeFiles/industrial_calibration_optimizations.dir/src/covariance_analysis.cpp.o\x1b[0m\n'}
+[9.652212] (industrial_calibration) StdoutLine: {'line': b'[ 10%] \x1b[32mBuilding CXX object optimizations/CMakeFiles/industrial_calibration_optimizations.dir/src/covariance_types.cpp.o\x1b[0m\n'}
+[9.653721] (industrial_calibration) StdoutLine: {'line': b'[ 13%] \x1b[32mBuilding CXX object optimizations/CMakeFiles/industrial_calibration_optimizations.dir/src/pnp.cpp.o\x1b[0m\n'}
+[9.654006] (industrial_calibration) StdoutLine: {'line': b'[ 13%] \x1b[32mBuilding CXX object optimizations/CMakeFiles/industrial_calibration_optimizations.dir/src/camera_intrinsic.cpp.o\x1b[0m\n'}
+[9.654251] (industrial_calibration) StdoutLine: {'line': b'[ 16%] \x1b[32mBuilding CXX object target_finders/opencv/CMakeFiles/industrial_calibration_target_finders_opencv.dir/src/utils.cpp.o\x1b[0m\n'}
+[9.654542] (industrial_calibration) StdoutLine: {'line': b'[ 17%] \x1b[32mBuilding CXX object optimizations/CMakeFiles/industrial_calibration_optimizations.dir/src/extrinsic_multi_static_camera.cpp.o\x1b[0m\n'}
+[9.654907] (industrial_calibration) StdoutLine: {'line': b'[ 17%] \x1b[32mBuilding CXX object optimizations/CMakeFiles/industrial_calibration_optimizations.dir/src/dh_chain_kinematic_calibration.cpp.o\x1b[0m\n'}
+[9.656184] (industrial_calibration) StdoutLine: {'line': b'[ 19%] \x1b[32mBuilding CXX object optimizations/CMakeFiles/industrial_calibration_optimizations.dir/src/extrinsic_hand_eye.cpp.o\x1b[0m\n'}
+[9.724359] (-) TimerEvent: {}
+[9.824652] (-) TimerEvent: {}
+[9.924948] (-) TimerEvent: {}
+[10.027520] (-) TimerEvent: {}
+[10.127839] (-) TimerEvent: {}
+[10.228174] (-) TimerEvent: {}
+[10.328569] (-) TimerEvent: {}
+[10.428897] (-) TimerEvent: {}
+[10.529241] (-) TimerEvent: {}
+[10.629586] (-) TimerEvent: {}
+[10.729901] (-) TimerEvent: {}
+[10.833334] (-) TimerEvent: {}
+[10.933668] (-) TimerEvent: {}
+[11.034007] (-) TimerEvent: {}
+[11.134351] (-) TimerEvent: {}
+[11.236366] (-) TimerEvent: {}
+[11.336678] (-) TimerEvent: {}
+[11.373461] (industrial_calibration) StdoutLine: {'line': b'[ 20%] \x1b[32mBuilding CXX object optimizations/CMakeFiles/industrial_calibration_optimizations.dir/src/multi_camera_pnp.cpp.o\x1b[0m\n'}
+[11.436787] (-) TimerEvent: {}
+[11.538065] (-) TimerEvent: {}
+[11.638370] (-) TimerEvent: {}
+[11.739667] (-) TimerEvent: {}
+[11.746618] (industrial_calibration) StdoutLine: {'line': b'[ 22%] \x1b[32mBuilding CXX object target_finders/opencv/CMakeFiles/industrial_calibration_target_finders_opencv.dir/src/circle_detector.cpp.o\x1b[0m\n'}
+[11.839781] (-) TimerEvent: {}
+[11.940103] (-) TimerEvent: {}
+[12.041367] (-) TimerEvent: {}
+[12.141677] (-) TimerEvent: {}
+[12.241996] (-) TimerEvent: {}
+[12.342309] (-) TimerEvent: {}
+[12.428336] (industrial_calibration) StdoutLine: {'line': b'[ 23%] \x1b[32mBuilding CXX object target_finders/opencv/CMakeFiles/industrial_calibration_target_finders_opencv.dir/src/target_finder.cpp.o\x1b[0m\n'}
+[12.443354] (-) TimerEvent: {}
+[12.543659] (-) TimerEvent: {}
+[12.643970] (-) TimerEvent: {}
+[12.744303] (-) TimerEvent: {}
+[12.845519] (-) TimerEvent: {}
+[12.945852] (-) TimerEvent: {}
+[13.048521] (-) TimerEvent: {}
+[13.148852] (-) TimerEvent: {}
+[13.249187] (-) TimerEvent: {}
+[13.349536] (-) TimerEvent: {}
+[13.449882] (-) TimerEvent: {}
+[13.550225] (-) TimerEvent: {}
+[13.652380] (-) TimerEvent: {}
+[13.753603] (-) TimerEvent: {}
+[13.854371] (-) TimerEvent: {}
+[13.954717] (-) TimerEvent: {}
+[14.068363] (-) TimerEvent: {}
+[14.168678] (-) TimerEvent: {}
+[14.268990] (-) TimerEvent: {}
+[14.369321] (-) TimerEvent: {}
+[14.462182] (industrial_calibration) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object target_finders/opencv/CMakeFiles/industrial_calibration_target_finders_opencv.dir/src/modified_circle_grid_target_finder.cpp.o\x1b[0m\n'}
+[14.469777] (-) TimerEvent: {}
+[14.571200] (-) TimerEvent: {}
+[14.674367] (-) TimerEvent: {}
+[14.774672] (-) TimerEvent: {}
+[14.874969] (-) TimerEvent: {}
+[14.975315] (-) TimerEvent: {}
+[15.076046] (-) TimerEvent: {}
+[15.176347] (-) TimerEvent: {}
+[15.276726] (-) TimerEvent: {}
+[15.350319] (industrial_calibration) StdoutLine: {'line': b'[ 26%] \x1b[32mBuilding CXX object target_finders/opencv/CMakeFiles/industrial_calibration_target_finders_opencv.dir/src/aruco_grid_target_finder.cpp.o\x1b[0m\n'}
+[15.377366] (-) TimerEvent: {}
+[15.477667] (-) TimerEvent: {}
+[15.577962] (-) TimerEvent: {}
+[15.678654] (-) TimerEvent: {}
+[15.779362] (-) TimerEvent: {}
+[15.879659] (-) TimerEvent: {}
+[15.965906] (industrial_calibration) StdoutLine: {'line': b'[ 28%] \x1b[32mBuilding CXX object target_finders/opencv/CMakeFiles/industrial_calibration_target_finders_opencv.dir/src/charuco_grid_target_finder.cpp.o\x1b[0m\n'}
+[15.979772] (-) TimerEvent: {}
+[16.080094] (-) TimerEvent: {}
+[16.180368] (-) TimerEvent: {}
+[16.280681] (-) TimerEvent: {}
+[16.381056] (-) TimerEvent: {}
+[16.481383] (-) TimerEvent: {}
+[16.581685] (-) TimerEvent: {}
+[16.681986] (-) TimerEvent: {}
+[16.782280] (-) TimerEvent: {}
+[16.882611] (-) TimerEvent: {}
+[16.982926] (-) TimerEvent: {}
+[17.083246] (-) TimerEvent: {}
+[17.183528] (-) TimerEvent: {}
+[17.283798] (-) TimerEvent: {}
+[17.384077] (-) TimerEvent: {}
+[17.484354] (-) TimerEvent: {}
+[17.584637] (-) TimerEvent: {}
+[17.684911] (-) TimerEvent: {}
+[17.785210] (-) TimerEvent: {}
+[17.885481] (-) TimerEvent: {}
+[17.985773] (-) TimerEvent: {}
+[18.086156] (-) TimerEvent: {}
+[18.186436] (-) TimerEvent: {}
+[18.286702] (-) TimerEvent: {}
+[18.387051] (-) TimerEvent: {}
+[18.487447] (-) TimerEvent: {}
+[18.587730] (-) TimerEvent: {}
+[18.687987] (-) TimerEvent: {}
+[18.788270] (-) TimerEvent: {}
+[18.888538] (-) TimerEvent: {}
+[18.927188] (industrial_calibration) StdoutLine: {'line': b'[ 29%] \x1b[32m\x1b[1mLinking CXX shared library libindustrial_calibration_target_finders_opencv.so\x1b[0m\n'}
+[18.988644] (-) TimerEvent: {}
+[19.072530] (industrial_calibration) StdoutLine: {'line': b'[ 29%] Built target industrial_calibration_target_finders_opencv\n'}
+[19.088747] (-) TimerEvent: {}
+[19.094048] (industrial_calibration) StdoutLine: {'line': b'[ 31%] \x1b[32mBuilding CXX object target_finders/opencv/CMakeFiles/industrial_calibration_plugins_opencv.dir/src/plugins.cpp.o\x1b[0m\n'}
+[19.188967] (-) TimerEvent: {}
+[19.289287] (-) TimerEvent: {}
+[19.389557] (-) TimerEvent: {}
+[19.489902] (-) TimerEvent: {}
+[19.590251] (-) TimerEvent: {}
+[19.690531] (-) TimerEvent: {}
+[19.790820] (-) TimerEvent: {}
+[19.891203] (-) TimerEvent: {}
+[19.991479] (-) TimerEvent: {}
+[20.091741] (-) TimerEvent: {}
+[20.096451] (industrial_calibration) StdoutLine: {'line': b'[ 32%] \x1b[32m\x1b[1mLinking CXX shared library libindustrial_calibration_optimizations.so\x1b[0m\n'}
+[20.191937] (-) TimerEvent: {}
+[20.278050] (industrial_calibration) StdoutLine: {'line': b'[ 34%] \x1b[32m\x1b[1mLinking CXX shared library libindustrial_calibration_plugins_opencv.so\x1b[0m\n'}
+[20.292071] (-) TimerEvent: {}
+[20.348871] (industrial_calibration) StdoutLine: {'line': b'[ 34%] Built target industrial_calibration_plugins_opencv\n'}
+[20.389072] (industrial_calibration) StdoutLine: {'line': b'[ 34%] Built target industrial_calibration_optimizations\n'}
+[20.392159] (-) TimerEvent: {}
+[20.410405] (industrial_calibration) StdoutLine: {'line': b'[ 35%] \x1b[32mBuilding CXX object analysis/CMakeFiles/industrial_calibration_analysis.dir/src/extrinsic_hand_eye_calibration_analysis.cpp.o\x1b[0m\n'}
+[20.410902] (industrial_calibration) StdoutLine: {'line': b'[ 37%] \x1b[32mBuilding CXX object analysis/CMakeFiles/industrial_calibration_analysis.dir/src/homography_analysis.cpp.o\x1b[0m\n'}
+[20.412505] (industrial_calibration) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding CXX object analysis/CMakeFiles/industrial_calibration_analysis.dir/src/noise_qualification.cpp.o\x1b[0m\n'}
+[20.413913] (industrial_calibration) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding CXX object analysis/CMakeFiles/industrial_calibration_analysis.dir/src/projection.cpp.o\x1b[0m\n'}
+[20.414399] (industrial_calibration) StdoutLine: {'line': b'[ 41%] \x1b[32mBuilding CXX object analysis/CMakeFiles/industrial_calibration_analysis.dir/src/statistics.cpp.o\x1b[0m\n'}
+[20.415217] (industrial_calibration) StdoutLine: {'line': b'[ 43%] \x1b[32mBuilding CXX object analysis/CMakeFiles/industrial_calibration_analysis.dir/src/camera_intrinsic_calibration_analysis.cpp.o\x1b[0m\n'}
+[20.492816] (-) TimerEvent: {}
+[20.593090] (-) TimerEvent: {}
+[20.693377] (-) TimerEvent: {}
+[20.794524] (-) TimerEvent: {}
+[20.894831] (-) TimerEvent: {}
+[20.995149] (-) TimerEvent: {}
+[21.095463] (-) TimerEvent: {}
+[21.196750] (-) TimerEvent: {}
+[21.297047] (-) TimerEvent: {}
+[21.397347] (-) TimerEvent: {}
+[21.497634] (-) TimerEvent: {}
+[21.598065] (-) TimerEvent: {}
+[21.699119] (-) TimerEvent: {}
+[21.799395] (-) TimerEvent: {}
+[21.899681] (-) TimerEvent: {}
+[22.000008] (-) TimerEvent: {}
+[22.100286] (-) TimerEvent: {}
+[22.200596] (-) TimerEvent: {}
+[22.300921] (-) TimerEvent: {}
+[22.401251] (-) TimerEvent: {}
+[22.501563] (-) TimerEvent: {}
+[22.601842] (-) TimerEvent: {}
+[22.702117] (-) TimerEvent: {}
+[22.802392] (-) TimerEvent: {}
+[22.902656] (-) TimerEvent: {}
+[23.002963] (-) TimerEvent: {}
+[23.103249] (-) TimerEvent: {}
+[23.203543] (-) TimerEvent: {}
+[23.303792] (-) TimerEvent: {}
+[23.404136] (-) TimerEvent: {}
+[23.504427] (-) TimerEvent: {}
+[23.567317] (industrial_calibration) StdoutLine: {'line': b'[ 44%] \x1b[32m\x1b[1mLinking CXX shared library libindustrial_calibration_analysis.so\x1b[0m\n'}
+[23.604539] (-) TimerEvent: {}
+[23.704857] (-) TimerEvent: {}
+[23.764180] (industrial_calibration) StdoutLine: {'line': b'[ 44%] Built target industrial_calibration_analysis\n'}
+[23.782641] (industrial_calibration) StdoutLine: {'line': b'[ 46%] \x1b[32mBuilding CXX object examples/CMakeFiles/industrial_calibration_extrinsic_hand_eye.dir/extrinsic_hand_eye.cpp.o\x1b[0m\n'}
+[23.784432] (industrial_calibration) StdoutLine: {'line': b'[ 47%] \x1b[32mBuilding CXX object examples/CMakeFiles/industrial_calibration_camera_intrinsic.dir/camera_intrinsic.cpp.o\x1b[0m\n'}
+[23.784880] (industrial_calibration) StdoutLine: {'line': b'[ 49%] \x1b[32mBuilding CXX object examples/CMakeFiles/industrial_calibration_kinematic_calibration.dir/kinematic_calibration.cpp.o\x1b[0m\n'}
+[23.787872] (industrial_calibration) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object examples/CMakeFiles/industrial_calibration_pnp.dir/pnp.cpp.o\x1b[0m\n'}
+[23.789115] (industrial_calibration) StdoutLine: {'line': b'[ 50%] Built target industrial_calibration_gui_autogen_timestamp_deps\n'}
+[23.791018] (industrial_calibration) StdoutLine: {'line': b'[ 52%] \x1b[32mBuilding CXX object examples/CMakeFiles/industrial_calibration_noise_qualification_2d.dir/noise_qualification_2d.cpp.o\x1b[0m\n'}
+[23.804955] (-) TimerEvent: {}
+[23.807406] (industrial_calibration) StdoutLine: {'line': b'[ 53%] \x1b[34m\x1b[1mAutomatic MOC and UIC for target industrial_calibration_gui\x1b[0m\n'}
+[23.905351] (-) TimerEvent: {}
+[24.005632] (-) TimerEvent: {}
+[24.106354] (-) TimerEvent: {}
+[24.206615] (-) TimerEvent: {}
+[24.306915] (-) TimerEvent: {}
+[24.407440] (-) TimerEvent: {}
+[24.508431] (-) TimerEvent: {}
+[24.608846] (-) TimerEvent: {}
+[24.710498] (-) TimerEvent: {}
+[24.811059] (-) TimerEvent: {}
+[24.914550] (-) TimerEvent: {}
+[25.014958] (-) TimerEvent: {}
+[25.091254] (industrial_calibration) StdoutLine: {'line': b'[ 53%] Built target industrial_calibration_gui_autogen\n'}
+[25.101660] (industrial_calibration) StdoutLine: {'line': b'[ 55%] \x1b[34m\x1b[1mAutomatic RCC for resources/resources.qrc\x1b[0m\n'}
+[25.115090] (-) TimerEvent: {}
+[25.144410] (industrial_calibration) StdoutLine: {'line': b'[ 56%] \x1b[32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/configurable_widget.cpp.o\x1b[0m\n'}
+[25.145173] (industrial_calibration) StdoutLine: {'line': b'[ 58%] \x1b[32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/aspect_ratio_pixmap_label.cpp.o\x1b[0m\n'}
+[25.155504] (industrial_calibration) StdoutLine: {'line': b'[ 59%] \x1b[32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/industrial_calibration_gui_autogen/mocs_compilation.cpp.o\x1b[0m\n'}
+[25.215172] (-) TimerEvent: {}
+[25.315473] (-) TimerEvent: {}
+[25.416333] (-) TimerEvent: {}
+[25.516605] (-) TimerEvent: {}
+[25.616878] (-) TimerEvent: {}
+[25.717728] (-) TimerEvent: {}
+[25.821117] (-) TimerEvent: {}
+[25.921369] (-) TimerEvent: {}
+[26.022609] (-) TimerEvent: {}
+[26.122897] (-) TimerEvent: {}
+[26.223178] (-) TimerEvent: {}
+[26.271556] (industrial_calibration) StdoutLine: {'line': b'[ 61%] \x1b[32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/camera_intrinsics.cpp.o\x1b[0m\n'}
+[26.323350] (-) TimerEvent: {}
+[26.426232] (-) TimerEvent: {}
+[26.527358] (-) TimerEvent: {}
+[26.627655] (-) TimerEvent: {}
+[26.727932] (-) TimerEvent: {}
+[26.738417] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/pnp.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kstd::tuple<industrial_calibration::PnPResult, Eigen::Transform<double, 3, 1, 0> >\x1b[01;32m\x1b[K run\x1b[m\x1b[K(const path&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[26.738735] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/pnp.cpp:74:33:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<std::__cxx11::basic_string<char> >::insert(const char [38])\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.738879] (industrial_calibration) StderrLine: {'line': b'   74 |   \x1b[01;31m\x1b[Kloader.search_libraries.insert(INDUSTRIAL_CALIBRATION_PLUGIN_LIBRARIES)\x1b[m\x1b[K;\n'}
+[26.739009] (industrial_calibration) StderrLine: {'line': b'      |   \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.741558] (industrial_calibration) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/13/vector:66\x1b[m\x1b[K,\n'}
+[26.741775] (industrial_calibration) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/core/include/industrial_calibration/core/types.h:3\x1b[m\x1b[K,\n'}
+[26.741897] (industrial_calibration) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/optimizations/include/industrial_calibration/optimizations/pnp.h:3\x1b[m\x1b[K,\n'}
+[26.742013] (industrial_calibration) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/pnp.cpp:1\x1b[m\x1b[K:\n'}
+[26.742129] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1482:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _InputIterator, class> std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::\x1b[01;32m\x1b[Kinsert\x1b[m\x1b[K(const_iterator, _InputIterator, _InputIterator) \x1b[35m\x1b[K[with <template-parameter-2-2> = _InputIterator; _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.742266] (industrial_calibration) StderrLine: {'line': b' 1482 |         \x1b[01;36m\x1b[Kinsert\x1b[m\x1b[K(const_iterator __position, _InputIterator __first,\n'}
+[26.742409] (industrial_calibration) StderrLine: {'line': b'      |         \x1b[01;36m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[26.742532] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1482:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[26.742649] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/pnp.cpp:74:33:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 3 arguments, 1 provided\n'}
+[26.742755] (industrial_calibration) StderrLine: {'line': b'   74 |   \x1b[01;36m\x1b[Kloader.search_libraries.insert(INDUSTRIAL_CALIBRATION_PLUGIN_LIBRARIES)\x1b[m\x1b[K;\n'}
+[26.742863] (industrial_calibration) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.742968] (industrial_calibration) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/13/vector:72\x1b[m\x1b[K:\n'}
+[26.743073] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/vector.tcc:133:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::\x1b[01;32m\x1b[Kinsert\x1b[m\x1b[K(const_iterator, const value_type&) \x1b[35m\x1b[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; value_type = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.743179] (industrial_calibration) StderrLine: {'line': b'  133 |     \x1b[01;36m\x1b[Kvector<_Tp, _Alloc>\x1b[m\x1b[K::\n'}
+[26.743276] (industrial_calibration) StderrLine: {'line': b'      |     \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.743392] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/vector.tcc:133:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 1 provided\n'}
+[26.743492] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1393:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::\x1b[01;32m\x1b[Kinsert\x1b[m\x1b[K(const_iterator, value_type&&) \x1b[35m\x1b[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; value_type = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.743594] (industrial_calibration) StderrLine: {'line': b' 1393 |       \x1b[01;36m\x1b[Kinsert\x1b[m\x1b[K(const_iterator __position, value_type&& __x)\n'}
+[26.743690] (industrial_calibration) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[26.743784] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1393:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 1 provided\n'}
+[26.743884] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1411:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::\x1b[01;32m\x1b[Kinsert\x1b[m\x1b[K(const_iterator, std::initializer_list<_Tp>) \x1b[35m\x1b[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.743996] (industrial_calibration) StderrLine: {'line': b' 1411 |       \x1b[01;36m\x1b[Kinsert\x1b[m\x1b[K(const_iterator __position, initializer_list<value_type> __l)\n'}
+[26.744096] (industrial_calibration) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[26.744199] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1411:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 1 provided\n'}
+[26.744318] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1437:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::\x1b[01;32m\x1b[Kinsert\x1b[m\x1b[K(const_iterator, size_type, const value_type&) \x1b[35m\x1b[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; size_type = long unsigned int; value_type = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.744452] (industrial_calibration) StderrLine: {'line': b' 1437 |       \x1b[01;36m\x1b[Kinsert\x1b[m\x1b[K(const_iterator __position, size_type __n, const value_type& __x)\n'}
+[26.744564] (industrial_calibration) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[26.744676] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1437:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 3 arguments, 1 provided\n'}
+[26.828372] (-) TimerEvent: {}
+[26.928711] (-) TimerEvent: {}
+[27.030485] (-) TimerEvent: {}
+[27.034127] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/noise_qualification_2d.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kindustrial_calibration::PnPNoiseStat\x1b[01;32m\x1b[K run\x1b[m\x1b[K(const path&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[27.034574] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/noise_qualification_2d.cpp:31:33:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<std::__cxx11::basic_string<char> >::insert(const char [38])\x1b[m\x1b[K\xe2\x80\x99\n'}
+[27.034729] (industrial_calibration) StderrLine: {'line': b'   31 |   \x1b[01;31m\x1b[Kloader.search_libraries.insert(INDUSTRIAL_CALIBRATION_PLUGIN_LIBRARIES)\x1b[m\x1b[K;\n'}
+[27.034866] (industrial_calibration) StderrLine: {'line': b'      |   \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[27.034979] (industrial_calibration) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/13/vector:66\x1b[m\x1b[K,\n'}
+[27.035107] (industrial_calibration) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/core/include/industrial_calibration/core/types.h:3\x1b[m\x1b[K,\n'}
+[27.035226] (industrial_calibration) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/analysis/include/industrial_calibration/analysis/noise_qualification.h:3\x1b[m\x1b[K,\n'}
+[27.035352] (industrial_calibration) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/noise_qualification_2d.cpp:1\x1b[m\x1b[K:\n'}
+[27.035472] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1482:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _InputIterator, class> std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::\x1b[01;32m\x1b[Kinsert\x1b[m\x1b[K(const_iterator, _InputIterator, _InputIterator) \x1b[35m\x1b[K[with <template-parameter-2-2> = _InputIterator; _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[27.035578] (industrial_calibration) StderrLine: {'line': b' 1482 |         \x1b[01;36m\x1b[Kinsert\x1b[m\x1b[K(const_iterator __position, _InputIterator __first,\n'}
+[27.035830] (industrial_calibration) StderrLine: {'line': b'      |         \x1b[01;36m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[27.035944] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1482:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[27.036047] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/noise_qualification_2d.cpp:31:33:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 3 arguments, 1 provided\n'}
+[27.036147] (industrial_calibration) StderrLine: {'line': b'   31 |   \x1b[01;36m\x1b[Kloader.search_libraries.insert(INDUSTRIAL_CALIBRATION_PLUGIN_LIBRARIES)\x1b[m\x1b[K;\n'}
+[27.036245] (industrial_calibration) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[27.036359] (industrial_calibration) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/13/vector:72\x1b[m\x1b[K:\n'}
+[27.036459] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/vector.tcc:133:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::\x1b[01;32m\x1b[Kinsert\x1b[m\x1b[K(const_iterator, const value_type&) \x1b[35m\x1b[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; value_type = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[27.036563] (industrial_calibration) StderrLine: {'line': b'  133 |     \x1b[01;36m\x1b[Kvector<_Tp, _Alloc>\x1b[m\x1b[K::\n'}
+[27.036656] (industrial_calibration) StderrLine: {'line': b'      |     \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[27.036752] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/vector.tcc:133:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 1 provided\n'}
+[27.036847] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1393:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::\x1b[01;32m\x1b[Kinsert\x1b[m\x1b[K(const_iterator, value_type&&) \x1b[35m\x1b[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; value_type = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[27.036946] (industrial_calibration) StderrLine: {'line': b' 1393 |       \x1b[01;36m\x1b[Kinsert\x1b[m\x1b[K(const_iterator __position, value_type&& __x)\n'}
+[27.037042] (industrial_calibration) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[27.037135] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1393:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 1 provided\n'}
+[27.037242] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1411:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::\x1b[01;32m\x1b[Kinsert\x1b[m\x1b[K(const_iterator, std::initializer_list<_Tp>) \x1b[35m\x1b[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[27.037363] (industrial_calibration) StderrLine: {'line': b' 1411 |       \x1b[01;36m\x1b[Kinsert\x1b[m\x1b[K(const_iterator __position, initializer_list<value_type> __l)\n'}
+[27.037463] (industrial_calibration) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[27.037557] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1411:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 1 provided\n'}
+[27.037651] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1437:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::\x1b[01;32m\x1b[Kinsert\x1b[m\x1b[K(const_iterator, size_type, const value_type&) \x1b[35m\x1b[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; size_type = long unsigned int; value_type = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[27.040691] (industrial_calibration) StderrLine: {'line': b' 1437 |       \x1b[01;36m\x1b[Kinsert\x1b[m\x1b[K(const_iterator __position, size_type __n, const value_type& __x)\n'}
+[27.040806] (industrial_calibration) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[27.040907] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1437:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 3 arguments, 1 provided\n'}
+[27.041062] (industrial_calibration) StdoutLine: {'line': b'[ 62%] \x1b[32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/transform_guess.cpp.o\x1b[0m\n'}
+[27.130591] (-) TimerEvent: {}
+[27.232521] (-) TimerEvent: {}
+[27.337369] (-) TimerEvent: {}
+[27.422194] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/camera_intrinsic.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kstd::pair<industrial_calibration::CameraIntrinsicResult, industrial_calibration::IntrinsicCalibrationAccuracyResult>\x1b[01;32m\x1b[K run\x1b[m\x1b[K(const path&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[27.422542] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/camera_intrinsic.cpp:96:33:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<std::__cxx11::basic_string<char> >::insert(const char [38])\x1b[m\x1b[K\xe2\x80\x99\n'}
+[27.422789] (industrial_calibration) StderrLine: {'line': b'   96 |   \x1b[01;31m\x1b[Kloader.search_libraries.insert(INDUSTRIAL_CALIBRATION_PLUGIN_LIBRARIES)\x1b[m\x1b[K;\n'}
+[27.423335] (industrial_calibration) StderrLine: {'line': b'      |   \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[27.423571] (industrial_calibration) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/13/vector:66\x1b[m\x1b[K,\n'}
+[27.423795] (industrial_calibration) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/13/functional:64\x1b[m\x1b[K,\n'}
+[27.423994] (industrial_calibration) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Core:85\x1b[m\x1b[K,\n'}
+[27.424191] (industrial_calibration) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Dense:1\x1b[m\x1b[K,\n'}
+[27.424397] (industrial_calibration) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/optimizations/include/industrial_calibration/optimizations/covariance_types.h:3\x1b[m\x1b[K,\n'}
+[27.424620] (industrial_calibration) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/optimizations/include/industrial_calibration/optimizations/camera_intrinsic.h:3\x1b[m\x1b[K,\n'}
+[27.424888] (industrial_calibration) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/camera_intrinsic.cpp:1\x1b[m\x1b[K:\n'}
+[27.425076] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1482:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _InputIterator, class> std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::\x1b[01;32m\x1b[Kinsert\x1b[m\x1b[K(const_iterator, _InputIterator, _InputIterator) \x1b[35m\x1b[K[with <template-parameter-2-2> = _InputIterator; _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[27.425193] (industrial_calibration) StderrLine: {'line': b' 1482 |         \x1b[01;36m\x1b[Kinsert\x1b[m\x1b[K(const_iterator __position, _InputIterator __first,\n'}
+[27.425305] (industrial_calibration) StderrLine: {'line': b'      |         \x1b[01;36m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[27.426032] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1482:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[27.426179] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/camera_intrinsic.cpp:96:33:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 3 arguments, 1 provided\n'}
+[27.426286] (industrial_calibration) StderrLine: {'line': b'   96 |   \x1b[01;36m\x1b[Kloader.search_libraries.insert(INDUSTRIAL_CALIBRATION_PLUGIN_LIBRARIES)\x1b[m\x1b[K;\n'}
+[27.426418] (industrial_calibration) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[27.426518] (industrial_calibration) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/13/vector:72\x1b[m\x1b[K:\n'}
+[27.426612] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/vector.tcc:133:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::\x1b[01;32m\x1b[Kinsert\x1b[m\x1b[K(const_iterator, const value_type&) \x1b[35m\x1b[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; value_type = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[27.426725] (industrial_calibration) StderrLine: {'line': b'  133 |     \x1b[01;36m\x1b[Kvector<_Tp, _Alloc>\x1b[m\x1b[K::\n'}
+[27.426823] (industrial_calibration) StderrLine: {'line': b'      |     \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[27.426916] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/vector.tcc:133:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 1 provided\n'}
+[27.429465] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1393:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::\x1b[01;32m\x1b[Kinsert\x1b[m\x1b[K(const_iterator, value_type&&) \x1b[35m\x1b[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; value_type = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[27.429701] (industrial_calibration) StderrLine: {'line': b' 1393 |       \x1b[01;36m\x1b[Kinsert\x1b[m\x1b[K(const_iterator __position, value_type&& __x)\n'}
+[27.429819] (industrial_calibration) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[27.429926] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1393:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 1 provided\n'}
+[27.430031] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1411:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::\x1b[01;32m\x1b[Kinsert\x1b[m\x1b[K(const_iterator, std::initializer_list<_Tp>) \x1b[35m\x1b[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[27.430138] (industrial_calibration) StderrLine: {'line': b' 1411 |       \x1b[01;36m\x1b[Kinsert\x1b[m\x1b[K(const_iterator __position, initializer_list<value_type> __l)\n'}
+[27.430238] (industrial_calibration) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[27.430357] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1411:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 1 provided\n'}
+[27.430469] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1437:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::\x1b[01;32m\x1b[Kinsert\x1b[m\x1b[K(const_iterator, size_type, const value_type&) \x1b[35m\x1b[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; size_type = long unsigned int; value_type = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[27.430603] (industrial_calibration) StderrLine: {'line': b' 1437 |       \x1b[01;36m\x1b[Kinsert\x1b[m\x1b[K(const_iterator __position, size_type __n, const value_type& __x)\n'}
+[27.430717] (industrial_calibration) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[27.430824] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1437:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 3 arguments, 1 provided\n'}
+[27.440366] (-) TimerEvent: {}
+[27.543368] (-) TimerEvent: {}
+[27.621991] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/extrinsic_hand_eye.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kstd::tuple<industrial_calibration::ExtrinsicHandEyeResult, industrial_calibration::ExtrinsicHandEyeAnalysisStats>\x1b[01;32m\x1b[K run\x1b[m\x1b[K(const path&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[27.622383] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/extrinsic_hand_eye.cpp:99:33:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<std::__cxx11::basic_string<char> >::insert(const char [38])\x1b[m\x1b[K\xe2\x80\x99\n'}
+[27.622568] (industrial_calibration) StderrLine: {'line': b'   99 |   \x1b[01;31m\x1b[Kloader.search_libraries.insert(INDUSTRIAL_CALIBRATION_PLUGIN_LIBRARIES)\x1b[m\x1b[K;\n'}
+[27.622712] (industrial_calibration) StderrLine: {'line': b'      |   \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[27.625898] (industrial_calibration) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/13/vector:66\x1b[m\x1b[K,\n'}
+[27.626041] (industrial_calibration) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/core/include/industrial_calibration/core/types.h:3\x1b[m\x1b[K,\n'}
+[27.626156] (industrial_calibration) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/optimizations/include/industrial_calibration/optimizations/extrinsic_hand_eye.h:19\x1b[m\x1b[K,\n'}
+[27.626265] (industrial_calibration) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/extrinsic_hand_eye.cpp:1\x1b[m\x1b[K:\n'}
+[27.626402] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1482:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _InputIterator, class> std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::\x1b[01;32m\x1b[Kinsert\x1b[m\x1b[K(const_iterator, _InputIterator, _InputIterator) \x1b[35m\x1b[K[with <template-parameter-2-2> = _InputIterator; _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[27.626543] (industrial_calibration) StderrLine: {'line': b' 1482 |         \x1b[01;36m\x1b[Kinsert\x1b[m\x1b[K(const_iterator __position, _InputIterator __first,\n'}
+[27.626649] (industrial_calibration) StderrLine: {'line': b'      |         \x1b[01;36m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[27.626751] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1482:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[27.626855] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/extrinsic_hand_eye.cpp:99:33:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 3 arguments, 1 provided\n'}
+[27.626960] (industrial_calibration) StderrLine: {'line': b'   99 |   \x1b[01;36m\x1b[Kloader.search_libraries.insert(INDUSTRIAL_CALIBRATION_PLUGIN_LIBRARIES)\x1b[m\x1b[K;\n'}
+[27.627060] (industrial_calibration) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[27.627158] (industrial_calibration) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/13/vector:72\x1b[m\x1b[K:\n'}
+[27.627256] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/vector.tcc:133:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::\x1b[01;32m\x1b[Kinsert\x1b[m\x1b[K(const_iterator, const value_type&) \x1b[35m\x1b[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; value_type = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[27.627401] (industrial_calibration) StderrLine: {'line': b'  133 |     \x1b[01;36m\x1b[Kvector<_Tp, _Alloc>\x1b[m\x1b[K::\n'}
+[27.627501] (industrial_calibration) StderrLine: {'line': b'      |     \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[27.627597] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/vector.tcc:133:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 1 provided\n'}
+[27.627693] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1393:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::\x1b[01;32m\x1b[Kinsert\x1b[m\x1b[K(const_iterator, value_type&&) \x1b[35m\x1b[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; value_type = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[27.627793] (industrial_calibration) StderrLine: {'line': b' 1393 |       \x1b[01;36m\x1b[Kinsert\x1b[m\x1b[K(const_iterator __position, value_type&& __x)\n'}
+[27.627891] (industrial_calibration) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[27.627985] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1393:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 1 provided\n'}
+[27.628081] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1411:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::\x1b[01;32m\x1b[Kinsert\x1b[m\x1b[K(const_iterator, std::initializer_list<_Tp>) \x1b[35m\x1b[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[27.628192] (industrial_calibration) StderrLine: {'line': b' 1411 |       \x1b[01;36m\x1b[Kinsert\x1b[m\x1b[K(const_iterator __position, initializer_list<value_type> __l)\n'}
+[27.628288] (industrial_calibration) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[27.628400] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1411:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 1 provided\n'}
+[27.628499] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1437:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::\x1b[01;32m\x1b[Kinsert\x1b[m\x1b[K(const_iterator, size_type, const value_type&) \x1b[35m\x1b[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; size_type = long unsigned int; value_type = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[27.628606] (industrial_calibration) StderrLine: {'line': b' 1437 |       \x1b[01;36m\x1b[Kinsert\x1b[m\x1b[K(const_iterator __position, size_type __n, const value_type& __x)\n'}
+[27.628701] (industrial_calibration) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[27.628802] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1437:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 3 arguments, 1 provided\n'}
+[27.645372] (-) TimerEvent: {}
+[27.745688] (-) TimerEvent: {}
+[27.846039] (-) TimerEvent: {}
+[27.946366] (-) TimerEvent: {}
+[28.046699] (-) TimerEvent: {}
+[28.062720] (industrial_calibration) StderrLine: {'line': b'gmake[2]: *** [examples/CMakeFiles/industrial_calibration_noise_qualification_2d.dir/build.make:76: examples/CMakeFiles/industrial_calibration_noise_qualification_2d.dir/noise_qualification_2d.cpp.o] Error 1\n'}
+[28.065533] (industrial_calibration) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:697: examples/CMakeFiles/industrial_calibration_noise_qualification_2d.dir/all] Error 2\n'}
+[28.065760] (industrial_calibration) StderrLine: {'line': b'gmake[1]: *** Waiting for unfinished jobs....\n'}
+[28.079405] (industrial_calibration) StdoutLine: {'line': b'[ 64%] \x1b[32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/charuco_grid_target_finder.cpp.o\x1b[0m\n'}
+[28.146815] (-) TimerEvent: {}
+[28.247139] (-) TimerEvent: {}
+[28.350293] (-) TimerEvent: {}
+[28.412543] (industrial_calibration) StdoutLine: {'line': b'[ 65%] \x1b[32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/aruco_grid_target_finder.cpp.o\x1b[0m\n'}
+[28.450367] (-) TimerEvent: {}
+[28.550683] (-) TimerEvent: {}
+[28.651003] (-) TimerEvent: {}
+[28.753526] (-) TimerEvent: {}
+[28.853852] (-) TimerEvent: {}
+[28.954203] (-) TimerEvent: {}
+[29.003533] (industrial_calibration) StderrLine: {'line': b'gmake[2]: *** [examples/CMakeFiles/industrial_calibration_pnp.dir/build.make:76: examples/CMakeFiles/industrial_calibration_pnp.dir/pnp.cpp.o] Error 1\n'}
+[29.003977] (industrial_calibration) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:726: examples/CMakeFiles/industrial_calibration_pnp.dir/all] Error 2\n'}
+[29.023895] (industrial_calibration) StdoutLine: {'line': b'[ 67%] \x1b[32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/modified_circle_grid_target_finder.cpp.o\x1b[0m\n'}
+[29.054331] (-) TimerEvent: {}
+[29.096051] (industrial_calibration) StderrLine: {'line': b'gmake[2]: *** [examples/CMakeFiles/industrial_calibration_camera_intrinsic.dir/build.make:76: examples/CMakeFiles/industrial_calibration_camera_intrinsic.dir/camera_intrinsic.cpp.o] Error 1\n'}
+[29.096505] (industrial_calibration) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:610: examples/CMakeFiles/industrial_calibration_camera_intrinsic.dir/all] Error 2\n'}
+[29.104461] (industrial_calibration) StdoutLine: {'line': b'[ 68%] \x1b[32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/target_finder.cpp.o\x1b[0m\n'}
+[29.154437] (-) TimerEvent: {}
+[29.254737] (-) TimerEvent: {}
+[29.355007] (-) TimerEvent: {}
+[29.455320] (-) TimerEvent: {}
+[29.479507] (industrial_calibration) StderrLine: {'line': b'gmake[2]: *** [examples/CMakeFiles/industrial_calibration_extrinsic_hand_eye.dir/build.make:76: examples/CMakeFiles/industrial_calibration_extrinsic_hand_eye.dir/extrinsic_hand_eye.cpp.o] Error 1\n'}
+[29.479755] (industrial_calibration) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:639: examples/CMakeFiles/industrial_calibration_extrinsic_hand_eye.dir/all] Error 2\n'}
+[29.494479] (industrial_calibration) StdoutLine: {'line': b'[ 70%] \x1b[32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/camera_calibration_data_manager_widget.cpp.o\x1b[0m\n'}
+[29.555425] (-) TimerEvent: {}
+[29.659885] (-) TimerEvent: {}
+[29.760164] (-) TimerEvent: {}
+[29.860458] (-) TimerEvent: {}
+[29.960763] (-) TimerEvent: {}
+[30.061730] (-) TimerEvent: {}
+[30.162656] (-) TimerEvent: {}
+[30.262941] (-) TimerEvent: {}
+[30.363244] (-) TimerEvent: {}
+[30.365615] (industrial_calibration) StdoutLine: {'line': b'[ 71%] \x1b[32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/extrinsic_hand_eye_calibration_widget.cpp.o\x1b[0m\n'}
+[30.463353] (-) TimerEvent: {}
+[30.565429] (-) TimerEvent: {}
+[30.665703] (-) TimerEvent: {}
+[30.766358] (-) TimerEvent: {}
+[30.868375] (industrial_calibration) StdoutLine: {'line': b'[ 73%] \x1b[32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/camera_intrinsic_calibration_widget.cpp.o\x1b[0m\n'}
+[30.868587] (-) TimerEvent: {}
+[30.969650] (-) TimerEvent: {}
+[31.072369] (-) TimerEvent: {}
+[31.176356] (-) TimerEvent: {}
+[31.276627] (-) TimerEvent: {}
+[31.376911] (-) TimerEvent: {}
+[31.477179] (-) TimerEvent: {}
+[31.524721] (industrial_calibration) StdoutLine: {'line': b'[ 74%] \x1b[32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/industrial_calibration_gui_autogen/3YJK5W5UP7/qrc_resources.cpp.o\x1b[0m\n'}
+[31.577314] (-) TimerEvent: {}
+[31.677641] (-) TimerEvent: {}
+[31.781510] (-) TimerEvent: {}
+[31.881817] (-) TimerEvent: {}
+[31.982144] (-) TimerEvent: {}
+[32.082472] (-) TimerEvent: {}
+[32.182788] (-) TimerEvent: {}
+[32.283091] (-) TimerEvent: {}
+[32.383369] (-) TimerEvent: {}
+[32.483670] (-) TimerEvent: {}
+[32.583977] (-) TimerEvent: {}
+[32.684326] (-) TimerEvent: {}
+[32.784631] (-) TimerEvent: {}
+[32.884914] (-) TimerEvent: {}
+[32.985235] (-) TimerEvent: {}
+[33.085550] (-) TimerEvent: {}
+[33.185858] (-) TimerEvent: {}
+[33.200752] (industrial_calibration) StdoutLine: {'line': b'[ 76%] \x1b[32m\x1b[1mLinking CXX executable industrial_calibration_kinematic_calibration\x1b[0m\n'}
+[33.263429] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/gui/src/camera_calibration_data_manager_widget.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[Kindustrial_calibration::CameraCalibrationDataManagerWidget::\x1b[01;32m\x1b[KCameraCalibrationDataManagerWidget\x1b[m\x1b[K(QWidget*)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[33.263882] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/gui/src/camera_calibration_data_manager_widget.cpp:102:34:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<std::__cxx11::basic_string<char> >::insert(const char [38])\x1b[m\x1b[K\xe2\x80\x99\n'}
+[33.263983] (industrial_calibration) StderrLine: {'line': b'  102 |   \x1b[01;31m\x1b[Kloader_.search_libraries.insert(INDUSTRIAL_CALIBRATION_PLUGIN_LIBRARIES)\x1b[m\x1b[K;\n'}
+[33.264057] (industrial_calibration) StderrLine: {'line': b'      |   \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[33.264126] (industrial_calibration) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/13/vector:66\x1b[m\x1b[K,\n'}
+[33.264182] (industrial_calibration) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/13/functional:64\x1b[m\x1b[K,\n'}
+[33.264245] (industrial_calibration) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/x86_64-linux-gnu/qt5/QtCore/qhashfunctions.h:48\x1b[m\x1b[K,\n'}
+[33.264394] (industrial_calibration) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/x86_64-linux-gnu/qt5/QtCore/qlist.h:47\x1b[m\x1b[K,\n'}
+[33.264476] (industrial_calibration) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/x86_64-linux-gnu/qt5/QtCore/qvariant.h:45\x1b[m\x1b[K,\n'}
+[33.264543] (industrial_calibration) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/x86_64-linux-gnu/qt5/QtCore/QVariant:1\x1b[m\x1b[K,\n'}
+[33.264605] (industrial_calibration) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration/gui/industrial_calibration_gui_autogen/include/ui_camera_calibration_data_manager_widget.h:12\x1b[m\x1b[K,\n'}
+[33.264669] (industrial_calibration) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/gui/src/camera_calibration_data_manager_widget.cpp:1\x1b[m\x1b[K:\n'}
+[33.264749] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1482:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _InputIterator, class> std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::\x1b[01;32m\x1b[Kinsert\x1b[m\x1b[K(const_iterator, _InputIterator, _InputIterator) \x1b[35m\x1b[K[with <template-parameter-2-2> = _InputIterator; _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[33.264823] (industrial_calibration) StderrLine: {'line': b' 1482 |         \x1b[01;36m\x1b[Kinsert\x1b[m\x1b[K(const_iterator __position, _InputIterator __first,\n'}
+[33.264889] (industrial_calibration) StderrLine: {'line': b'      |         \x1b[01;36m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[33.264955] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1482:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[33.265016] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/gui/src/camera_calibration_data_manager_widget.cpp:102:34:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 3 arguments, 1 provided\n'}
+[33.265078] (industrial_calibration) StderrLine: {'line': b'  102 |   \x1b[01;36m\x1b[Kloader_.search_libraries.insert(INDUSTRIAL_CALIBRATION_PLUGIN_LIBRARIES)\x1b[m\x1b[K;\n'}
+[33.265135] (industrial_calibration) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[33.265201] (industrial_calibration) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/13/vector:72\x1b[m\x1b[K:\n'}
+[33.265263] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/vector.tcc:133:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::\x1b[01;32m\x1b[Kinsert\x1b[m\x1b[K(const_iterator, const value_type&) \x1b[35m\x1b[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; value_type = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[33.265353] (industrial_calibration) StderrLine: {'line': b'  133 |     \x1b[01;36m\x1b[Kvector<_Tp, _Alloc>\x1b[m\x1b[K::\n'}
+[33.265419] (industrial_calibration) StderrLine: {'line': b'      |     \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[33.265484] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/vector.tcc:133:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 1 provided\n'}
+[33.265546] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1393:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::\x1b[01;32m\x1b[Kinsert\x1b[m\x1b[K(const_iterator, value_type&&) \x1b[35m\x1b[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; value_type = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[33.265623] (industrial_calibration) StderrLine: {'line': b' 1393 |       \x1b[01;36m\x1b[Kinsert\x1b[m\x1b[K(const_iterator __position, value_type&& __x)\n'}
+[33.265686] (industrial_calibration) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[33.265746] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1393:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 1 provided\n'}
+[33.265808] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1411:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::\x1b[01;32m\x1b[Kinsert\x1b[m\x1b[K(const_iterator, std::initializer_list<_Tp>) \x1b[35m\x1b[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[33.265876] (industrial_calibration) StderrLine: {'line': b' 1411 |       \x1b[01;36m\x1b[Kinsert\x1b[m\x1b[K(const_iterator __position, initializer_list<value_type> __l)\n'}
+[33.265934] (industrial_calibration) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[33.265992] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1411:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 1 provided\n'}
+[33.266051] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1437:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::\x1b[01;32m\x1b[Kinsert\x1b[m\x1b[K(const_iterator, size_type, const value_type&) \x1b[35m\x1b[K[with _Tp = std::__cxx11::basic_string<char>; _Alloc = std::allocator<std::__cxx11::basic_string<char> >; iterator = std::vector<std::__cxx11::basic_string<char> >::iterator; const_iterator = std::vector<std::__cxx11::basic_string<char> >::const_iterator; size_type = long unsigned int; value_type = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[33.266115] (industrial_calibration) StderrLine: {'line': b' 1437 |       \x1b[01;36m\x1b[Kinsert\x1b[m\x1b[K(const_iterator __position, size_type __n, const value_type& __x)\n'}
+[33.266175] (industrial_calibration) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[33.266234] (industrial_calibration) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/stl_vector.h:1437:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 3 arguments, 1 provided\n'}
+[33.285969] (-) TimerEvent: {}
+[33.386261] (-) TimerEvent: {}
+[33.410346] (industrial_calibration) StdoutLine: {'line': b'[ 76%] Built target industrial_calibration_kinematic_calibration\n'}
+[33.486388] (-) TimerEvent: {}
+[33.586653] (-) TimerEvent: {}
+[33.686959] (-) TimerEvent: {}
+[33.787224] (-) TimerEvent: {}
+[33.887500] (-) TimerEvent: {}
+[33.987773] (-) TimerEvent: {}
+[34.088056] (-) TimerEvent: {}
+[34.188374] (-) TimerEvent: {}
+[34.288656] (-) TimerEvent: {}
+[34.385592] (industrial_calibration) StderrLine: {'line': b'gmake[2]: *** [gui/CMakeFiles/industrial_calibration_gui.dir/build.make:219: gui/CMakeFiles/industrial_calibration_gui.dir/src/camera_calibration_data_manager_widget.cpp.o] Error 1\n'}
+[34.385787] (industrial_calibration) StderrLine: {'line': b'gmake[2]: *** Waiting for unfinished jobs....\n'}
+[34.388759] (-) TimerEvent: {}
+[34.489091] (-) TimerEvent: {}
+[34.589401] (-) TimerEvent: {}
+[34.689739] (-) TimerEvent: {}
+[34.790160] (-) TimerEvent: {}
+[34.890522] (-) TimerEvent: {}
+[34.990883] (-) TimerEvent: {}
+[35.091230] (-) TimerEvent: {}
+[35.191545] (-) TimerEvent: {}
+[35.291924] (-) TimerEvent: {}
+[35.392316] (-) TimerEvent: {}
+[35.492722] (-) TimerEvent: {}
+[35.593030] (-) TimerEvent: {}
+[35.693404] (-) TimerEvent: {}
+[35.793656] (-) TimerEvent: {}
+[35.894009] (-) TimerEvent: {}
+[35.994277] (-) TimerEvent: {}
+[36.094545] (-) TimerEvent: {}
+[36.194840] (-) TimerEvent: {}
+[36.216568] (industrial_calibration) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:360: gui/CMakeFiles/industrial_calibration_gui.dir/all] Error 2\n'}
+[36.216891] (industrial_calibration) StderrLine: {'line': b'gmake: *** [Makefile:136: all] Error 2\n'}
+[36.218330] (industrial_calibration) CommandEnded: {'returncode': 2}
+[36.222857] (industrial_calibration) JobEnded: {'identifier': 'industrial_calibration', 'rc': 2}
+[36.233248] (industrial_calibration_ros) JobSkipped: {'identifier': 'industrial_calibration_ros'}
+[36.233303] (-) EventReactorShutdown: {}

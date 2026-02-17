@@ -1,0 +1,51 @@
+[33mCMake Warning at /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/clang_tidy_tools.cmake:115 (message):
+  Using target_clang_tidy but clang tidy executable was not found!
+Call Stack (most recent call first):
+  core/CMakeLists.txt:22 (target_clang_tidy)
+
+[0m
+[33mCMake Warning at /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/clang_tidy_tools.cmake:115 (message):
+  Using target_clang_tidy but clang tidy executable was not found!
+Call Stack (most recent call first):
+  optimizations/CMakeLists.txt:20 (target_clang_tidy)
+
+[0m
+[33mCMake Warning at /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/clang_tidy_tools.cmake:115 (message):
+  Using target_clang_tidy but clang tidy executable was not found!
+Call Stack (most recent call first):
+  analysis/CMakeLists.txt:13 (target_clang_tidy)
+
+[0m
+[0mBuilding OpenCV target finders[0m
+[33mCMake Warning at /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/clang_tidy_tools.cmake:115 (message):
+  Using target_clang_tidy but clang tidy executable was not found!
+Call Stack (most recent call first):
+  target_finders/opencv/CMakeLists.txt:28 (target_clang_tidy)
+
+[0m
+[33mCMake Warning at /home/tetripick/UR10_Pick_ws/ros2_ws/install/ros_industrial_cmake_boilerplate/lib/cmake/ros_industrial_cmake_boilerplate/clang_tidy_tools.cmake:115 (message):
+  Using target_clang_tidy but clang tidy executable was not found!
+Call Stack (most recent call first):
+  target_finders/opencv/CMakeLists.txt:46 (target_clang_tidy)
+
+[0m
+[0mBuilding GUI[0m
+[0mBuilding examples[0m
+In file included from [01m[K/usr/include/eigen3/Eigen/Core:257[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Geometry:11[m[K,
+                 from [01m[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/analysis/include/industrial_calibration/analysis/statistics.h:3[m[K,
+                 from [01m[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/kinematic_calibration.cpp:2[m[K:
+In member function ‘[01m[Kvoid Eigen::internal::assign_op<DstScalar, SrcScalar>::[01;32m[KassignCoeff[m[K(DstScalar&, const SrcScalar&) const [35m[K[with DstScalar = bool; SrcScalar = bool][m[K[m[K’,
+    inlined from ‘[01m[Kvoid Eigen::internal::generic_dense_assignment_kernel<DstEvaluatorTypeT, SrcEvaluatorTypeT, Functor, Version>::[01;32m[KassignCoeff[m[K(Eigen::Index) [35m[K[with DstEvaluatorTypeT = Eigen::internal::evaluator<Eigen::Array<bool, -1, 4> >; SrcEvaluatorTypeT = Eigen::internal::evaluator<Eigen::Matrix<bool, -1, 4, 0, -1, 4> >; Functor = Eigen::internal::assign_op<bool, bool>; int Version = 0][m[K[m[K’ at [01m[K/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:660:26[m[K,
+    inlined from ‘[01m[Kstatic void Eigen::internal::unaligned_dense_assignment_loop<false>::[01;32m[Krun[m[K(Kernel&, Eigen::Index, Eigen::Index) [35m[K[with Kernel = Eigen::internal::generic_dense_assignment_kernel<Eigen::internal::evaluator<Eigen::Array<bool, -1, 4> >, Eigen::internal::evaluator<Eigen::Matrix<bool, -1, 4, 0, -1, 4> >, Eigen::internal::assign_op<bool, bool>, 0>][m[K[m[K’ at [01m[K/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:411:25[m[K,
+    inlined from ‘[01m[Kstatic void Eigen::internal::dense_assignment_loop<Kernel, 3, 0>::[01;32m[Krun[m[K(Kernel&) [35m[K[with Kernel = Eigen::internal::generic_dense_assignment_kernel<Eigen::internal::evaluator<Eigen::Array<bool, -1, 4> >, Eigen::internal::evaluator<Eigen::Matrix<bool, -1, 4, 0, -1, 4> >, Eigen::internal::assign_op<bool, bool>, 0>][m[K[m[K’ at [01m[K/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:439:43[m[K,
+    inlined from ‘[01m[Kvoid Eigen::internal::[01;32m[Kcall_dense_assignment_loop[m[K(DstXprType&, const SrcXprType&, const Functor&) [35m[K[with DstXprType = Eigen::Array<bool, -1, 4>; SrcXprType = Eigen::Matrix<bool, -1, 4, 0, -1, 4>; Functor = assign_op<bool, bool>][m[K[m[K’ at [01m[K/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:785:37[m[K,
+    inlined from ‘[01m[Kstatic void Eigen::internal::Assignment<DstXprType, SrcXprType, Functor, Eigen::internal::Dense2Dense, Weak>::[01;32m[Krun[m[K(DstXprType&, const SrcXprType&, const Functor&) [35m[K[with DstXprType = Eigen::Array<bool, -1, 4>; SrcXprType = Eigen::Matrix<bool, -1, 4, 0, -1, 4>; Functor = Eigen::internal::assign_op<bool, bool>; Weak = void][m[K[m[K’ at [01m[K/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:954:31[m[K,
+    inlined from ‘[01m[Kvoid Eigen::internal::[01;32m[Kcall_assignment_no_alias[m[K(Dst&, const Src&, const Func&) [35m[K[with Dst = Eigen::Array<bool, -1, 4>; Src = Eigen::Matrix<bool, -1, 4, 0, -1, 4>; Func = assign_op<bool, bool>][m[K[m[K’ at [01m[K/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:890:49[m[K,
+    inlined from ‘[01m[KDerived& Eigen::PlainObjectBase<Derived>::[01;32m[K_set_noalias[m[K(const Eigen::DenseBase<OtherDerived>&) [35m[K[with OtherDerived = Eigen::Matrix<bool, -1, 4, 0, -1, 4>; Derived = Eigen::Array<bool, -1, 4>][m[K[m[K’ at [01m[K/usr/include/eigen3/Eigen/src/Core/PlainObjectBase.h:797:41[m[K,
+    inlined from ‘[01m[KEigen::PlainObjectBase<Derived>::[01;32m[KPlainObjectBase[m[K(const Eigen::DenseBase<OtherDerived>&) [35m[K[with OtherDerived = Eigen::Matrix<bool, -1, 4, 0, -1, 4>; Derived = Eigen::Array<bool, -1, 4>][m[K[m[K’ at [01m[K/usr/include/eigen3/Eigen/src/Core/PlainObjectBase.h:594:19[m[K,
+    inlined from ‘[01m[KEigen::Array<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>::[01;32m[KArray[m[K(const Eigen::EigenBase<OtherDerived>&, typename Eigen::internal::enable_if<std::is_convertible<typename OtherDerived::Scalar, typename Eigen::internal::traits<Eigen::Array<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols> >::Scalar>::value, PrivateType>::type) [35m[K[with OtherDerived = Eigen::Matrix<bool, -1, 4, 0, -1, 4>; _Scalar = bool; int _Rows = -1; int _Cols = 4; int _Options = 0; int _MaxRows = -1; int _MaxCols = 4][m[K[m[K’ at [01m[K/usr/include/eigen3/Eigen/src/Core/Array.h:288:29[m[K,
+    inlined from ‘[01m[Kstd::tuple<industrial_calibration::KinematicCalibrationResult, Stats, Stats>[01;32m[K run[m[K()[m[K’ at [01m[K/home/tetripick/UR10_Pick_ws/ros2_ws/src/industrial_calibration/examples/kinematic_calibration.cpp:285:38[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Core/functors/AssignmentFunctors.h:24:102:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid*[01;32m[K __builtin_memcpy[m[K(void*, const void*, long unsigned int)[m[K’ specified size between 18446744073709551601 and 18446744073709551615 exceeds maximum object size 9223372036854775807 [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wstringop-overflow=-Wstringop-overflow=]8;;[m[K]
+   24 |   EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE void assignCoeff(DstScalar& a, const SrcScalar& b) const { [01;35m[Ka = b[m[K; }
+      |                                                                                                    [01;35m[K~~^~~[m[K

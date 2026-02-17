@@ -1,0 +1,18 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/industrial_calibration_camera_intrinsic_calibration_app_autogen.dir/AutogenUsed.txt"
+  "CMakeFiles/industrial_calibration_camera_intrinsic_calibration_app_autogen.dir/ParseCache.txt"
+  "industrial_calibration_camera_intrinsic_calibration_app_autogen"
+  "CMakeFiles/industrial_calibration_camera_intrinsic_calibration_app.dir/industrial_calibration_camera_intrinsic_calibration_app_autogen/mocs_compilation.cpp.o"
+  "CMakeFiles/industrial_calibration_camera_intrinsic_calibration_app.dir/industrial_calibration_camera_intrinsic_calibration_app_autogen/mocs_compilation.cpp.o.d"
+  "CMakeFiles/industrial_calibration_camera_intrinsic_calibration_app.dir/src/app/camera_intrinsic_calibration_app.cpp.o"
+  "CMakeFiles/industrial_calibration_camera_intrinsic_calibration_app.dir/src/app/camera_intrinsic_calibration_app.cpp.o.d"
+  "industrial_calibration_camera_intrinsic_calibration_app"
+  "industrial_calibration_camera_intrinsic_calibration_app.pdb"
+  "industrial_calibration_camera_intrinsic_calibration_app_autogen/mocs_compilation.cpp"
+  "industrial_calibration_camera_intrinsic_calibration_app_autogen/timestamp"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/industrial_calibration_camera_intrinsic_calibration_app.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

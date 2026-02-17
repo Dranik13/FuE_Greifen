@@ -1,0 +1,26 @@
+%YAML:1.0
+
+debug: 1
+
+roi:
+  x: 115
+  y: 0
+  width: 420            # = 580 - 160
+  height: 415
+
+conveyor_z_dist: 865    # relative to fixed camera [mm]
+min_obj_height: 15
+z_offset: 15              # ofset, because of conveyor reflection 
+
+ref_pt:     # refference Point in input image for extrinct calibration
+  x: 125
+  y: 190
+
+# Maximum deltas per frame for object list
+pos_tol: 30
+size_tol:  30
+orientation_tol: 0.44
+
+# edge detection
+canny_thresh1: 50       # threshold1 – first threshold for the hysteresis procedure.
+canny_thresh2: 150      # threshold2 – second threshold for the hysteresis procedure.

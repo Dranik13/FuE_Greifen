@@ -1,0 +1,14 @@
+source;share/boost_plugin_loader/hook/cmake_prefix_path.ps1
+source;share/boost_plugin_loader/hook/cmake_prefix_path.dsv
+source;share/boost_plugin_loader/hook/cmake_prefix_path.sh
+source;share/boost_plugin_loader/hook/ld_library_path_lib.ps1
+source;share/boost_plugin_loader/hook/ld_library_path_lib.dsv
+source;share/boost_plugin_loader/hook/ld_library_path_lib.sh
+source;share/boost_plugin_loader/hook/pkg_config_path.ps1
+source;share/boost_plugin_loader/hook/pkg_config_path.dsv
+source;share/boost_plugin_loader/hook/pkg_config_path.sh
+source;share/boost_plugin_loader/hook/pkg_config_path_multiarch.ps1
+source;share/boost_plugin_loader/hook/pkg_config_path_multiarch.dsv
+source;share/boost_plugin_loader/hook/pkg_config_path_multiarch.sh
+source;share/boost_plugin_loader/hook/ament_prefix_path.dsv
+source;share/boost_plugin_loader/hook/ros_package_path.dsv

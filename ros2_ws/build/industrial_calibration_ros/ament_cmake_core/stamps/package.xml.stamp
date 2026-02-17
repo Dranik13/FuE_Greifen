@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>industrial_calibration_ros</name>
+  <version>1.2.0</version>
+  <description>The industrial_calibration_ros package</description>
+
+  <author email="michael.ripperger@swri.org">Michael Ripperger</author>
+  <maintainer email="michael.ripperger@swri.org">Michael Ripperger</maintainer>
+  <maintainer email="ychen@swri.org">ychen</maintainer>
+
+  <license>Apache 2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  
+  <depend>rclcpp</depend>
+  <depend>cv_bridge</depend>
+  <depend>image_transport</depend>
+  <depend>sensor_msgs</depend>
+  <depend>sensor_msgs_py</depend>
+  <depend>yaml-cpp</depend>
+  <depend>boost_plugin_loader</depend>
+  <depend>industrial_calibration</depend>
+  <depend>rviz_common</depend>
+  <depend>tf2_ros</depend>
+  <depend>tf2_eigen</depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>std_srvs</exec_depend>
+  <exec_depend>message_filters</exec_depend>
+  <exec_depend>python3-open3d</exec_depend>
+  <exec_depend>rqt_common_plugins</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

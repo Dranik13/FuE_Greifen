@@ -1,0 +1,15 @@
+#include "static_camera.hpp"
+
+int main() 
+{
+    StaticCamera reader("config.yml");
+
+    if (!reader.isRunning()) {
+        std::cerr << "CameraReader1 failed to initialize.\n";
+        return 1;
+    }
+
+    reader.spin();
+
+    return 0;
+}

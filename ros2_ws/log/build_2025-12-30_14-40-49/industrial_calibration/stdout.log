@@ -1,0 +1,107 @@
+-- clang-tidy not found!
+-- cppcheck found: /usr/bin/cppcheck
+-- include-what-you-use not found!
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- No package config template file found, creating default one
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found AMD headers in: /usr/include/suitesparse
+-- Found AMD library: /usr/lib/x86_64-linux-gnu/libamd.so
+-- Found CAMD headers in: /usr/include/suitesparse
+-- Found CAMD library: /usr/lib/x86_64-linux-gnu/libcamd.so
+-- Found CCOLAMD headers in: /usr/include/suitesparse
+-- Found CCOLAMD library: /usr/lib/x86_64-linux-gnu/libccolamd.so
+-- Found CHOLMOD headers in: /usr/include/suitesparse
+-- Found CHOLMOD library: /usr/lib/x86_64-linux-gnu/libcholmod.so
+-- Found COLAMD headers in: /usr/include/suitesparse
+-- Found COLAMD library: /usr/lib/x86_64-linux-gnu/libcolamd.so
+-- Found SPQR headers in: /usr/include/suitesparse
+-- Found SPQR library: /usr/lib/x86_64-linux-gnu/libspqr.so
+-- Found Config headers in: /usr/include/suitesparse
+-- Found Config library: /usr/lib/x86_64-linux-gnu/libsuitesparseconfig.so
+-- Found Intel Thread Building Blocks (TBB) library (2021.11 / ) include location: . Assuming SuiteSparseQR was compiled with TBB.
+-- Looking for shm_open in rt
+-- Looking for shm_open in rt - found
+-- Adding librt to SuiteSparse_config libraries (required on Linux & Unix [not OSX] if SuiteSparse is compiled with timing).
+-- Could NOT find METIS (missing: METIS_INCLUDE_DIR METIS_LIBRARY) 
+-- Found SuiteSparse: /usr/include/suitesparse (found suitable version "7.6.1", minimum required is "7.6.1") found components: AMD CAMD CCOLAMD CHOLMOD COLAMD SPQR Config 
+-- Found required Ceres dependency: Eigen version 3.4.0 in /usr/share/eigen3/cmake
+-- Found required Ceres dependency: glog
+-- Found required Ceres dependency: gflags
+-- Found Ceres version: 2.2.0 installed in: /usr with components: [EigenSparse, SparseLinearAlgebraLibrary, LAPACK, SuiteSparse, SchurSpecializations]
+-- No package config template file found, creating default one
+-- No package config template file found, creating default one
+-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: filesystem 
+-- Found OpenCV: /usr (found version "4.6.0") 
+-- No package config template file found, creating default one
+-- No package config template file found, creating default one
+-- No package config template file found, creating default one
+-- No package config template file found, creating default one
+-- Configuring done (1.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration
+[  1%] [32mBuilding CXX object core/CMakeFiles/industrial_calibration_core.dir/src/dh_chain.cpp.o[0m
+[  2%] [32mBuilding CXX object core/CMakeFiles/industrial_calibration_core.dir/src/utils.cpp.o[0m
+[  4%] [32mBuilding CXX object core/CMakeFiles/industrial_calibration_core.dir/src/camera_intrinsics.cpp.o[0m
+[  5%] [32mBuilding CXX object core/CMakeFiles/industrial_calibration_core.dir/src/types.cpp.o[0m
+[  7%] [32m[1mLinking CXX shared library libindustrial_calibration_core.so[0m
+[  7%] Built target industrial_calibration_core
+[  8%] [32mBuilding CXX object optimizations/CMakeFiles/industrial_calibration_optimizations.dir/src/covariance_analysis.cpp.o[0m
+[ 10%] [32mBuilding CXX object optimizations/CMakeFiles/industrial_calibration_optimizations.dir/src/covariance_types.cpp.o[0m
+[ 13%] [32mBuilding CXX object optimizations/CMakeFiles/industrial_calibration_optimizations.dir/src/pnp.cpp.o[0m
+[ 13%] [32mBuilding CXX object optimizations/CMakeFiles/industrial_calibration_optimizations.dir/src/camera_intrinsic.cpp.o[0m
+[ 16%] [32mBuilding CXX object target_finders/opencv/CMakeFiles/industrial_calibration_target_finders_opencv.dir/src/utils.cpp.o[0m
+[ 17%] [32mBuilding CXX object optimizations/CMakeFiles/industrial_calibration_optimizations.dir/src/extrinsic_multi_static_camera.cpp.o[0m
+[ 17%] [32mBuilding CXX object optimizations/CMakeFiles/industrial_calibration_optimizations.dir/src/dh_chain_kinematic_calibration.cpp.o[0m
+[ 19%] [32mBuilding CXX object optimizations/CMakeFiles/industrial_calibration_optimizations.dir/src/extrinsic_hand_eye.cpp.o[0m
+[ 20%] [32mBuilding CXX object optimizations/CMakeFiles/industrial_calibration_optimizations.dir/src/multi_camera_pnp.cpp.o[0m
+[ 22%] [32mBuilding CXX object target_finders/opencv/CMakeFiles/industrial_calibration_target_finders_opencv.dir/src/circle_detector.cpp.o[0m
+[ 23%] [32mBuilding CXX object target_finders/opencv/CMakeFiles/industrial_calibration_target_finders_opencv.dir/src/target_finder.cpp.o[0m
+[ 25%] [32mBuilding CXX object target_finders/opencv/CMakeFiles/industrial_calibration_target_finders_opencv.dir/src/modified_circle_grid_target_finder.cpp.o[0m
+[ 26%] [32mBuilding CXX object target_finders/opencv/CMakeFiles/industrial_calibration_target_finders_opencv.dir/src/aruco_grid_target_finder.cpp.o[0m
+[ 28%] [32mBuilding CXX object target_finders/opencv/CMakeFiles/industrial_calibration_target_finders_opencv.dir/src/charuco_grid_target_finder.cpp.o[0m
+[ 29%] [32m[1mLinking CXX shared library libindustrial_calibration_target_finders_opencv.so[0m
+[ 29%] Built target industrial_calibration_target_finders_opencv
+[ 31%] [32mBuilding CXX object target_finders/opencv/CMakeFiles/industrial_calibration_plugins_opencv.dir/src/plugins.cpp.o[0m
+[ 32%] [32m[1mLinking CXX shared library libindustrial_calibration_optimizations.so[0m
+[ 34%] [32m[1mLinking CXX shared library libindustrial_calibration_plugins_opencv.so[0m
+[ 34%] Built target industrial_calibration_plugins_opencv
+[ 34%] Built target industrial_calibration_optimizations
+[ 35%] [32mBuilding CXX object analysis/CMakeFiles/industrial_calibration_analysis.dir/src/extrinsic_hand_eye_calibration_analysis.cpp.o[0m
+[ 37%] [32mBuilding CXX object analysis/CMakeFiles/industrial_calibration_analysis.dir/src/homography_analysis.cpp.o[0m
+[ 38%] [32mBuilding CXX object analysis/CMakeFiles/industrial_calibration_analysis.dir/src/noise_qualification.cpp.o[0m
+[ 40%] [32mBuilding CXX object analysis/CMakeFiles/industrial_calibration_analysis.dir/src/projection.cpp.o[0m
+[ 41%] [32mBuilding CXX object analysis/CMakeFiles/industrial_calibration_analysis.dir/src/statistics.cpp.o[0m
+[ 43%] [32mBuilding CXX object analysis/CMakeFiles/industrial_calibration_analysis.dir/src/camera_intrinsic_calibration_analysis.cpp.o[0m
+[ 44%] [32m[1mLinking CXX shared library libindustrial_calibration_analysis.so[0m
+[ 44%] Built target industrial_calibration_analysis
+[ 46%] [32mBuilding CXX object examples/CMakeFiles/industrial_calibration_extrinsic_hand_eye.dir/extrinsic_hand_eye.cpp.o[0m
+[ 47%] [32mBuilding CXX object examples/CMakeFiles/industrial_calibration_camera_intrinsic.dir/camera_intrinsic.cpp.o[0m
+[ 49%] [32mBuilding CXX object examples/CMakeFiles/industrial_calibration_kinematic_calibration.dir/kinematic_calibration.cpp.o[0m
+[ 50%] [32mBuilding CXX object examples/CMakeFiles/industrial_calibration_pnp.dir/pnp.cpp.o[0m
+[ 50%] Built target industrial_calibration_gui_autogen_timestamp_deps
+[ 52%] [32mBuilding CXX object examples/CMakeFiles/industrial_calibration_noise_qualification_2d.dir/noise_qualification_2d.cpp.o[0m
+[ 53%] [34m[1mAutomatic MOC and UIC for target industrial_calibration_gui[0m
+[ 53%] Built target industrial_calibration_gui_autogen
+[ 55%] [34m[1mAutomatic RCC for resources/resources.qrc[0m
+[ 56%] [32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/configurable_widget.cpp.o[0m
+[ 58%] [32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/aspect_ratio_pixmap_label.cpp.o[0m
+[ 59%] [32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/industrial_calibration_gui_autogen/mocs_compilation.cpp.o[0m
+[ 61%] [32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/camera_intrinsics.cpp.o[0m
+[ 62%] [32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/transform_guess.cpp.o[0m
+[ 64%] [32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/charuco_grid_target_finder.cpp.o[0m
+[ 65%] [32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/aruco_grid_target_finder.cpp.o[0m
+[ 67%] [32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/modified_circle_grid_target_finder.cpp.o[0m
+[ 68%] [32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/target_finder.cpp.o[0m
+[ 70%] [32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/camera_calibration_data_manager_widget.cpp.o[0m
+[ 71%] [32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/extrinsic_hand_eye_calibration_widget.cpp.o[0m
+[ 73%] [32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/src/camera_intrinsic_calibration_widget.cpp.o[0m
+[ 74%] [32mBuilding CXX object gui/CMakeFiles/industrial_calibration_gui.dir/industrial_calibration_gui_autogen/3YJK5W5UP7/qrc_resources.cpp.o[0m
+[ 76%] [32m[1mLinking CXX executable industrial_calibration_kinematic_calibration[0m
+[ 76%] Built target industrial_calibration_kinematic_calibration

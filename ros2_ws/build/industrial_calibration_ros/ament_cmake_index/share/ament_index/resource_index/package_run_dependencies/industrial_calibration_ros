@@ -1,0 +1,1 @@
+rclcpp;cv_bridge;image_transport;sensor_msgs;sensor_msgs_py;yaml-cpp;boost_plugin_loader;industrial_calibration;rviz_common;tf2_ros;tf2_eigen;geometry_msgs;std_srvs;message_filters;python3-open3d;rqt_common_plugins;rviz2

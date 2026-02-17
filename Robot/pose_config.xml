@@ -1,0 +1,5 @@
+<rtde_config>
+    <output>
+        <variable name="actual_TCP_pose" type="VECTOR6D"/>
+    </output>
+</rtde_config>

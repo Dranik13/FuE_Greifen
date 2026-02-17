@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O3 -DNDEBUG -shared -Wl,-soname,libboost_plugin_loader.so -o libboost_plugin_loader.so CMakeFiles/boost_plugin_loader.dir/src/utils.cpp.o  /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.83.0 -ldl /usr/lib/x86_64-linux-gnu/libboost_atomic.so.1.83.0 

@@ -1,0 +1,1 @@
+/home/tetripick/UR10_Pick_ws/ros2_ws/build/industrial_calibration_ros/ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake

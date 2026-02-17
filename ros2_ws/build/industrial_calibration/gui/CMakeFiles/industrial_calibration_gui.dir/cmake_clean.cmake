@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/industrial_calibration_gui_autogen.dir/AutogenUsed.txt"
+  "CMakeFiles/industrial_calibration_gui_autogen.dir/ParseCache.txt"
+  "industrial_calibration_gui_autogen"
+  "CMakeFiles/industrial_calibration_gui.dir/industrial_calibration_gui_autogen/3YJK5W5UP7/qrc_resources.cpp.o"
+  "CMakeFiles/industrial_calibration_gui.dir/industrial_calibration_gui_autogen/3YJK5W5UP7/qrc_resources.cpp.o.d"
+  "CMakeFiles/industrial_calibration_gui.dir/industrial_calibration_gui_autogen/mocs_compilation.cpp.o"
+  "CMakeFiles/industrial_calibration_gui.dir/industrial_calibration_gui_autogen/mocs_compilation.cpp.o.d"
+  "CMakeFiles/industrial_calibration_gui.dir/src/aruco_grid_target_finder.cpp.o"
+  "CMakeFiles/industrial_calibration_gui.dir/src/aruco_grid_target_finder.cpp.o.d"
+  "CMakeFiles/industrial_calibration_gui.dir/src/aspect_ratio_pixmap_label.cpp.o"
+  "CMakeFiles/industrial_calibration_gui.dir/src/aspect_ratio_pixmap_label.cpp.o.d"
+  "CMakeFiles/industrial_calibration_gui.dir/src/camera_calibration_data_manager_widget.cpp.o"
+  "CMakeFiles/industrial_calibration_gui.dir/src/camera_calibration_data_manager_widget.cpp.o.d"
+  "CMakeFiles/industrial_calibration_gui.dir/src/camera_intrinsic_calibration_widget.cpp.o"
+  "CMakeFiles/industrial_calibration_gui.dir/src/camera_intrinsic_calibration_widget.cpp.o.d"
+  "CMakeFiles/industrial_calibration_gui.dir/src/camera_intrinsics.cpp.o"
+  "CMakeFiles/industrial_calibration_gui.dir/src/camera_intrinsics.cpp.o.d"
+  "CMakeFiles/industrial_calibration_gui.dir/src/charuco_grid_target_finder.cpp.o"
+  "CMakeFiles/industrial_calibration_gui.dir/src/charuco_grid_target_finder.cpp.o.d"
+  "CMakeFiles/industrial_calibration_gui.dir/src/configurable_widget.cpp.o"
+  "CMakeFiles/industrial_calibration_gui.dir/src/configurable_widget.cpp.o.d"
+  "CMakeFiles/industrial_calibration_gui.dir/src/extrinsic_hand_eye_calibration_widget.cpp.o"
+  "CMakeFiles/industrial_calibration_gui.dir/src/extrinsic_hand_eye_calibration_widget.cpp.o.d"
+  "CMakeFiles/industrial_calibration_gui.dir/src/modified_circle_grid_target_finder.cpp.o"
+  "CMakeFiles/industrial_calibration_gui.dir/src/modified_circle_grid_target_finder.cpp.o.d"
+  "CMakeFiles/industrial_calibration_gui.dir/src/target_finder.cpp.o"
+  "CMakeFiles/industrial_calibration_gui.dir/src/target_finder.cpp.o.d"
+  "CMakeFiles/industrial_calibration_gui.dir/src/transform_guess.cpp.o"
+  "CMakeFiles/industrial_calibration_gui.dir/src/transform_guess.cpp.o.d"
+  "industrial_calibration_gui_autogen/3YJK5W5UP7/qrc_resources.cpp"
+  "industrial_calibration_gui_autogen/mocs_compilation.cpp"
+  "industrial_calibration_gui_autogen/timestamp"
+  "libindustrial_calibration_gui.pdb"
+  "libindustrial_calibration_gui.so"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/industrial_calibration_gui.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

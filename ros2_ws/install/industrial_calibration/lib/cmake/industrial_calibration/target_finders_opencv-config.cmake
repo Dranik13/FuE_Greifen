@@ -1,0 +1,17 @@
+# Default *-config.cmake file created by ros-industrial-cmake-boilerplate
+
+set(industrial_calibration_target_finders_opencv_FOUND ON)
+set(industrial_calibration_target_finders_opencv_LIBRARIES)
+
+# Targets
+list(APPEND industrial_calibration_target_finders_opencv_LIBRARIES industrial_calibration::industrial_calibration_target_finders_opencv)
+list(APPEND industrial_calibration_target_finders_opencv_LIBRARIES industrial_calibration::industrial_calibration_plugins_opencv)
+
+# Dependencies
+include(CMakeFindDependencyMacro)
+find_dependency(boost_plugin_loader)
+find_dependency(OpenCV)
+find_dependency(industrial_calibration COMPONENTS core)
+
+# Targets
+include("${CMAKE_CURRENT_LIST_DIR}/target_finders_opencv-targets.cmake")
