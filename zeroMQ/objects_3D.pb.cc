@@ -27,6 +27,7 @@ PROTOBUF_CONSTEXPR Object3D_msg::Object3D_msg(
   , /*decltype(_impl_.y_)*/0
   , /*decltype(_impl_.z_)*/0
   , /*decltype(_impl_.orientation_)*/0
+  , /*decltype(_impl_.vy_)*/0
   , /*decltype(_impl_.width_)*/0
   , /*decltype(_impl_.length_)*/0
   , /*decltype(_impl_.height_)*/0
@@ -68,6 +69,7 @@ const uint32_t TableStruct_objects_5f3D_2eproto::offsets[] PROTOBUF_SECTION_VARI
   PROTOBUF_FIELD_OFFSET(::Object3D_msg, _impl_.y_),
   PROTOBUF_FIELD_OFFSET(::Object3D_msg, _impl_.z_),
   PROTOBUF_FIELD_OFFSET(::Object3D_msg, _impl_.orientation_),
+  PROTOBUF_FIELD_OFFSET(::Object3D_msg, _impl_.vy_),
   PROTOBUF_FIELD_OFFSET(::Object3D_msg, _impl_.width_),
   PROTOBUF_FIELD_OFFSET(::Object3D_msg, _impl_.length_),
   PROTOBUF_FIELD_OFFSET(::Object3D_msg, _impl_.height_),
@@ -82,7 +84,7 @@ const uint32_t TableStruct_objects_5f3D_2eproto::offsets[] PROTOBUF_SECTION_VARI
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::Object3D_msg)},
-  { 14, -1, -1, sizeof(::Objects3D_msg)},
+  { 15, -1, -1, sizeof(::Objects3D_msg)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -91,16 +93,16 @@ static const ::_pb::Message* const file_default_instances[] = {
 };
 
 const char descriptor_table_protodef_objects_5f3D_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\020objects_3D.proto\"\202\001\n\014Object3D_msg\022\t\n\001x"
+  "\n\020objects_3D.proto\"\216\001\n\014Object3D_msg\022\t\n\001x"
   "\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001(\002\022\023\n\013orientat"
-  "ion\030\004 \001(\002\022\r\n\005width\030\005 \001(\002\022\016\n\006length\030\006 \001(\002"
-  "\022\016\n\006height\030\007 \001(\002\022\r\n\005label\030\010 \001(\t\"/\n\rObjec"
-  "ts3D_msg\022\036\n\007objects\030\001 \003(\0132\r.Object3D_msg"
-  "b\006proto3"
+  "ion\030\004 \001(\002\022\n\n\002vy\030\005 \001(\002\022\r\n\005width\030\006 \001(\002\022\016\n\006"
+  "length\030\007 \001(\002\022\016\n\006height\030\010 \001(\002\022\r\n\005label\030\t "
+  "\001(\t\"/\n\rObjects3D_msg\022\036\n\007objects\030\001 \003(\0132\r."
+  "Object3D_msgb\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_objects_5f3D_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_objects_5f3D_2eproto = {
-    false, false, 208, descriptor_table_protodef_objects_5f3D_2eproto,
+    false, false, 220, descriptor_table_protodef_objects_5f3D_2eproto,
     "objects_3D.proto",
     &descriptor_table_objects_5f3D_2eproto_once, nullptr, 0, 2,
     schemas, file_default_instances, TableStruct_objects_5f3D_2eproto::offsets,
@@ -135,6 +137,7 @@ Object3D_msg::Object3D_msg(const Object3D_msg& from)
     , decltype(_impl_.y_){}
     , decltype(_impl_.z_){}
     , decltype(_impl_.orientation_){}
+    , decltype(_impl_.vy_){}
     , decltype(_impl_.width_){}
     , decltype(_impl_.length_){}
     , decltype(_impl_.height_){}
@@ -165,6 +168,7 @@ inline void Object3D_msg::SharedCtor(
     , decltype(_impl_.y_){0}
     , decltype(_impl_.z_){0}
     , decltype(_impl_.orientation_){0}
+    , decltype(_impl_.vy_){0}
     , decltype(_impl_.width_){0}
     , decltype(_impl_.length_){0}
     , decltype(_impl_.height_){0}
@@ -245,33 +249,41 @@ const char* Object3D_msg::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
         } else
           goto handle_unusual;
         continue;
-      // float width = 5;
+      // float vy = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 45)) {
+          _impl_.vy_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // float width = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 53)) {
           _impl_.width_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else
           goto handle_unusual;
         continue;
-      // float length = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 53)) {
+      // float length = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 61)) {
           _impl_.length_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else
           goto handle_unusual;
         continue;
-      // float height = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 61)) {
+      // float height = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 69)) {
           _impl_.height_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else
           goto handle_unusual;
         continue;
-      // string label = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
+      // string label = 9;
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
           auto str = _internal_mutable_label();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -348,44 +360,54 @@ uint8_t* Object3D_msg::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteFloatToArray(4, this->_internal_orientation(), target);
   }
 
-  // float width = 5;
+  // float vy = 5;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_vy = this->_internal_vy();
+  uint32_t raw_vy;
+  memcpy(&raw_vy, &tmp_vy, sizeof(tmp_vy));
+  if (raw_vy != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(5, this->_internal_vy(), target);
+  }
+
+  // float width = 6;
   static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
   float tmp_width = this->_internal_width();
   uint32_t raw_width;
   memcpy(&raw_width, &tmp_width, sizeof(tmp_width));
   if (raw_width != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(5, this->_internal_width(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(6, this->_internal_width(), target);
   }
 
-  // float length = 6;
+  // float length = 7;
   static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
   float tmp_length = this->_internal_length();
   uint32_t raw_length;
   memcpy(&raw_length, &tmp_length, sizeof(tmp_length));
   if (raw_length != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(6, this->_internal_length(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(7, this->_internal_length(), target);
   }
 
-  // float height = 7;
+  // float height = 8;
   static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
   float tmp_height = this->_internal_height();
   uint32_t raw_height;
   memcpy(&raw_height, &tmp_height, sizeof(tmp_height));
   if (raw_height != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(7, this->_internal_height(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(8, this->_internal_height(), target);
   }
 
-  // string label = 8;
+  // string label = 9;
   if (!this->_internal_label().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_label().data(), static_cast<int>(this->_internal_label().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "Object3D_msg.label");
     target = stream->WriteStringMaybeAliased(
-        8, this->_internal_label(), target);
+        9, this->_internal_label(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -404,7 +426,7 @@ size_t Object3D_msg::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string label = 8;
+  // string label = 9;
   if (!this->_internal_label().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
@@ -447,7 +469,16 @@ size_t Object3D_msg::ByteSizeLong() const {
     total_size += 1 + 4;
   }
 
-  // float width = 5;
+  // float vy = 5;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_vy = this->_internal_vy();
+  uint32_t raw_vy;
+  memcpy(&raw_vy, &tmp_vy, sizeof(tmp_vy));
+  if (raw_vy != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float width = 6;
   static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
   float tmp_width = this->_internal_width();
   uint32_t raw_width;
@@ -456,7 +487,7 @@ size_t Object3D_msg::ByteSizeLong() const {
     total_size += 1 + 4;
   }
 
-  // float length = 6;
+  // float length = 7;
   static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
   float tmp_length = this->_internal_length();
   uint32_t raw_length;
@@ -465,7 +496,7 @@ size_t Object3D_msg::ByteSizeLong() const {
     total_size += 1 + 4;
   }
 
-  // float height = 7;
+  // float height = 8;
   static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
   float tmp_height = this->_internal_height();
   uint32_t raw_height;
@@ -522,6 +553,13 @@ void Object3D_msg::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::P
   memcpy(&raw_orientation, &tmp_orientation, sizeof(tmp_orientation));
   if (raw_orientation != 0) {
     _this->_internal_set_orientation(from._internal_orientation());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_vy = from._internal_vy();
+  uint32_t raw_vy;
+  memcpy(&raw_vy, &tmp_vy, sizeof(tmp_vy));
+  if (raw_vy != 0) {
+    _this->_internal_set_vy(from._internal_vy());
   }
   static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
   float tmp_width = from._internal_width();

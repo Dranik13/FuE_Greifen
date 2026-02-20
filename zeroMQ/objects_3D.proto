@@ -5,10 +5,11 @@ message Object3D_msg {
   float y = 2;
   float z = 3;
   float orientation = 4;
-  float width = 5;
-  float length = 6;
-  float height = 7;
-  string label = 8;
+  float vy = 5;
+  float width = 6;
+  float length = 7;
+  float height = 8;
+  string label = 9;
 }
 
 message Objects3D_msg {

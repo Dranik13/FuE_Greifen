@@ -16,10 +16,9 @@ def _load_place_tcp_pos():
 
 PLACE_TCP_POS = _load_place_tcp_pos()
 
-# def place(gripper, rtde_c):
-def place(rtde_c):
+def place(rtde_c, gripper):
     new_pos = rtde_c.getInverseKinematics(PLACE_TCP_POS)
     print(f"[place_handler] Moving to PLACE position: {new_pos}")
-    rtde_c.moveJ(new_pos, 0.2, 0.1)
+    rtde_c.moveJ(new_pos, 0.8, 0.2)
     print("[place_handler] Reached PLACE position.")
-    # gripper.open()
+    gripper.open()

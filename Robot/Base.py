@@ -16,11 +16,15 @@ from pymodbus.client import ModbusSerialClient
 from pyrobotiqgripper import RobotiqGripper
 import time
 
-# gripper = RobotiqGripper()
-# gripper.activate()
-# gripper.calibrate(0,130)
+debug = True
+
+gripper = RobotiqGripper()
+gripper.activate()
+gripper.open()
 
 pos_x = 0
+object_speed = 0
+robot_speed = 0.1
 ROBOT_IP = "192.168.96.221"
 rtde_c = rtde_control.RTDEControlInterface(ROBOT_IP)
 rtde_r = rtde_receive.RTDEReceiveInterface(ROBOT_IP)
@@ -51,34 +55,40 @@ class RandomStateMachine:
 
 
 def idle_handling(machine: RandomStateMachine) -> Optional[MachineState]:
-	print("[Base] Handling IDLE state...")
-	global pos_x
-	pos_x = idle_handler.idle(rtde_c)
+	
+	if debug:
+		print("[Base] Handling IDLE state...")
+	global pos_x, object_speed
+	pos_x, object_speed = idle_handler.idle(rtde_c)
 	return MachineState.MOVE
 
 def move_handling(machine: RandomStateMachine) -> Optional[MachineState]:
-	print("[Base] Handling MOVE state...")
-	move_handler.move(pos_x, rtde_c)
+	if debug:
+		print("[Base] Handling MOVE state...")
+	move_handler.move(pos_x, rtde_r, rtde_c, object_speed)
 	return MachineState.FOLLOW
 
 
 def follow_handling(machine: RandomStateMachine) -> Optional[MachineState]:
-	print("[Base] Handling FOLLOW state...")
-	follow_handler.follow(rtde_c, rtde_r)
+	if debug:
+		print("[Base] Handling FOLLOW state...")
+	follow_handler.follow(rtde_c, rtde_r, object_speed=object_speed)
 	return MachineState.GRIP
 
 
 def grip_handling(machine: RandomStateMachine) -> Optional[MachineState]:
-	print("[Base] Handling GRIP state...")
-	grip_handler.grip(rtde_c)
+	if debug:
+		print("[Base] Handling GRIP state...")
+	grip_handler.grip(rtde_c, gripper, speed=object_speed)
 	# gripper.close()
 	return MachineState.PLACE
 
 def place_handling(machine: RandomStateMachine) -> Optional[MachineState]:
-    print("[Base] Handling PLACE state...")
-    place_handler.place(rtde_c)
+	if debug:
+		print("[Base] Handling PLACE state...")
+	place_handler.place(rtde_c, gripper)
 	# place_handler.place(gripper, rtde_c)
-    return MachineState.IDLE
+	return MachineState.IDLE
 
 
 def safe_shutdown() -> None:

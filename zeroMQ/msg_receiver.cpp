@@ -11,7 +11,7 @@ public:
     explicit CameraSubscriber(const std::string& address);
 
     // blockierend: wartet auf nächste Nachricht
-    bool receiveCoordinates(Object3D_msg& out_msg);
+    bool receiveObjectList(Objects3D_msg& out_msg);
 
 private:
     zmq::context_t context_;
@@ -22,13 +22,13 @@ CameraSubscriber::CameraSubscriber(const std::string& address)
     : context_(1),
       socket_(context_, zmq::socket_type::sub)
 {
-    // Subscribe to "coordinates" topic
-    socket_.set(zmq::sockopt::subscribe, "coordinates");
+    // Subscribe to "obj_list" topic
+    socket_.set(zmq::sockopt::subscribe, "obj_list");
 
     socket_.connect(address);
 }
 
-bool CameraSubscriber::receiveCoordinates(Object3D_msg& out_msg)
+bool CameraSubscriber::receiveObjectList(Objects3D_msg& out_msg)
 {
     zmq::message_t topic_msg;
     zmq::message_t data_msg;
@@ -64,18 +64,24 @@ bool CameraSubscriber::receiveCoordinates(Object3D_msg& out_msg)
 
 int main()
 {
-    std::cout << "Connecting to RobotCamera on tcp://localhost:5556..." << std::endl;
-    CameraSubscriber sub("tcp://localhost:5556");
+    std::cout << "Connecting to camera publisher on tcp://localhost:5555..." << std::endl;
+    CameraSubscriber sub("tcp://localhost:5555");
     
-    std::cout << "Waiting for 'coordinates' messages..." << std::endl;
+    std::cout << "Waiting for 'obj_list' messages..." << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(100));  // ZMQ slow joiner fix
 
     while (true) {
-        Object3D_msg coord;
-        if (sub.receiveCoordinates(coord)) {
-            std::cout << "Object center [mm]: X=" << coord.x() 
-                      << ", Y=" << coord.y() 
-                      << ", Z=" << coord.z() << std::endl;
+        Objects3D_msg objects;
+        if (sub.receiveObjectList(objects)) {
+            std::cout << "Received objects: " << objects.objects_size() << std::endl;
+            for (int i = 0; i < objects.objects_size(); ++i) {
+                const auto& obj = objects.objects(i);
+                std::cout << "[" << i << "] X=" << obj.x()
+                          << ", Y=" << obj.y()
+                          << ", Z=" << obj.z()
+                          << ", vy=" << obj.vy()
+                          << ", label=" << obj.label() << std::endl;
+            }
         }
     }
 }

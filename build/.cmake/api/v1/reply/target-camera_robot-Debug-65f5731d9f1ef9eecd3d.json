@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "camera_static"
+			"path" : "camera_robot"
 		}
 	],
 	"backtrace" : 1,
@@ -27,7 +27,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 56,
+				"line" : 62,
 				"parent" : 0
 			},
 			{
@@ -45,7 +45,7 @@
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 59,
+				"line" : 65,
 				"parent" : 0
 			},
 			{
@@ -81,6 +81,10 @@
 				},
 				{
 					"backtrace" : 4,
+					"path" : "/usr/include/mit-krb5"
+				},
+				{
+					"backtrace" : 4,
 					"path" : "/home/tetripick/UR10_Pick_ws/zeroMQ"
 				},
 				{
@@ -111,7 +115,7 @@
 			"id" : "camera_base::@6890427a1f51a3e7e1df"
 		}
 	],
-	"id" : "camera_static::@6890427a1f51a3e7e1df",
+	"id" : "camera_robot::@6890427a1f51a3e7e1df",
 	"install" : 
 	{
 		"destinations" : 
@@ -445,8 +449,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "camera_static",
-	"nameOnDisk" : "camera_static",
+	"name" : "camera_robot",
+	"nameOnDisk" : "camera_robot",
 	"paths" : 
 	{
 		"build" : ".",
@@ -467,7 +471,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "cameras/camera_static_main.cpp",
+			"path" : "cameras/camera_robot_main.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

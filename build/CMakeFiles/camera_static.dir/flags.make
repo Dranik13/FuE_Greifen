@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/tetripick/UR10_Pick_ws -I/usr/include/pgm-5.3 -I/usr/include/libxml2 -I/home/tetripick/UR10_Pick_ws/zeroMQ -isystem /usr/include/opencv4
+CXX_INCLUDES = -I/home/tetripick/UR10_Pick_ws -I/usr/include/pgm-5.3 -I/usr/include/libxml2 -I/usr/include/mit-krb5 -I/home/tetripick/UR10_Pick_ws/zeroMQ -isystem /usr/include/opencv4
 
 CXX_FLAGS = -g -std=gnu++17
 

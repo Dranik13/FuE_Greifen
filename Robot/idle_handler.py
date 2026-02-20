@@ -2,7 +2,6 @@ import sys
 import zmq
 from pathlib import Path
 from typing import List, Dict, Optional
-import rtde_control
 from pathlib import Path
 import yaml
 
@@ -92,6 +91,7 @@ class CameraSubscriber:
                 'length': obj.length,
                 'height': obj.height,
                 'label': obj.label,
+                'vy': obj.vy,
             })
 
         return result
@@ -99,21 +99,28 @@ class CameraSubscriber:
 def recive():
     sub = CameraSubscriber('tcp://localhost:5555')
     print('[idle_handler] Waiting for messages on tcp://localhost:5555...')
+    counter = 0
     while True:
         objs = sub.receive()
         if objs is None:
             continue
         print(f'[idle_handler] Received {len(objs)} objects')
         for i, o in enumerate(objs):
-            print(f"[idle_handler]  {i}: {o['label']} @ ({o['x']:.3f}, {o['y']:.3f}, {o['z']:.3f})")
+            print(f"[idle_handler]  {i}: {o['label']} @ ({o['x']:.3f}, {o['y']:.3f}, {o['z']:.3f}), vy={o.get('vy', 0):.3f}")
+            object_speed = o.get('vy', 0)  # Geschwindigkeit in y-Richtung
+            object_speed = object_speed/1000
             pos_x = o['x']
-            print(f"[idle_handler] x in while: {pos_x}")
-        return pos_x
+            print(f"[idle_handler] x in while: {pos_x}, vy: {object_speed}")
+        if object_speed != 0:
+            counter += 1
+            if counter >= 3:  # Warte auf mehrere Messungen mit Geschwindigkeit, um Rauschen zu reduzieren
+                break
+    return pos_x, object_speed
     
 def move_to_home(rtde_c):
     new_pos = rtde_c.getInverseKinematics(START_CONVEYOR_TCP_POS)
     print(f"[idle_handler] Moving to Home position: {new_pos}")
-    rtde_c.moveJ(new_pos, 0.2, 0.1)
+    rtde_c.moveJ(new_pos, 0.8, 0.2)
     print("[idle_handler] Reached Home position.")
 
 def idle(rtde_c):

@@ -91,8 +91,9 @@ void StaticCamera::processFrames()
                 rs2_deproject_pixel_to_point(point, &depth_intrinsics, pixel, depth_value_mm);
 
                 float z_mm = point[2];
-
-                if (z_mm < conveyor_z_dist_ - min_obj_height_) {
+                float max_obj_height_mm = 50; ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                // Check if the point is within the expected height range of objects on the conveyor
+                if (z_mm < conveyor_z_dist_ - min_obj_height_ && z_mm > conveyor_z_dist_ - max_obj_height_mm) {
                     obj_mask.at<uint8_t>(y, x) = 255;
                 }
             }
@@ -110,8 +111,7 @@ void StaticCamera::processFrames()
 
         for (size_t ci = 0; ci < obj_contours.size(); ++ci) {
             const auto &cnt = obj_contours[ci];
-            if (cv::contourArea(cnt) < 200.0) continue;
-
+            if (cv::contourArea(cnt) < 500.0) continue;
             cv::RotatedRect rrect = cv::minAreaRect(cnt);
             cv::Point2f box2f[4];
             rrect.points(box2f);
@@ -143,7 +143,7 @@ void StaticCamera::processFrames()
             Object3D object;
             cv::Point3f obj_center = computeCenter(corners3d);
             object.x = (obj_center.x - ref_pt_3d_.x) * 1000;
-            object.y = (obj_center.y - ref_pt_3d_.y) * 1000;
+            object.y = (obj_center.y - ref_pt_3d_.y) * -1000;       // flip y-axis to match robot coordinates
             object.orientation = computeOrientation2D(corners3d);
 
             auto dist_mm = [](const cv::Point3f& A, const cv::Point3f& B)->float {
@@ -185,13 +185,6 @@ void StaticCamera::processFrames()
             if (count_z > 0) {
                 float z_mm = sum_z_mm / static_cast<float>(count_z);
                 height_mm = conveyor_z_dist_ - z_mm + 20;
-            }
-            // Filter: Skip objects with Heigth > 60 mm
-            if (!std::isfinite(object.height) || object.height > 60.0f) {
-                // if (debug_) {
-                //     std::cout << "[static_camera] Skipping object with heigth=" << object.heigth << " mm (> 60 mm)" << std::endl;
-                // }
-                continue;
             }
 
             object.z = (obj_center.z - ref_pt_3d_.z) * 1000 + (height_mm/2);
@@ -250,21 +243,30 @@ void StaticCamera::processFrames()
             obj.vy = reference_velocity_y;
         }
 
-        // Publish all active tracks (visible + predicted invisible)
         obj_list_ = tracker_.getActiveObjects();
-        if (debug_) {
-            std::cout << "[static_camera] Number of objects in List: " << obj_list_.size();
-            if (!obj_list_.empty()) {
-                for(const auto& obj : obj_list_) {
-                    std::cout << " y=" << obj.y << " heigth=" << obj.height << std::endl;
-                }
+        int i = 0;
+        for(const auto& obj : obj_list_) {
+            if (debug_) {
+                std::cout << "[static_camera] Obj. " << i++ << " at (x=" << obj.x << "mm, y=" << obj.y 
+                          << "mm, z=" << obj.z << "mm), size (LxWxH): " << obj.length 
+                          << "x" << obj.width << "x" << obj.height << " mm\n";
             }
-            std::cout << "\n";
         }
-        
+        // if (debug_) {
+        //     std::cout << "[static_camera] Number of objects in List: " << obj_list_.size();
+        //     if (!obj_list_.empty()) {
+        //         for(const auto& obj : obj_list_) {
+        //             std::cout << " y=" << obj.y << " heigth=" << obj.height << std::endl;
+        //         }
+        //     }
+        //     std::cout << "\n";
+        // }
+
+        // Publish all active tracks (visible + predicted invisible)
         sendObjList();
 
         if (debug_) {
+            cv::imshow("Input - " + serial_, input_img);
             cv::imshow("Mask - " + serial_, mask_roi);
             cv::imshow("Annotated ROI - " + serial_, rgb_img);
         }

@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "msg_receiver"
+			"path" : "libcamera_base.so"
 		}
 	],
 	"backtrace" : 1,
@@ -10,8 +10,7 @@
 	{
 		"commands" : 
 		[
-			"add_executable",
-			"install",
+			"add_library",
 			"link_directories",
 			"target_link_libraries",
 			"target_include_directories"
@@ -28,31 +27,25 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 74,
+				"line" : 34,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 90,
+				"line" : 26,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 26,
+				"line" : 48,
 				"parent" : 0
 			},
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 83,
-				"parent" : 0
-			},
-			{
-				"command" : 4,
-				"file" : 0,
-				"line" : 78,
+				"line" : 42,
 				"parent" : 0
 			}
 		]
@@ -63,29 +56,39 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -std=gnu++17"
+					"fragment" : "-g -std=gnu++17 -fPIC"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"define" : "camera_base_EXPORTS"
 				}
 			],
 			"includes" : 
 			[
 				{
-					"backtrace" : 5,
+					"backtrace" : 4,
 					"path" : "/home/tetripick/UR10_Pick_ws"
 				},
 				{
-					"backtrace" : 5,
+					"backtrace" : 4,
 					"path" : "/usr/include/pgm-5.3"
 				},
 				{
-					"backtrace" : 5,
+					"backtrace" : 4,
 					"path" : "/usr/include/libxml2"
 				},
 				{
-					"backtrace" : 5,
+					"backtrace" : 4,
+					"path" : "/usr/include/mit-krb5"
+				},
+				{
+					"backtrace" : 4,
 					"path" : "/home/tetripick/UR10_Pick_ws/zeroMQ"
 				},
 				{
-					"backtrace" : 5,
+					"backtrace" : 4,
 					"isSystem" : true,
 					"path" : "/usr/include/opencv4"
 				}
@@ -95,348 +98,333 @@
 			{
 				"backtraces" : 
 				[
-					4
+					3
 				],
 				"standard" : "17"
 			},
 			"sourceIndexes" : 
 			[
 				0,
-				1
+				1,
+				2,
+				3,
+				4
 			]
 		}
 	],
-	"id" : "msg_receiver::@6890427a1f51a3e7e1df",
-	"install" : 
-	{
-		"destinations" : 
-		[
-			{
-				"backtrace" : 2,
-				"path" : "bin"
-			}
-		],
-		"prefix" : 
-		{
-			"path" : "/usr/local"
-		}
-	},
+	"id" : "camera_base::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-g",
-				"role" : "flags"
-			},
-			{
 				"fragment" : "",
 				"role" : "flags"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "-L/usr/local/lib/x86_64-linux-gnu",
 				"role" : "libraryPath"
 			},
 			{
-				"fragment" : "-Wl,-rpath,/usr/local/lib/x86_64-linux-gnu:",
+				"fragment" : "-Wl,-rpath,/usr/local/lib/x86_64-linux-gnu",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_stitching.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_alphamat.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_aruco.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_barcode.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_bgsegm.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_bioinspired.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_ccalib.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_cvv.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_dnn_objdetect.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_dnn_superres.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_dpm.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_face.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_freetype.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_fuzzy.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_hdf.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_hfs.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_img_hash.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_intensity_transform.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_line_descriptor.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_mcc.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_quality.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_rapid.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_reg.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_rgbd.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_saliency.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_shape.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_stereo.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_structured_light.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_superres.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_surface_matching.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_tracking.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_videostab.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_viz.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_wechat_qrcode.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_xobjdetect.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_xphoto.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "-lrealsense2",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libprotobuf.so",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "-lzmq",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_highgui.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_datasets.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_plot.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_text.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_ml.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_phase_unwrapping.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_optflow.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_ximgproc.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_video.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_videoio.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_dnn.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_features2d.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_flann.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_photo.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.4.6.0",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_core.so.4.6.0",
 				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
-	"name" : "msg_receiver",
-	"nameOnDisk" : "msg_receiver",
+	"name" : "camera_base",
+	"nameOnDisk" : "libcamera_base.so",
 	"paths" : 
 	{
 		"build" : ".",
@@ -449,7 +437,10 @@
 			"sourceIndexes" : 
 			[
 				0,
-				1
+				1,
+				2,
+				3,
+				4
 			]
 		}
 	],
@@ -458,7 +449,25 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "zeroMQ/msg_receiver.cpp",
+			"path" : "cameras/camera_reader_base.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "cameras/camera_static.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "cameras/camera_robot.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "cameras/tracker.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -468,5 +477,5 @@
 			"sourceGroupIndex" : 0
 		}
 	],
-	"type" : "EXECUTABLE"
+	"type" : "SHARED_LIBRARY"
 }

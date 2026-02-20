@@ -68,7 +68,6 @@ protected:
     cv::Point2i ref_pt_;
     cv::Point3f ref_pt_3d_;
     float pos_delta_;  
-    float size_delta_;
     float orientation_delta_;
 
     // RealSense

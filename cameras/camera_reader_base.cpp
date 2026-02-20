@@ -95,7 +95,6 @@ void BaseCameraReader::loadConfig(const std::string& config_file)
     }
 
     if (!fs["pos_tol"].empty()) fs["pos_tol"] >> pos_delta_; else pos_delta_ = 30.0f;
-    if (!fs["size_tol"].empty()) fs["size_tol"] >> size_delta_; else size_delta_ = 30.0f;
     if (!fs["orientation_tol"].empty()) fs["orientation_tol"] >> orientation_delta_; else orientation_delta_ = 0.5f;
 
     canny_thresh_.resize(2);
@@ -169,6 +168,7 @@ void BaseCameraReader::sendObjList()
         o->set_y(obj.y);
         o->set_z(obj.z);
         o->set_orientation(obj.orientation);
+        o->set_vy(obj.vy);
         o->set_width(obj.width);
         o->set_length(obj.length);
         o->set_height(obj.height);

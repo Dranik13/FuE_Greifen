@@ -178,16 +178,17 @@ class Object3D_msg final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kLabelFieldNumber = 8,
+    kLabelFieldNumber = 9,
     kXFieldNumber = 1,
     kYFieldNumber = 2,
     kZFieldNumber = 3,
     kOrientationFieldNumber = 4,
-    kWidthFieldNumber = 5,
-    kLengthFieldNumber = 6,
-    kHeightFieldNumber = 7,
+    kVyFieldNumber = 5,
+    kWidthFieldNumber = 6,
+    kLengthFieldNumber = 7,
+    kHeightFieldNumber = 8,
   };
-  // string label = 8;
+  // string label = 9;
   void clear_label();
   const std::string& label() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -237,7 +238,16 @@ class Object3D_msg final :
   void _internal_set_orientation(float value);
   public:
 
-  // float width = 5;
+  // float vy = 5;
+  void clear_vy();
+  float vy() const;
+  void set_vy(float value);
+  private:
+  float _internal_vy() const;
+  void _internal_set_vy(float value);
+  public:
+
+  // float width = 6;
   void clear_width();
   float width() const;
   void set_width(float value);
@@ -246,7 +256,7 @@ class Object3D_msg final :
   void _internal_set_width(float value);
   public:
 
-  // float length = 6;
+  // float length = 7;
   void clear_length();
   float length() const;
   void set_length(float value);
@@ -255,7 +265,7 @@ class Object3D_msg final :
   void _internal_set_length(float value);
   public:
 
-  // float height = 7;
+  // float height = 8;
   void clear_height();
   float height() const;
   void set_height(float value);
@@ -277,6 +287,7 @@ class Object3D_msg final :
     float y_;
     float z_;
     float orientation_;
+    float vy_;
     float width_;
     float length_;
     float height_;
@@ -533,7 +544,27 @@ inline void Object3D_msg::set_orientation(float value) {
   // @@protoc_insertion_point(field_set:Object3D_msg.orientation)
 }
 
-// float width = 5;
+// float vy = 5;
+inline void Object3D_msg::clear_vy() {
+  _impl_.vy_ = 0;
+}
+inline float Object3D_msg::_internal_vy() const {
+  return _impl_.vy_;
+}
+inline float Object3D_msg::vy() const {
+  // @@protoc_insertion_point(field_get:Object3D_msg.vy)
+  return _internal_vy();
+}
+inline void Object3D_msg::_internal_set_vy(float value) {
+  
+  _impl_.vy_ = value;
+}
+inline void Object3D_msg::set_vy(float value) {
+  _internal_set_vy(value);
+  // @@protoc_insertion_point(field_set:Object3D_msg.vy)
+}
+
+// float width = 6;
 inline void Object3D_msg::clear_width() {
   _impl_.width_ = 0;
 }
@@ -553,7 +584,7 @@ inline void Object3D_msg::set_width(float value) {
   // @@protoc_insertion_point(field_set:Object3D_msg.width)
 }
 
-// float length = 6;
+// float length = 7;
 inline void Object3D_msg::clear_length() {
   _impl_.length_ = 0;
 }
@@ -573,7 +604,7 @@ inline void Object3D_msg::set_length(float value) {
   // @@protoc_insertion_point(field_set:Object3D_msg.length)
 }
 
-// float height = 7;
+// float height = 8;
 inline void Object3D_msg::clear_height() {
   _impl_.height_ = 0;
 }
@@ -593,7 +624,7 @@ inline void Object3D_msg::set_height(float value) {
   // @@protoc_insertion_point(field_set:Object3D_msg.height)
 }
 
-// string label = 8;
+// string label = 9;
 inline void Object3D_msg::clear_label() {
   _impl_.label_.ClearToEmpty();
 }

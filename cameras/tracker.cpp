@@ -72,7 +72,7 @@ float Tracker::update(std::vector<Object3D>& detections, double timestamp)
             if (dt > 1e-6 && dt < 10.0) {
                 float vy = (detections[i].y - track.state.y) / (float)dt;
                 
-                if (vy >= 10){
+                if (std::abs(vy) >= 10){
                     detections[i].vy = vy;
                     sum_vy += vy;
                     vel_count++;
@@ -105,6 +105,7 @@ float Tracker::update(std::vector<Object3D>& detections, double timestamp)
         int best_c = -1;
 
         for (size_t c = 0; c < candidates_.size(); ++c) {
+            if (candidate_matched[c]) continue;
             const auto& cand = candidates_[c];
             double dx = d.x - cand.state.x;
             double dy = d.y - cand.state.y;
@@ -119,7 +120,6 @@ float Tracker::update(std::vector<Object3D>& detections, double timestamp)
 
         if (best_c != -1 && best_dist <= max_match_distance_mm) {
             // Candidate confirmed! Promote to full track
-            const auto& cand = candidates_[best_c];
             Track newt;
             newt.id = next_id_++;
             newt.state = detections[i];
@@ -190,7 +190,6 @@ float Tracker::update(std::vector<Object3D>& detections, double timestamp)
         //     // Outside region: lenient - keep until y threshold
         //     keep = (t.state.y >= min_tracked_y_mm);
         // }
-
         bool keep = (t.state.y >= min_tracked_y_mm && t.state.y <= max_tracked_y_mm);
         
         if (keep) {

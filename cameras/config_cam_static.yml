@@ -16,9 +16,9 @@ conveyor_z_dist: 865    # relative to fixed camera [mm]
 min_obj_height: 15
 z_offset: 15              # ofset, because of conveyor reflection 
 
-ref_pt:     # refference Point in input image for extrinct calibration
-  x: 125
-  y: 190
+ref_pt:     # refference Point in input image for extrinct calibration (in input image)
+  x: 120
+  y: 185
 
 # Maximum deltas per frame for object list
 pos_tol: 30
