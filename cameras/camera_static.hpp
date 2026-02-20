@@ -19,7 +19,7 @@ private:
     
     // Frame skipping: process only every 3rd frame
     int frame_skip_counter_ = 0;
-    static constexpr int FRAME_SKIP = 8;
+    static constexpr int FRAME_SKIP = 5;
     
     // Velocity filtering: exponential moving average (alpha = smoothing factor 0..1)
     float filtered_velocity_y_ = 0.0f;

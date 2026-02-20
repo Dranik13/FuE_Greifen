@@ -52,25 +52,24 @@ protected:
     float computeOrientation2D(const std::vector<cv::Point3f>& corners);
     bool checkIfObjIsInList(const Object3D& new_obj, size_t& id);
     void sendObjList();
+    void sendCoordinates(float &x, float &y, float &z);
 
     // Configuration and state
     bool running_ = false;
     bool debug_;
+    int zmq_port_ = 5555;
     cv::Rect roi_;
     uint16_t conveyor_z_dist_;
     uint16_t min_obj_height_;
     uint16_t z_offset_;
     std::vector<double> canny_thresh_;
+    std::string camera_serial_config_;
+    std::string serial_number_ = "";
     cv::Point2i ref_pt_;
     cv::Point3f ref_pt_3d_;
     float pos_delta_;  
     float size_delta_;
     float orientation_delta_;
-    // Velocity reference region (mm)
-    float velocity_region_x_min_ = -1000.0f;
-    float velocity_region_x_max_ = 1000.0f;
-    float velocity_region_y_min_ = -450.0f;
-    float velocity_region_y_max_ = 270.0f;
 
     // RealSense
     rs2::pipeline pipeline_;

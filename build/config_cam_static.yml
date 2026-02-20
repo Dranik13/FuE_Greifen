@@ -1,6 +1,10 @@
 %YAML:1.0
 
+zmq_port: 5555
 debug: 1
+
+# Camera selection 
+serial_number: f1370107
 
 roi:
   x: 115

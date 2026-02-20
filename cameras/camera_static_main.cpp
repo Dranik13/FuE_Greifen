@@ -7,7 +7,7 @@
 int main() 
 {
     std::cout << "Starting static camera reader \n";
-    StaticCamera reader("config.yml");
+    StaticCamera reader("config_cam_static.yml");
 
     if (!reader.isRunning()) {
         std::cerr << "Static camera reader failed to initialize.\n";

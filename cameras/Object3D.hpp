@@ -11,7 +11,6 @@ struct Object3D
     std::string label;
     // Velocity in y-direction (mm/s) - only this matters for conveyor belt
     float vy = 0.0f;
-    float speed = 0.0f;  // |vy| for convenience
 };
 
 #endif // OBJECT3D_HPP

@@ -1,9 +1,10 @@
 %YAML:1.0
 
-# Configuration for CameraReader2 (Fixed Camera)
-# Adjust these values based on your camera's position and requirements
-
+zmq_port: 5556
 debug: 1
+
+# Camera selection 
+serial_number: "241122074842"
 
 # Depth distance reference (adjust based on your setup)
 conveyor_z_dist: 1000   # reference depth [mm]

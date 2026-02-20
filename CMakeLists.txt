@@ -15,9 +15,9 @@ pkg_check_modules(REALSR realsense2 QUIET)
 pkg_check_modules(ZMQ REQUIRED libzmq)
 
 # Copy config files
-configure_file(${CMAKE_SOURCE_DIR}/cameras/config.yml ${CMAKE_BINARY_DIR}/config.yml COPYONLY)
-if(EXISTS ${CMAKE_SOURCE_DIR}/cameras/config2.yml)
-  configure_file(${CMAKE_SOURCE_DIR}/cameras/config2.yml ${CMAKE_BINARY_DIR}/config2.yml COPYONLY)
+configure_file(${CMAKE_SOURCE_DIR}/cameras/config_cam_static.yml ${CMAKE_BINARY_DIR}/config_cam_static.yml COPYONLY)
+if(EXISTS ${CMAKE_SOURCE_DIR}/cameras/config_cam_robot.yml)
+  configure_file(${CMAKE_SOURCE_DIR}/cameras/config_cam_robot.yml ${CMAKE_BINARY_DIR}/config_cam_robot.yml COPYONLY)
 endif()
 
 if (REALSR_FOUND)

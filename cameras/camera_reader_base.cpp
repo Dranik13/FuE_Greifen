@@ -5,7 +5,9 @@ BaseCameraReader::BaseCameraReader(const std::string& config_file)
       socket_(context_, zmq::socket_type::pub) 
 {
     loadConfig(config_file);
-    socket_.bind("tcp://*:5555");
+    std::string bind_addr = "tcp://*:" + std::to_string(zmq_port_);
+    socket_.bind(bind_addr);
+    std::cout << "ZMQ socket bound to " << bind_addr << "\n";
     initializeRealSense();
 }
 
@@ -18,17 +20,42 @@ void BaseCameraReader::initializeRealSense()
         return;
     }
 
-    serial_ = devices[0].get_info(RS2_CAMERA_INFO_SERIAL_NUMBER);
+    bool selected_device_found = false;
+    std::string serial;
+    for (size_t i = 0; i < devices.size(); ++i) {
+        serial = devices[i].get_info(RS2_CAMERA_INFO_SERIAL_NUMBER);
+        if (serial == serial_number_) {
+            selected_device_found = true;
+            break;
+        }
+    }
+    if (!selected_device_found) {
+        std::cerr << "Configured camera serial number  '" << serial_number_
+                    << "' not found. Available devices:\n";
+        for (size_t i = 0; i < devices.size(); ++i) {
+            std::cerr << "  [" << i << "] "
+                        << devices[i].get_info(RS2_CAMERA_INFO_SERIAL_NUMBER) << "\n";
+        }
+        return;
+    }
 
     rs2::config cfg;
-    cfg.enable_device(serial_);
+    cfg.enable_device(serial);
     cfg.enable_stream(RS2_STREAM_COLOR, 640, 480, RS2_FORMAT_BGR8, 30);
     cfg.enable_stream(RS2_STREAM_DEPTH, 640, 480, RS2_FORMAT_Z16, 30);
 
     pipeline_.start(cfg);
     running_ = true;
 
-    std::cout << "Pipeline gestartet für Gerät: " << serial_ << "\n";
+    try {
+        for (int i = 0; i < 5; ++i) {
+            pipeline_.wait_for_frames(3000);
+        }
+    } catch (const rs2::error& e) {
+        std::cerr << "Warmup warning for device " << serial << ": " << e.what() << "\n";
+    }
+
+    std::cout << "Pipeline gestartet für Gerät: " << serial << "\n";
 }
 
 void BaseCameraReader::loadConfig(const std::string& config_file)
@@ -75,16 +102,21 @@ void BaseCameraReader::loadConfig(const std::string& config_file)
     if (!fs["canny_thresh1"].empty()) fs["canny_thresh1"] >> canny_thresh_.at(0); else canny_thresh_.at(0) = 50;
     if (!fs["canny_thresh2"].empty()) fs["canny_thresh2"] >> canny_thresh_.at(1); else canny_thresh_.at(1) = 150;
 
-    // Load velocity reference region (optional)
-    if (!fs["velocity_region"].empty()) {
-        cv::FileNode vreg = fs["velocity_region"];
-        velocity_region_x_min_ = (float)vreg["x_min"];
-        velocity_region_x_max_ = (float)vreg["x_max"];
-        velocity_region_y_min_ = (float)vreg["y_min"];
-        velocity_region_y_max_ = (float)vreg["y_max"];
+    if (!fs["zmq_port"].empty()) fs["zmq_port"] >> zmq_port_; else zmq_port_ = 5555;
+    if (!fs["serial_number"].empty()) {
+        cv::FileNode serial_node = fs["serial_number"];
+        if (serial_node.isString()) {
+            serial_node >> serial_number_;
+        } else if (serial_node.isInt() || serial_node.isReal()) {
+            double serial_numeric = 0.0;
+            serial_node >> serial_numeric;
+            serial_number_ = std::to_string(static_cast<unsigned long long>(serial_numeric + 0.5));
+        }
     }
 
-    std::cout << "Config loaded from " << config_file << ": ROI=" << roi_ << " (debug=" << debug_ << ")\n";
+    std::cout << "Config loaded from " << config_file << ": ROI=" << roi_
+              << " (debug=" << debug_ << ", zmq_port=" << zmq_port_
+              << "', serial_number=" << serial_number_ << ")\n";
 }
 
 cv::Point3f BaseCameraReader::computeCenter(const std::vector<cv::Point3f>& corners)
@@ -146,7 +178,30 @@ void BaseCameraReader::sendObjList()
     std::string buffer;
     list.SerializeToString(&buffer);
 
-    zmq::message_t msg(buffer.size());
-    memcpy(msg.data(), buffer.data(), buffer.size());
-    socket_.send(msg, zmq::send_flags::none);
+    // Send with "obj_list" topic prefix
+    std::string topic = "obj_list";
+    zmq::message_t topic_msg(topic.data(), topic.size());
+    zmq::message_t data_msg(buffer.data(), buffer.size());
+    
+    socket_.send(topic_msg, zmq::send_flags::sndmore);
+    socket_.send(data_msg, zmq::send_flags::none);
+}
+
+void BaseCameraReader::sendCoordinates(float &x, float &y, float &z)
+{
+    Object3D_msg obj_msg;
+    obj_msg.set_x(x);
+    obj_msg.set_y(y);
+    obj_msg.set_z(z);
+
+    std::string buffer;
+    obj_msg.SerializeToString(&buffer);
+
+    // Send with "coordinates" topic prefix
+    std::string topic = "coordinates";
+    zmq::message_t topic_msg(topic.data(), topic.size());
+    zmq::message_t data_msg(buffer.data(), buffer.size());
+    
+    socket_.send(topic_msg, zmq::send_flags::sndmore);
+    socket_.send(data_msg, zmq::send_flags::none);
 }

@@ -37,7 +37,7 @@ void StaticCamera::processFrames()
         
         if (input_img.empty()) return;
 
-        cv::imshow("Static Camera - " + serial_, input_img);
+        // cv::imshow("Static Camera - " + serial_, input_img);
 
         // Handle ROI: if roi is empty (0,0,0,0), use full frame as effective_roi
         cv::Rect effective_roi = (roi_.area() > 0) ? roi_ : cv::Rect(0, 0, input_img.cols, input_img.rows);
@@ -103,6 +103,7 @@ void StaticCamera::processFrames()
 
         std::vector<std::vector<cv::Point>> obj_contours;
         cv::findContours(obj_mask, obj_contours, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
+        cv::Mat mask_roi = cv::Mat::zeros(obj_mask.size(), CV_8U);
 
         // Process contours -> collect detections directly as Object3D
         std::vector<Object3D> detected_objects;
@@ -156,7 +157,6 @@ void StaticCamera::processFrames()
             if (length_mm < width_mm) std::swap(length_mm, width_mm);
 
             // Height calculation
-            cv::Mat mask_roi = cv::Mat::zeros(obj_mask.size(), CV_8U);
             cv::drawContours(mask_roi, std::vector<std::vector<cv::Point>>{cnt}, -1, 255, cv::FILLED);
             
             float sum_z_mm = 0.0f;
@@ -186,42 +186,36 @@ void StaticCamera::processFrames()
                 float z_mm = sum_z_mm / static_cast<float>(count_z);
                 height_mm = conveyor_z_dist_ - z_mm + 20;
             }
-
-            object.z = (obj_center.z - ref_pt_3d_.z) * 1000 + (height_mm/2);
-            object.length = length_mm;
-            object.width = width_mm;
-            object.height = height_mm;
-
             // Filter: Skip objects with Heigth > 60 mm
-            if (std::isfinite(object.height) && object.height > 60.0f) {
+            if (!std::isfinite(object.height) || object.height > 60.0f) {
                 // if (debug_) {
                 //     std::cout << "[static_camera] Skipping object with heigth=" << object.heigth << " mm (> 60 mm)" << std::endl;
                 // }
                 continue;
             }
 
+            object.z = (obj_center.z - ref_pt_3d_.z) * 1000 + (height_mm/2);
+            object.length = length_mm;
+            object.width = width_mm;
+            object.height = height_mm;
+
             // Validate object coordinates before adding to list
             if (!std::isfinite(object.x) || !std::isfinite(object.y) || !std::isfinite(object.z)) {
-                if (debug_) {
-                    std::cout << "[static_camera] Skipping object with invalid coordinates: ("
-                              << object.x << ", " << object.y << ", " << object.z << ")\n";
-                }
+                // if (debug_) {
+                //     std::cout << "[static_camera] Skipping object with invalid coordinates: ("
+                //               << object.x << ", " << object.y << ", " << object.z << ")\n";
+                // }
                 continue;
             }
-
+            
             detected_objects.push_back(object);
         }
         // Frame timestamp (seconds)
         double frame_ts = color.get_timestamp() / 1000.0;
 
-        // Only update tracker if we have valid detections
-        if (detected_objects.empty()) {
-            // if (debug_) {
-            //     std::cout << "[static_camera] No valid detections in this frame\n";
-            // }
-            sendObjList();
-            return;
-        }
+        // Use previous filtered velocity as fallback for prediction
+        tracker_.setPredictionVelocity(filtered_velocity_y_);
+
         // Update tracker: fills in vy (y-direction velocity) and speed in each detection
         float global_velocity_y = tracker_.update(detected_objects, frame_ts);
         
@@ -238,41 +232,40 @@ void StaticCamera::processFrames()
             int ref_idx = rand() % detected_objects.size();
             const auto& ref_obj = detected_objects[ref_idx];
             
-            // Check if position is within region
-            if (ref_obj.x >= velocity_region_x_min_ && ref_obj.x <= velocity_region_x_max_ &&
-                ref_obj.y >= velocity_region_y_min_ && ref_obj.y <= velocity_region_y_max_) {
+            // Reference object found (in current detections)
+            if (!std::isnan(ref_obj.vy)) {
                 
                 reference_velocity_y = ref_obj.vy;
                 found_reference = true;
                 
-                if (debug_) {
-                    std::cout << "[static_camera] Reference object at (" << ref_obj.x << ", " 
-                              << ref_obj.y << ") with vy=" << reference_velocity_y << " mm/s\n";
-                }
+                // if (debug_) {
+                //     std::cout << "[static_camera] Reference object at (" << ref_obj.x << ", " 
+                //               << ref_obj.y << ") with vy=" << reference_velocity_y << " mm/s\n";
+                // }
             }
         }
 
         // Apply reference y-velocity to all detected objects
         for (auto& obj : detected_objects) {
             obj.vy = reference_velocity_y;
-            obj.speed = std::abs(reference_velocity_y);
-
-            size_t id;
-            if (checkIfObjIsInList(obj, id)) {
-                // Update existing object at index id
-                if (id < obj_list_.size()) {
-                    obj_list_[id] = obj;
-                }
-            } else {
-                // Add new object
-                obj_list_.push_back(obj);
-            }
         }
 
+        // Publish all active tracks (visible + predicted invisible)
+        obj_list_ = tracker_.getActiveObjects();
+        if (debug_) {
+            std::cout << "[static_camera] Number of objects in List: " << obj_list_.size();
+            if (!obj_list_.empty()) {
+                for(const auto& obj : obj_list_) {
+                    std::cout << " y=" << obj.y << " heigth=" << obj.height << std::endl;
+                }
+            }
+            std::cout << "\n";
+        }
+        
         sendObjList();
 
         if (debug_) {
-            cv::imshow("Mask - " + serial_, obj_mask);
+            cv::imshow("Mask - " + serial_, mask_roi);
             cv::imshow("Annotated ROI - " + serial_, rgb_img);
         }
 

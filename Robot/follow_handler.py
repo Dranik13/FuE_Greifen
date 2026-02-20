@@ -1,14 +1,10 @@
+import time
 import sys
 import zmq
 from pathlib import Path
 from typing import Dict, Optional
-import rtde_receive
-import rtde_control
 from camera_to_robot_transform import CameraToRobotTransformer
 
-rtde_r = rtde_receive.RTDEReceiveInterface("192.168.96.221")
-# rtde_c = rtde_control.RTDEControlInterface("192.168.96.221")
-pos_x = 0
 # Versuche das generierte Python-Protobuf-Modul aus dem zeroMQ-Ordner zu laden
 proto_dir = Path(__file__).parent.parent / "zeroMQ"
 if str(proto_dir) not in sys.path:
@@ -29,7 +25,7 @@ class CameraSubscriber:
     """Python-Äquivalent des C++ ZeroMQ-Subscribers.
 
     Beispiel:
-        sub = CameraSubscriber('tcp://localhost:5555')
+        sub = CameraSubscriber('tcp://localhost:5556')
         objects = sub.receive()  # blockierend
     """
 
@@ -86,39 +82,62 @@ class CameraSubscriber:
             'label': obj_msg.label,
         }
 
-def recive(transformer: CameraToRobotTransformer):
+def recive(transformer: CameraToRobotTransformer, sub: CameraSubscriber):
     while True:
         obj = sub.receive()
         if obj is None:
             continue
 
-        print(f"Object center [mm]: X={obj['x']:.3f}, Y={obj['y']:.3f}, Z={obj['z']:.3f}")
+        print(f"[follow_handler] Object center [mm]: X={obj['x']:.3f}, Y={obj['y']:.3f}, Z={obj['z']:.3f}")
         bx, by, bz = transformer.camera_point_to_base(obj['x'], obj['y'], obj['z'])
-        print(f"Object center [base,m]: X={bx:.4f}, Y={by:.4f}, Z={bz:.4f}")
-        print("x in while", bx)
-        print("y in while", by)
+        print(f"[follow_handler] Object center [base,m]: X={bx:.4f}, Y={by:.4f}, Z={bz:.4f}")
         return bx, by
 
-if __name__ == '__main__':
+def _apply_position_correction(base_y: float, object_speed_y: float, dt_s: float) -> float:
+    return base_y + (object_speed_y * dt_s)
+
+
+def follow(rtde_c, rtde_r, object_speed=0.1, robot_acc=0.1, robot_step_time=0.1, robot_test_vy=0.1, robot_test_vz=-0.05):
     # Einfacher Test: Nachrichten auf localhost:5556 empfangen und ausgeben
     sub = CameraSubscriber('tcp://localhost:5556')
     transformer = CameraToRobotTransformer(rtde_receiver=rtde_r)
-    print("Waiting for 'coordinates' messages on tcp://localhost:5556...")
-    pos_x, pos_y = recive(transformer)
+    print("[follow_handler] Waiting for 'coordinates' messages on tcp://localhost:5556...")
+    measurement_ts = time.monotonic()
+    pos_x, pos_y = recive(transformer, sub)
 
     actual_TCP = rtde_r.getActualTCPPose()
-    print("TCP Pos: ", actual_TCP)
-    new_pose = actual_TCP.copy()
-    new_pose[0] = pos_x  # mm -> m
-    new_pose[1] = pos_y  # mm -> m
-    print("Moving to new pose: ", new_pose)
+    print("[follow_handler] TCP Pos: ", actual_TCP)
 
-    # while True:
-    # actual_q = rtde_r.getActualQ()
-    # print("Joint Pos: ", actual_q)
-    # print("pos x out of while", pos_x)
-    # new_x = 0.46987006692897526 + (abs(pos_x/1000))
-    # print("new_x", new_x)
-    # new_pos = rtde_c.getInverseKinematics([new_x, -0.6141117468652709, 0.29701407690139925, -2.2319500763632916, 2.2104305473135506, -0.0007869137174410558])
-    # print("new_pos", new_pos)
-    # rtde_c.moveJ(new_pos, 0.3, 0.15)
+    dt_to_motion = time.monotonic() - measurement_ts
+    object_speed_y = object_speed
+    pos_y_corrected = _apply_position_correction(pos_y, object_speed_y, dt_to_motion)
+
+    new_pose = actual_TCP.copy()
+    new_pose[0] = pos_x
+    new_pose[1] = pos_y_corrected
+    print(f"[follow_handler] Y correction: dt={dt_to_motion:.3f}s, v_obj={object_speed_y:.3f}m/s -> y={pos_y_corrected:.4f}m")
+    print("[follow_handler] Moving to new pose: ", new_pose)
+    rtde_c.moveL(new_pose, 0.2, 0.1)
+    while True:
+        rtde_c.speedL([0, robot_test_vy, robot_test_vz, 0, 0, 0], robot_acc, robot_step_time)
+        change_direction(rtde_r)
+        rtde_c.speedL([0, robot_test_vy, 0, 0, 0, 0], robot_acc, robot_step_time)
+        if stopping():
+            break
+    # stop(rtde_c)
+
+
+def stop(rtde_c):
+    rtde_c.speedStop(0.1)
+
+def change_direction(rtde_r):
+    while True:
+        actual_TCP = rtde_r.getActualTCPPose()
+        # print("TCP Pos: ", actual_TCP)
+        if actual_TCP[2] < 0.15:  # Beispielbedingung zum Stoppen
+            # print("Stopping condition met.")
+            break
+
+def stopping():
+    time.sleep(1)
+    return True

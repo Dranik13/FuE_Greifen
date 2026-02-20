@@ -17,26 +17,43 @@ public:
     // Objects only move along conveyor belt (y-direction).
     // Returns y-component of average velocity across all tracked objects.
     float update(std::vector<Object3D>& detections, double timestamp);
+
+    // Set fallback velocity for prediction of temporarily invisible objects.
+    void setPredictionVelocity(float vy_mm_s) { prediction_velocity_y_ = vy_mm_s; }
+
+    // Current active tracks as object states (includes predicted invisible ones).
+    std::vector<Object3D> getActiveObjects() const;
     
     // Get current averaged y-velocity
     float getAverageVelocity() const { return avg_velocity_y_; }
 
     // Parameters
     float max_match_distance_mm = 100.0f;
-    int max_missed_frames = 5;
+    float min_tracked_y_mm = -1110.0f;  // Objects removed when y falls below this (outside velocity region)
+    float max_tracked_y_mm = 200.0f;
+    // int max_missed_in_region = 2;        // Max missed frames while in velocity region before deletion
+    float velocity_region_y_min = -400.0f; // Trusted detection region boundaries
+    float velocity_region_y_max = 200.0f;
 
 private:
     struct Track {
         int id;
-        cv::Point3f last_pos;  // For velocity calculation
+        Object3D state;
         double last_ts;
         int missed;
         int age;
     };
 
+    struct Candidate {
+        Object3D state;
+        double detected_ts;
+    };
+
     std::vector<Track> tracks_;
+    std::vector<Candidate> candidates_;
     int next_id_ = 1;
     float avg_velocity_y_ = 0.0f;  // Average y-velocity across all tracked objects
+    float prediction_velocity_y_ = 0.0f;
 };
 
 #endif // TRACKER_HPP
