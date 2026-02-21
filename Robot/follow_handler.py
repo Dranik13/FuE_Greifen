@@ -105,7 +105,7 @@ def follow(rtde_c, rtde_r, object_speed=0.1):
     transformer = CameraToRobotTransformer(rtde_receiver=rtde_r)
     print("[follow_handler] Waiting for 'coordinates' messages on tcp://localhost:5556...")
     pos_y = recive(transformer, sub)
-    stop_time = ((0.03436+abs(pos_y))/object_speed)+0.4
+    stop_time = ((0.03436+abs(pos_y))/object_speed)
     print(f"[follow_handler] Calculated stop time: {stop_time:.3f}s based on pos_y={pos_y:.3f}m and object_speed={object_speed:.3f}m/s")
     time.sleep(stop_time)
 

@@ -81,9 +81,7 @@ void RobotCamera::processFrames()
 
 
         constexpr float kMmPerMeter = 1000.0f;
-        constexpr uint16_t kZThresholdMm = 200;
-        constexpr float kMaskOffsetMm = 30.0f;
-        cv::Mat depth_bin = cv::Mat::zeros(depth_mat.rows, depth_mat.cols, CV_8U);
+        cv::Mat rgb_edges = cv::Mat::zeros(input_img.rows, input_img.cols, CV_8U);
 
         auto get_z_mm = [&](int x, int y, float& z_mm) -> bool {
             uint16_t raw_depth = depth_mat.at<uint16_t>(y, x);
@@ -100,29 +98,21 @@ void RobotCamera::processFrames()
             return true;
         };
 
-        // Segmentierung basierend auf Z-Koordinate
-        for (int y = 0; y < depth_mat.rows; ++y) {
-            for (int x = 0; x < depth_mat.cols; ++x) {
-                float z_mm = 0.0f;
-                if (get_z_mm(x, y, z_mm) == 0){
-                    depth_bin.at<uint8_t>(y, x) = 255;
-                } 
-                else {
-                    depth_bin.at<uint8_t>(y, x) = 0;
-                }
-            }
-        }        
+        // RGB-basierte Segmentierung: Kanten aus Farbbild
+        cv::Mat gray;
+        cv::cvtColor(input_img, gray, cv::COLOR_BGR2GRAY);
+        cv::GaussianBlur(gray, gray, cv::Size(5, 5), 1.2);
+        cv::Canny(gray, rgb_edges, 60, 160);
 
-        // Einfaches Morphologie-Tuning gegen Kantenrauschen
         cv::Mat morph_kernel = cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(5, 5));
-        cv::morphologyEx(depth_bin, depth_bin, cv::MORPH_OPEN, morph_kernel, cv::Point(-1, -1), 1);
-        cv::morphologyEx(depth_bin, depth_bin, cv::MORPH_CLOSE, morph_kernel, cv::Point(-1, -1), 2);
+        cv::dilate(rgb_edges, rgb_edges, morph_kernel, cv::Point(-1, -1), 1);
+        cv::morphologyEx(rgb_edges, rgb_edges, cv::MORPH_CLOSE, morph_kernel, cv::Point(-1, -1), 2);
 
-        // Mittelpunkt des Objekts (größte Kontur) in mm berechnen
+        // Größte Kontur aus RGB-Kanten
         std::vector<std::vector<cv::Point>> contours;
-        cv::findContours(depth_bin, contours, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
+        cv::findContours(rgb_edges, contours, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
         
-        cv::Mat object_mask = cv::Mat::zeros(depth_bin.size(), CV_8U);
+        cv::Mat object_mask = cv::Mat::zeros(rgb_edges.size(), CV_8U);
 
         if (!contours.empty()) {
             auto largest_it = std::max_element(
@@ -136,6 +126,59 @@ void RobotCamera::processFrames()
                                 0,
                                 cv::Scalar(255),
                                 cv::FILLED);
+
+            auto try_get_point3d_mm = [&](int px, int py, cv::Point3f& out_mm) -> bool {
+                constexpr int kSearchRadiusPx = 2;
+                for (int dy = -kSearchRadiusPx; dy <= kSearchRadiusPx; ++dy) {
+                    for (int dx = -kSearchRadiusPx; dx <= kSearchRadiusPx; ++dx) {
+                        int sx = std::clamp(px + dx, 0, depth_raw.cols - 1);
+                        int sy = std::clamp(py + dy, 0, depth_raw.rows - 1);
+                        uint16_t raw_depth = depth_raw.at<uint16_t>(sy, sx);
+                        if (raw_depth == 0) continue;
+
+                        float depth_m = static_cast<float>(raw_depth) / kMmPerMeter;
+                        float pixel[2] = {static_cast<float>(sx), static_cast<float>(sy)};
+                        float point_3d[3];
+                        rs2_deproject_pixel_to_point(point_3d, &depth_intrinsics, pixel, depth_m);
+                        if (point_3d[2] <= 0.0f) continue;
+
+                        out_mm = cv::Point3f(point_3d[0] * kMmPerMeter,
+                                             point_3d[1] * kMmPerMeter,
+                                             point_3d[2] * kMmPerMeter);
+                        return true;
+                    }
+                }
+                return false;
+            };
+
+            // Maße aus RGB-Kanten: RotatedRect-Ecken -> Tiefe auslesen -> 3D-Kantenlängen
+            float measured_length_mm = predicted_obj.length;
+            float measured_width_mm = predicted_obj.width;
+            cv::RotatedRect box = cv::minAreaRect(*largest_it);
+            cv::Point2f box_pts[4];
+            box.points(box_pts);
+
+            cv::Point3f p3d_mm[4];
+            bool corner_ok[4] = {false, false, false, false};
+            for (int i = 0; i < 4; ++i) {
+                int px = std::clamp(static_cast<int>(std::lround(box_pts[i].x)), 0, depth_raw.cols - 1);
+                int py = std::clamp(static_cast<int>(std::lround(box_pts[i].y)), 0, depth_raw.rows - 1);
+                corner_ok[i] = try_get_point3d_mm(px, py, p3d_mm[i]);
+            }
+
+            auto dist_mm = [](const cv::Point3f& a, const cv::Point3f& b) {
+                float dx = a.x - b.x;
+                float dy = a.y - b.y;
+                float dz = a.z - b.z;
+                return std::sqrt(dx * dx + dy * dy + dz * dz);
+            };
+
+            if (corner_ok[0] && corner_ok[1] && corner_ok[2]) {
+                float e1 = dist_mm(p3d_mm[0], p3d_mm[1]);
+                float e2 = dist_mm(p3d_mm[1], p3d_mm[2]);
+                measured_length_mm = std::max(e1, e2);
+                measured_width_mm = std::min(e1, e2);
+            }
 
             int max_y_px = -1;
             double sum_all_x_px = 0.0;
@@ -174,35 +217,17 @@ void RobotCamera::processFrames()
                 mean_bottom_x_px = std::clamp(mean_bottom_x_px, 0, depth_raw.cols - 1);
                 mean_bottom_y_px = std::clamp(mean_bottom_y_px, 0, depth_raw.rows - 1);
 
-                auto try_get_depth_m = [&](int px, int py, float& depth_m) -> bool {
-                    constexpr int kSearchRadiusPx = 2;
-                    for (int dy = -kSearchRadiusPx; dy <= kSearchRadiusPx; ++dy) {
-                        for (int dx = -kSearchRadiusPx; dx <= kSearchRadiusPx; ++dx) {
-                            int sx = std::clamp(px + dx, 0, depth_raw.cols - 1);
-                            int sy = std::clamp(py + dy, 0, depth_raw.rows - 1);
-                            uint16_t raw_depth = depth_raw.at<uint16_t>(sy, sx);
-                            if (raw_depth == 0) continue;
-                            depth_m = static_cast<float>(raw_depth) / kMmPerMeter;
-                            return true;
-                        }
-                    }
-                    return false;
-                };
-
-                float depth_m = 0.0f;
-                if (try_get_depth_m(mean_bottom_x_px, mean_bottom_y_px, depth_m)) {
-                    float pixel[2] = {static_cast<float>(mean_bottom_x_px), static_cast<float>(mean_bottom_y_px)};
-                    float point_3d[3];
-                    rs2_deproject_pixel_to_point(point_3d, &depth_intrinsics, pixel, depth_m);
-
-                    if (point_3d[2] > 0.0f) {
-                        float obj_x_mm = point_3d[0] * kMmPerMeter;
-                        float obj_y_mm = -1 * point_3d[1] * kMmPerMeter + predicted_obj.length / 2;       // Orientierung einberechnen später
+                cv::Point3f bottom_mm;
+                if (try_get_point3d_mm(mean_bottom_x_px, mean_bottom_y_px, bottom_mm)) {
+                    if (bottom_mm.z > 0.0f) {
+                        float obj_x_mm = bottom_mm.x;
+                        float obj_y_mm = -1 * bottom_mm.y + measured_length_mm / 2;       // Orientierung einberechnen später
                         float obj_z_mm = predicted_obj.z;
 
                         if (debug_) {
                             std::cout << "[robot_camera] Bottom edge: y_px=" << max_y_px
                                       << ", mean_x_px=" << mean_bottom_x_px
+                                      << ", LxW(mm)=" << measured_length_mm << "x" << measured_width_mm
                                       << ", bottom_y_mm=" << obj_y_mm << "\n";
                         }
 
@@ -214,7 +239,8 @@ void RobotCamera::processFrames()
         }
 
         cv::imshow("Robot Camera - " + serial_, input_img);
-        cv::imshow("depth mat" + serial_, object_mask);
+        cv::imshow("RGB edges " + serial_, rgb_edges);
+        cv::imshow("Object mask " + serial_, object_mask);
     } catch (const rs2::error& e) {
         std::string message = e.what();
         if (message.find("Frame didn't arrive") != std::string::npos) {

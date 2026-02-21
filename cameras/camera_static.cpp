@@ -92,7 +92,7 @@ void StaticCamera::processFrames()
                 rs2_deproject_pixel_to_point(point, &depth_intrinsics, pixel, depth_value_m);
 
                 float z_mm = point[2] * 1000.0f;
-                float max_obj_height_mm = 70; ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                float max_obj_height_mm = 50; ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 // Check if the point is within the expected height range of objects on the conveyor
                 if (z_mm < conveyor_z_dist_ - min_obj_height_ && z_mm > conveyor_z_dist_ - max_obj_height_mm) {
                     obj_mask.at<uint8_t>(y, x) = 255;
@@ -146,9 +146,16 @@ void StaticCamera::processFrames()
 
             Object3D object;
             cv::Point3f obj_center = computeCenter(corners3d);
-            object.x = (obj_center.x - ref_pt_3d_.x) * 1000;
+            object.x = (obj_center.x - ref_pt_3d_.x) * 1000 + 25;
             object.y = (obj_center.y - ref_pt_3d_.y) * -1000;       // flip y-axis to match robot coordinates
             object.orientation = computeOrientation2D(corners3d);
+            
+
+            float search_area_y_min = -350.0f; ///////////////////////////////////////////////  IN CONFIG !!!!
+            float search_area_y_max = 190.0f;
+            if(object.y < search_area_y_min || object.y > search_area_y_max) {
+                continue;
+            }
 
             auto dist_mm = [](const cv::Point3f& A, const cv::Point3f& B)->float {
                 if (!std::isfinite(A.x) || !std::isfinite(B.x)) return NAN;

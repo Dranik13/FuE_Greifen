@@ -107,23 +107,24 @@ def recive():
         objs = sub.receive()
         if objs is None:
             continue
-        print(f'[idle_handler] Received objects: {objs}')
+        # print(f'[idle_handler] Received objects: {objs}')
         objs = next((o for o in objs if o.get("id") == id_counter), None)
         if objs is None:
             continue
-        print(f'[idle_handler] Filtered objects: {objs}')
+        # print(f'[idle_handler] Filtered objects: {objs}')
         # for i, o in enumerate(objs):
-        print(f"[idle_handler]  {objs['label']} @ ({objs['x']:.3f}, {objs['y']:.3f}, {objs['z']:.3f}), vy={objs.get('vy', 0):.3f}")
+        # print(f"[idle_handler]  {objs['label']} @ ({objs['x']:.3f}, {objs['y']:.3f}, {objs['z']:.3f}), vy={objs.get('vy', 0):.3f}")
         object_speed = objs.get('vy', 0)  # Geschwindigkeit in y-Richtung
         object_speed = object_speed/1000
         pos_x = objs['x']
-        print(f"[idle_handler] x in while: {pos_x}, vy: {object_speed}")
-        if object_speed != 0:
+        pos_y = objs['y']
+        if object_speed >= 0.05:
             counter += 1
             if counter >= 10:  # Warte auf mehrere Messungen mit Geschwindigkeit, um Rauschen zu reduzieren
                 break
+    print(f"[idle_handler] x, y and speed from Camera: {pos_x},{pos_y}, vy: {object_speed}")
     id_counter += 1
-    return pos_x, object_speed
+    return pos_x, pos_y, object_speed
     
 def move_to_home(rtde_c):
     if save_pos.is_save_position(START_CONVEYOR_TCP_POS[:3]):
@@ -136,6 +137,6 @@ def move_to_home(rtde_c):
 def idle(rtde_c):
     global id_counter
     if id_counter == 1:
-        print("[idle_handler] Erste ID, fahre zum Home-Position.")
+        # print("[idle_handler] Erste ID, fahre zum Home-Position.")
         move_to_home(rtde_c)
     return recive()

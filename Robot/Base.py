@@ -23,6 +23,7 @@ gripper.activate()
 gripper.open()
 
 pos_x = 0
+pos_y = 0
 object_speed = 0
 robot_speed = 0.1
 ROBOT_IP = "192.168.96.221"
@@ -58,14 +59,14 @@ def idle_handling(machine: RandomStateMachine) -> Optional[MachineState]:
 	
 	if debug:
 		print("[Base] Handling IDLE state...")
-	global pos_x, object_speed
-	pos_x, object_speed = idle_handler.idle(rtde_c)
+	global pos_x, pos_y, object_speed
+	pos_x, pos_y, object_speed = idle_handler.idle(rtde_c)
 	return MachineState.MOVE
 
 def move_handling(machine: RandomStateMachine) -> Optional[MachineState]:
 	if debug:
 		print("[Base] Handling MOVE state...")
-	move_handler.move(pos_x, rtde_r, rtde_c, object_speed)
+	move_handler.move(pos_x, pos_y, rtde_r, rtde_c, object_speed)
 	return MachineState.FOLLOW
 
 
@@ -79,7 +80,7 @@ def follow_handling(machine: RandomStateMachine) -> Optional[MachineState]:
 def grip_handling(machine: RandomStateMachine) -> Optional[MachineState]:
 	if debug:
 		print("[Base] Handling GRIP state...")
-	grip_handler.grip(rtde_c, gripper, speed=object_speed)
+	grip_handler.grip(rtde_r, rtde_c, gripper, speed=object_speed)
 	# gripper.close()
 	return MachineState.PLACE
 

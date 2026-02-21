@@ -14,6 +14,10 @@ public:
 
 private:
     void processFrames() override;
+    bool receiveStaticObject(Object3D& out_obj);
+
+    zmq::context_t sub_context_{1};
+    zmq::socket_t sub_socket_{sub_context_, zmq::socket_type::sub};
 };
 
 #endif // CAMERA_READER_2_H
