@@ -85,51 +85,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-.PHONY : list_install_components/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/tetripick/UR10_Pick_ws/build/CMakeFiles /home/tetripick/UR10_Pick_ws/build//CMakeFiles/progress.marks
@@ -199,19 +154,6 @@ camera_robot: cmake_check_build_system
 camera_robot/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/camera_robot.dir/build.make CMakeFiles/camera_robot.dir/build
 .PHONY : camera_robot/fast
-
-#=============================================================================
-# Target rules for targets named msg_receiver
-
-# Build rule for target.
-msg_receiver: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 msg_receiver
-.PHONY : msg_receiver
-
-# fast build rule for target.
-msg_receiver/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/msg_receiver.dir/build.make CMakeFiles/msg_receiver.dir/build
-.PHONY : msg_receiver/fast
 
 cameras/camera_reader_base.o: cameras/camera_reader_base.cpp.o
 .PHONY : cameras/camera_reader_base.o
@@ -357,37 +299,12 @@ cameras/tracker.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/camera_base.dir/build.make CMakeFiles/camera_base.dir/cameras/tracker.cpp.s
 .PHONY : cameras/tracker.cpp.s
 
-zeroMQ/msg_receiver.o: zeroMQ/msg_receiver.cpp.o
-.PHONY : zeroMQ/msg_receiver.o
-
-# target to build an object file
-zeroMQ/msg_receiver.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/msg_receiver.dir/build.make CMakeFiles/msg_receiver.dir/zeroMQ/msg_receiver.cpp.o
-.PHONY : zeroMQ/msg_receiver.cpp.o
-
-zeroMQ/msg_receiver.i: zeroMQ/msg_receiver.cpp.i
-.PHONY : zeroMQ/msg_receiver.i
-
-# target to preprocess a source file
-zeroMQ/msg_receiver.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/msg_receiver.dir/build.make CMakeFiles/msg_receiver.dir/zeroMQ/msg_receiver.cpp.i
-.PHONY : zeroMQ/msg_receiver.cpp.i
-
-zeroMQ/msg_receiver.s: zeroMQ/msg_receiver.cpp.s
-.PHONY : zeroMQ/msg_receiver.s
-
-# target to generate assembly for a file
-zeroMQ/msg_receiver.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/msg_receiver.dir/build.make CMakeFiles/msg_receiver.dir/zeroMQ/msg_receiver.cpp.s
-.PHONY : zeroMQ/msg_receiver.cpp.s
-
 zeroMQ/objects_3D.pb.o: zeroMQ/objects_3D.pb.cc.o
 .PHONY : zeroMQ/objects_3D.pb.o
 
 # target to build an object file
 zeroMQ/objects_3D.pb.cc.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/camera_base.dir/build.make CMakeFiles/camera_base.dir/zeroMQ/objects_3D.pb.cc.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/msg_receiver.dir/build.make CMakeFiles/msg_receiver.dir/zeroMQ/objects_3D.pb.cc.o
 .PHONY : zeroMQ/objects_3D.pb.cc.o
 
 zeroMQ/objects_3D.pb.i: zeroMQ/objects_3D.pb.cc.i
@@ -396,7 +313,6 @@ zeroMQ/objects_3D.pb.i: zeroMQ/objects_3D.pb.cc.i
 # target to preprocess a source file
 zeroMQ/objects_3D.pb.cc.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/camera_base.dir/build.make CMakeFiles/camera_base.dir/zeroMQ/objects_3D.pb.cc.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/msg_receiver.dir/build.make CMakeFiles/msg_receiver.dir/zeroMQ/objects_3D.pb.cc.i
 .PHONY : zeroMQ/objects_3D.pb.cc.i
 
 zeroMQ/objects_3D.pb.s: zeroMQ/objects_3D.pb.cc.s
@@ -405,7 +321,6 @@ zeroMQ/objects_3D.pb.s: zeroMQ/objects_3D.pb.cc.s
 # target to generate assembly for a file
 zeroMQ/objects_3D.pb.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/camera_base.dir/build.make CMakeFiles/camera_base.dir/zeroMQ/objects_3D.pb.cc.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/msg_receiver.dir/build.make CMakeFiles/msg_receiver.dir/zeroMQ/objects_3D.pb.cc.s
 .PHONY : zeroMQ/objects_3D.pb.cc.s
 
 # Help Target
@@ -415,15 +330,10 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... install"
-	@echo "... install/local"
-	@echo "... install/strip"
-	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... camera_base"
 	@echo "... camera_robot"
 	@echo "... camera_static"
-	@echo "... msg_receiver"
 	@echo "... cameras/camera_reader_base.o"
 	@echo "... cameras/camera_reader_base.i"
 	@echo "... cameras/camera_reader_base.s"
@@ -442,9 +352,6 @@ help:
 	@echo "... cameras/tracker.o"
 	@echo "... cameras/tracker.i"
 	@echo "... cameras/tracker.s"
-	@echo "... zeroMQ/msg_receiver.o"
-	@echo "... zeroMQ/msg_receiver.i"
-	@echo "... zeroMQ/msg_receiver.s"
 	@echo "... zeroMQ/objects_3D.pb.o"
 	@echo "... zeroMQ/objects_3D.pb.i"
 	@echo "... zeroMQ/objects_3D.pb.s"

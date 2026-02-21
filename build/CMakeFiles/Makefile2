@@ -66,7 +66,6 @@ CMAKE_BINARY_DIR = /home/tetripick/UR10_Pick_ws/build
 all: CMakeFiles/camera_base.dir/all
 all: CMakeFiles/camera_static.dir/all
 all: CMakeFiles/camera_robot.dir/all
-all: CMakeFiles/msg_receiver.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -77,7 +76,6 @@ preinstall:
 clean: CMakeFiles/camera_base.dir/clean
 clean: CMakeFiles/camera_static.dir/clean
 clean: CMakeFiles/camera_robot.dir/clean
-clean: CMakeFiles/msg_receiver.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -157,32 +155,6 @@ camera_robot: CMakeFiles/camera_robot.dir/rule
 CMakeFiles/camera_robot.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/camera_robot.dir/build.make CMakeFiles/camera_robot.dir/clean
 .PHONY : CMakeFiles/camera_robot.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/msg_receiver.dir
-
-# All Build rule for target.
-CMakeFiles/msg_receiver.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/msg_receiver.dir/build.make CMakeFiles/msg_receiver.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/msg_receiver.dir/build.make CMakeFiles/msg_receiver.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/tetripick/UR10_Pick_ws/build/CMakeFiles --progress-num=11,12,13 "Built target msg_receiver"
-.PHONY : CMakeFiles/msg_receiver.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/msg_receiver.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tetripick/UR10_Pick_ws/build/CMakeFiles 3
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/msg_receiver.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tetripick/UR10_Pick_ws/build/CMakeFiles 0
-.PHONY : CMakeFiles/msg_receiver.dir/rule
-
-# Convenience name for target.
-msg_receiver: CMakeFiles/msg_receiver.dir/rule
-.PHONY : msg_receiver
-
-# clean rule for target.
-CMakeFiles/msg_receiver.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/msg_receiver.dir/build.make CMakeFiles/msg_receiver.dir/clean
-.PHONY : CMakeFiles/msg_receiver.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

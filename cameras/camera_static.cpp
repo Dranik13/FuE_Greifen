@@ -55,7 +55,7 @@ void StaticCamera::processFrames()
                                     .get_intrinsics();
 
         // Initialize reference point (once)
-        if (!ref_pt_3d_.x)
+        if (!ref_pt_3d_initialized_)
         {
             float d_m = depth.get_distance(static_cast<int>(ref_pt_.x), static_cast<int>(ref_pt_.y));
             if (d_m > 0.0f) 
@@ -65,6 +65,7 @@ void StaticCamera::processFrames()
                 float pos[3];
                 rs2_deproject_pixel_to_point(pos, &depth_intrinsics, pixel, d_m);
                 ref_pt_3d_ = cv::Point3f(pos[0], pos[1], pos[2]);
+                ref_pt_3d_initialized_ = true;
                 if (debug_) 
                 {
                     std::cout << "[static_camera] Reference point 3D (m): X=" << ref_pt_3d_.x 
@@ -82,16 +83,16 @@ void StaticCamera::processFrames()
             for (int x = 0; x < depth_roi.cols; ++x) {
                 int total_x = effective_roi.x + x;
                 int total_y = effective_roi.y + y;
-                float depth_value_mm = depth.get_distance(total_x, total_y) * 1000.0f;
+                float depth_value_m = depth.get_distance(total_x, total_y);
 
-                if (depth_value_mm == 0) continue;
+                if (depth_value_m <= 0.0f) continue;
 
                 float pixel[2] = { static_cast<float>(total_x), static_cast<float>(total_y) };
                 float point[3];
-                rs2_deproject_pixel_to_point(point, &depth_intrinsics, pixel, depth_value_mm);
+                rs2_deproject_pixel_to_point(point, &depth_intrinsics, pixel, depth_value_m);
 
-                float z_mm = point[2];
-                float max_obj_height_mm = 50; ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                float z_mm = point[2] * 1000.0f;
+                float max_obj_height_mm = 70; ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 // Check if the point is within the expected height range of objects on the conveyor
                 if (z_mm < conveyor_z_dist_ - min_obj_height_ && z_mm > conveyor_z_dist_ - max_obj_height_mm) {
                     obj_mask.at<uint8_t>(y, x) = 255;
@@ -100,7 +101,10 @@ void StaticCamera::processFrames()
         }
 
         cv::GaussianBlur(obj_mask, obj_mask, cv::Size(5,5), 1.4);
-        cv::Canny(obj_mask, obj_mask, canny_thresh_.at(0), canny_thresh_.at(1));
+        cv::threshold(obj_mask, obj_mask, 127, 255, cv::THRESH_BINARY);
+        cv::Mat morph_kernel = cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(5, 5));
+        cv::morphologyEx(obj_mask, obj_mask, cv::MORPH_CLOSE, morph_kernel, cv::Point(-1, -1), 2);
+        cv::morphologyEx(obj_mask, obj_mask, cv::MORPH_OPEN, morph_kernel, cv::Point(-1, -1), 1);
 
         std::vector<std::vector<cv::Point>> obj_contours;
         cv::findContours(obj_mask, obj_contours, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
@@ -244,12 +248,11 @@ void StaticCamera::processFrames()
         }
 
         obj_list_ = tracker_.getActiveObjects();
-        int i = 0;
         for(const auto& obj : obj_list_) {
             if (debug_) {
-                std::cout << "[static_camera] Obj. " << i++ << " at (x=" << obj.x << "mm, y=" << obj.y 
+                std::cout << "[static_camera] Obj. ID: " << obj.id << " at (x=" << obj.x << "mm, y=" << obj.y 
                           << "mm, z=" << obj.z << "mm), size (LxWxH): " << obj.length 
-                          << "x" << obj.width << "x" << obj.height << " mm\n";
+                          << "x" << obj.width << "x" << obj.height << "vy=" << obj.vy << " mm/s\n";
             }
         }
         // if (debug_) {

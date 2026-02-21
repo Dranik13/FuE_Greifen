@@ -71,20 +71,20 @@ target_link_libraries(camera_robot PRIVATE camera_base)
 # target_link_libraries(camera_reader PRIVATE camera_base)
 
 # ============ ZeroMQ Message Receiver ============
-add_executable(msg_receiver 
-  zeroMQ/msg_receiver.cpp
-  zeroMQ/objects_3D.pb.cc)
+# add_executable(msg_receiver 
+#   zeroMQ/msg_receiver.cpp
+#   zeroMQ/objects_3D.pb.cc)
 
-target_include_directories(msg_receiver PRIVATE 
-                          ${OpenCV_INCLUDE_DIRS} 
-                          ${CMAKE_CURRENT_SOURCE_DIR}
-                          ${ZMQ_INCLUDE_DIRS}
-                          ${CMAKE_CURRENT_SOURCE_DIR}/zeroMQ)
-target_link_libraries(msg_receiver PRIVATE 
-                      ${OpenCV_LIBS} 
-                      ${REALSR_LIBS}
-                      protobuf::libprotobuf
-                      ${ZMQ_LIBRARIES})
+# target_include_directories(msg_receiver PRIVATE 
+#                           ${OpenCV_INCLUDE_DIRS} 
+#                           ${CMAKE_CURRENT_SOURCE_DIR}
+#                           ${ZMQ_INCLUDE_DIRS}
+#                           ${CMAKE_CURRENT_SOURCE_DIR}/zeroMQ)
+# target_link_libraries(msg_receiver PRIVATE 
+#                       ${OpenCV_LIBS} 
+#                       ${REALSR_LIBS}
+#                       protobuf::libprotobuf
+#                       ${ZMQ_LIBRARIES})
 
-# ============ Install Targets ============
-install(TARGETS camera_static camera_robot msg_receiver DESTINATION bin)
+# # ============ Install Targets ============
+# install(TARGETS camera_static camera_robot msg_receiver DESTINATION bin)

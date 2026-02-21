@@ -173,6 +173,7 @@ void BaseCameraReader::sendObjList()
         o->set_length(obj.length);
         o->set_height(obj.height);
         o->set_label(obj.label);
+        o->set_id(obj.id);
     }
 
     std::string buffer;

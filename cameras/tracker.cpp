@@ -8,6 +8,10 @@ float resolve_prediction_vy(const Object3D& state, float fallback_vy) {
     }
     return fallback_vy;
 }
+
+bool is_in_velocity_region(float y, float y_min, float y_max) {
+    return y >= y_min && y <= y_max;
+}
 }
 
 Tracker::Tracker() {}
@@ -66,14 +70,17 @@ float Tracker::update(std::vector<Object3D>& detections, double timestamp)
         int tj = matched_track_index[i];
         if (tj != -1 && tj < (int)original_track_count) {
             Track& track = tracks_[tj];
+            detections[i].id = track.id;
             double dt = timestamp - track.last_ts;
+            bool prev_in_region = is_in_velocity_region(track.state.y, velocity_region_y_min, velocity_region_y_max);
+            bool curr_in_region = is_in_velocity_region(detections[i].y, velocity_region_y_min, velocity_region_y_max);
             
             // Calculate y-velocity and store in Object3D
-            if (dt > 1e-6 && dt < 10.0) {
+            if (dt > 1e-6 && dt < 10.0 && prev_in_region && curr_in_region) {
                 float vy = (detections[i].y - track.state.y) / (float)dt;
+                detections[i].vy = vy;
                 
                 if (std::abs(vy) >= 10){
-                    detections[i].vy = vy;
                     sum_vy += vy;
                     vel_count++;
                 }
@@ -91,6 +98,7 @@ float Tracker::update(std::vector<Object3D>& detections, double timestamp)
 
     // Match detections also with candidates (to promote they to full tracks)
     std::vector<bool> candidate_matched(candidates_.size(), false);
+    std::vector<bool> promoted_to_track(n, false);
 
     for (int i = 0; i < n; ++i) {
         if (matched_track_index[i] != -1) continue;  // Already matched with a track
@@ -122,6 +130,8 @@ float Tracker::update(std::vector<Object3D>& detections, double timestamp)
             // Candidate confirmed! Promote to full track
             Track newt;
             newt.id = next_id_++;
+            detections[i].id = newt.id;
+            detections[i].vy = 0.0f;  // New tracks have zero velocity initially
             newt.state = detections[i];
             newt.last_ts = timestamp;
             newt.missed = 0;
@@ -129,7 +139,7 @@ float Tracker::update(std::vector<Object3D>& detections, double timestamp)
             tracks_.push_back(newt);
             
             candidate_matched[best_c] = true;
-            detections[i].vy = 0.0f;  // New tracks have zero velocity initially
+            promoted_to_track[i] = true;
         }
     }
 
@@ -144,11 +154,12 @@ float Tracker::update(std::vector<Object3D>& detections, double timestamp)
 
     // Create candidates for still-unmatched detections
     for (int i = 0; i < n; ++i) {
-        if (matched_track_index[i] == -1 &&
+        if (matched_track_index[i] == -1 && !promoted_to_track[i] &&
             std::isfinite(detections[i].x) && std::isfinite(detections[i].y) && 
             std::isfinite(detections[i].z)) {
 
             Candidate cand;
+            detections[i].id = 0;
             cand.state = detections[i];
             cand.detected_ts = timestamp;
             candidates_.push_back(cand);
@@ -181,17 +192,15 @@ float Tracker::update(std::vector<Object3D>& detections, double timestamp)
     for (size_t j = 0; j < tracks_.size(); ++j) {
         const Track& t = tracks_[j];
         bool in_region = (t.state.y >= velocity_region_y_min && t.state.y <= velocity_region_y_max);
-        
-        // bool keep = false;
-        // if (in_region) {
-        //     // Inside trusted region: strict - delete if too many misses
-        //     keep = (t.missed <= max_missed_in_region);
-        // } else {
-        //     // Outside region: lenient - keep until y threshold
-        //     keep = (t.state.y >= min_tracked_y_mm);
-        // }
-        bool keep = (t.state.y >= min_tracked_y_mm && t.state.y <= max_tracked_y_mm);
-        
+        bool keep = false;
+        if (in_region) {
+            // Inside trusted region: strict - delete if too many misses
+            keep = (t.missed <= max_missed_in_region);
+        } else {
+            // Outside region: lenient - keep until y threshold
+            keep = (t.state.y >= min_tracked_y_mm && t.state.y <= max_tracked_y_mm);
+        }
+
         if (keep) {
             new_tracks.push_back(t);
         }

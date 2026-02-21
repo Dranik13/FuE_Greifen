@@ -178,17 +178,18 @@ class Object3D_msg final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kLabelFieldNumber = 9,
-    kXFieldNumber = 1,
-    kYFieldNumber = 2,
-    kZFieldNumber = 3,
-    kOrientationFieldNumber = 4,
-    kVyFieldNumber = 5,
-    kWidthFieldNumber = 6,
-    kLengthFieldNumber = 7,
-    kHeightFieldNumber = 8,
+    kLabelFieldNumber = 2,
+    kIdFieldNumber = 1,
+    kXFieldNumber = 3,
+    kYFieldNumber = 4,
+    kZFieldNumber = 5,
+    kOrientationFieldNumber = 6,
+    kVyFieldNumber = 7,
+    kWidthFieldNumber = 8,
+    kLengthFieldNumber = 9,
+    kHeightFieldNumber = 10,
   };
-  // string label = 9;
+  // string label = 2;
   void clear_label();
   const std::string& label() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -202,7 +203,16 @@ class Object3D_msg final :
   std::string* _internal_mutable_label();
   public:
 
-  // float x = 1;
+  // int32 id = 1;
+  void clear_id();
+  int32_t id() const;
+  void set_id(int32_t value);
+  private:
+  int32_t _internal_id() const;
+  void _internal_set_id(int32_t value);
+  public:
+
+  // float x = 3;
   void clear_x();
   float x() const;
   void set_x(float value);
@@ -211,7 +221,7 @@ class Object3D_msg final :
   void _internal_set_x(float value);
   public:
 
-  // float y = 2;
+  // float y = 4;
   void clear_y();
   float y() const;
   void set_y(float value);
@@ -220,7 +230,7 @@ class Object3D_msg final :
   void _internal_set_y(float value);
   public:
 
-  // float z = 3;
+  // float z = 5;
   void clear_z();
   float z() const;
   void set_z(float value);
@@ -229,7 +239,7 @@ class Object3D_msg final :
   void _internal_set_z(float value);
   public:
 
-  // float orientation = 4;
+  // float orientation = 6;
   void clear_orientation();
   float orientation() const;
   void set_orientation(float value);
@@ -238,7 +248,7 @@ class Object3D_msg final :
   void _internal_set_orientation(float value);
   public:
 
-  // float vy = 5;
+  // float vy = 7;
   void clear_vy();
   float vy() const;
   void set_vy(float value);
@@ -247,7 +257,7 @@ class Object3D_msg final :
   void _internal_set_vy(float value);
   public:
 
-  // float width = 6;
+  // float width = 8;
   void clear_width();
   float width() const;
   void set_width(float value);
@@ -256,7 +266,7 @@ class Object3D_msg final :
   void _internal_set_width(float value);
   public:
 
-  // float length = 7;
+  // float length = 9;
   void clear_length();
   float length() const;
   void set_length(float value);
@@ -265,7 +275,7 @@ class Object3D_msg final :
   void _internal_set_length(float value);
   public:
 
-  // float height = 8;
+  // float height = 10;
   void clear_height();
   float height() const;
   void set_height(float value);
@@ -283,6 +293,7 @@ class Object3D_msg final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr label_;
+    int32_t id_;
     float x_;
     float y_;
     float z_;
@@ -464,167 +475,27 @@ class Objects3D_msg final :
 #endif  // __GNUC__
 // Object3D_msg
 
-// float x = 1;
-inline void Object3D_msg::clear_x() {
-  _impl_.x_ = 0;
+// int32 id = 1;
+inline void Object3D_msg::clear_id() {
+  _impl_.id_ = 0;
 }
-inline float Object3D_msg::_internal_x() const {
-  return _impl_.x_;
+inline int32_t Object3D_msg::_internal_id() const {
+  return _impl_.id_;
 }
-inline float Object3D_msg::x() const {
-  // @@protoc_insertion_point(field_get:Object3D_msg.x)
-  return _internal_x();
+inline int32_t Object3D_msg::id() const {
+  // @@protoc_insertion_point(field_get:Object3D_msg.id)
+  return _internal_id();
 }
-inline void Object3D_msg::_internal_set_x(float value) {
+inline void Object3D_msg::_internal_set_id(int32_t value) {
   
-  _impl_.x_ = value;
+  _impl_.id_ = value;
 }
-inline void Object3D_msg::set_x(float value) {
-  _internal_set_x(value);
-  // @@protoc_insertion_point(field_set:Object3D_msg.x)
+inline void Object3D_msg::set_id(int32_t value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:Object3D_msg.id)
 }
 
-// float y = 2;
-inline void Object3D_msg::clear_y() {
-  _impl_.y_ = 0;
-}
-inline float Object3D_msg::_internal_y() const {
-  return _impl_.y_;
-}
-inline float Object3D_msg::y() const {
-  // @@protoc_insertion_point(field_get:Object3D_msg.y)
-  return _internal_y();
-}
-inline void Object3D_msg::_internal_set_y(float value) {
-  
-  _impl_.y_ = value;
-}
-inline void Object3D_msg::set_y(float value) {
-  _internal_set_y(value);
-  // @@protoc_insertion_point(field_set:Object3D_msg.y)
-}
-
-// float z = 3;
-inline void Object3D_msg::clear_z() {
-  _impl_.z_ = 0;
-}
-inline float Object3D_msg::_internal_z() const {
-  return _impl_.z_;
-}
-inline float Object3D_msg::z() const {
-  // @@protoc_insertion_point(field_get:Object3D_msg.z)
-  return _internal_z();
-}
-inline void Object3D_msg::_internal_set_z(float value) {
-  
-  _impl_.z_ = value;
-}
-inline void Object3D_msg::set_z(float value) {
-  _internal_set_z(value);
-  // @@protoc_insertion_point(field_set:Object3D_msg.z)
-}
-
-// float orientation = 4;
-inline void Object3D_msg::clear_orientation() {
-  _impl_.orientation_ = 0;
-}
-inline float Object3D_msg::_internal_orientation() const {
-  return _impl_.orientation_;
-}
-inline float Object3D_msg::orientation() const {
-  // @@protoc_insertion_point(field_get:Object3D_msg.orientation)
-  return _internal_orientation();
-}
-inline void Object3D_msg::_internal_set_orientation(float value) {
-  
-  _impl_.orientation_ = value;
-}
-inline void Object3D_msg::set_orientation(float value) {
-  _internal_set_orientation(value);
-  // @@protoc_insertion_point(field_set:Object3D_msg.orientation)
-}
-
-// float vy = 5;
-inline void Object3D_msg::clear_vy() {
-  _impl_.vy_ = 0;
-}
-inline float Object3D_msg::_internal_vy() const {
-  return _impl_.vy_;
-}
-inline float Object3D_msg::vy() const {
-  // @@protoc_insertion_point(field_get:Object3D_msg.vy)
-  return _internal_vy();
-}
-inline void Object3D_msg::_internal_set_vy(float value) {
-  
-  _impl_.vy_ = value;
-}
-inline void Object3D_msg::set_vy(float value) {
-  _internal_set_vy(value);
-  // @@protoc_insertion_point(field_set:Object3D_msg.vy)
-}
-
-// float width = 6;
-inline void Object3D_msg::clear_width() {
-  _impl_.width_ = 0;
-}
-inline float Object3D_msg::_internal_width() const {
-  return _impl_.width_;
-}
-inline float Object3D_msg::width() const {
-  // @@protoc_insertion_point(field_get:Object3D_msg.width)
-  return _internal_width();
-}
-inline void Object3D_msg::_internal_set_width(float value) {
-  
-  _impl_.width_ = value;
-}
-inline void Object3D_msg::set_width(float value) {
-  _internal_set_width(value);
-  // @@protoc_insertion_point(field_set:Object3D_msg.width)
-}
-
-// float length = 7;
-inline void Object3D_msg::clear_length() {
-  _impl_.length_ = 0;
-}
-inline float Object3D_msg::_internal_length() const {
-  return _impl_.length_;
-}
-inline float Object3D_msg::length() const {
-  // @@protoc_insertion_point(field_get:Object3D_msg.length)
-  return _internal_length();
-}
-inline void Object3D_msg::_internal_set_length(float value) {
-  
-  _impl_.length_ = value;
-}
-inline void Object3D_msg::set_length(float value) {
-  _internal_set_length(value);
-  // @@protoc_insertion_point(field_set:Object3D_msg.length)
-}
-
-// float height = 8;
-inline void Object3D_msg::clear_height() {
-  _impl_.height_ = 0;
-}
-inline float Object3D_msg::_internal_height() const {
-  return _impl_.height_;
-}
-inline float Object3D_msg::height() const {
-  // @@protoc_insertion_point(field_get:Object3D_msg.height)
-  return _internal_height();
-}
-inline void Object3D_msg::_internal_set_height(float value) {
-  
-  _impl_.height_ = value;
-}
-inline void Object3D_msg::set_height(float value) {
-  _internal_set_height(value);
-  // @@protoc_insertion_point(field_set:Object3D_msg.height)
-}
-
-// string label = 9;
+// string label = 2;
 inline void Object3D_msg::clear_label() {
   _impl_.label_.ClearToEmpty();
 }
@@ -672,6 +543,166 @@ inline void Object3D_msg::set_allocated_label(std::string* label) {
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:Object3D_msg.label)
+}
+
+// float x = 3;
+inline void Object3D_msg::clear_x() {
+  _impl_.x_ = 0;
+}
+inline float Object3D_msg::_internal_x() const {
+  return _impl_.x_;
+}
+inline float Object3D_msg::x() const {
+  // @@protoc_insertion_point(field_get:Object3D_msg.x)
+  return _internal_x();
+}
+inline void Object3D_msg::_internal_set_x(float value) {
+  
+  _impl_.x_ = value;
+}
+inline void Object3D_msg::set_x(float value) {
+  _internal_set_x(value);
+  // @@protoc_insertion_point(field_set:Object3D_msg.x)
+}
+
+// float y = 4;
+inline void Object3D_msg::clear_y() {
+  _impl_.y_ = 0;
+}
+inline float Object3D_msg::_internal_y() const {
+  return _impl_.y_;
+}
+inline float Object3D_msg::y() const {
+  // @@protoc_insertion_point(field_get:Object3D_msg.y)
+  return _internal_y();
+}
+inline void Object3D_msg::_internal_set_y(float value) {
+  
+  _impl_.y_ = value;
+}
+inline void Object3D_msg::set_y(float value) {
+  _internal_set_y(value);
+  // @@protoc_insertion_point(field_set:Object3D_msg.y)
+}
+
+// float z = 5;
+inline void Object3D_msg::clear_z() {
+  _impl_.z_ = 0;
+}
+inline float Object3D_msg::_internal_z() const {
+  return _impl_.z_;
+}
+inline float Object3D_msg::z() const {
+  // @@protoc_insertion_point(field_get:Object3D_msg.z)
+  return _internal_z();
+}
+inline void Object3D_msg::_internal_set_z(float value) {
+  
+  _impl_.z_ = value;
+}
+inline void Object3D_msg::set_z(float value) {
+  _internal_set_z(value);
+  // @@protoc_insertion_point(field_set:Object3D_msg.z)
+}
+
+// float orientation = 6;
+inline void Object3D_msg::clear_orientation() {
+  _impl_.orientation_ = 0;
+}
+inline float Object3D_msg::_internal_orientation() const {
+  return _impl_.orientation_;
+}
+inline float Object3D_msg::orientation() const {
+  // @@protoc_insertion_point(field_get:Object3D_msg.orientation)
+  return _internal_orientation();
+}
+inline void Object3D_msg::_internal_set_orientation(float value) {
+  
+  _impl_.orientation_ = value;
+}
+inline void Object3D_msg::set_orientation(float value) {
+  _internal_set_orientation(value);
+  // @@protoc_insertion_point(field_set:Object3D_msg.orientation)
+}
+
+// float vy = 7;
+inline void Object3D_msg::clear_vy() {
+  _impl_.vy_ = 0;
+}
+inline float Object3D_msg::_internal_vy() const {
+  return _impl_.vy_;
+}
+inline float Object3D_msg::vy() const {
+  // @@protoc_insertion_point(field_get:Object3D_msg.vy)
+  return _internal_vy();
+}
+inline void Object3D_msg::_internal_set_vy(float value) {
+  
+  _impl_.vy_ = value;
+}
+inline void Object3D_msg::set_vy(float value) {
+  _internal_set_vy(value);
+  // @@protoc_insertion_point(field_set:Object3D_msg.vy)
+}
+
+// float width = 8;
+inline void Object3D_msg::clear_width() {
+  _impl_.width_ = 0;
+}
+inline float Object3D_msg::_internal_width() const {
+  return _impl_.width_;
+}
+inline float Object3D_msg::width() const {
+  // @@protoc_insertion_point(field_get:Object3D_msg.width)
+  return _internal_width();
+}
+inline void Object3D_msg::_internal_set_width(float value) {
+  
+  _impl_.width_ = value;
+}
+inline void Object3D_msg::set_width(float value) {
+  _internal_set_width(value);
+  // @@protoc_insertion_point(field_set:Object3D_msg.width)
+}
+
+// float length = 9;
+inline void Object3D_msg::clear_length() {
+  _impl_.length_ = 0;
+}
+inline float Object3D_msg::_internal_length() const {
+  return _impl_.length_;
+}
+inline float Object3D_msg::length() const {
+  // @@protoc_insertion_point(field_get:Object3D_msg.length)
+  return _internal_length();
+}
+inline void Object3D_msg::_internal_set_length(float value) {
+  
+  _impl_.length_ = value;
+}
+inline void Object3D_msg::set_length(float value) {
+  _internal_set_length(value);
+  // @@protoc_insertion_point(field_set:Object3D_msg.length)
+}
+
+// float height = 10;
+inline void Object3D_msg::clear_height() {
+  _impl_.height_ = 0;
+}
+inline float Object3D_msg::_internal_height() const {
+  return _impl_.height_;
+}
+inline float Object3D_msg::height() const {
+  // @@protoc_insertion_point(field_get:Object3D_msg.height)
+  return _internal_height();
+}
+inline void Object3D_msg::_internal_set_height(float value) {
+  
+  _impl_.height_ = value;
+}
+inline void Object3D_msg::set_height(float value) {
+  _internal_set_height(value);
+  // @@protoc_insertion_point(field_set:Object3D_msg.height)
 }
 
 // -------------------------------------------------------------------

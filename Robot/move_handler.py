@@ -1,5 +1,6 @@
 from pathlib import Path
 import yaml
+import save_pos
 
 
 def _load_kamera_2_kalib_tcp_pos():
@@ -28,7 +29,10 @@ def move(pos_x, rtde_r, rtde_c, object_speed):
     target_tcp[0] = new_x
     target_tcp[1] = new_y
     target_tcp[2] = 0.10
-    print(f"[move_handler] Moving to new TCP: {target_tcp}")
+    if save_pos.is_save_position(target_tcp[:3]):
+        rtde_c.moveL(target_tcp, 0.8, 0.5)
+    else:
+        print(f"[move_handler] Zielposition {target_tcp[:3]} ist außerhalb des Arbeitsbereichs. Bewegung wird abgebrochen.")
     # new_pos = rtde_c.getInverseKinematics(target_tcp)
     # print(f"[move_handler] new_pos: {new_pos}")
-    rtde_c.moveL(target_tcp, 0.8, 0.2)
+    

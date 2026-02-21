@@ -1,5 +1,6 @@
 import yaml
 from pathlib import Path
+import save_pos
 
 def _load_place_tcp_pos():
     pose_file = Path(__file__).with_name("pose.yaml")
@@ -17,8 +18,10 @@ def _load_place_tcp_pos():
 PLACE_TCP_POS = _load_place_tcp_pos()
 
 def place(rtde_c, gripper):
-    new_pos = rtde_c.getInverseKinematics(PLACE_TCP_POS)
-    print(f"[place_handler] Moving to PLACE position: {new_pos}")
-    rtde_c.moveJ(new_pos, 0.8, 0.2)
+    print(f"[place_handler] Moving to PLACE position: {PLACE_TCP_POS}")
+    if save_pos.is_save_position(PLACE_TCP_POS[:3]):
+        rtde_c.moveL(PLACE_TCP_POS, 0.8, 0.5)
+    else:
+        print(f"[place_handler] Zielposition {PLACE_TCP_POS[:3]} ist außerhalb des Arbeitsbereichs. Bewegung wird abgebrochen.")
     print("[place_handler] Reached PLACE position.")
     gripper.open()

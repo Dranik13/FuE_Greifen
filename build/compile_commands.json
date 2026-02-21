@@ -1,56 +1,44 @@
 [
 {
   "directory": "/home/tetripick/UR10_Pick_ws/build",
-  "command": "/usr/bin/c++ -Dcamera_base_EXPORTS -I/home/tetripick/UR10_Pick_ws -I/usr/include/pgm-5.3 -I/usr/include/libxml2 -I/usr/include/mit-krb5 -I/home/tetripick/UR10_Pick_ws/zeroMQ -isystem /usr/include/opencv4 -g -std=gnu++17 -fPIC -o CMakeFiles/camera_base.dir/cameras/camera_reader_base.cpp.o -c /home/tetripick/UR10_Pick_ws/cameras/camera_reader_base.cpp",
+  "command": "/usr/bin/c++ -Dcamera_base_EXPORTS -I/home/tetripick/UR10_Pick_ws -I/usr/include/pgm-5.3 -I/usr/include/libxml2 -I/home/tetripick/UR10_Pick_ws/zeroMQ -isystem /usr/include/opencv4 -g -std=gnu++17 -fPIC -o CMakeFiles/camera_base.dir/cameras/camera_reader_base.cpp.o -c /home/tetripick/UR10_Pick_ws/cameras/camera_reader_base.cpp",
   "file": "/home/tetripick/UR10_Pick_ws/cameras/camera_reader_base.cpp",
   "output": "CMakeFiles/camera_base.dir/cameras/camera_reader_base.cpp.o"
 },
 {
   "directory": "/home/tetripick/UR10_Pick_ws/build",
-  "command": "/usr/bin/c++ -Dcamera_base_EXPORTS -I/home/tetripick/UR10_Pick_ws -I/usr/include/pgm-5.3 -I/usr/include/libxml2 -I/usr/include/mit-krb5 -I/home/tetripick/UR10_Pick_ws/zeroMQ -isystem /usr/include/opencv4 -g -std=gnu++17 -fPIC -o CMakeFiles/camera_base.dir/cameras/camera_static.cpp.o -c /home/tetripick/UR10_Pick_ws/cameras/camera_static.cpp",
+  "command": "/usr/bin/c++ -Dcamera_base_EXPORTS -I/home/tetripick/UR10_Pick_ws -I/usr/include/pgm-5.3 -I/usr/include/libxml2 -I/home/tetripick/UR10_Pick_ws/zeroMQ -isystem /usr/include/opencv4 -g -std=gnu++17 -fPIC -o CMakeFiles/camera_base.dir/cameras/camera_static.cpp.o -c /home/tetripick/UR10_Pick_ws/cameras/camera_static.cpp",
   "file": "/home/tetripick/UR10_Pick_ws/cameras/camera_static.cpp",
   "output": "CMakeFiles/camera_base.dir/cameras/camera_static.cpp.o"
 },
 {
   "directory": "/home/tetripick/UR10_Pick_ws/build",
-  "command": "/usr/bin/c++ -Dcamera_base_EXPORTS -I/home/tetripick/UR10_Pick_ws -I/usr/include/pgm-5.3 -I/usr/include/libxml2 -I/usr/include/mit-krb5 -I/home/tetripick/UR10_Pick_ws/zeroMQ -isystem /usr/include/opencv4 -g -std=gnu++17 -fPIC -o CMakeFiles/camera_base.dir/cameras/camera_robot.cpp.o -c /home/tetripick/UR10_Pick_ws/cameras/camera_robot.cpp",
+  "command": "/usr/bin/c++ -Dcamera_base_EXPORTS -I/home/tetripick/UR10_Pick_ws -I/usr/include/pgm-5.3 -I/usr/include/libxml2 -I/home/tetripick/UR10_Pick_ws/zeroMQ -isystem /usr/include/opencv4 -g -std=gnu++17 -fPIC -o CMakeFiles/camera_base.dir/cameras/camera_robot.cpp.o -c /home/tetripick/UR10_Pick_ws/cameras/camera_robot.cpp",
   "file": "/home/tetripick/UR10_Pick_ws/cameras/camera_robot.cpp",
   "output": "CMakeFiles/camera_base.dir/cameras/camera_robot.cpp.o"
 },
 {
   "directory": "/home/tetripick/UR10_Pick_ws/build",
-  "command": "/usr/bin/c++ -Dcamera_base_EXPORTS -I/home/tetripick/UR10_Pick_ws -I/usr/include/pgm-5.3 -I/usr/include/libxml2 -I/usr/include/mit-krb5 -I/home/tetripick/UR10_Pick_ws/zeroMQ -isystem /usr/include/opencv4 -g -std=gnu++17 -fPIC -o CMakeFiles/camera_base.dir/cameras/tracker.cpp.o -c /home/tetripick/UR10_Pick_ws/cameras/tracker.cpp",
+  "command": "/usr/bin/c++ -Dcamera_base_EXPORTS -I/home/tetripick/UR10_Pick_ws -I/usr/include/pgm-5.3 -I/usr/include/libxml2 -I/home/tetripick/UR10_Pick_ws/zeroMQ -isystem /usr/include/opencv4 -g -std=gnu++17 -fPIC -o CMakeFiles/camera_base.dir/cameras/tracker.cpp.o -c /home/tetripick/UR10_Pick_ws/cameras/tracker.cpp",
   "file": "/home/tetripick/UR10_Pick_ws/cameras/tracker.cpp",
   "output": "CMakeFiles/camera_base.dir/cameras/tracker.cpp.o"
 },
 {
   "directory": "/home/tetripick/UR10_Pick_ws/build",
-  "command": "/usr/bin/c++ -Dcamera_base_EXPORTS -I/home/tetripick/UR10_Pick_ws -I/usr/include/pgm-5.3 -I/usr/include/libxml2 -I/usr/include/mit-krb5 -I/home/tetripick/UR10_Pick_ws/zeroMQ -isystem /usr/include/opencv4 -g -std=gnu++17 -fPIC -o CMakeFiles/camera_base.dir/zeroMQ/objects_3D.pb.cc.o -c /home/tetripick/UR10_Pick_ws/zeroMQ/objects_3D.pb.cc",
+  "command": "/usr/bin/c++ -Dcamera_base_EXPORTS -I/home/tetripick/UR10_Pick_ws -I/usr/include/pgm-5.3 -I/usr/include/libxml2 -I/home/tetripick/UR10_Pick_ws/zeroMQ -isystem /usr/include/opencv4 -g -std=gnu++17 -fPIC -o CMakeFiles/camera_base.dir/zeroMQ/objects_3D.pb.cc.o -c /home/tetripick/UR10_Pick_ws/zeroMQ/objects_3D.pb.cc",
   "file": "/home/tetripick/UR10_Pick_ws/zeroMQ/objects_3D.pb.cc",
   "output": "CMakeFiles/camera_base.dir/zeroMQ/objects_3D.pb.cc.o"
 },
 {
   "directory": "/home/tetripick/UR10_Pick_ws/build",
-  "command": "/usr/bin/c++  -I/home/tetripick/UR10_Pick_ws -I/usr/include/pgm-5.3 -I/usr/include/libxml2 -I/usr/include/mit-krb5 -I/home/tetripick/UR10_Pick_ws/zeroMQ -isystem /usr/include/opencv4 -g -std=gnu++17 -o CMakeFiles/camera_static.dir/cameras/camera_static_main.cpp.o -c /home/tetripick/UR10_Pick_ws/cameras/camera_static_main.cpp",
+  "command": "/usr/bin/c++  -I/home/tetripick/UR10_Pick_ws -I/usr/include/pgm-5.3 -I/usr/include/libxml2 -I/home/tetripick/UR10_Pick_ws/zeroMQ -isystem /usr/include/opencv4 -g -std=gnu++17 -o CMakeFiles/camera_static.dir/cameras/camera_static_main.cpp.o -c /home/tetripick/UR10_Pick_ws/cameras/camera_static_main.cpp",
   "file": "/home/tetripick/UR10_Pick_ws/cameras/camera_static_main.cpp",
   "output": "CMakeFiles/camera_static.dir/cameras/camera_static_main.cpp.o"
 },
 {
   "directory": "/home/tetripick/UR10_Pick_ws/build",
-  "command": "/usr/bin/c++  -I/home/tetripick/UR10_Pick_ws -I/usr/include/pgm-5.3 -I/usr/include/libxml2 -I/usr/include/mit-krb5 -I/home/tetripick/UR10_Pick_ws/zeroMQ -isystem /usr/include/opencv4 -g -std=gnu++17 -o CMakeFiles/camera_robot.dir/cameras/camera_robot_main.cpp.o -c /home/tetripick/UR10_Pick_ws/cameras/camera_robot_main.cpp",
+  "command": "/usr/bin/c++  -I/home/tetripick/UR10_Pick_ws -I/usr/include/pgm-5.3 -I/usr/include/libxml2 -I/home/tetripick/UR10_Pick_ws/zeroMQ -isystem /usr/include/opencv4 -g -std=gnu++17 -o CMakeFiles/camera_robot.dir/cameras/camera_robot_main.cpp.o -c /home/tetripick/UR10_Pick_ws/cameras/camera_robot_main.cpp",
   "file": "/home/tetripick/UR10_Pick_ws/cameras/camera_robot_main.cpp",
   "output": "CMakeFiles/camera_robot.dir/cameras/camera_robot_main.cpp.o"
-},
-{
-  "directory": "/home/tetripick/UR10_Pick_ws/build",
-  "command": "/usr/bin/c++  -I/home/tetripick/UR10_Pick_ws -I/usr/include/pgm-5.3 -I/usr/include/libxml2 -I/usr/include/mit-krb5 -I/home/tetripick/UR10_Pick_ws/zeroMQ -isystem /usr/include/opencv4 -g -std=gnu++17 -o CMakeFiles/msg_receiver.dir/zeroMQ/msg_receiver.cpp.o -c /home/tetripick/UR10_Pick_ws/zeroMQ/msg_receiver.cpp",
-  "file": "/home/tetripick/UR10_Pick_ws/zeroMQ/msg_receiver.cpp",
-  "output": "CMakeFiles/msg_receiver.dir/zeroMQ/msg_receiver.cpp.o"
-},
-{
-  "directory": "/home/tetripick/UR10_Pick_ws/build",
-  "command": "/usr/bin/c++  -I/home/tetripick/UR10_Pick_ws -I/usr/include/pgm-5.3 -I/usr/include/libxml2 -I/usr/include/mit-krb5 -I/home/tetripick/UR10_Pick_ws/zeroMQ -isystem /usr/include/opencv4 -g -std=gnu++17 -o CMakeFiles/msg_receiver.dir/zeroMQ/objects_3D.pb.cc.o -c /home/tetripick/UR10_Pick_ws/zeroMQ/objects_3D.pb.cc",
-  "file": "/home/tetripick/UR10_Pick_ws/zeroMQ/objects_3D.pb.cc",
-  "output": "CMakeFiles/msg_receiver.dir/zeroMQ/objects_3D.pb.cc.o"
 }
 ]

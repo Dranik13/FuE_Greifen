@@ -1,15 +1,16 @@
 syntax = "proto3";
 
 message Object3D_msg {
-  float x = 1;
-  float y = 2;
-  float z = 3;
-  float orientation = 4;
-  float vy = 5;
-  float width = 6;
-  float length = 7;
-  float height = 8;
-  string label = 9;
+  int32 id = 1;
+  string label = 2;
+  float x = 3;
+  float y = 4;
+  float z = 5;
+  float orientation = 6;
+  float vy = 7;
+  float width = 8;
+  float length = 9;
+  float height = 10;
 }
 
 message Objects3D_msg {

@@ -1,10 +1,5 @@
 /home/tetripick/UR10_Pick_ws/build/CMakeFiles/camera_base.dir
 /home/tetripick/UR10_Pick_ws/build/CMakeFiles/camera_static.dir
 /home/tetripick/UR10_Pick_ws/build/CMakeFiles/camera_robot.dir
-/home/tetripick/UR10_Pick_ws/build/CMakeFiles/msg_receiver.dir
 /home/tetripick/UR10_Pick_ws/build/CMakeFiles/edit_cache.dir
 /home/tetripick/UR10_Pick_ws/build/CMakeFiles/rebuild_cache.dir
-/home/tetripick/UR10_Pick_ws/build/CMakeFiles/list_install_components.dir
-/home/tetripick/UR10_Pick_ws/build/CMakeFiles/install.dir
-/home/tetripick/UR10_Pick_ws/build/CMakeFiles/install/local.dir
-/home/tetripick/UR10_Pick_ws/build/CMakeFiles/install/strip.dir

@@ -1,4 +1,5 @@
 import sys
+import save_pos
 import zmq
 from pathlib import Path
 from typing import List, Dict, Optional
@@ -19,8 +20,9 @@ def _load_start_conveyor_tcp_pos():
     return [float(value) for value in tcp_pos]
 
 START_CONVEYOR_TCP_POS = _load_start_conveyor_tcp_pos()
-
+id_counter = 1
 pos_x = 0
+
 # Versuche das generierte Python-Protobuf-Modul aus dem zeroMQ-Ordner zu laden
 proto_dir = Path(__file__).parent.parent / "zeroMQ"
 if str(proto_dir) not in sys.path:
@@ -83,6 +85,7 @@ class CameraSubscriber:
         result = []
         for obj in objects_msg.objects:
             result.append({
+                'id': obj.id,
                 'x': obj.x,
                 'y': obj.y,
                 'z': obj.z,
@@ -93,36 +96,46 @@ class CameraSubscriber:
                 'label': obj.label,
                 'vy': obj.vy,
             })
-
         return result
 
 def recive():
     sub = CameraSubscriber('tcp://localhost:5555')
     print('[idle_handler] Waiting for messages on tcp://localhost:5555...')
+    global id_counter
     counter = 0
     while True:
         objs = sub.receive()
         if objs is None:
             continue
-        print(f'[idle_handler] Received {len(objs)} objects')
-        for i, o in enumerate(objs):
-            print(f"[idle_handler]  {i}: {o['label']} @ ({o['x']:.3f}, {o['y']:.3f}, {o['z']:.3f}), vy={o.get('vy', 0):.3f}")
-            object_speed = o.get('vy', 0)  # Geschwindigkeit in y-Richtung
-            object_speed = object_speed/1000
-            pos_x = o['x']
-            print(f"[idle_handler] x in while: {pos_x}, vy: {object_speed}")
+        print(f'[idle_handler] Received objects: {objs}')
+        objs = next((o for o in objs if o.get("id") == id_counter), None)
+        if objs is None:
+            continue
+        print(f'[idle_handler] Filtered objects: {objs}')
+        # for i, o in enumerate(objs):
+        print(f"[idle_handler]  {objs['label']} @ ({objs['x']:.3f}, {objs['y']:.3f}, {objs['z']:.3f}), vy={objs.get('vy', 0):.3f}")
+        object_speed = objs.get('vy', 0)  # Geschwindigkeit in y-Richtung
+        object_speed = object_speed/1000
+        pos_x = objs['x']
+        print(f"[idle_handler] x in while: {pos_x}, vy: {object_speed}")
         if object_speed != 0:
             counter += 1
-            if counter >= 3:  # Warte auf mehrere Messungen mit Geschwindigkeit, um Rauschen zu reduzieren
+            if counter >= 10:  # Warte auf mehrere Messungen mit Geschwindigkeit, um Rauschen zu reduzieren
                 break
+    id_counter += 1
     return pos_x, object_speed
     
 def move_to_home(rtde_c):
-    new_pos = rtde_c.getInverseKinematics(START_CONVEYOR_TCP_POS)
-    print(f"[idle_handler] Moving to Home position: {new_pos}")
-    rtde_c.moveJ(new_pos, 0.8, 0.2)
-    print("[idle_handler] Reached Home position.")
+    if save_pos.is_save_position(START_CONVEYOR_TCP_POS[:3]):
+        print(f"[idle_handler] Moving to Home position: {START_CONVEYOR_TCP_POS}")
+        rtde_c.moveL(START_CONVEYOR_TCP_POS, 0.8, 0.5)
+        print("[idle_handler] Reached Home position.")
+    else:
+        print(f"[idle_handler] Zielposition {START_CONVEYOR_TCP_POS[:3]} ist außerhalb des Arbeitsbereichs. Bewegung wird abgebrochen.")
 
 def idle(rtde_c):
-    move_to_home(rtde_c)
+    global id_counter
+    if id_counter == 1:
+        print("[idle_handler] Erste ID, fahre zum Home-Position.")
+        move_to_home(rtde_c)
     return recive()

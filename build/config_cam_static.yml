@@ -7,7 +7,7 @@ debug: 1
 serial_number: f1370107
 
 roi:
-  x: 115
+  x: 130
   y: 0
   width: 420            # = 580 - 160
   height: 415
@@ -17,8 +17,8 @@ min_obj_height: 15
 z_offset: 15              # ofset, because of conveyor reflection 
 
 ref_pt:     # refference Point in input image for extrinct calibration (in input image)
-  x: 120
-  y: 185
+  x: 118
+  y: 180
 
 # Maximum deltas per frame for object list
 pos_tol: 30

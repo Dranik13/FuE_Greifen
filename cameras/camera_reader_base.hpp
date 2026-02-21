@@ -67,6 +67,7 @@ protected:
     std::string serial_number_ = "";
     cv::Point2i ref_pt_;
     cv::Point3f ref_pt_3d_;
+    bool ref_pt_3d_initialized_ = false;
     float pos_delta_;  
     float orientation_delta_;
 
