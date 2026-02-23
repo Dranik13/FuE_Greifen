@@ -11,13 +11,15 @@ def _load_kamera_2_kalib_tcp_pos():
     start_conveyor = data.get("Kamera_2_Kalib", {})
     tcp_pos = start_conveyor.get("TCP Pos")
     if not isinstance(tcp_pos, list) or len(tcp_pos) != 6:
-        raise ValueError("[move_handler] Ungültige oder fehlende 'Kamera_2_Kalib -> TCP Pos' Werte in pose.yaml")
+        raise ValueError("[move_handler] Invalid or missing 'Kamera_2_Kalib -> TCP Pos' values in pose.yaml")
 
     return [float(value) for value in tcp_pos]
 
+
 KAMERA_2_KALIB_TCP_POS = _load_kamera_2_kalib_tcp_pos()
 
-def move(pos_x, pos_y, rtde_r, rtde_c, object_speed):
+
+def move(pos_x, pos_y, rtde_r, rtde_c, object_speed, robot_speed=0.8, robot_acceleration=0.5, debug=False):
     # print(f"[move_handler] KAMERA_2_KALIB_TCP_POS[1] : {KAMERA_2_KALIB_TCP_POS[1]}")
     new_y = KAMERA_2_KALIB_TCP_POS[1]+ (pos_y / 1000) + (object_speed*3)
     # print(f"[move_handler] new_y: {new_y}")
@@ -28,9 +30,8 @@ def move(pos_x, pos_y, rtde_r, rtde_c, object_speed):
     target_tcp[1] = new_y
     target_tcp[2] = 0.10
     if save_pos.is_save_position(target_tcp[:3]):
-        rtde_c.moveL(target_tcp, 0.9, 0.6)
+        rtde_c.moveL(target_tcp, robot_speed, robot_acceleration)
+        if debug:
+            print(f"[move_handler] moveL target={target_tcp[:3]}, v={robot_speed}, a={robot_acceleration}")
     else:
-        print(f"[move_handler] Zielposition {target_tcp[:3]} ist außerhalb des Arbeitsbereichs. Bewegung wird abgebrochen.")
-    # new_pos = rtde_c.getInverseKinematics(target_tcp)
-    # print(f"[move_handler] new_pos: {new_pos}")
-    
+        print(f"[move_handler] target position {target_tcp[:3]} is outside the workspace. Movement aborted.")    

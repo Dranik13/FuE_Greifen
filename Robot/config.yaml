@@ -1,0 +1,4 @@
+debug: true
+robot_speed: 0.9
+robot_acceleration: 0.6
+robot_ip: "192.168.96.221"

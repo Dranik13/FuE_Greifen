@@ -1,32 +1,57 @@
 import time
 import sys
 import zmq
+import yaml
 from pathlib import Path
 from typing import Dict, Optional
 from camera_to_robot_transform import CameraToRobotTransformer
 
-# Versuche das generierte Python-Protobuf-Modul aus dem zeroMQ-Ordner zu laden
+
+def _load_camera_mount_to_camera_distance():
+    pose_file = Path(__file__).with_name("Calibration_results_final.yaml")
+    with pose_file.open("r", encoding="utf-8") as stream:
+        data = yaml.safe_load(stream)
+
+    camera_mount_to_camera = data.get("camera_mount_to_camera", {})
+    camera_to_mount_distance = camera_mount_to_camera.get("x")
+    # print(f"[follow_handler] Loaded camera_to_mount_distance from YAML: {camera_to_mount_distance}")
+    if isinstance(camera_to_mount_distance, list):
+        if len(camera_to_mount_distance) != 1:
+            raise ValueError("[follow_handler] Invalid values for 'camera_mount_to_camera -> x' in Calibration_results_final.yaml (expected: 1 value)")
+        return float(camera_to_mount_distance[0])
+
+    try:
+        return float(camera_to_mount_distance)
+    except (TypeError, ValueError):
+        raise ValueError("[follow_handler] Invalid or missing value for 'camera_mount_to_camera -> x' in Calibration_results_final.yaml")
+
+
+distance_to_camera = _load_camera_mount_to_camera_distance()
+
+
+# Try to load the generated Python-Protobuf module from the zeroMQ folder
 proto_dir = Path(__file__).parent.parent / "zeroMQ"
 if str(proto_dir) not in sys.path:
     sys.path.insert(0, str(proto_dir))
+
 
 try:
     import objects_3D_pb2 as pb2
 except Exception as e:
     raise ImportError(
-        "Kann 'objects_3D_pb2' nicht importieren. Erzeuge die Python-Protobuf-Datei mit:\n"
+        "[follow_handler] Cannot import 'objects_3D_pb2'. Generate the Python-Protobuf file with:\n"
         "protoc --python_out=zeroMQ objects_3D.proto\n"
-        "aus dem Verzeichnis '/home/tetripick/UR10_Pick_ws/zeroMQ'.\n"
-        f"Fehler: {e}"
+        "from the directory '/home/tetripick/UR10_Pick_ws/zeroMQ'.\n"
+        f"Error: {e}"
     )
 
 
 class CameraSubscriber:
-    """Python-Äquivalent des C++ ZeroMQ-Subscribers.
+    """Python equivalent of the C++ ZeroMQ subscriber.
 
-    Beispiel:
+    Example:
         sub = CameraSubscriber('tcp://localhost:5556')
-        objects = sub.receive()  # blockierend
+        objects = sub.receive()  # blocking
     """
 
     def __init__(self, address: str, topic: str = "coordinates"):
@@ -36,15 +61,16 @@ class CameraSubscriber:
         self.socket.setsockopt_string(zmq.SUBSCRIBE, self.topic)
         self.socket.connect(address)
 
+
     def receive(self, timeout_ms: Optional[int] = None) -> Optional[Dict]:
-        """Wartet blockierend (oder mit Timeout) auf die nächste Nachricht und
-        gibt ein Objekt als Dict zurück.
+        """Waits blocking (or with timeout) for the next message and
+        returns an object as a Dict.
 
         Args:
-            timeout_ms: Optionaler Timeout in Millisekunden (None = blockierend)
+            timeout_ms: Optional timeout in milliseconds (None = blocking)
 
         Returns:
-            Dict mit den Feldern aus Object3D_msg oder None bei Timeout/Fehler.
+            Dict with the fields from Object3D_msg or None on timeout/error.
         """
         if timeout_ms is not None:
             self.socket.RCVTIMEO = int(timeout_ms)
@@ -82,46 +108,38 @@ class CameraSubscriber:
             'label': obj_msg.label,
         }
 
-def recive(transformer: CameraToRobotTransformer, sub: CameraSubscriber):
+
+def receive(transformer: CameraToRobotTransformer, sub: CameraSubscriber, debug=False):
     while True:
         obj = sub.receive()
         if obj is None:
             continue
 
-        print(f"[follow_handler] Object center [mm]: X={obj['x']:.3f}, Y={obj['y']:.3f}, Z={obj['z']:.3f}")
+        if debug:
+            print(f"[follow_handler] Object center [mm]: X={obj['x']:.3f}, Y={obj['y']:.3f}, Z={obj['z']:.3f}")
         pos_y = obj['y']/1000
-        # Transformation in Robot Koordinaten
+        # Transformation in Robot coordinates
         # bx, by, bz = transformer.camera_point_to_base(obj['x'], obj['y'], obj['z'])
         # print(f"[follow_handler] Object center [base,m]: X={bx:.4f}, Y={by:.4f}, Z={bz:.4f}")
         return pos_y
 
-def _apply_position_correction(base_y: float, object_speed_y: float, dt_s: float) -> float:
-    return base_y + (object_speed_y * dt_s)
 
-
-def follow(rtde_c, rtde_r, object_speed=0.1):
-    # Einfacher Test: Nachrichten auf localhost:5556 empfangen und ausgeben
+def follow(rtde_c, rtde_r, object_speed=0.1, robot_speed=0.8, robot_acceleration=0.5, debug=False):
+    # Simple test: receive and print messages on localhost:5556
     sub = CameraSubscriber('tcp://localhost:5556')
     transformer = CameraToRobotTransformer(rtde_receiver=rtde_r)
-    print("[follow_handler] Waiting for 'coordinates' messages on tcp://localhost:5556...")
-    pos_y = recive(transformer, sub)
-    stop_time = ((0.03436+abs(pos_y))/object_speed)
-    print(f"[follow_handler] Calculated stop time: {stop_time:.3f}s based on pos_y={pos_y:.3f}m and object_speed={object_speed:.3f}m/s")
+    if debug:
+        print("[follow_handler] Waiting for 'coordinates' messages on tcp://localhost:5556...")
+    pos_y = receive(transformer, sub, debug=debug)
+    stop_time = ((distance_to_camera + abs(pos_y)) / object_speed)
+    if debug:
+        print(f"[follow_handler] Calculated stop time: {stop_time:.3f}s based on pos_y={pos_y:.3f}m and object_speed={object_speed:.3f}m/s")
     time.sleep(stop_time)
+
 
 def stop(rtde_c):
     rtde_c.speedStop(0.1)
 
-# def change_direction(rtde_r, rtde_c):
-#     while True:
-#         t_start = rtde_c.initPeriod()
-#         actual_TCP = rtde_r.getActualTCPPose()
-#         # print("TCP Pos: ", actual_TCP)
-#         if actual_TCP[2] < 0.25:
-#             print("TCP Pos: ", actual_TCP)
-#             print("Stopping condition met.")
-#             break
-#         rtde_c.waitPeriod(t_start)
 
 def stopping():
     time.sleep(1)

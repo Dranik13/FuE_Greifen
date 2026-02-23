@@ -49,9 +49,9 @@ def _homogeneous_from_yaml_pose(pose_data: dict) -> np.ndarray:
 
 
 class CameraToRobotTransformer:
-    """Rechnet Kamera-Koordinaten ins Roboter-Basis-Koordinatensystem um.
+    """Converts camera coordinates to the robot base coordinate system.
 
-    Erwartete Kette:
+    Expected chain:
         base_T_object = base_T_mount @ mount_T_camera @ camera_T_object
     """
 
@@ -79,7 +79,7 @@ class CameraToRobotTransformer:
         z: float,
         tcp_pose: Optional[Iterable[float]] = None,
     ) -> Tuple[float, float, float]:
-        """Konvertiert einen 3D-Punkt aus dem Kamera-Frame in den Base-Frame."""
+        """Converts a 3D point from the camera frame to the base frame."""
         if self.coordinates_in_mm:
             x, y, z = x / 1000.0, y / 1000.0, z / 1000.0
 

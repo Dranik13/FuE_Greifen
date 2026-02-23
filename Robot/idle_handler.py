@@ -15,54 +15,58 @@ def _load_start_conveyor_tcp_pos():
     start_conveyor = data.get("Start_Conveyor", {})
     tcp_pos = start_conveyor.get("TCP Pos")
     if not isinstance(tcp_pos, list) or len(tcp_pos) != 6:
-        raise ValueError("[idle_handler] Ungültige oder fehlende 'Start_Conveyor -> TCP Pos' Werte in pose.yaml")
+        raise ValueError("[idle_handler] Invalid or missing 'Start_Conveyor -> TCP Pos' values in pose.yaml")
 
     return [float(value) for value in tcp_pos]
+
 
 START_CONVEYOR_TCP_POS = _load_start_conveyor_tcp_pos()
 id_counter = 1
 pos_x = 0
 
-# Versuche das generierte Python-Protobuf-Modul aus dem zeroMQ-Ordner zu laden
+
+# Try to load the generated Python-Protobuf module from the zeroMQ folder
 proto_dir = Path(__file__).parent.parent / "zeroMQ"
 if str(proto_dir) not in sys.path:
     sys.path.insert(0, str(proto_dir))
+
 
 try:
     import objects_3D_pb2 as pb2
 except Exception as e:
     raise ImportError(
-        "[idle_handler] Kann 'objects_3D_pb2' nicht importieren. Erzeuge die Python-Protobuf-Datei mit:\n"
+        "[idle_handler] Cannot import 'objects_3D_pb2'. Generate the Python-Protobuf file with:\n"
         "protoc --python_out=zeroMQ objects_3D.proto\n"
-        "aus dem Verzeichnis '/home/tetripick/UR10_Pick_ws/zeroMQ'.\n"
-        f"Fehler: {e}"
+        "from the directory '/home/tetripick/UR10_Pick_ws/zeroMQ'.\n"
+        f"Error: {e}"
     )
 
 
 class CameraSubscriber:
-    """Python-Äquivalent des C++ ZeroMQ-Subscribers.
+    """Python equivalent of the C++ ZeroMQ subscriber.
 
-    Beispiel:
+    Example:
         sub = CameraSubscriber('tcp://localhost:5555')
-        objects = sub.receive()  # blockierend
+        objects = sub.receive()  # blocking
     """
 
     def __init__(self, address: str):
         self.context = zmq.Context()
         self.socket = self.context.socket(zmq.SUB)
-        # Alle Topics abonnieren
+        # Subscribe to all topics
         self.socket.setsockopt_string(zmq.SUBSCRIBE, "")
         self.socket.connect(address)
 
+
     def receive(self, timeout_ms: Optional[int] = None) -> Optional[List[Dict]]:
-        """Wartet blockierend (oder mit Timeout) auf die nächste Nachricht und
-        gibt eine Liste von Objekten als Dict zurück.
+        """Waits blocking (or with timeout) for the next message and
+        returns a list of objects as Dicts.
 
         Args:
-            timeout_ms: Optionaler Timeout in Millisekunden (None = blockierend)
+            timeout_ms: Optional timeout in milliseconds (None = blocking)
 
         Returns:
-            Liste von Dicts mit den Feldern aus Object3D_msg oder None bei Timeout.
+            List of Dicts with the fields from Object3D_msg or None on timeout.
         """
         if timeout_ms is not None:
             self.socket.RCVTIMEO = int(timeout_ms)
@@ -98,11 +102,14 @@ class CameraSubscriber:
             })
         return result
 
-def recive():
+
+def receive(debug=False, gripper=None):
     sub = CameraSubscriber('tcp://localhost:5555')
-    print('[idle_handler] Waiting for messages on tcp://localhost:5555...')
+    if debug:
+        print('[idle_handler] Waiting for messages on tcp://localhost:5555...')
     global id_counter
     counter = 0
+    speed = []
     while True:
         objs = sub.receive()
         if objs is None:
@@ -118,25 +125,42 @@ def recive():
         object_speed = object_speed/1000
         pos_x = objs['x']
         pos_y = objs['y']
+        width = objs['width']
         if object_speed >= 0.05:
             counter += 1
-            if counter >= 10:  # Warte auf mehrere Messungen mit Geschwindigkeit, um Rauschen zu reduzieren
+            if counter >= 7:
+                speed.append(object_speed)
+            if counter >= 10:  # wait for multiple measurements with speed to reduce noise
+                object_speed = sum(speed) / (len(speed))  # mean last 3 measurements
                 break
-    print(f"[idle_handler] x, y and speed from Camera: {pos_x},{pos_y}, vy: {object_speed}")
+    if debug:
+        print(f"[idle_handler] x, y and speed from Camera: {pos_x},{pos_y}, vy: {object_speed}")
+        print(f"[idle_handler] gripper: {gripper}, width: {width}")
+        
+    if gripper is not None:
+        gripper.goTomm(int(width)+20) # Close the gripper based on the measured width + some tolerance
+        if debug:
+            print(f"[idle_handler] Gripper closed with width: {width+20}")
     id_counter += 1
     return pos_x, pos_y, object_speed
     
-def move_to_home(rtde_c):
-    if save_pos.is_save_position(START_CONVEYOR_TCP_POS[:3]):
-        print(f"[idle_handler] Moving to Home position: {START_CONVEYOR_TCP_POS}")
-        rtde_c.moveL(START_CONVEYOR_TCP_POS, 0.8, 0.5)
-        print("[idle_handler] Reached Home position.")
-    else:
-        print(f"[idle_handler] Zielposition {START_CONVEYOR_TCP_POS[:3]} ist außerhalb des Arbeitsbereichs. Bewegung wird abgebrochen.")
 
-def idle(rtde_c):
+def move_to_home(rtde_c, robot_speed=0.8, robot_acceleration=0.5, debug=False):
+    if save_pos.is_save_position(START_CONVEYOR_TCP_POS[:3]):
+        if debug:
+            print(f"[idle_handler] Moving to Home position: {START_CONVEYOR_TCP_POS}")
+        rtde_c.moveL(START_CONVEYOR_TCP_POS, robot_speed, robot_acceleration)
+        if debug:
+            print("[idle_handler] Reached Home position.")
+    else:
+        if debug:
+            print(f"[idle_handler] target position {START_CONVEYOR_TCP_POS[:3]} is outside the workspace. Movement aborted.")
+
+
+def idle(rtde_c, robot_speed=0.8, robot_acceleration=0.5, gripper=None, debug=False):
     global id_counter
     if id_counter == 1:
-        # print("[idle_handler] Erste ID, fahre zum Home-Position.")
-        move_to_home(rtde_c)
-    return recive()
+        if debug:
+            print("[idle_handler] First ID, moving to Home position.")
+        move_to_home(rtde_c, robot_speed=robot_speed, robot_acceleration=robot_acceleration, debug=debug)
+    return receive(debug=debug, gripper=gripper)
