@@ -193,6 +193,7 @@ libcamera_base.so: /usr/lib/x86_64-linux-gnu/libopencv_wechat_qrcode.so.4.6.0
 libcamera_base.so: /usr/lib/x86_64-linux-gnu/libopencv_xobjdetect.so.4.6.0
 libcamera_base.so: /usr/lib/x86_64-linux-gnu/libopencv_xphoto.so.4.6.0
 libcamera_base.so: /usr/lib/x86_64-linux-gnu/libprotobuf.so
+libcamera_base.so: /usr/local/lib/libapriltag.so.3.4.5
 libcamera_base.so: /usr/lib/x86_64-linux-gnu/libopencv_highgui.so.4.6.0
 libcamera_base.so: /usr/lib/x86_64-linux-gnu/libopencv_datasets.so.4.6.0
 libcamera_base.so: /usr/lib/x86_64-linux-gnu/libopencv_plot.so.4.6.0

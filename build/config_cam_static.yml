@@ -9,16 +9,20 @@ serial_number: f1370107
 roi:
   x: 130
   y: 0
-  width: 420            # = 580 - 160
+  width: 420              # = 580 - 160
   height: 415
 
-conveyor_z_dist: 865    # relative to fixed camera [mm]
+conveyor_z_dist: 865      # relative to fixed camera [mm]
 min_obj_height: 15
-z_offset: 15              # ofset, because of conveyor reflection 
+z_offset: 15              # offset, because of conveyor reflection 
+max_obj_height_mm: 50     # maximum expected object height in mm (for filtering)
+min_contour_area: 500.0   # minimum contour area to be considered an object (in pixels)
+search_area_y_min: -350.0 # minimum y-coordinate of the search area (in mm)
+search_area_y_max: 190.0  # maximum y-coordinate of the search area (in mm)
 
-ref_pt:     # refference Point in input image for extrinct calibration (in input image)
-  x: 120
-  y: 185
+ref_pt:                   # reference Point in input image for extrinsic calibration (in input image)
+  x: 116
+  y: 182
 
 # Maximum deltas per frame for object list
 pos_tol: 30
@@ -28,3 +32,13 @@ orientation_tol: 0.44
 # edge detection
 canny_thresh1: 50       # threshold1 – first threshold for the hysteresis procedure.
 canny_thresh2: 150      # threshold2 – second threshold for the hysteresis procedure.
+
+# extrinsics
+T_cam_to_board: !!opencv-matrix
+   rows: 4
+   cols: 4
+   dt: d
+   data: [ -0.9139963, 0.4048901, -0.02597667, 0.0,
+           -0.01150139, 0.03814325, 0.9992061, 0.0,
+            0.40555946, 0.91356944, -0.03020599, 0.0,
+            0, 0, 0, 0 ]

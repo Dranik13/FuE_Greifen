@@ -1,22 +1,21 @@
 #include "camera_robot.hpp"
 
 /**
- * Main executable for Camera Reader (robot camera)
+ * Main executable for robot camera (camera overlooking robot arm)
  * Usage: ./camera_robot
  */
 int main() 
 {
-    std::cout << "Starting CameraReader (Robot Camera)\n";
+    std::cout << "Starting robot camera reader \n";
     RobotCamera reader("config_cam_robot.yml");
 
     if (!reader.isRunning()) {
-        std::cerr << "CameraReader failed to initialize.\n";
+        std::cerr << "Robot camera reader failed to initialize.\n";
         return 1;
     }
 
-    std::cout << "CameraReader running. Press 'q' or ESC to exit.\n";
     reader.spin();
 
-    std::cout << "CameraReader stopped.\n";
+    std::cout << "Robot camera reader stopped.\n";
     return 0;
 }

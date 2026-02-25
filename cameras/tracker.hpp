@@ -5,9 +5,11 @@
 #include <vector>
 #include "Object3D.hpp"
 
-// Simple nearest-neighbor 3D tracker working directly with Object3D.
-// Stores only tracking metadata (id, timestamps, missed frames).
-// Positions and velocities are updated directly in Object3D references.
+/*
+* Simple nearest-neighbor 3D tracker working directly with Object3D.
+* Stores only tracking metadata (id, timestamps, missed frames).
+* Positions and velocities are updated directly in Object3D references.
+*/
 class Tracker {
 public:
     Tracker();
@@ -29,10 +31,10 @@ public:
 
     // Parameters
     float max_match_distance_mm = 300.0f;
-    float min_tracked_y_mm = -400.0f;   // Objects removed when y falls below this (outside velocity region)
+    float min_tracked_y_mm = -400.0f;       // Objects removed when y falls below this (outside velocity region)
     float max_tracked_y_mm = 1100.0f;
-    int max_missed_in_region = 3;        // Max missed frames while in velocity region before deletion
-    float velocity_region_y_min = -350.0f; // Trusted detection region boundaries
+    int max_missed_in_region = 3;           // Max missed frames while in velocity region before deletion
+    float velocity_region_y_min = -350.0f;  // Trusted detection region boundaries
     float velocity_region_y_max = 170.0f;
 
 private:

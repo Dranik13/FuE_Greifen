@@ -1,5 +1,5 @@
-#ifndef BASE_CAMERA_READER_H
-#define BASE_CAMERA_READER_H
+#ifndef BASE_CAMERA_READER_HPP
+#define BASE_CAMERA_READER_HPP
 
 #include <librealsense2/rs.hpp>
 #include <opencv2/opencv.hpp>
@@ -15,12 +15,6 @@
 #include "tracker.hpp"
 #include "Object3D.hpp"
 
-struct Object3D;
-/* (The actual struct is now in Object3D.hpp, included above)
- * Abstract base class for camera readers.
- * Handles RealSense device initialization, ZMQ communication, and frame capture.
- * Subclasses implement custom processFrames() logic.
- */
 class BaseCameraReader {
 public:
     BaseCameraReader(const std::string& config_file);
@@ -70,11 +64,20 @@ protected:
     bool ref_pt_3d_initialized_ = false;
     float pos_delta_;  
     float orientation_delta_;
+    // Max expected object height in mm (for filtering)
+    float max_obj_height_mm_;
+    // Minimum contour area to be considered an object (in pixels)
+    int min_contour_area_;
+    // Search area boundaries in y-direction (in mm)
+    float search_area_y_min_;
+    float search_area_y_max_;
 
     // RealSense
     rs2::pipeline pipeline_;
     std::string serial_;
     rs2::context ctx_;
+    rs2::pipeline_profile profile_;
+    cv::Matx44d T_cam_to_belt_ = cv::Matx44d::eye();
 
     // Object list and output
     std::vector<Object3D> obj_list_;
@@ -90,4 +93,4 @@ private:
     void initializeRealSense();
 };
 
-#endif // BASE_CAMERA_READER_H
+#endif // BASE_CAMERA_READER_HPP

@@ -1,0 +1,3 @@
+data:
+  - image: /home/tetripick/UR10_Pick_ws/ros2_ws/src/Kalibrierung_Feste_cam.png
+    pose:  /home/tetripick/UR10_Pick_ws/ros2_ws/src/Kalibrierung_Pose.yaml

@@ -8,6 +8,11 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include "camera_static.hpp"
+// #include "apriltag/apriltag.h"
+// #include "apriltag/apriltag_pose.h"
+// #include "apriltag/tag36h11.h"
+// #include "apriltag/tag25h9.h"
+#include <algorithm>
 
 StaticCamera::StaticCamera(const std::string& config_file)
     : BaseCameraReader(config_file)
@@ -37,8 +42,6 @@ void StaticCamera::processFrames()
         
         if (input_img.empty()) return;
 
-        // cv::imshow("Static Camera - " + serial_, input_img);
-
         // Handle ROI: if roi is empty (0,0,0,0), use full frame as effective_roi
         cv::Rect effective_roi = (roi_.area() > 0) ? roi_ : cv::Rect(0, 0, input_img.cols, input_img.rows);
         
@@ -53,7 +56,6 @@ void StaticCamera::processFrames()
         auto depth_intrinsics = depth.get_profile()
                                     .as<rs2::video_stream_profile>()
                                     .get_intrinsics();
-
         // Initialize reference point (once)
         if (!ref_pt_3d_initialized_)
         {
@@ -92,9 +94,8 @@ void StaticCamera::processFrames()
                 rs2_deproject_pixel_to_point(point, &depth_intrinsics, pixel, depth_value_m);
 
                 float z_mm = point[2] * 1000.0f;
-                float max_obj_height_mm = 50; ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 // Check if the point is within the expected height range of objects on the conveyor
-                if (z_mm < conveyor_z_dist_ - min_obj_height_ && z_mm > conveyor_z_dist_ - max_obj_height_mm) {
+                if (z_mm < conveyor_z_dist_ - min_obj_height_ && z_mm > conveyor_z_dist_ - max_obj_height_mm_) {
                     obj_mask.at<uint8_t>(y, x) = 255;
                 }
             }
@@ -103,8 +104,8 @@ void StaticCamera::processFrames()
         cv::GaussianBlur(obj_mask, obj_mask, cv::Size(5,5), 1.4);
         cv::threshold(obj_mask, obj_mask, 127, 255, cv::THRESH_BINARY);
         cv::Mat morph_kernel = cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(5, 5));
-        cv::morphologyEx(obj_mask, obj_mask, cv::MORPH_CLOSE, morph_kernel, cv::Point(-1, -1), 2);
-        cv::morphologyEx(obj_mask, obj_mask, cv::MORPH_OPEN, morph_kernel, cv::Point(-1, -1), 1);
+        // cv::morphologyEx(obj_mask, obj_mask, cv::MORPH_OPEN, morph_kernel, cv::Point(-1, -1), 1);
+        // cv::morphologyEx(obj_mask, obj_mask, cv::MORPH_CLOSE, morph_kernel, cv::Point(-1, -1), 2);
 
         std::vector<std::vector<cv::Point>> obj_contours;
         cv::findContours(obj_mask, obj_contours, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
@@ -115,7 +116,7 @@ void StaticCamera::processFrames()
 
         for (size_t ci = 0; ci < obj_contours.size(); ++ci) {
             const auto &cnt = obj_contours[ci];
-            if (cv::contourArea(cnt) < 500.0) continue;
+            if (cv::contourArea(cnt) < min_contour_area_) continue;
             cv::RotatedRect rrect = cv::minAreaRect(cnt);
             cv::Point2f box2f[4];
             rrect.points(box2f);
@@ -146,14 +147,12 @@ void StaticCamera::processFrames()
 
             Object3D object;
             cv::Point3f obj_center = computeCenter(corners3d);
-            object.x = (obj_center.x - ref_pt_3d_.x) * 1000 + 25;
+            // cv::Point3f obj_center_calibrated = transformCamToBelt(obj_center);
+            object.x = (obj_center.x - ref_pt_3d_.x) * 1000;
             object.y = (obj_center.y - ref_pt_3d_.y) * -1000;       // flip y-axis to match robot coordinates
             object.orientation = computeOrientation2D(corners3d);
-            
 
-            float search_area_y_min = -350.0f; ///////////////////////////////////////////////  IN CONFIG !!!!
-            float search_area_y_max = 190.0f;
-            if(object.y < search_area_y_min || object.y > search_area_y_max) {
+            if(object.y < search_area_y_min_ || object.y > search_area_y_max_) {
                 continue;
             }
 
@@ -204,14 +203,7 @@ void StaticCamera::processFrames()
             object.height = height_mm;
 
             // Validate object coordinates before adding to list
-            if (!std::isfinite(object.x) || !std::isfinite(object.y) || !std::isfinite(object.z)) {
-                // if (debug_) {
-                //     std::cout << "[static_camera] Skipping object with invalid coordinates: ("
-                //               << object.x << ", " << object.y << ", " << object.z << ")\n";
-                // }
-                continue;
-            }
-            
+            if (!std::isfinite(object.x) || !std::isfinite(object.y) || !std::isfinite(object.z)) continue;
             detected_objects.push_back(object);
         }
         // Frame timestamp (seconds)
@@ -262,16 +254,6 @@ void StaticCamera::processFrames()
                           << "x" << obj.width << "x" << obj.height << "vy=" << obj.vy << " mm/s\n";
             }
         }
-        // if (debug_) {
-        //     std::cout << "[static_camera] Number of objects in List: " << obj_list_.size();
-        //     if (!obj_list_.empty()) {
-        //         for(const auto& obj : obj_list_) {
-        //             std::cout << " y=" << obj.y << " heigth=" << obj.height << std::endl;
-        //         }
-        //     }
-        //     std::cout << "\n";
-        // }
-
         // Publish all active tracks (visible + predicted invisible)
         sendObjList();
 
@@ -286,4 +268,33 @@ void StaticCamera::processFrames()
     } catch (const std::exception &e) {
         std::cerr << "[static_camera] Exception: " << e.what() << "\n";
     }
+}
+
+bool StaticCamera::saveExtrinsics(const std::string& file_path) const
+{
+    cv::Mat T(4, 4, CV_64F);
+    for (int r = 0; r < 4; ++r) {
+        for (int c = 0; c < 4; ++c) {
+            T.at<double>(r, c) = T_cam_to_belt_(r, c);
+        }
+    }
+
+    cv::FileStorage fs(file_path, cv::FileStorage::WRITE);
+    if (!fs.isOpened()) {
+        std::cerr << "[static_camera] Could not write extrinsics file: " << file_path << "\n";
+        return false;
+    }
+
+    fs << "T_cam_to_belt" << T;
+    return true;
+}
+
+cv::Point3f StaticCamera::transformCamToBelt(const cv::Point3f& cam_point_m) const
+{
+    cv::Vec4d cam_h(cam_point_m.x, cam_point_m.y, cam_point_m.z, 1.0);
+    cv::Vec4d belt_h = T_cam_to_belt_ * cam_h;
+    return cv::Point3f(
+        static_cast<float>(belt_h[0]),
+        static_cast<float>(belt_h[1]),
+        static_cast<float>(belt_h[2]));
 }

@@ -1,7 +1,6 @@
 #include "tracker.hpp"
 #include <cmath>
 
-namespace {
 float resolve_prediction_vy(const Object3D& state, float fallback_vy) {
     if (std::isfinite(state.vy) && std::abs(state.vy) > 1e-6f) {
         return state.vy;
@@ -11,7 +10,6 @@ float resolve_prediction_vy(const Object3D& state, float fallback_vy) {
 
 bool is_in_velocity_region(float y, float y_min, float y_max) {
     return y >= y_min && y <= y_max;
-}
 }
 
 Tracker::Tracker() {}

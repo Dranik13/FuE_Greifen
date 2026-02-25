@@ -11,10 +11,6 @@ conveyor_z_dist: 1000   # reference depth [mm]
 min_obj_height: 10
 z_offset: 0
 
-ref_pt:     # reference point in input image for extrinsic calibration
-  x: 320
-  y: 240
-
 # Maximum deltas per frame for object list
 pos_tol: 50
 orientation_tol: 0.5

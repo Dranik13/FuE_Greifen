@@ -8,11 +8,11 @@ actual_TCP = rtde_r.getActualTCPPose()
 # status = rtde_r.getRobotStatus()
 
 # print("Joint Pos: ", actual_q)
-print("TCP Pos: ", actual_TCP)
-# binary_string = format(status, "04b")   # 4 Bits, mit führenden Nullen
-# print(binary_string)
-# rtde_c = rtde_control.RTDEControlInterface("192.168.96.221")
-# rtde_c.moveL([0.46987006692897526, -0.6141117468652709, 0.29701407690139925, -2.2319500763632916, 2.2104305473135506, -0.0007869137174410558], 0.2, 0.1)
+# print("TCP Pos: ", actual_TCP)
+rtde_c = rtde_control.RTDEControlInterface("192.168.96.221")
+new_x = 0.4299188979059998 + 0.03436 + 0.10 - 0.005
+new_y = -0.6104172709301667 - 0.05
+rtde_c.moveL([new_x, new_y, 0.10, -2.232739631053332, 2.203136075703988, 0.025498422826788783], 0.2, 0.1)
 # start = time.time()
 # rtde_c.speedL([0,-1,0,0,0,0], 0.1, 0.1)
 # time.sleep(1)
@@ -25,4 +25,4 @@ print("TCP Pos: ", actual_TCP)
 # print(f"Time with speedL([0,-1,0,0,0,0]): {start_2 - start:.3f}s")
 # print(f"Time with speedL([0,-1,1,0,0,0]): {stop_2 - start_2:.3f}s")
 # actual_TCP = rtde_r.getActualTCPPose()
-# print("TCP Pos: ", actual_TCP)
+print("TCP Pos: ", actual_TCP)

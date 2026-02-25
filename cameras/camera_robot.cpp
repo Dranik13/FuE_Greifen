@@ -49,12 +49,6 @@ void RobotCamera::processFrames()
     try {
         Object3D predicted_obj;
         receiveStaticObject(predicted_obj);
-        // if(receiveStaticObject(predicted_obj)){
-        //     std::cout << "[robot_camera] RX static obj id=" << predicted_obj.id
-        //                 << " width=" << predicted_obj.width
-        //                 << " length=" << predicted_obj.length
-        //                 << " height=" << predicted_obj.height << "\n"; 
-        // };
 
         rs2::frameset frames = pipeline_.wait_for_frames(3000);
         rs2::align align_to_color(RS2_STREAM_COLOR);
@@ -100,7 +94,7 @@ void RobotCamera::processFrames()
             return true;
         };
 
-        // Segmentierung basierend auf Z-Koordinate
+        // Segmentation based on depth thresholding around predicted object z + offset
         for (int y = 0; y < depth_mat.rows; ++y) {
             for (int x = 0; x < depth_mat.cols; ++x) {
                 float z_mm = 0.0f;
@@ -113,15 +107,14 @@ void RobotCamera::processFrames()
             }
         }        
 
-        // Einfaches Morphologie-Tuning gegen Kantenrauschen
-        cv::Mat morph_kernel = cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(5, 5));
+        // Simple morphology tuning against edge noise
+        cv::Mat morph_kernel = cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(15, 15));
         cv::morphologyEx(depth_bin, depth_bin, cv::MORPH_OPEN, morph_kernel, cv::Point(-1, -1), 1);
-        cv::morphologyEx(depth_bin, depth_bin, cv::MORPH_CLOSE, morph_kernel, cv::Point(-1, -1), 2);
 
-        // Mittelpunkt des Objekts (größte Kontur) in mm berechnen
+        // Calculate the center of the object (largest contour) in mm
         std::vector<std::vector<cv::Point>> contours;
         cv::findContours(depth_bin, contours, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
-        
+
         cv::Mat object_mask = cv::Mat::zeros(depth_bin.size(), CV_8U);
 
         if (!contours.empty()) {

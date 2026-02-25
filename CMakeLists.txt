@@ -10,6 +10,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 find_package(OpenCV REQUIRED)
 find_package(PkgConfig REQUIRED)
 find_package(Protobuf REQUIRED)
+find_package(apriltag REQUIRED)
 
 pkg_check_modules(REALSR realsense2 QUIET)
 pkg_check_modules(ZMQ REQUIRED libzmq)
@@ -49,6 +50,7 @@ target_link_libraries(camera_base PUBLIC
   ${OpenCV_LIBS}
   ${REALSR_LIBS}
   protobuf::libprotobuf
+  apriltag::apriltag
   ${ZMQ_LIBRARIES})
 
 # ============ CameraReader Executables ============
@@ -63,6 +65,11 @@ add_executable(camera_robot
   cameras/camera_robot_main.cpp
 )
 target_link_libraries(camera_robot PRIVATE camera_base)
+
+# add_executable(camera_calibration
+#   cameras/camera_calibration.cpp
+# )
+# target_link_libraries(camera_calibration PRIVATE camera_base)
 
 # # Backward compatibility: camera_reader alias
 # add_executable(camera_reader

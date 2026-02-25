@@ -256,6 +256,9 @@ UR10_Pick_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 UR10_Pick_SOURCE_DIR:STATIC=/home/tetripick/UR10_Pick_ws
 
+//The directory containing a CMake configuration file for apriltag.
+apriltag_DIR:PATH=/usr/local/lib/apriltag/cmake
+
 //Path to a library.
 pkgcfg_lib_REALSR_realsense2:FILEPATH=/usr/local/lib/librealsense2.so
 
@@ -418,6 +421,8 @@ FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[/usr][v4.6.0()]
 FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v1.8.1()]
 //Details about finding Protobuf
 FIND_PACKAGE_MESSAGE_DETAILS_Protobuf:INTERNAL=[/usr/lib/x86_64-linux-gnu/libprotobuf.so][/usr/include][v3.21.12()]
+//Details about finding Threads
+FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //ADVANCED property for variable: PKG_CONFIG_ARGN
 PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PKG_CONFIG_EXECUTABLE

@@ -44,7 +44,7 @@ void BaseCameraReader::initializeRealSense()
     cfg.enable_stream(RS2_STREAM_COLOR, 640, 480, RS2_FORMAT_BGR8, 30);
     cfg.enable_stream(RS2_STREAM_DEPTH, 640, 480, RS2_FORMAT_Z16, 30);
 
-    pipeline_.start(cfg);
+    profile_ = pipeline_.start(cfg);
     running_ = true;
 
     try {
@@ -111,6 +111,20 @@ void BaseCameraReader::loadConfig(const std::string& config_file)
             serial_node >> serial_numeric;
             serial_number_ = std::to_string(static_cast<unsigned long long>(serial_numeric + 0.5));
         }
+    }
+
+    if (!fs["max_obj_height_mm"].empty()) fs["max_obj_height_mm"] >> max_obj_height_mm_;
+    if (!fs["min_contour_area"].empty()) fs["min_contour_area"] >> min_contour_area_;
+    if (!fs["search_area_y_min"].empty()) fs["search_area_y_min"] >> search_area_y_min_;
+    if (!fs["search_area_y_max"].empty()) fs["search_area_y_max"] >> search_area_y_max_;
+
+    cv::Mat T;
+    if (!fs["T_cam_to_board"].empty()){
+        fs["T_cam_to_board"] >> T;
+        for (int r = 0; r < 4; ++r)
+            for (int c = 0; c < 4; ++c)
+                T_cam_to_belt_(r, c) = T.at<double>(r, c);
+        std::cout << "Loaded T_cam_to_board from config:\n" << T_cam_to_belt_ << "\n";
     }
 
     std::cout << "Config loaded from " << config_file << ": ROI=" << roi_

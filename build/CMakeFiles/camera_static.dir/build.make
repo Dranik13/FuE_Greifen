@@ -149,6 +149,7 @@ camera_static: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.4.6.0
 camera_static: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.4.6.0
 camera_static: /usr/lib/x86_64-linux-gnu/libopencv_core.so.4.6.0
 camera_static: /usr/lib/x86_64-linux-gnu/libprotobuf.so
+camera_static: /usr/local/lib/libapriltag.so.3.4.5
 camera_static: CMakeFiles/camera_static.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/tetripick/UR10_Pick_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable camera_static"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/camera_static.dir/link.txt --verbose=$(VERBOSE)

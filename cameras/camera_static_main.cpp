@@ -1,7 +1,7 @@
 #include "camera_static.hpp"
 
 /**
- * Main executable for Camera Reader 1 (conveyor belt camera)
+ * Main executable for static camera (conveyor belt camera)
  * Usage: ./camera_static
  */
 int main() 
@@ -14,7 +14,6 @@ int main()
         return 1;
     }
 
-    std::cout << "Static camera reader running. Press 'q' or ESC to exit.\n";
     reader.spin();
 
     std::cout << "Static camera reader stopped.\n";

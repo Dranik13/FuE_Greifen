@@ -1,16 +1,15 @@
-#ifndef CAMERA_READER_2_H
-#define CAMERA_READER_2_H
+#ifndef CAMERA_ROBOT_HPP
+#define CAMERA_ROBOT_HPP
 
 #include "camera_reader_base.hpp"
 
 /**
- * RobotCamera: Camara attached to endeffector
- * - Implementiere hier eigene Logik für die zweite Kamera
- * - Z.B. andere Objekterkennung, andere Filter, andere Ausgabe
+ * RobotCamera: Camera attached to endeffector
+ * - Detects objects right in front of TCP to estimate grasping moment
  */
 class RobotCamera : public BaseCameraReader {
 public:
-    explicit RobotCamera(const std::string& config_file = "config2.yml");
+    explicit RobotCamera(const std::string& config_file = "config_cam_robot.yml");
 
 private:
     void processFrames() override;
@@ -20,4 +19,4 @@ private:
     zmq::socket_t sub_socket_{sub_context_, zmq::socket_type::sub};
 };
 
-#endif // CAMERA_READER_2_H
+#endif // CAMERA_ROBOT_HPP
