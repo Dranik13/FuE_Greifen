@@ -1,17 +1,4 @@
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// 1. Objekte werden von Stationärer Kamera erkannt und in eine Liste gepackt. Jedes Objekt hat: Größe, Pose, Geschw. und Klasse
-// 2. Position der Objekte wird dauerhaft auf Basis der Geschw. in der Liste aktualisiert. -> Geschwindigkeit als globaler Eintrag?? 
-// 3. Regler sucht sich ein Objekt raus und positioniert sich einem Versatz in y-Richtung über dem Objekt 
-// 4. Roboterkamera lokalisiert Objekt und Distanz zum Objekt -> Wenn keine Distanzdaten da sind orientiert man sich an der Größe des Loches -> Abgleich mit gespeicherten Größendaten??
-// 5. Roboter richtet sich den Kameradaten nach aus, sodass Objekt zentral liegt
-// 6. Roboter bleibt stehen und der Griffzeitpunkt wird anhand der Objektgeschwindigkeit ermittelt
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 #include "camera_static.hpp"
-// #include "apriltag/apriltag.h"
-// #include "apriltag/apriltag_pose.h"
-// #include "apriltag/tag36h11.h"
-// #include "apriltag/tag25h9.h"
 #include <algorithm>
 
 StaticCamera::StaticCamera(const std::string& config_file)
@@ -60,13 +47,14 @@ void StaticCamera::processFrames()
         if (!ref_pt_3d_initialized_)
         {
             float d_m = depth.get_distance(static_cast<int>(ref_pt_.x), static_cast<int>(ref_pt_.y));
-            if (d_m > 0.0f) 
+            if (d_m > 0.0f)
             {
                 float pixel[2] = { static_cast<float>(ref_pt_.x),
                                     static_cast<float>(ref_pt_.y) };
                 float pos[3];
                 rs2_deproject_pixel_to_point(pos, &depth_intrinsics, pixel, d_m);
                 ref_pt_3d_ = cv::Point3f(pos[0], pos[1], pos[2]);
+                // ref_pt_3d_ = transformCamToBelt(cv::Point3f(pos[0], pos[1], pos[2]));
                 ref_pt_3d_initialized_ = true;
                 if (debug_) 
                 {
@@ -143,11 +131,11 @@ void StaticCamera::processFrames()
                 float pos[3];
                 rs2_deproject_pixel_to_point(pos, &depth_intrinsics, pixel, d);
                 corners3d[k] = cv::Point3f(pos[0], pos[1], pos[2]);
+                // corners3d[k] = transformCamToBelt(cv::Point3f(pos[0], pos[1], pos[2]));
             }
 
             Object3D object;
             cv::Point3f obj_center = computeCenter(corners3d);
-            // cv::Point3f obj_center_calibrated = transformCamToBelt(obj_center);
             object.x = (obj_center.x - ref_pt_3d_.x) * 1000;
             object.y = (obj_center.y - ref_pt_3d_.y) * -1000;       // flip y-axis to match robot coordinates
             object.orientation = computeOrientation2D(corners3d);
@@ -184,8 +172,10 @@ void StaticCamera::processFrames()
                     float pixel[2] = { static_cast<float>(px), static_cast<float>(py) };
                     float pos[3];
                     rs2_deproject_pixel_to_point(pos, &depth_intrinsics, pixel, d);
-
+                    
                     float z_mm = pos[2] * 1000.0f;
+                    // cv::Point3f p_belt = transformCamToBelt(cv::Point3f(pos[0], pos[1], pos[2]));
+                    // float z_mm = p_belt.z * 1000.0f;
                     sum_z_mm += z_mm;
                     count_z++;
                 }
@@ -268,25 +258,6 @@ void StaticCamera::processFrames()
     } catch (const std::exception &e) {
         std::cerr << "[static_camera] Exception: " << e.what() << "\n";
     }
-}
-
-bool StaticCamera::saveExtrinsics(const std::string& file_path) const
-{
-    cv::Mat T(4, 4, CV_64F);
-    for (int r = 0; r < 4; ++r) {
-        for (int c = 0; c < 4; ++c) {
-            T.at<double>(r, c) = T_cam_to_belt_(r, c);
-        }
-    }
-
-    cv::FileStorage fs(file_path, cv::FileStorage::WRITE);
-    if (!fs.isOpened()) {
-        std::cerr << "[static_camera] Could not write extrinsics file: " << file_path << "\n";
-        return false;
-    }
-
-    fs << "T_cam_to_belt" << T;
-    return true;
 }
 
 cv::Point3f StaticCamera::transformCamToBelt(const cv::Point3f& cam_point_m) const

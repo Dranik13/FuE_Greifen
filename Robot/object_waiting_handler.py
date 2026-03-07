@@ -14,6 +14,7 @@ import yaml
 from pathlib import Path
 from camera_to_robot_transform import CameraToRobotTransformer
 import camera_sub
+import save_pos
 
 
 def _load_camera_mount_to_camera_distance():
@@ -58,11 +59,12 @@ def wait_for_object_data(transformer: CameraToRobotTransformer, sub: camera_sub.
 
         if debug:
             print(f"[follow_handler] Object center [mm]: X={obj['x']:.3f}, Y={obj['y']:.3f}, Z={obj['z']:.3f}")
-        pos_y = obj['y'] / 1000.0  # Convert mm to meters
+        pos_y = obj['y'] / 1000.0  # Convert mm to meter
+        pos_x = obj['x'] / 1000.0  # Convert mm to meter
         # To transform to robot coordinates, uncomment below:
         # bx, by, bz = transformer.camera_point_to_base(obj['x'], obj['y'], obj['z'])
         # print(f"[follow_handler] Object center [base,m]: X={bx:.4f}, Y={by:.4f}, Z={bz:.4f}")
-        return pos_y
+        return pos_x, pos_y
 
 
 def object_waiting(rtde_c, rtde_r, object_speed=0.1, robot_speed=0.8, robot_acceleration=0.5, debug=False):
@@ -82,13 +84,29 @@ def object_waiting(rtde_c, rtde_r, object_speed=0.1, robot_speed=0.8, robot_acce
     transformer = CameraToRobotTransformer(rtde_receiver=rtde_r)
     if debug:
         print("[follow_handler] Waiting for 'coordinates' messages on tcp://localhost:5556...")
-    pos_y = wait_for_object_data(transformer, sub, debug=debug, object_speed=object_speed)
+    pos_x, pos_y = wait_for_object_data(transformer, sub, debug=debug, object_speed=object_speed)
     if pos_y is None:
         if debug:
             print("[follow_handler] No valid object position received within timeout. Remaining in FOLLOW state.")
         return False  # Indicate failure to receive data
-    stop_time = (distance_to_camera + abs(pos_y)) / object_speed
+    stop_time = (distance_to_camera + abs(pos_y)) / object_speed - 0.3  # Subtract a small buffer time to ensure we grip slightly before the object reaches the camera
+    start_time = time.time()
     if debug:
         print(f"[follow_handler] Calculated stop time: {stop_time:.3f}s based on pos_y={pos_y:.3f}m and object_speed={object_speed:.3f}m/s")
-    time.sleep(stop_time)
+    actual_TCP_pose = rtde_r.getActualTCPPose()
+    actual_TCP_pose[0] -= (pos_x - 0.03)  # Move in x-direction to align with the object
+    print(f"[follow_handler] Adjusted TCP pose for following: {(pos_x - 0.03):.3f}m in x-direction, with {pos_x} + 0.03)m total adjustment")
+    if save_pos.is_save_position(actual_TCP_pose[:3]):
+        if debug:
+            print(f"[follow_handler] Moving to position: {actual_TCP_pose} with speed: {robot_speed} m/s and acceleration: {robot_acceleration} m/s^2")
+        rtde_c.moveL(actual_TCP_pose, robot_speed, robot_acceleration)
+    else:
+        if debug:
+            print(f"[follow_handler] Current position {actual_TCP_pose[:3]} is not a valid save position. Skipping move command.")
+    while (time.time() - start_time) < stop_time:
+        # if debug:
+        #     elapsed = time.time() - start_time
+        #     remaining = stop_time - elapsed
+        #     print(f"[follow_handler] Waiting... Elapsed: {elapsed:.3f}s, Remaining: {remaining:.3f}s")
+        time.sleep(0.05)  # Sleep briefly to avoid busy-waiting
     return True  # Indicate that we are ready to transition to the GRIP state after following the object

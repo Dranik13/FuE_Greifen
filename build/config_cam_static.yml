@@ -19,10 +19,14 @@ max_obj_height_mm: 50     # maximum expected object height in mm (for filtering)
 min_contour_area: 500.0   # minimum contour area to be considered an object (in pixels)
 search_area_y_min: -350.0 # minimum y-coordinate of the search area (in mm)
 search_area_y_max: 190.0  # maximum y-coordinate of the search area (in mm)
+x_scale: 1.0              # optional affine calibration in robot frame
+y_scale: 1.0
+x_offset_mm: -35.0        # measured systematic x-bias compensation
+y_offset_mm: 0.0
 
 ref_pt:                   # reference Point in input image for extrinsic calibration (in input image)
-  x: 116
-  y: 182
+  x: 112
+  y: 185
 
 # Maximum deltas per frame for object list
 pos_tol: 30
@@ -38,7 +42,7 @@ T_cam_to_board: !!opencv-matrix
    rows: 4
    cols: 4
    dt: d
-   data: [ -0.9139963, 0.4048901, -0.02597667, 0.0,
-           -0.01150139, 0.03814325, 0.9992061, 0.0,
-            0.40555946, 0.91356944, -0.03020599, 0.0,
-            0, 0, 0, 0 ]
+   data: [ 0.99841, 0.0,  0.05634, 0.0,
+        0.0,     1.0,  0.0,     0.0,
+       -0.05634, 0.0,  0.99841, 0.0,
+        0.0,     0.0,  0.0,     1.0 ]

@@ -10,6 +10,7 @@
 #include <thread>
 #include <chrono>
 #include <zmq.hpp>
+#include <yaml-cpp/yaml.h>
 
 #include "objects_3D.pb.h"
 #include "tracker.hpp"
@@ -71,6 +72,11 @@ protected:
     // Search area boundaries in y-direction (in mm)
     float search_area_y_min_;
     float search_area_y_max_;
+    // Final affine calibration in robot frame (mm): out = scale * raw + offset
+    float x_scale_ = 1.0f;
+    float y_scale_ = 1.0f;
+    float x_offset_mm_ = 0.0f;
+    float y_offset_mm_ = 0.0f;
 
     // RealSense
     rs2::pipeline pipeline_;

@@ -11,7 +11,7 @@ RobotCamera::RobotCamera(const std::string& config_file)
     sub_socket_.connect("tcp://127.0.0.1:5555");
 }
 
-bool RobotCamera::receiveStaticObject(Object3D& out_obj)
+bool RobotCamera::receiveStaticObject()
 {
     zmq::message_t topic_msg;
     zmq::message_t data_msg;
@@ -36,19 +36,18 @@ bool RobotCamera::receiveStaticObject(Object3D& out_obj)
     }
 
     const auto& obj = list_msg.objects(0);      // Aktuell immer das erste Objekt in der Liste nehmen -> Wir greifen Obj. mit kleinster ID
-    out_obj.z = obj.z();
-    out_obj.orientation = obj.orientation();
-    out_obj.width = obj.width();
-    out_obj.length = obj.length();
-    out_obj.height = obj.height();
+    current_obj.z = obj.z();
+    current_obj.orientation = obj.orientation();
+    current_obj.width = obj.width();
+    current_obj.length = obj.length();
+    current_obj.height = obj.height();
     return true;
 }
 
 void RobotCamera::processFrames() 
 {
     try {
-        Object3D predicted_obj;
-        receiveStaticObject(predicted_obj);
+        receiveStaticObject();
 
         rs2::frameset frames = pipeline_.wait_for_frames(3000);
         rs2::align align_to_color(RS2_STREAM_COLOR);
@@ -75,8 +74,8 @@ void RobotCamera::processFrames()
 
 
         constexpr float kMmPerMeter = 1000.0f;
-        constexpr uint16_t kZThresholdMm = 200;
-        constexpr float kMaskOffsetMm = 30.0f;
+        // constexpr uint16_t kZThresholdMm = 200;
+        // constexpr float kMaskOffsetMm = 30.0f;
         cv::Mat depth_bin = cv::Mat::zeros(depth_mat.rows, depth_mat.cols, CV_8U);
 
         auto get_z_mm = [&](int x, int y, float& z_mm) -> bool {
@@ -145,27 +144,25 @@ void RobotCamera::processFrames()
                 }
             }
 
-            constexpr int kBottomBandPx = 3;
-            double sum_bottom_y_px = 0.0;
-            int bottom_point_count = 0;
+            // constexpr int kBottomBandPx = 3;
+            // double sum_bottom_y_px = 0.0;
+            // int bottom_point_count = 0;
+
+            // if (object_pixel_count > 0 && max_y_px >= 0) {
+            //     int y_start = std::max(0, max_y_px - kBottomBandPx);
+            //     for (int y = y_start; y <= max_y_px; ++y) {
+            //         for (int x = 0; x < object_mask.cols; ++x) {
+            //             if (object_mask.at<uint8_t>(y, x) == 0) continue;
+            //             sum_bottom_y_px += static_cast<double>(y);
+            //             bottom_point_count++;
+            //         }
+            //     }
+            // }
 
             if (object_pixel_count > 0 && max_y_px >= 0) {
-                int y_start = std::max(0, max_y_px - kBottomBandPx);
-                for (int y = y_start; y <= max_y_px; ++y) {
-                    for (int x = 0; x < object_mask.cols; ++x) {
-                        if (object_mask.at<uint8_t>(y, x) == 0) continue;
-                        sum_bottom_y_px += static_cast<double>(y);
-                        bottom_point_count++;
-                    }
-                }
-            }
+                int mean_x_px = static_cast<int>(std::lround(sum_all_x_px / object_pixel_count));
 
-            if (object_pixel_count > 0 && bottom_point_count > 0) {
-                int mean_bottom_x_px = static_cast<int>(std::lround(sum_all_x_px / object_pixel_count));
-                int mean_bottom_y_px = static_cast<int>(std::lround(sum_bottom_y_px / bottom_point_count));
-
-                mean_bottom_x_px = std::clamp(mean_bottom_x_px, 0, depth_raw.cols - 1);
-                mean_bottom_y_px = std::clamp(mean_bottom_y_px, 0, depth_raw.rows - 1);
+                mean_x_px = std::clamp(mean_x_px, 0, depth_raw.cols - 1);
 
                 auto try_get_depth_m = [&](int px, int py, float& depth_m) -> bool {
                     constexpr int kSearchRadiusPx = 2;
@@ -183,20 +180,23 @@ void RobotCamera::processFrames()
                 };
 
                 float depth_m = 0.0f;
-                if (try_get_depth_m(mean_bottom_x_px, mean_bottom_y_px, depth_m)) {
-                    float pixel[2] = {static_cast<float>(mean_bottom_x_px), static_cast<float>(mean_bottom_y_px)};
+                if (try_get_depth_m(mean_x_px, max_y_px, depth_m)) {
+                    float pixel[2] = {static_cast<float>(mean_x_px), static_cast<float>(max_y_px)};
                     float point_3d[3];
                     rs2_deproject_pixel_to_point(point_3d, &depth_intrinsics, pixel, depth_m);
 
                     if (point_3d[2] > 0.0f) {
                         float obj_x_mm = point_3d[0] * kMmPerMeter;
-                        float obj_y_mm = -1 * point_3d[1] * kMmPerMeter + predicted_obj.length / 2;       // Orientierung einberechnen später
-                        float obj_z_mm = predicted_obj.z;
+                        float obj_y_mm = -1 * point_3d[1] * kMmPerMeter + current_obj.length / 2;       // Orientierung einberechnen später
+                        float obj_z_mm = current_obj.z;
 
                         if (debug_) {
-                            std::cout << "[robot_camera] Bottom edge: y_px=" << max_y_px
-                                      << ", mean_x_px=" << mean_bottom_x_px
-                                      << ", bottom_y_mm=" << obj_y_mm << "\n";
+                            std::cout << "[robot_camera] Bottom edge: max_y_px=" << max_y_px
+                                      << ", current_obj.length=" << current_obj.length
+                                      << ", point_3d[1]=" << point_3d[1]
+                                    //   << ", mean_x_px=" << mean_x_px
+                                    //   << ", obj_x_mm=" << obj_x_mm
+                                      << ", obj_y_mm=" << obj_y_mm << "\n";
                         }
 
                         // Send bottom-edge representative 3D point

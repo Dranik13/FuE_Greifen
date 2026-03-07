@@ -2,7 +2,7 @@
 #define CAMERA_STATIC_HPP
 
 #include "camera_reader_base.hpp"
-#include <chrono>
+
 
 /**
  * StaticCamera: Camera reader for fixed camera overlooking conveyor belt
@@ -16,7 +16,6 @@ public:
 
 private:
     void processFrames() override;
-    bool saveExtrinsics(const std::string& file_path) const;
     cv::Point3f transformCamToBelt(const cv::Point3f& cam_point_m) const;
 
     // Frame skipping: process only every 3rd frame

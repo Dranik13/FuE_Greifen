@@ -12,5 +12,5 @@ Workspace:
   X_max: 1.05
   Y_min: -0.8
   Y_max: 0.3
-  Z_min: 0.1
+  Z_min: 0.095
   Z_max: 0.37

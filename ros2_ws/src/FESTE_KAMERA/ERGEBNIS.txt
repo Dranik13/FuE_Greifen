@@ -1,0 +1,13 @@
+Code ist in cal_Static_cam.py, genauso wie die Bilder mit denen ich das kalibriert habe
+Die werte sind für z irgendwie bisschen unrealistisch, aber die 7° Verdrehung kommt mir eigentlich solide vor. und x und y auch.
+
+Das ist jetzt feste Kamera bezogen auf Roboter Base.
+
+
+--- ERGEBNIS ---
+X-Position: 0.6904 m
+Y-Position: -1.0108 m
+Z-Position: 0.2884 m
+Verdrehung um X (Roll):  144.32 Grad
+Verdrehung um Y (Pitch): -3.23 Grad
+Verdrehung um Z (Yaw):   7.44 Grad   <--- DAS IST DEIN GESUCHTER WERT!

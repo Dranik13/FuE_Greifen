@@ -117,6 +117,10 @@ void BaseCameraReader::loadConfig(const std::string& config_file)
     if (!fs["min_contour_area"].empty()) fs["min_contour_area"] >> min_contour_area_;
     if (!fs["search_area_y_min"].empty()) fs["search_area_y_min"] >> search_area_y_min_;
     if (!fs["search_area_y_max"].empty()) fs["search_area_y_max"] >> search_area_y_max_;
+    if (!fs["x_scale"].empty()) fs["x_scale"] >> x_scale_; else x_scale_ = 1.0f;
+    if (!fs["y_scale"].empty()) fs["y_scale"] >> y_scale_; else y_scale_ = 1.0f;
+    if (!fs["x_offset_mm"].empty()) fs["x_offset_mm"] >> x_offset_mm_; else x_offset_mm_ = 0.0f;
+    if (!fs["y_offset_mm"].empty()) fs["y_offset_mm"] >> y_offset_mm_; else y_offset_mm_ = 0.0f;
 
     cv::Mat T;
     if (!fs["T_cam_to_board"].empty()){
@@ -129,7 +133,10 @@ void BaseCameraReader::loadConfig(const std::string& config_file)
 
     std::cout << "Config loaded from " << config_file << ": ROI=" << roi_
               << " (debug=" << debug_ << ", zmq_port=" << zmq_port_
-              << "', serial_number=" << serial_number_ << ")\n";
+              << "', serial_number=" << serial_number_ << ""
+              << ", x_scale=" << x_scale_ << ", y_scale=" << y_scale_
+              << ", x_offset_mm=" << x_offset_mm_ << ", y_offset_mm=" << y_offset_mm_
+              << ")\n";
 }
 
 cv::Point3f BaseCameraReader::computeCenter(const std::vector<cv::Point3f>& corners)
