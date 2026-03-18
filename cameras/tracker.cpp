@@ -1,9 +1,9 @@
 #include "tracker.hpp"
 #include <cmath>
 
-float resolve_prediction_vy(const Object3D& state, float fallback_vy) {
-    if (std::isfinite(state.vy) && std::abs(state.vy) > 1e-6f) {
-        return state.vy;
+float resolve_prediction_vy(const Object3D& obj, float fallback_vy) {
+    if (std::isfinite(obj.vy) && std::abs(obj.vy) > 1e-6f) {
+        return obj.vy;
     }
     return fallback_vy;
 }
@@ -31,7 +31,7 @@ float Tracker::update(std::vector<Object3D>& detections, double timestamp)
             continue;
         }
         
-        const cv::Point3f d(detections[i].x, detections[i].y, detections[i].z);
+        const cv::Point3f det_midpoint(detections[i].x, detections[i].y, detections[i].z);
         float best_dist = max_match_distance_mm + 1.0f;
         int best_j = -1;
         for (size_t j = 0; j < original_track_count; ++j) {
@@ -40,19 +40,19 @@ float Tracker::update(std::vector<Object3D>& detections, double timestamp)
 
             double dt = timestamp - track.last_ts;
             if (dt < 0.0) dt = 0.0;
-            float pred_vy = resolve_prediction_vy(track.state, prediction_velocity_y_);
+            float pred_vy = resolve_prediction_vy(track.object, prediction_velocity_y_);
 
-            float pred_x = track.state.x;
-            float pred_y = track.state.y + pred_vy * static_cast<float>(dt);
-            float pred_z = track.state.z;
+            float pred_x = track.object.x;
+            float pred_y = track.object.y + pred_vy * static_cast<float>(dt);
+            float pred_z = track.object.z;
 
-            double dx = d.x - pred_x;
-            double dy = d.y - pred_y;
-            double dz = d.z - pred_z;
+            double dx = det_midpoint.x - pred_x;
+            double dy = det_midpoint.y - pred_y;
+            double dz = det_midpoint.z - pred_z;
             float dist = std::sqrt(dx*dx + dy*dy + dz*dz);
             if (dist < best_dist) {
                 best_dist = dist;
-                best_j = (int)j;
+                best_j = j;
             }
         }
         if (best_j != -1 && best_dist <= max_match_distance_mm) {
@@ -66,17 +66,17 @@ float Tracker::update(std::vector<Object3D>& detections, double timestamp)
     int vel_count = 0;
 
     for (int i = 0; i < n; ++i) {
-        int tj = matched_track_index[i];
-        if (tj != -1 && tj < (int)original_track_count) {
-            Track& track = tracks_[tj];
-            detections[i].id = track.id;
+        int track_index = matched_track_index[i];
+        if (track_index != -1 && track_index < (int)original_track_count) {
+            Track& track = tracks_[track_index];
+            detections[i].id = track.object.id;
             double dt = timestamp - track.last_ts;
-            bool prev_in_region = is_in_velocity_region(track.state.y, velocity_region_y_min, velocity_region_y_max);
-            bool curr_in_region = is_in_velocity_region(detections[i].y, velocity_region_y_min, velocity_region_y_max);
+            // bool prev_in_region = is_in_velocity_region(track.object.y, velocity_region_y_min, velocity_region_y_max);
+            bool det_in_region = is_in_velocity_region(detections[i].y, velocity_region_y_min, velocity_region_y_max);
             
             // Calculate y-velocity and store in Object3D
-            if (dt > 1e-6 && dt < 2.0 && prev_in_region && curr_in_region) {
-                float vy = (detections[i].y - track.state.y) / (float)dt;
+            if (dt > 1e-6 && dt < 2.0 && det_in_region) {
+                float vy = (detections[i].y - track.object.y) / (float)dt;
                 detections[i].vy = vy;
                 
                 if (std::abs(vy) >= 10){
@@ -85,17 +85,17 @@ float Tracker::update(std::vector<Object3D>& detections, double timestamp)
                 }
 
             } else {
-                detections[i].vy = resolve_prediction_vy(track.state, prediction_velocity_y_);
+                detections[i].vy = resolve_prediction_vy(track.object, prediction_velocity_y_);
             }
             
-            track.state = detections[i];
+            track.object = detections[i];
             track.last_ts = timestamp;
             track.missed = 0;
             track.age++;
         }
     }
 
-    // Match detections also with candidates (to promote they to full tracks)
+    // Match detections also with candidates (to promote them to full tracks)
     std::vector<bool> candidate_matched(candidates_.size(), false);
     std::vector<bool> promoted_to_track(n, false);
 
@@ -107,16 +107,16 @@ float Tracker::update(std::vector<Object3D>& detections, double timestamp)
             continue;
         }
 
-        const cv::Point3f d(detections[i].x, detections[i].y, detections[i].z);
+        const cv::Point3f det_midpoint(detections[i].x, detections[i].y, detections[i].z);
         float best_dist = max_match_distance_mm + 1.0f;
         int best_c = -1;
 
         for (size_t c = 0; c < candidates_.size(); ++c) {
             if (candidate_matched[c]) continue;
             const auto& cand = candidates_[c];
-            double dx = d.x - cand.state.x;
-            double dy = d.y - cand.state.y;
-            double dz = d.z - cand.state.z;
+            double dx = det_midpoint.x - cand.object.x;
+            double dy = det_midpoint.y - cand.object.y;
+            double dz = det_midpoint.z - cand.object.z;
             float dist = std::sqrt(dx*dx + dy*dy + dz*dz);
 
             if (dist < best_dist) {
@@ -127,15 +127,15 @@ float Tracker::update(std::vector<Object3D>& detections, double timestamp)
 
         if (best_c != -1 && best_dist <= max_match_distance_mm) {
             // Candidate confirmed! Promote to full track
-            Track newt;
-            newt.id = next_id_++;
-            detections[i].id = newt.id;
+            Track new_track;
+            new_track.object.id = next_id_++;
+            detections[i].id = new_track.object.id;
             detections[i].vy = 0.0f;  // New tracks have zero velocity initially
-            newt.state = detections[i];
-            newt.last_ts = timestamp;
-            newt.missed = 0;
-            newt.age = 1;
-            tracks_.push_back(newt);
+            new_track.object = detections[i];
+            new_track.last_ts = timestamp;
+            new_track.missed = 0;
+            new_track.age = 1;
+            tracks_.push_back(new_track);
             
             candidate_matched[best_c] = true;
             promoted_to_track[i] = true;
@@ -159,7 +159,7 @@ float Tracker::update(std::vector<Object3D>& detections, double timestamp)
 
             Candidate cand;
             detections[i].id = 0;
-            cand.state = detections[i];
+            cand.object = detections[i];
             cand.detected_ts = timestamp;
             candidates_.push_back(cand);
             detections[i].vy = 0.0f;
@@ -174,9 +174,9 @@ float Tracker::update(std::vector<Object3D>& detections, double timestamp)
         double dt = timestamp - track.last_ts;
         if (dt < 0.0) dt = 0.0;
 
-        float pred_vy = resolve_prediction_vy(track.state, prediction_velocity_y_);
-        track.state.y += pred_vy * static_cast<float>(dt);
-        track.state.vy = pred_vy;
+        float pred_vy = resolve_prediction_vy(track.object, prediction_velocity_y_);
+        track.object.y += pred_vy * static_cast<float>(dt);
+        track.object.vy = pred_vy;
         track.last_ts = timestamp;
         track.missed++;
     }
@@ -190,21 +190,21 @@ float Tracker::update(std::vector<Object3D>& detections, double timestamp)
     std::vector<Track> new_tracks;
     for (size_t j = 0; j < tracks_.size(); ++j) {
         const Track& t = tracks_[j];
-        bool in_region = (t.state.y >= velocity_region_y_min && t.state.y <= velocity_region_y_max);
+        bool in_region = (t.object.y >= velocity_region_y_min && t.object.y <= velocity_region_y_max);
         bool keep = false;
         if (in_region) {
             // Inside trusted region: strict - delete if too many misses
             keep = (t.missed <= max_missed_in_region);
         } else {
             // Outside region: lenient - keep until y threshold
-            keep = (t.state.y >= min_tracked_y_mm && t.state.y <= max_tracked_y_mm);
+            keep = (t.object.y >= min_tracked_y_mm && t.object.y <= max_tracked_y_mm);
         }
 
         if (keep) {
             new_tracks.push_back(t);
         }
     }
-    tracks_ = new_tracks;  // Use assignment instead of swap
+    tracks_ = new_tracks;
 
     // Compute average y-velocity across all tracked objects
     if (vel_count > 0) {
@@ -219,7 +219,7 @@ std::vector<Object3D> Tracker::getActiveObjects() const
     std::vector<Object3D> objects;
     objects.reserve(tracks_.size());
     for (const auto& track : tracks_) {
-        objects.push_back(track.state);
+        objects.push_back(track.object);
     }
     return objects;
 }

@@ -74,8 +74,6 @@ void RobotCamera::processFrames()
 
 
         constexpr float kMmPerMeter = 1000.0f;
-        // constexpr uint16_t kZThresholdMm = 200;
-        // constexpr float kMaskOffsetMm = 30.0f;
         cv::Mat depth_bin = cv::Mat::zeros(depth_mat.rows, depth_mat.cols, CV_8U);
 
         auto get_z_mm = [&](int x, int y, float& z_mm) -> bool {
@@ -106,7 +104,7 @@ void RobotCamera::processFrames()
             }
         }        
 
-        // Simple morphology tuning against edge noise
+        // Morphology tuning against edge noise
         cv::Mat morph_kernel = cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(15, 15));
         cv::morphologyEx(depth_bin, depth_bin, cv::MORPH_OPEN, morph_kernel, cv::Point(-1, -1), 1);
 
@@ -117,6 +115,7 @@ void RobotCamera::processFrames()
         cv::Mat object_mask = cv::Mat::zeros(depth_bin.size(), CV_8U);
 
         if (!contours.empty()) {
+            // extract largest contour
             auto largest_it = std::max_element(
                 contours.begin(), contours.end(),
                 [](const std::vector<cv::Point>& a, const std::vector<cv::Point>& b) {
@@ -144,21 +143,6 @@ void RobotCamera::processFrames()
                 }
             }
 
-            // constexpr int kBottomBandPx = 3;
-            // double sum_bottom_y_px = 0.0;
-            // int bottom_point_count = 0;
-
-            // if (object_pixel_count > 0 && max_y_px >= 0) {
-            //     int y_start = std::max(0, max_y_px - kBottomBandPx);
-            //     for (int y = y_start; y <= max_y_px; ++y) {
-            //         for (int x = 0; x < object_mask.cols; ++x) {
-            //             if (object_mask.at<uint8_t>(y, x) == 0) continue;
-            //             sum_bottom_y_px += static_cast<double>(y);
-            //             bottom_point_count++;
-            //         }
-            //     }
-            // }
-
             if (object_pixel_count > 0 && max_y_px >= 0) {
                 int mean_x_px = static_cast<int>(std::lround(sum_all_x_px / object_pixel_count));
 
@@ -181,7 +165,9 @@ void RobotCamera::processFrames()
 
                 float depth_m = 0.0f;
                 if (try_get_depth_m(mean_x_px, max_y_px, depth_m)) {
-                    float pixel[2] = {static_cast<float>(mean_x_px), static_cast<float>(max_y_px)};
+                    // get distance Data of a point on conveyor infront of object, because the LiDAR can't detect the object
+                    // as ist is too close to the camera
+                    float pixel[2] = {static_cast<float>(mean_x_px), static_cast<float>(max_y_px+1)};
                     float point_3d[3];
                     rs2_deproject_pixel_to_point(point_3d, &depth_intrinsics, pixel, depth_m);
 

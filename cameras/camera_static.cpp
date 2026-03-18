@@ -88,6 +88,7 @@ void StaticCamera::processFrames()
                 }
             }
         }
+
         // cv::GaussianBlur(obj_mask, obj_mask, cv::Size(5,5), 1.4);
         // cv::threshold(obj_mask, obj_mask, 127, 255, cv::THRESH_BINARY);
         // cv::Mat morph_kernel = cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(5, 5));
