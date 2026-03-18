@@ -105,10 +105,6 @@
 				},
 				{
 					"backtrace" : 3,
-					"path" : "/usr/include/mit-krb5"
-				},
-				{
-					"backtrace" : 3,
 					"path" : "/home/tetripick/UR10_Pick_ws/zeroMQ"
 				},
 				{

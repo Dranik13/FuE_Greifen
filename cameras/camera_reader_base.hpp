@@ -16,6 +16,15 @@
 #include "tracker.hpp"
 #include "Object3D.hpp"
 
+struct ExtrinsicCalibration {
+    double x;
+    double y;
+    double z;
+    double roll_deg;
+    double pitch_deg;
+    double yaw_deg;
+};
+
 class BaseCameraReader {
 public:
     BaseCameraReader(const std::string& config_file);
@@ -60,9 +69,6 @@ protected:
     std::vector<double> canny_thresh_;
     std::string camera_serial_config_;
     std::string serial_number_ = "";
-    cv::Point2i ref_pt_;
-    cv::Point3f ref_pt_3d_;
-    bool ref_pt_3d_initialized_ = false;
     float pos_delta_;  
     float orientation_delta_;
     // Max expected object height in mm (for filtering)
@@ -83,7 +89,8 @@ protected:
     std::string serial_;
     rs2::context ctx_;
     rs2::pipeline_profile profile_;
-    cv::Matx44d T_cam_to_belt_ = cv::Matx44d::eye();
+    ExtrinsicCalibration extrinsic_calibration_; 
+    cv::Matx44d transform_cam_to_robot_;
 
     // Object list and output
     std::vector<Object3D> obj_list_;

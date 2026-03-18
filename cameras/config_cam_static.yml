@@ -24,9 +24,20 @@ y_scale: 1.0
 x_offset_mm: -35.0        # measured systematic x-bias compensation
 y_offset_mm: 0.0
 
-ref_pt:                   # reference Point in input image for extrinsic calibration (in input image)
-  x: 112
-  y: 185
+calibration:              # extrinsic calibration of fixed camera to robot frame
+    x: 0.7433     # x: 0.7104
+    y: -0.7671   # y: -0.8058
+    z: 0.8507     # z: 0.2884
+    roll: 177.51   # roll:   180.0
+    pitch: -0.49  # pitch: -3.23
+    yaw: 0.0     # yaw:    0.0
+
+    # x: 0.7433
+    # y: -0.7671
+    # z: 0.8507
+    # roll: 177.51 
+    # pitch: -0.49
+    # yaw: 1.64 
 
 # Maximum deltas per frame for object list
 pos_tol: 30

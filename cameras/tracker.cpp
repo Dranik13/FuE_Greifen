@@ -17,6 +17,7 @@ Tracker::Tracker() {}
 float Tracker::update(std::vector<Object3D>& detections, double timestamp)
 {
     int n = (int)detections.size();
+    std::cout << "[Tracker] Updating with " << n << " detections at timestamp " << timestamp << " s\n";
     
     std::vector<int> matched_track_index(n, -1);
     const size_t original_track_count = tracks_.size();
@@ -74,7 +75,7 @@ float Tracker::update(std::vector<Object3D>& detections, double timestamp)
             bool curr_in_region = is_in_velocity_region(detections[i].y, velocity_region_y_min, velocity_region_y_max);
             
             // Calculate y-velocity and store in Object3D
-            if (dt > 1e-6 && dt < 10.0 && prev_in_region && curr_in_region) {
+            if (dt > 1e-6 && dt < 2.0 && prev_in_region && curr_in_region) {
                 float vy = (detections[i].y - track.state.y) / (float)dt;
                 detections[i].vy = vy;
                 
