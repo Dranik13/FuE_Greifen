@@ -6,7 +6,7 @@
 #include "Object3D.hpp"
 
 /*
-* Simple nearest-neighbor 3D tracker working directly with Object3D.
+* Nearest-neighbor 3D tracker working directly with Object3D.
 * Stores only tracking metadata (id, timestamps, missed frames).
 * Positions and velocities are updated directly in Object3D references.
 */
@@ -39,15 +39,14 @@ public:
 
 private:
     struct Track {
-        int id;
-        Object3D state;
+        Object3D object;
         double last_ts;
         int missed;
         int age;
     };
 
     struct Candidate {
-        Object3D state;
+        Object3D object;
         double detected_ts;
     };
 

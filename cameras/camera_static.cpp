@@ -89,9 +89,9 @@ void StaticCamera::processFrames()
             }
         }
 
-        cv::GaussianBlur(obj_mask, obj_mask, cv::Size(5,5), 1.4);
-        cv::threshold(obj_mask, obj_mask, 127, 255, cv::THRESH_BINARY);
-        cv::Mat morph_kernel = cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(5, 5));
+        // cv::GaussianBlur(obj_mask, obj_mask, cv::Size(5,5), 1.4);
+        // cv::threshold(obj_mask, obj_mask, 127, 255, cv::THRESH_BINARY);
+        // cv::Mat morph_kernel = cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(5, 5));
         // cv::morphologyEx(obj_mask, obj_mask, cv::MORPH_OPEN, morph_kernel, cv::Point(-1, -1), 1);
         // cv::morphologyEx(obj_mask, obj_mask, cv::MORPH_CLOSE, morph_kernel, cv::Point(-1, -1), 2);
 
