@@ -17,7 +17,6 @@ Tracker::Tracker() {}
 float Tracker::update(std::vector<Object3D>& detections, double timestamp)
 {
     int n = (int)detections.size();
-    std::cout << "[Tracker] Updating with " << n << " detections at timestamp " << timestamp << " s\n";
     
     std::vector<int> matched_track_index(n, -1);
     const size_t original_track_count = tracks_.size();
@@ -71,27 +70,38 @@ float Tracker::update(std::vector<Object3D>& detections, double timestamp)
             Track& track = tracks_[track_index];
             detections[i].id = track.object.id;
             double dt = timestamp - track.last_ts;
-            // bool prev_in_region = is_in_velocity_region(track.object.y, velocity_region_y_min, velocity_region_y_max);
             bool det_in_region = is_in_velocity_region(detections[i].y, velocity_region_y_min, velocity_region_y_max);
             
             // Calculate y-velocity and store in Object3D
             if (dt > 1e-6 && dt < 2.0 && det_in_region) {
                 float vy = (detections[i].y - track.object.y) / (float)dt;
-                detections[i].vy = vy;
                 
-                if (std::abs(vy) >= 10){
+                
+                if (std::abs(vy) >= 30.0f) {
+                    detections[i].vy = vy;
                     sum_vy += vy;
                     vel_count++;
+                }
+                else{
+                    detections[i].vy = 0.0f;
                 }
 
             } else {
                 detections[i].vy = resolve_prediction_vy(track.object, prediction_velocity_y_);
             }
-            
-            track.object = detections[i];
             track.last_ts = timestamp;
             track.missed = 0;
             track.age++;
+
+            if(!det_in_region && detections[i].vy != 0.0f) {
+                float prev_y = track.object.y;
+                track.object = detections[i];
+                track.object.y = prev_y + detections[i].vy * (float)dt;          // Preserve y-coordinate outside region
+            }
+            else{
+                track.object = detections[i];
+            }
+
         }
     }
 
@@ -190,9 +200,8 @@ float Tracker::update(std::vector<Object3D>& detections, double timestamp)
     std::vector<Track> new_tracks;
     for (size_t j = 0; j < tracks_.size(); ++j) {
         const Track& t = tracks_[j];
-        bool in_region = (t.object.y >= velocity_region_y_min && t.object.y <= velocity_region_y_max);
         bool keep = false;
-        if (in_region) {
+        if (t.object.y >= velocity_region_y_min && t.object.y <= velocity_region_y_max) {
             // Inside trusted region: strict - delete if too many misses
             keep = (t.missed <= max_missed_in_region);
         } else {

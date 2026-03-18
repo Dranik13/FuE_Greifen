@@ -43,28 +43,6 @@ void StaticCamera::processFrames()
         auto depth_intrinsics = depth.get_profile()
                                     .as<rs2::video_stream_profile>()
                                     .get_intrinsics();
-        // // Initialize reference point (once)
-        // if (!ref_pt_3d_initialized_)
-        // {
-        //     float d_m = depth.get_distance(static_cast<int>(ref_pt_.x), static_cast<int>(ref_pt_.y));
-        //     if (d_m > 0.0f)
-        //     {
-        //         float pixel[2] = { static_cast<float>(ref_pt_.x),
-        //                             static_cast<float>(ref_pt_.y) };
-        //         float pos[3];
-        //         rs2_deproject_pixel_to_point(pos, &depth_intrinsics, pixel, d_m);
-        //         ref_pt_3d_ = cv::Point3f(pos[0], pos[1], pos[2]);
-        //         // ref_pt_3d_ = transformCamToBelt(cv::Point3f(pos[0], pos[1], pos[2]));
-        //         ref_pt_3d_initialized_ = true;
-        //         if (debug_) 
-        //         {
-        //             std::cout << "[static_camera] Reference point 3D (m): X=" << ref_pt_3d_.x 
-        //                       << " Y=" << ref_pt_3d_.y << " Z=" << ref_pt_3d_.z << "\n";
-        //         }
-        //     } else {
-        //         std::cerr << "Warning: Invalid depth at ref_pt\n";
-        //     }
-        // }
 
         // Create mask
         cv::Mat obj_mask = cv::Mat::zeros(depth_roi.rows, depth_roi.cols, CV_8U);
@@ -89,12 +67,6 @@ void StaticCamera::processFrames()
             }
         }
 
-        // cv::GaussianBlur(obj_mask, obj_mask, cv::Size(5,5), 1.4);
-        // cv::threshold(obj_mask, obj_mask, 127, 255, cv::THRESH_BINARY);
-        // cv::Mat morph_kernel = cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(5, 5));
-        // cv::morphologyEx(obj_mask, obj_mask, cv::MORPH_OPEN, morph_kernel, cv::Point(-1, -1), 1);
-        // cv::morphologyEx(obj_mask, obj_mask, cv::MORPH_CLOSE, morph_kernel, cv::Point(-1, -1), 2);
-
         std::vector<std::vector<cv::Point>> obj_contours;
         cv::findContours(obj_mask, obj_contours, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
         cv::Mat mask_roi = cv::Mat::zeros(obj_mask.size(), CV_8U);
@@ -105,6 +77,17 @@ void StaticCamera::processFrames()
         for (size_t ci = 0; ci < obj_contours.size(); ++ci) {
             const auto &cnt = obj_contours[ci];
             if (cv::contourArea(cnt) < min_contour_area_) continue;
+
+            // Reject partial objects touching ROI border; their size estimate is unreliable.
+            constexpr int border_margin_px = 2;
+            const cv::Rect bbox = cv::boundingRect(cnt);
+            const bool touches_roi_border =
+                (bbox.x <= border_margin_px) ||
+                (bbox.y <= border_margin_px) ||
+                (bbox.x + bbox.width >= obj_mask.cols - border_margin_px) ||
+                (bbox.y + bbox.height >= obj_mask.rows - border_margin_px);
+            if (touches_roi_border) continue;
+
             cv::RotatedRect rrect = cv::minAreaRect(cnt);
             cv::Point2f box2f[4];
             rrect.points(box2f);
@@ -137,9 +120,7 @@ void StaticCamera::processFrames()
             Object3D object;
             cv::Point3f obj_center = computeCenter(corners3d);
             object.x = obj_center.x * 1000;
-            std::cout << "calibration.x: " << extrinsic_calibration_.x << "  obj_center.x: " << obj_center.x << "\n"; 
             object.y = obj_center.y * 1000;       // flip y-axis to match robot coordinates
-            std::cout << "calibration.y: " << extrinsic_calibration_.y << "  obj_center.y: " << obj_center.y << "\n"; 
             object.orientation = computeOrientation2D(corners3d);
 
             // if(object.y < search_area_y_min_ || object.y > search_area_y_max_) {
@@ -157,6 +138,7 @@ void StaticCamera::processFrames()
             if (length_mm < width_mm) std::swap(length_mm, width_mm);
 
             // Height calculation
+            mask_roi.setTo(0);
             cv::drawContours(mask_roi, std::vector<std::vector<cv::Point>>{cnt}, -1, 255, cv::FILLED);
             
             float sum_z_mm = 0.0f;
@@ -175,21 +157,21 @@ void StaticCamera::processFrames()
                     float pos[3];
                     rs2_deproject_pixel_to_point(pos, &depth_intrinsics, pixel, d);
                     
-                    // float z_mm = pos[2] * 1000.0f;
-                    cv::Point3f p_robot = transformCamToRobot(cv::Point3f(pos[0], pos[1], pos[2]));
-                    float z_mm = p_robot.z * 1000.0f;
+                    float z_mm = pos[2] * 1000.0f;
                     sum_z_mm += z_mm;
                     count_z++;
                 }
             }
 
             float height_mm = NAN;
+            float z_mm = NAN;
             if (count_z > 0) {
-                float z_mm = sum_z_mm / static_cast<float>(count_z);
+                z_mm = sum_z_mm / static_cast<float>(count_z);
                 height_mm = conveyor_z_dist_ - z_mm + 20;
             }
 
-            object.z = obj_center.z * 1000 + (height_mm/2);
+            object.z = obj_center.z * 1000 + height_mm/2;
+
             object.length = length_mm;
             object.width = width_mm;
             object.height = height_mm;
@@ -243,7 +225,7 @@ void StaticCamera::processFrames()
             if (debug_) {
                 std::cout << "[static_camera] Obj. ID: " << obj.id << " at (x=" << obj.x << "mm, y=" << obj.y 
                           << "mm, z=" << obj.z << "mm), size (LxWxH): " << obj.length 
-                          << "x" << obj.width << "x" << obj.height << "vy=" << obj.vy << " mm/s\n";
+                          << "x" << obj.width << "x" << obj.height << " vy=" << obj.vy << " mm/s\n";
             }
         }
         // Publish all active tracks (visible + predicted invisible)

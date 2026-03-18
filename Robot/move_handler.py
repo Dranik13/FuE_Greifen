@@ -52,9 +52,9 @@ DISTANCE_TO_CAMERA = _load_camera_mount_to_camera_distance()
 
 def move(pos_x, pos_y, rtde_r, rtde_c, object_speed, robot_speed=0.8, robot_acceleration=0.5, debug=False):
     
-    new_x = KAMERA_2_KALIB_TCP_POS[0] + (abs(pos_x / 1000)) - DISTANCE_TO_CAMERA - 0.005  # compensate for the distance between the camera and the robot's TCP, and add a safety margin
-    dif_x = (new_x - KAMERA_2_KALIB_TCP_POS[0])/0.6
-    new_y = KAMERA_2_KALIB_TCP_POS[1] + (pos_y / 1000) + (object_speed*(2+(2*dif_x)))  # compensate for the movement of the object during the robot's movement
+    new_x = pos_x / 1000                           # compensate for the distance between the camera and the robot's TCP, and add a safety margin
+    dif_x = new_x / 0.6
+    new_y = pos_y / 1000 + (object_speed*(2+(2*dif_x)))  # compensate for the movement of the object during the robot's movement
     target_tcp = KAMERA_2_KALIB_TCP_POS.copy()
     target_tcp[0] = new_x
     target_tcp[1] = new_y

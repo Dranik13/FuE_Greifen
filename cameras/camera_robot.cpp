@@ -114,10 +114,18 @@ void RobotCamera::processFrames()
 
         cv::Mat object_mask = cv::Mat::zeros(depth_bin.size(), CV_8U);
 
-        if (!contours.empty()) {
+        // Only consider contours touching the top image border (objects entering frame from above)
+        constexpr int top_margin_px = 2;
+        std::vector<std::vector<cv::Point>> top_contours;
+        for (const auto& c : contours) {
+            if (cv::boundingRect(c).y <= top_margin_px)
+                top_contours.push_back(c);
+        }
+
+        if (!top_contours.empty()) {
             // extract largest contour
             auto largest_it = std::max_element(
-                contours.begin(), contours.end(),
+                top_contours.begin(), top_contours.end(),
                 [](const std::vector<cv::Point>& a, const std::vector<cv::Point>& b) {
                     return cv::contourArea(a) < cv::contourArea(b);
                 });

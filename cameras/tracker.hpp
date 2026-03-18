@@ -31,11 +31,11 @@ public:
 
     // Parameters
     float max_match_distance_mm = 300.0f;
-    float min_tracked_y_mm = -10000.0f;       // Objects removed when y falls below this (outside velocity region)
-    float max_tracked_y_mm = 10000.0f;
+    float min_tracked_y_mm = -1080.0f;      // Objects removed when y falls outside these borders (conveyor length)
+    float max_tracked_y_mm = 375.0f;
     int max_missed_in_region = 3;           // Max missed frames while in velocity region before deletion
-    float velocity_region_y_min = -350.0f;  // Trusted detection region boundaries
-    float velocity_region_y_max = 170.0f;
+    float velocity_region_y_min = -1000.0f;  // Trusted detection region boundaries
+    float velocity_region_y_max = -500.0f;
 
 private:
     struct Track {
