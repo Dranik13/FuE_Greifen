@@ -179,7 +179,7 @@ void RobotCamera::processFrames()
                         if (debug_) {
                             std::cout << "[robot_camera] Bottom edge: max_y_px=" << max_y_px
                                       << ", current_obj.length=" << current_obj.length
-                                      << ", point_3d[1]=" << point_3d[1]
+                                    //   << ", point_3d[1]=" << point_3d[1]
                                     //   << ", mean_x_px=" << mean_x_px
                                     //   << ", obj_x_mm=" << obj_x_mm
                                       << ", obj_y_mm=" << obj_y_mm << "\n";

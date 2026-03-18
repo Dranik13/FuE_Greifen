@@ -11,6 +11,34 @@ BaseCameraReader::BaseCameraReader(const std::string& config_file)
     initializeRealSense();
 }
 
+static cv::Matx44d genTransformCamToRobot(const ExtrinsicCalibration& calibration) {
+    const double r = calibration.roll_deg  * CV_PI / 180.0;
+    const double p = calibration.pitch_deg * CV_PI / 180.0;
+    const double yv = calibration.yaw_deg  * CV_PI / 180.0;
+
+    const cv::Matx33d Rx(1, 0, 0,
+                         0, std::cos(r), -std::sin(r),
+                         0, std::sin(r),  std::cos(r));
+    const cv::Matx33d Ry(std::cos(p), 0, std::sin(p),
+                         0,           1, 0,
+                        -std::sin(p), 0, std::cos(p));
+    const cv::Matx33d Rz(std::cos(yv), -std::sin(yv), 0,
+                         std::sin(yv),  std::cos(yv), 0,
+                         0,             0,            1);
+
+    const cv::Matx33d R = Rz * Ry * Rx; // yaw-pitch-roll (ZYX)
+
+    cv::Matx44d T = cv::Matx44d::eye();
+    for (int i = 0; i < 3; ++i)
+        for (int j = 0; j < 3; ++j)
+            T(i, j) = R(i, j);
+
+    T(0, 3) = calibration.x;
+    T(1, 3) = calibration.y;
+    T(2, 3) = calibration.z;
+    return T;
+}
+
 void BaseCameraReader::initializeRealSense()
 {
     rs2::context ctx;
@@ -69,6 +97,19 @@ void BaseCameraReader::loadConfig(const std::string& config_file)
     // read simple scalar with defaults
     if (!fs["debug"].empty()) fs["debug"] >> debug_; else debug_ = 0;
 
+    cv::FileNode calibration = fs["calibration"];
+    if (!calibration.empty()) {
+        calibration["x"] >> extrinsic_calibration_.x;
+        calibration["y"] >> extrinsic_calibration_.y;
+        calibration["z"] >> extrinsic_calibration_.z;
+        calibration["roll"] >> extrinsic_calibration_.roll_deg;
+        calibration["pitch"] >> extrinsic_calibration_.pitch_deg;
+        calibration["yaw"] >> extrinsic_calibration_.yaw_deg;
+    } else {
+        std::cerr << "Missing 'calibration' block in config.\n";
+    }
+    transform_cam_to_robot_ = genTransformCamToRobot(extrinsic_calibration_);
+
     // ROI may be absent for some cameras; provide a safe default
     cv::FileNode fn = fs["roi"];
     if (!fn.empty()) {
@@ -85,14 +126,6 @@ void BaseCameraReader::loadConfig(const std::string& config_file)
     if (!fs["conveyor_z_dist"].empty()) fs["conveyor_z_dist"] >> conveyor_z_dist_; else conveyor_z_dist_ = 0;
     if (!fs["min_obj_height"].empty()) fs["min_obj_height"] >> min_obj_height_; else min_obj_height_ = 0;
     if (!fs["z_offset"].empty()) fs["z_offset"] >> z_offset_; else z_offset_ = 0;
-
-    cv::FileNode ref = fs["ref_pt"];
-    if (!ref.empty()) {
-        ref["x"] >> ref_pt_.x;
-        ref["y"] >> ref_pt_.y;
-    } else {
-        ref_pt_ = cv::Point2i(0, 0);
-    }
 
     if (!fs["pos_tol"].empty()) fs["pos_tol"] >> pos_delta_; else pos_delta_ = 30.0f;
     if (!fs["orientation_tol"].empty()) fs["orientation_tol"] >> orientation_delta_; else orientation_delta_ = 0.5f;
@@ -122,21 +155,13 @@ void BaseCameraReader::loadConfig(const std::string& config_file)
     if (!fs["x_offset_mm"].empty()) fs["x_offset_mm"] >> x_offset_mm_; else x_offset_mm_ = 0.0f;
     if (!fs["y_offset_mm"].empty()) fs["y_offset_mm"] >> y_offset_mm_; else y_offset_mm_ = 0.0f;
 
-    cv::Mat T;
-    if (!fs["T_cam_to_board"].empty()){
-        fs["T_cam_to_board"] >> T;
-        for (int r = 0; r < 4; ++r)
-            for (int c = 0; c < 4; ++c)
-                T_cam_to_belt_(r, c) = T.at<double>(r, c);
-        std::cout << "Loaded T_cam_to_board from config:\n" << T_cam_to_belt_ << "\n";
-    }
-
     std::cout << "Config loaded from " << config_file << ": ROI=" << roi_
               << " (debug=" << debug_ << ", zmq_port=" << zmq_port_
               << "', serial_number=" << serial_number_ << ""
               << ", x_scale=" << x_scale_ << ", y_scale=" << y_scale_
               << ", x_offset_mm=" << x_offset_mm_ << ", y_offset_mm=" << y_offset_mm_
-              << ")\n";
+              << ")\n"
+              << "Extrinsic Calibration transform:\n" << transform_cam_to_robot_ << "\n";
 }
 
 cv::Point3f BaseCameraReader::computeCenter(const std::vector<cv::Point3f>& corners)

@@ -16,7 +16,7 @@ public:
 
 private:
     void processFrames() override;
-    cv::Point3f transformCamToBelt(const cv::Point3f& cam_point_m) const;
+    cv::Point3f transformCamToRobot(const cv::Point3f& cam_point_m) const;
 
     // Frame skipping: process only every 3rd frame
     int frame_skip_counter_ = 0;

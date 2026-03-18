@@ -43,28 +43,28 @@ void StaticCamera::processFrames()
         auto depth_intrinsics = depth.get_profile()
                                     .as<rs2::video_stream_profile>()
                                     .get_intrinsics();
-        // Initialize reference point (once)
-        if (!ref_pt_3d_initialized_)
-        {
-            float d_m = depth.get_distance(static_cast<int>(ref_pt_.x), static_cast<int>(ref_pt_.y));
-            if (d_m > 0.0f)
-            {
-                float pixel[2] = { static_cast<float>(ref_pt_.x),
-                                    static_cast<float>(ref_pt_.y) };
-                float pos[3];
-                rs2_deproject_pixel_to_point(pos, &depth_intrinsics, pixel, d_m);
-                ref_pt_3d_ = cv::Point3f(pos[0], pos[1], pos[2]);
-                // ref_pt_3d_ = transformCamToBelt(cv::Point3f(pos[0], pos[1], pos[2]));
-                ref_pt_3d_initialized_ = true;
-                if (debug_) 
-                {
-                    std::cout << "[static_camera] Reference point 3D (m): X=" << ref_pt_3d_.x 
-                              << " Y=" << ref_pt_3d_.y << " Z=" << ref_pt_3d_.z << "\n";
-                }
-            } else {
-                std::cerr << "Warning: Invalid depth at ref_pt\n";
-            }
-        }
+        // // Initialize reference point (once)
+        // if (!ref_pt_3d_initialized_)
+        // {
+        //     float d_m = depth.get_distance(static_cast<int>(ref_pt_.x), static_cast<int>(ref_pt_.y));
+        //     if (d_m > 0.0f)
+        //     {
+        //         float pixel[2] = { static_cast<float>(ref_pt_.x),
+        //                             static_cast<float>(ref_pt_.y) };
+        //         float pos[3];
+        //         rs2_deproject_pixel_to_point(pos, &depth_intrinsics, pixel, d_m);
+        //         ref_pt_3d_ = cv::Point3f(pos[0], pos[1], pos[2]);
+        //         // ref_pt_3d_ = transformCamToBelt(cv::Point3f(pos[0], pos[1], pos[2]));
+        //         ref_pt_3d_initialized_ = true;
+        //         if (debug_) 
+        //         {
+        //             std::cout << "[static_camera] Reference point 3D (m): X=" << ref_pt_3d_.x 
+        //                       << " Y=" << ref_pt_3d_.y << " Z=" << ref_pt_3d_.z << "\n";
+        //         }
+        //     } else {
+        //         std::cerr << "Warning: Invalid depth at ref_pt\n";
+        //     }
+        // }
 
         // Create mask
         cv::Mat obj_mask = cv::Mat::zeros(depth_roi.rows, depth_roi.cols, CV_8U);
@@ -130,19 +130,21 @@ void StaticCamera::processFrames()
                 float pixel[2] = { static_cast<float>(px), static_cast<float>(py) };
                 float pos[3];
                 rs2_deproject_pixel_to_point(pos, &depth_intrinsics, pixel, d);
-                corners3d[k] = cv::Point3f(pos[0], pos[1], pos[2]);
-                // corners3d[k] = transformCamToBelt(cv::Point3f(pos[0], pos[1], pos[2]));
+                // corners3d[k] = cv::Point3f(pos[0], pos[1], pos[2]);
+                corners3d[k] = transformCamToRobot(cv::Point3f(pos[0], pos[1], pos[2]));
             }
 
             Object3D object;
             cv::Point3f obj_center = computeCenter(corners3d);
-            object.x = (obj_center.x - ref_pt_3d_.x) * 1000;
-            object.y = (obj_center.y - ref_pt_3d_.y) * -1000;       // flip y-axis to match robot coordinates
+            object.x = obj_center.x * 1000;
+            std::cout << "calibration.x: " << extrinsic_calibration_.x << "  obj_center.x: " << obj_center.x << "\n"; 
+            object.y = obj_center.y * 1000;       // flip y-axis to match robot coordinates
+            std::cout << "calibration.y: " << extrinsic_calibration_.y << "  obj_center.y: " << obj_center.y << "\n"; 
             object.orientation = computeOrientation2D(corners3d);
 
-            if(object.y < search_area_y_min_ || object.y > search_area_y_max_) {
-                continue;
-            }
+            // if(object.y < search_area_y_min_ || object.y > search_area_y_max_) {
+            //     continue;
+            // }
 
             auto dist_mm = [](const cv::Point3f& A, const cv::Point3f& B)->float {
                 if (!std::isfinite(A.x) || !std::isfinite(B.x)) return NAN;
@@ -173,9 +175,9 @@ void StaticCamera::processFrames()
                     float pos[3];
                     rs2_deproject_pixel_to_point(pos, &depth_intrinsics, pixel, d);
                     
-                    float z_mm = pos[2] * 1000.0f;
-                    // cv::Point3f p_belt = transformCamToBelt(cv::Point3f(pos[0], pos[1], pos[2]));
-                    // float z_mm = p_belt.z * 1000.0f;
+                    // float z_mm = pos[2] * 1000.0f;
+                    cv::Point3f p_robot = transformCamToRobot(cv::Point3f(pos[0], pos[1], pos[2]));
+                    float z_mm = p_robot.z * 1000.0f;
                     sum_z_mm += z_mm;
                     count_z++;
                 }
@@ -187,7 +189,7 @@ void StaticCamera::processFrames()
                 height_mm = conveyor_z_dist_ - z_mm + 20;
             }
 
-            object.z = (obj_center.z - ref_pt_3d_.z) * 1000 + (height_mm/2);
+            object.z = obj_center.z * 1000 + (height_mm/2);
             object.length = length_mm;
             object.width = width_mm;
             object.height = height_mm;
@@ -218,17 +220,17 @@ void StaticCamera::processFrames()
             int ref_idx = rand() % detected_objects.size();
             const auto& ref_obj = detected_objects[ref_idx];
             
-            // Reference object found (in current detections)
-            if (!std::isnan(ref_obj.vy)) {
+            // // Reference object found (in current detections)
+            // if (!std::isnan(ref_obj.vy)) {
                 
-                reference_velocity_y = ref_obj.vy;
-                found_reference = true;
+            //     reference_velocity_y = ref_obj.vy;
+            //     found_reference = true;
                 
-                // if (debug_) {
-                //     std::cout << "[static_camera] Reference object at (" << ref_obj.x << ", " 
-                //               << ref_obj.y << ") with vy=" << reference_velocity_y << " mm/s\n";
-                // }
-            }
+            //     // if (debug_) {
+            //     //     std::cout << "[static_camera] Reference object at (" << ref_obj.x << ", " 
+            //     //               << ref_obj.y << ") with vy=" << reference_velocity_y << " mm/s\n";
+            //     // }
+            // }
         }
 
         // Apply reference y-velocity to all detected objects
@@ -260,12 +262,12 @@ void StaticCamera::processFrames()
     }
 }
 
-cv::Point3f StaticCamera::transformCamToBelt(const cv::Point3f& cam_point_m) const
+cv::Point3f StaticCamera::transformCamToRobot(const cv::Point3f& cam_point_m) const
 {
     cv::Vec4d cam_h(cam_point_m.x, cam_point_m.y, cam_point_m.z, 1.0);
-    cv::Vec4d belt_h = T_cam_to_belt_ * cam_h;
+    cv::Vec4d robot_h = transform_cam_to_robot_ * cam_h;
     return cv::Point3f(
-        static_cast<float>(belt_h[0]),
-        static_cast<float>(belt_h[1]),
-        static_cast<float>(belt_h[2]));
+        static_cast<float>(robot_h[0]),
+        static_cast<float>(robot_h[1]),
+        static_cast<float>(robot_h[2]));
 }
