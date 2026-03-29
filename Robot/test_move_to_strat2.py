@@ -19,19 +19,23 @@ def test_drive():
         print("Fehler: 'Kamera_2_Kalib' wurde in der pose.yaml nicht gefunden!")
         return
 
+    # --- DER TRICK ---
+    # Wir überschreiben den X-Wert (Spur) manuell mit der Fließbandmitte (0.43 Meter)
+    target[0] = 0.89
+    # -----------------
+
     print(f"Verbinde mit Roboter {ROBOT_IP}...")
     try:
         rtde_c = rtde_control.RTDEControlInterface(ROBOT_IP)
         
         print(f"Starte Fahrt zur Zielposition: {target}")
-        print("Achtung: Der Roboter bewegt sich jetzt!")
+        print("Achtung: Der Roboter bewegt sich jetzt über das Fließband!")
         
         # Wir nutzen moveL für eine geradlinige Bewegung zum Ziel
-        # Geschwindigkeit: 0.1 m/s, Beschleunigung: 0.1 m/s^2 (schön langsam für den Test)
         rtde_c.moveL(target, 0.1, 0.1)
         
-        print("\nErfolg! Der Roboter steht jetzt in der schrägen Lauerposition.")
-        print("Prüfe jetzt, ob der Winkel für die Kamera und den Greifer so passt.")
+        print("\nErfolg! Der Roboter steht jetzt mittig über dem Band in der Lauerposition.")
+        print("-> Nimm jetzt das Teach Pendant und fahre ihn auf der Z-Achse nach unten, bis er das Bauteil perfekt umschließt!")
         
     except Exception as e:
         print(f"\nFehler bei der Fahrt: {e}")

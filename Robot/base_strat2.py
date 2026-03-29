@@ -40,6 +40,7 @@ pos_x = 0
 pos_y = 0
 obj_height = 0  # <--- Wird jetzt für die Z-Achse benötigt
 object_speed = 0
+obj_label="default"
 # -----------------------------------
 
 ROBOT_SPEED = RUNTIME_CONFIG.robot_speed
@@ -77,10 +78,10 @@ def idle_handling(machine: RandomStateMachine) -> Optional[MachineState]:
         print("[Base] Handling IDLE state...")
         
     # --- NEU: obj_height in die globalen Variablen aufnehmen ---
-    global pos_x, pos_y, obj_height, object_speed 
+    global pos_x, pos_y, obj_height, object_speed, obj_label 
     
     # --- NEU: idle_handler gibt nun 4 Werte zurück (inkl. Höhe) ---
-    pos_x, pos_y, obj_height, object_speed = idle_handler.idle(
+    pos_x, pos_y, obj_height, object_speed, obj_label = idle_handler.idle(
         rtde_c=RTDE_C,
         robot_speed=ROBOT_SPEED,
         robot_acceleration=ROBOT_ACC,
@@ -182,6 +183,7 @@ def place_handling(machine: RandomStateMachine) -> Optional[MachineState]:
         gripper=GRIPPER,
         robot_speed=ROBOT_SPEED,
         robot_acceleration=ROBOT_ACC,
+        label=obj_label,
         debug=DEBUG,
     )
     GRIPPER.open()

@@ -507,4 +507,5 @@ CMakeFiles/camera_base.dir/cameras/camera_static.cpp.o: \
  /usr/include/google/protobuf/map_type_handler.h \
  /usr/include/google/protobuf/extension_set.h \
  /home/tetripick/UR10_Pick_ws/cameras/tracker.hpp \
- /home/tetripick/UR10_Pick_ws/cameras/Object3D.hpp
+ /home/tetripick/UR10_Pick_ws/cameras/Object3D.hpp \
+ /home/tetripick/UR10_Pick_ws/cameras/color_estimation.hpp

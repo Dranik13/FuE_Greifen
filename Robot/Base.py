@@ -19,8 +19,10 @@ from runtime_config import load_runtime_config
 import idle_handler
 import move_handler
 import place_handler
-import object_waiting_handler
-import grip_handler
+#import object_waiting_handler
+#import grip_handler
+import object_waiting_handler_45grad as object_waiting_handler
+import grip_handler_45grad as grip_handler
 
 
 RUNTIME_CONFIG = load_runtime_config()
@@ -35,6 +37,10 @@ GRIPPER.open()
 pos_x = 0
 pos_y = 0
 object_speed = 0
+orientation = 0.0
+current_label = ""
+obj_width = 1.0 
+obj_length = 1.0
 ROBOT_SPEED = RUNTIME_CONFIG.robot_speed
 ROBOT_ACC = RUNTIME_CONFIG.robot_acceleration
 ROBOT_IP = RUNTIME_CONFIG.robot_ip
@@ -85,8 +91,8 @@ def idle_handling(machine: RandomStateMachine) -> Optional[MachineState]:
 	
 	if DEBUG:
 		print("[Base] Handling IDLE state...")
-	global pos_x, pos_y, object_speed
-	pos_x, pos_y, object_speed = idle_handler.idle(
+	global pos_x, pos_y, object_speed, orientation, current_label, obj_width, obj_length
+	pos_x, pos_y, object_speed, orientation, current_label, obj_width, obj_length = idle_handler.idle(
 		rtde_c=RTDE_C,
 		robot_speed=ROBOT_SPEED,
 		robot_acceleration=ROBOT_ACC,
@@ -140,6 +146,9 @@ def object_waiting_handling(machine: RandomStateMachine) -> Optional[MachineStat
 		object_speed=object_speed,
 		robot_speed=ROBOT_SPEED,
 		robot_acceleration=ROBOT_ACC,
+		orientation=orientation,
+		width=obj_width,
+		length=obj_length,
 		debug=DEBUG,
 	):
 		return MachineState.GRIP
@@ -198,6 +207,7 @@ def place_handling(machine: RandomStateMachine) -> Optional[MachineState]:
 		gripper=GRIPPER,
 		robot_speed=ROBOT_SPEED,
 		robot_acceleration=ROBOT_ACC,
+		label=current_label,
 		debug=DEBUG,
 	)
 	GRIPPER.open()  # Open the gripper to release the object

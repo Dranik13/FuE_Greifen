@@ -89,7 +89,9 @@ def move(pos_x, pos_y, obj_height, rtde_r, rtde_c, object_speed, robot_speed=0.8
     # Wir addieren die Bauteilhöhe (in Metern) auf die geteachte Null-Höhe der Lauerposition.
     # So schwebt der schräge Greifer sicher über unterschiedlich hohen Bauteilen.
     hoehe_in_metern = obj_height / 1000.0
-    target_tcp[2] = KAMERA_2_KALIB_TCP_POS[2] + hoehe_in_metern
+    #target_tcp[2] = KAMERA_2_KALIB_TCP_POS[2] + hoehe_in_metern
+    #target_tcp[2] = KAMERA_2_KALIB_TCP_POS[2] + (hoehe_in_metern / 2.0)
+    target_tcp[2] = KAMERA_2_KALIB_TCP_POS[2]
 
     # 4. Debug-Ausgaben zur Kontrolle
     if debug:

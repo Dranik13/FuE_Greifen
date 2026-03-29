@@ -1,5 +1,25 @@
 #include "camera_static.hpp"
+#include "color_estimation.hpp"
 #include <algorithm>
+#include <cmath>
+
+namespace {
+
+constexpr float kNearSquareAspectRatioThreshold = 0.92f;
+
+bool isNearSquare(const cv::RotatedRect& rrect)
+{
+    const float width = rrect.size.width;
+    const float height = rrect.size.height;
+    if (width <= 1e-6f || height <= 1e-6f) return false;
+
+    const float longer_side = std::max(width, height);
+    const float shorter_side = std::min(width, height);
+    return (shorter_side / longer_side) >= kNearSquareAspectRatioThreshold;
+}
+
+} // namespace
+
 
 StaticCamera::StaticCamera(const std::string& config_file)
     : BaseCameraReader(config_file)
@@ -33,6 +53,9 @@ void StaticCamera::processFrames()
         cv::Rect effective_roi = (roi_.area() > 0) ? roi_ : cv::Rect(0, 0, input_img.cols, input_img.rows);
         
         cv::Mat rgb_img = input_img(effective_roi).clone();
+        cv::Mat hsv_img;
+        cv::cvtColor(rgb_img, hsv_img, cv::COLOR_BGR2HSV);
+
         cv::Mat depth_mat(cv::Size(depth.get_width(), depth.get_height()), CV_16U,
                           (void*)depth.get_data(), cv::Mat::AUTO_STEP);
 
@@ -113,7 +136,6 @@ void StaticCamera::processFrames()
                 float pixel[2] = { static_cast<float>(px), static_cast<float>(py) };
                 float pos[3];
                 rs2_deproject_pixel_to_point(pos, &depth_intrinsics, pixel, d);
-                // corners3d[k] = cv::Point3f(pos[0], pos[1], pos[2]);
                 corners3d[k] = transformCamToRobot(cv::Point3f(pos[0], pos[1], pos[2]));
             }
 
@@ -121,20 +143,25 @@ void StaticCamera::processFrames()
             cv::Point3f obj_center = computeCenter(corners3d);
             object.x = obj_center.x * 1000;
             object.y = obj_center.y * 1000;       // flip y-axis to match robot coordinates
-            object.orientation = computeOrientation2D(corners3d);
+            object.square = isNearSquare(rrect);
+            object.orientation = computeRobustOrientation2D(box2f, corners3d);
+            // if(object.square) {
+            //     object.orientation = std::fmod(object.orientation, (float)CV_PI / 2.0f);
+            // }y
 
-            // if(object.y < search_area_y_min_ || object.y > search_area_y_max_) {
-            //     continue;
-            // }
+            // Color label from center neighborhood in contour (robust against single-pixel noise).
+            cv::Point center_px_roi(std::lround(rrect.center.x), std::lround(rrect.center.y));
+            if (cv::pointPolygonTest(cnt, cv::Point2f(static_cast<float>(center_px_roi.x), static_cast<float>(center_px_roi.y)), false) < 0.0) {
+                const cv::Moments mu = cv::moments(cnt);
+                if (std::abs(mu.m00) > 1e-6) {
+                    center_px_roi.x = std::lround(mu.m10 / mu.m00);
+                    center_px_roi.y = std::lround(mu.m01 / mu.m00);
+                }
+            }
+            object.label = estimateObjectColorLabel(hsv_img, cnt, center_px_roi);
 
-            auto dist_mm = [](const cv::Point3f& A, const cv::Point3f& B)->float {
-                if (!std::isfinite(A.x) || !std::isfinite(B.x)) return NAN;
-                float dx = A.x - B.x, dy = A.y - B.y, dz = A.z - B.z;
-                return std::sqrt(dx*dx + dy*dy + dz*dz) * 1000.0f;
-            };
-
-            float length_mm = dist_mm(corners3d[0], corners3d[1]);
-            float width_mm = dist_mm(corners3d[1], corners3d[2]);
+            float length_mm = computeEdgeLengthMm(corners3d[0], corners3d[1]);
+            float width_mm = computeEdgeLengthMm(corners3d[1], corners3d[2]);
             if (length_mm < width_mm) std::swap(length_mm, width_mm);
 
             // Height calculation
@@ -177,7 +204,7 @@ void StaticCamera::processFrames()
             object.height = height_mm;
 
             // Validate object coordinates before adding to list
-            if (!std::isfinite(object.x) || !std::isfinite(object.y) || !std::isfinite(object.z)) continue;
+            if (!std::isfinite(object.x) || !std::isfinite(object.y) || !std::isfinite(object.z) || !std::isfinite(object.orientation)) continue;
             detected_objects.push_back(object);
         }
         // Frame timestamp (seconds)
@@ -192,39 +219,20 @@ void StaticCamera::processFrames()
         // Apply low-pass filter to velocity (exponential moving average)
         filtered_velocity_y_ = VEL_FILTER_ALPHA * global_velocity_y + (1.0f - VEL_FILTER_ALPHA) * filtered_velocity_y_;
         
-        // Strategy: Pick a random object from detections and use its y-velocity
-        // if its position is within the velocity reference region
-        float reference_velocity_y = filtered_velocity_y_;  // Use filtered velocity as fallback
-        bool found_reference = false;
-
         if (!detected_objects.empty()) {
             // Pick random object
             int ref_idx = rand() % detected_objects.size();
             const auto& ref_obj = detected_objects[ref_idx];
-            
-            // // Reference object found (in current detections)
-            // if (!std::isnan(ref_obj.vy)) {
-                
-            //     reference_velocity_y = ref_obj.vy;
-            //     found_reference = true;
-                
-            //     // if (debug_) {
-            //     //     std::cout << "[static_camera] Reference object at (" << ref_obj.x << ", " 
-            //     //               << ref_obj.y << ") with vy=" << reference_velocity_y << " mm/s\n";
-            //     // }
-            // }
         }
 
         // Apply reference y-velocity to all detected objects
-        for (auto& obj : detected_objects) {
-            obj.vy = reference_velocity_y;
-        }
+        tracker_.setGlobalVelocity(filtered_velocity_y_);
 
         obj_list_ = tracker_.getActiveObjects();
         for(const auto& obj : obj_list_) {
             if (debug_) {
-                std::cout << "[static_camera] Obj. ID: " << obj.id << " at (x=" << obj.x << "mm, y=" << obj.y 
-                          << "mm, z=" << obj.z << "mm), size (LxWxH): " << obj.length 
+                std::cout << "[static_camera] Obj. ID: " << obj.id << " label: " << obj.label << " at (x=" << obj.x << "mm, y=" << obj.y 
+                          << "mm, z=" << obj.z << "mm, phi=" << obj.orientation << "), size (LxWxH): " << obj.length 
                           << "x" << obj.width << "x" << obj.height << " vy=" << obj.vy << " mm/s\n";
             }
         }

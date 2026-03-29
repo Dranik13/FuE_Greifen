@@ -10,6 +10,7 @@ struct Object3D
     float x, y, z;
     float orientation;
     float width, length, height;
+    bool square= false;
     // Velocity in y-direction (mm/s)
     float vy = 0.0f;
 };

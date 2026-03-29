@@ -30,11 +30,11 @@ def grip(rtde_r, rtde_c, gripper, robot_speed=0.8, robot_acceleration=0.5, debug
     
     # Eine winzige Pause, um sicherzugehen, dass die Finger komplett geschlossen sind, 
     # bevor der Roboter ruckartig nach oben zieht.
-    time.sleep(0.5)     # evt. anpassen!
+    time.sleep(0.3)     # evt. anpassen!
     
     # 2. NACH OBEN ABHEBEN (Sicherheitsabstand zum Band)
     actual_TCP = rtde_r.getActualTCPPose()
-    actual_TCP[2] += 0.1  # 10 cm nach oben im Basis-Koordinatensystem
+    actual_TCP[2] += 0.2  # 20 cm nach oben im Basis-Koordinatensystem
     
     if save_pos.is_save_position(actual_TCP[:3]):
         if debug:

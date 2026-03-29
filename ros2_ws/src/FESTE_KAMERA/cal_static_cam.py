@@ -20,13 +20,17 @@ T_flange_camG[:3, 3] = t_cam_mount
 # A. Deine 4 Bild-Paare
 bild_paare = [
     (
+        "/home/tetripick/UR10_Pick_ws/ros2_ws/src/FESTE_KAMERA/robot_cam_Color.png", 
+        "/home/tetripick/UR10_Pick_ws/ros2_ws/src/FESTE_KAMERA/Pic_static_cam_Color.png" 
+    ),
+    (
         "/home/tetripick/UR10_Pick_ws/ros2_ws/src/FESTE_KAMERA/robot_cam1_Color.png", 
         "/home/tetripick/UR10_Pick_ws/ros2_ws/src/FESTE_KAMERA/Pic_static_cam_1_Color.png"
     ),
-    # (
-    #     "/home/tetripick/UR10_Pick_ws/ros2_ws/src/FESTE_KAMERA/robot_cam2_Color.png", 
-    #     "/home/tetripick/UR10_Pick_ws/ros2_ws/src/FESTE_KAMERA/Pic_static_cam_2_Color.png"
-    # ),
+    (
+        "/home/tetripick/UR10_Pick_ws/ros2_ws/src/FESTE_KAMERA/robot_cam2_Color.png", 
+        "/home/tetripick/UR10_Pick_ws/ros2_ws/src/FESTE_KAMERA/Pic_static_cam_2_Color.png"
+    ),
     (
         "/home/tetripick/UR10_Pick_ws/ros2_ws/src/FESTE_KAMERA/robot_cam3_Color.png", 
         "/home/tetripick/UR10_Pick_ws/ros2_ws/src/FESTE_KAMERA/Pic_static_cam_3_Color.png"

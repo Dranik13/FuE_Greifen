@@ -11,6 +11,7 @@ message Object3D_msg {
   float width = 8;
   float length = 9;
   float height = 10;
+  bool square = 11;
 }
 
 message Objects3D_msg {

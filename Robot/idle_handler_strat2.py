@@ -3,6 +3,8 @@ Handles the IDLE state for the robot's state machine. This module provides the l
 ANGEPASST: Gibt nun auch die Bauteilhöhe (obj_height / z-Koordinate) zurück.
 """
 
+from re import sub
+
 import save_pos
 from pathlib import Path
 import yaml
@@ -30,55 +32,53 @@ def wait_for_object_data(debug=False, gripper=None):
     sub = camera_sub.CameraSubscriber(address = 'tcp://localhost:5555', topic = "")
     if debug:
         print('[idle_handler] Waiting for messages on tcp://localhost:5555...')
+    
     global id_counter
     counter = 0
     speed = []
+    obj_label = "default"  # Initialisierung mit Fallback
     
     while True:
         objs = sub.receive_5555()
-        if objs is None:
-            continue
-        if debug:
-            print(f'[idle_handler] Received objects: {objs}')
-            
-        if len(objs) > 0:
-            objs = objs[0]
-        else:
+        if objs is None or len(objs) == 0:
             continue
             
-        if debug:
-            print(f"[idle_handler]  {objs['label']} @ ({objs['x']:.3f}, {objs['y']:.3f}, {objs['z']:.3f}), vy={objs.get('vy', 0):.3f}")
+        objs = objs[0] # Wir nehmen das erste erkannte Objekt
+        
+        # --- FARBE / LABEL HIER DIREKT AUSLESEN ---
+        obj_label = objs.get('label', 'default')
+        if not obj_label: # Falls der String leer ist
+            obj_label = "default"
             
-        object_speed = objs.get('vy', 0)  # speed in y-direction
-        object_speed = object_speed / 1000    # conversion from mm/s to m/s
+        object_speed = objs.get('vy', 0) / 1000.0 # mm/s -> m/s
         
         pos_x = objs['x']
         pos_y = objs['y']
-        obj_height = objs['z']  # <--- NEU: Wir speichern die Z-Koordinate (Höhe)
-        orientation = objs['orientation']
+        obj_height = objs['z']
         width = objs['width']
         
-        if object_speed >= 0.05:    # wait for multiple measurements with speed to reduce noise
+        if debug:
+            print(f"[idle_handler] Tracking {obj_label} @ y={pos_y:.3f}, vy={object_speed:.3f}")
+
+        # Geschwindigkeits-Glättung (deine Logik)
+        if object_speed >= 0.05:
             if counter >= 7:
                 speed.append(object_speed)
-            if counter >= 12:  # wait for multiple measurements with speed to reduce noise
-                object_speed = sum(speed) / (len(speed))  # mean speed
-                break
+            if counter >= 12:
+                object_speed = sum(speed) / len(speed)
+                break # ERST HIER GEHEN WIR AUS DER SCHLEIFE
             counter += 1
             
     if debug:
-        # NEU: Print-Ausgabe um die Höhe erweitert
-        print(f"[idle_handler] x, y, height(z) and speed from Camera: x: {pos_x}, y: {pos_y}, z: {obj_height}, vy: {object_speed}")
+        print(f"[idle_handler] FINAL: x: {pos_x}, y: {pos_y}, z: {obj_height}, vy: {object_speed}, label: {obj_label}")
         
     if gripper is not None:
-        gripper.goTomm(int(width) + 20) # Close the gripper based on the measured width + some tolerance
-        if debug:
-            print(f"[idle_handler] Gripper closed with width: {width + 20}")
+        gripper.goTomm(int(width) + 30)
     
     id_counter += 1
     
-    # NEU: obj_height wird als dritter Wert zurückgegeben!
-    return pos_x, pos_y, obj_height, object_speed
+    # Gib alle 5 Werte zurück
+    return pos_x, pos_y, obj_height, object_speed, obj_label
     
 
 def move_to_home(rtde_c, robot_speed=0.8, robot_acceleration=0.5, debug=False):

@@ -11,6 +11,7 @@
 #include <chrono>
 #include <zmq.hpp>
 #include <yaml-cpp/yaml.h>
+#include <cmath>
 
 #include "objects_3D.pb.h"
 #include "tracker.hpp"
@@ -75,9 +76,6 @@ protected:
     float max_obj_height_mm_;
     // Minimum contour area to be considered an object (in pixels)
     int min_contour_area_;
-    // Search area boundaries in y-direction (in mm)
-    float search_area_y_min_;
-    float search_area_y_max_;
     // Final affine calibration in robot frame (mm): out = scale * raw + offset
     float x_scale_ = 1.0f;
     float y_scale_ = 1.0f;

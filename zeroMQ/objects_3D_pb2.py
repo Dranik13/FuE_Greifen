@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10objects_3D.proto\"\x9a\x01\n\x0cObject3D_msg\x12\n\n\x02id\x18\x01 \x01(\x05\x12\r\n\x05label\x18\x02 \x01(\t\x12\t\n\x01x\x18\x03 \x01(\x02\x12\t\n\x01y\x18\x04 \x01(\x02\x12\t\n\x01z\x18\x05 \x01(\x02\x12\x13\n\x0borientation\x18\x06 \x01(\x02\x12\n\n\x02vy\x18\x07 \x01(\x02\x12\r\n\x05width\x18\x08 \x01(\x02\x12\x0e\n\x06length\x18\t \x01(\x02\x12\x0e\n\x06height\x18\n \x01(\x02\"/\n\rObjects3D_msg\x12\x1e\n\x07objects\x18\x01 \x03(\x0b\x32\r.Object3D_msgb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10objects_3D.proto\"\xaa\x01\n\x0cObject3D_msg\x12\n\n\x02id\x18\x01 \x01(\x05\x12\r\n\x05label\x18\x02 \x01(\t\x12\t\n\x01x\x18\x03 \x01(\x02\x12\t\n\x01y\x18\x04 \x01(\x02\x12\t\n\x01z\x18\x05 \x01(\x02\x12\x13\n\x0borientation\x18\x06 \x01(\x02\x12\n\n\x02vy\x18\x07 \x01(\x02\x12\r\n\x05width\x18\x08 \x01(\x02\x12\x0e\n\x06length\x18\t \x01(\x02\x12\x0e\n\x06height\x18\n \x01(\x02\x12\x0e\n\x06square\x18\x0b \x01(\x08\"/\n\rObjects3D_msg\x12\x1e\n\x07objects\x18\x01 \x03(\x0b\x32\r.Object3D_msgb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'objects_3D_pb2', globals())
@@ -21,7 +21,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   _OBJECT3D_MSG._serialized_start=21
-  _OBJECT3D_MSG._serialized_end=175
-  _OBJECTS3D_MSG._serialized_start=177
-  _OBJECTS3D_MSG._serialized_end=224
+  _OBJECT3D_MSG._serialized_end=191
+  _OBJECTS3D_MSG._serialized_start=193
+  _OBJECTS3D_MSG._serialized_end=240
 # @@protoc_insertion_point(module_scope)

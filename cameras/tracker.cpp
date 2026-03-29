@@ -12,7 +12,25 @@ bool is_in_velocity_region(float y, float y_min, float y_max) {
     return y >= y_min && y <= y_max;
 }
 
+float resolve_orientation(const Object3D& detection, const Object3D& previous)
+{
+    if (detection.square && std::isfinite(previous.orientation)) {
+        return previous.orientation;
+    }
+    return detection.orientation;
+}
+
 Tracker::Tracker() {}
+
+void Tracker::setGlobalVelocity(float &vy_mm_s)
+{
+    for (auto& track : tracks_) {
+        track.object.vy = vy_mm_s;
+    }
+
+    avg_velocity_y_ = vy_mm_s;
+    prediction_velocity_y_ = vy_mm_s;
+}
 
 float Tracker::update(std::vector<Object3D>& detections, double timestamp)
 {
@@ -69,6 +87,7 @@ float Tracker::update(std::vector<Object3D>& detections, double timestamp)
         if (track_index != -1 && track_index < (int)original_track_count) {
             Track& track = tracks_[track_index];
             detections[i].id = track.object.id;
+            detections[i].orientation = resolve_orientation(detections[i], track.object);
             double dt = timestamp - track.last_ts;
             bool det_in_region = is_in_velocity_region(detections[i].y, velocity_region_y_min, velocity_region_y_max);
             
@@ -141,6 +160,7 @@ float Tracker::update(std::vector<Object3D>& detections, double timestamp)
             new_track.object.id = next_id_++;
             detections[i].id = new_track.object.id;
             detections[i].vy = 0.0f;  // New tracks have zero velocity initially
+            detections[i].orientation = resolve_orientation(detections[i], candidates_[best_c].object);
             new_track.object = detections[i];
             new_track.last_ts = timestamp;
             new_track.missed = 0;

@@ -188,6 +188,7 @@ class Object3D_msg final :
     kWidthFieldNumber = 8,
     kLengthFieldNumber = 9,
     kHeightFieldNumber = 10,
+    kSquareFieldNumber = 11,
   };
   // string label = 2;
   void clear_label();
@@ -284,6 +285,15 @@ class Object3D_msg final :
   void _internal_set_height(float value);
   public:
 
+  // bool square = 11;
+  void clear_square();
+  bool square() const;
+  void set_square(bool value);
+  private:
+  bool _internal_square() const;
+  void _internal_set_square(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:Object3D_msg)
  private:
   class _Internal;
@@ -302,6 +312,7 @@ class Object3D_msg final :
     float width_;
     float length_;
     float height_;
+    bool square_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -703,6 +714,26 @@ inline void Object3D_msg::_internal_set_height(float value) {
 inline void Object3D_msg::set_height(float value) {
   _internal_set_height(value);
   // @@protoc_insertion_point(field_set:Object3D_msg.height)
+}
+
+// bool square = 11;
+inline void Object3D_msg::clear_square() {
+  _impl_.square_ = false;
+}
+inline bool Object3D_msg::_internal_square() const {
+  return _impl_.square_;
+}
+inline bool Object3D_msg::square() const {
+  // @@protoc_insertion_point(field_get:Object3D_msg.square)
+  return _internal_square();
+}
+inline void Object3D_msg::_internal_set_square(bool value) {
+  
+  _impl_.square_ = value;
+}
+inline void Object3D_msg::set_square(bool value) {
+  _internal_set_square(value);
+  // @@protoc_insertion_point(field_set:Object3D_msg.square)
 }
 
 // -------------------------------------------------------------------

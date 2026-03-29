@@ -32,6 +32,7 @@ PROTOBUF_CONSTEXPR Object3D_msg::Object3D_msg(
   , /*decltype(_impl_.width_)*/0
   , /*decltype(_impl_.length_)*/0
   , /*decltype(_impl_.height_)*/0
+  , /*decltype(_impl_.square_)*/false
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct Object3D_msgDefaultTypeInternal {
   PROTOBUF_CONSTEXPR Object3D_msgDefaultTypeInternal()
@@ -76,6 +77,7 @@ const uint32_t TableStruct_objects_5f3D_2eproto::offsets[] PROTOBUF_SECTION_VARI
   PROTOBUF_FIELD_OFFSET(::Object3D_msg, _impl_.width_),
   PROTOBUF_FIELD_OFFSET(::Object3D_msg, _impl_.length_),
   PROTOBUF_FIELD_OFFSET(::Object3D_msg, _impl_.height_),
+  PROTOBUF_FIELD_OFFSET(::Object3D_msg, _impl_.square_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::Objects3D_msg, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -86,7 +88,7 @@ const uint32_t TableStruct_objects_5f3D_2eproto::offsets[] PROTOBUF_SECTION_VARI
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::Object3D_msg)},
-  { 16, -1, -1, sizeof(::Objects3D_msg)},
+  { 17, -1, -1, sizeof(::Objects3D_msg)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -95,16 +97,17 @@ static const ::_pb::Message* const file_default_instances[] = {
 };
 
 const char descriptor_table_protodef_objects_5f3D_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\020objects_3D.proto\"\232\001\n\014Object3D_msg\022\n\n\002i"
+  "\n\020objects_3D.proto\"\252\001\n\014Object3D_msg\022\n\n\002i"
   "d\030\001 \001(\005\022\r\n\005label\030\002 \001(\t\022\t\n\001x\030\003 \001(\002\022\t\n\001y\030\004"
   " \001(\002\022\t\n\001z\030\005 \001(\002\022\023\n\013orientation\030\006 \001(\002\022\n\n\002"
   "vy\030\007 \001(\002\022\r\n\005width\030\010 \001(\002\022\016\n\006length\030\t \001(\002\022"
-  "\016\n\006height\030\n \001(\002\"/\n\rObjects3D_msg\022\036\n\007obje"
-  "cts\030\001 \003(\0132\r.Object3D_msgb\006proto3"
+  "\016\n\006height\030\n \001(\002\022\016\n\006square\030\013 \001(\010\"/\n\rObjec"
+  "ts3D_msg\022\036\n\007objects\030\001 \003(\0132\r.Object3D_msg"
+  "b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_objects_5f3D_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_objects_5f3D_2eproto = {
-    false, false, 232, descriptor_table_protodef_objects_5f3D_2eproto,
+    false, false, 248, descriptor_table_protodef_objects_5f3D_2eproto,
     "objects_3D.proto",
     &descriptor_table_objects_5f3D_2eproto_once, nullptr, 0, 2,
     schemas, file_default_instances, TableStruct_objects_5f3D_2eproto::offsets,
@@ -144,6 +147,7 @@ Object3D_msg::Object3D_msg(const Object3D_msg& from)
     , decltype(_impl_.width_){}
     , decltype(_impl_.length_){}
     , decltype(_impl_.height_){}
+    , decltype(_impl_.square_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -156,8 +160,8 @@ Object3D_msg::Object3D_msg(const Object3D_msg& from)
       _this->GetArenaForAllocation());
   }
   ::memcpy(&_impl_.id_, &from._impl_.id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.height_) -
-    reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.height_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.square_) -
+    reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.square_));
   // @@protoc_insertion_point(copy_constructor:Object3D_msg)
 }
 
@@ -176,6 +180,7 @@ inline void Object3D_msg::SharedCtor(
     , decltype(_impl_.width_){0}
     , decltype(_impl_.length_){0}
     , decltype(_impl_.height_){0}
+    , decltype(_impl_.square_){false}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.label_.InitDefault();
@@ -210,8 +215,8 @@ void Object3D_msg::Clear() {
 
   _impl_.label_.ClearToEmpty();
   ::memset(&_impl_.id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.height_) -
-      reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.height_));
+      reinterpret_cast<char*>(&_impl_.square_) -
+      reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.square_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -300,6 +305,14 @@ const char* Object3D_msg::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 85)) {
           _impl_.height_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // bool square = 11;
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
+          _impl_.square_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
@@ -428,6 +441,12 @@ uint8_t* Object3D_msg::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteFloatToArray(10, this->_internal_height(), target);
   }
 
+  // bool square = 11;
+  if (this->_internal_square() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(11, this->_internal_square(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -528,6 +547,11 @@ size_t Object3D_msg::ByteSizeLong() const {
     total_size += 1 + 4;
   }
 
+  // bool square = 11;
+  if (this->_internal_square() != 0) {
+    total_size += 1 + 1;
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -608,6 +632,9 @@ void Object3D_msg::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::P
   if (raw_height != 0) {
     _this->_internal_set_height(from._internal_height());
   }
+  if (from._internal_square() != 0) {
+    _this->_internal_set_square(from._internal_square());
+  }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -632,8 +659,8 @@ void Object3D_msg::InternalSwap(Object3D_msg* other) {
       &other->_impl_.label_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Object3D_msg, _impl_.height_)
-      + sizeof(Object3D_msg::_impl_.height_)
+      PROTOBUF_FIELD_OFFSET(Object3D_msg, _impl_.square_)
+      + sizeof(Object3D_msg::_impl_.square_)
       - PROTOBUF_FIELD_OFFSET(Object3D_msg, _impl_.id_)>(
           reinterpret_cast<char*>(&_impl_.id_),
           reinterpret_cast<char*>(&other->_impl_.id_));

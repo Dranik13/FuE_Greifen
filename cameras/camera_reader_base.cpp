@@ -148,8 +148,6 @@ void BaseCameraReader::loadConfig(const std::string& config_file)
 
     if (!fs["max_obj_height_mm"].empty()) fs["max_obj_height_mm"] >> max_obj_height_mm_;
     if (!fs["min_contour_area"].empty()) fs["min_contour_area"] >> min_contour_area_;
-    if (!fs["search_area_y_min"].empty()) fs["search_area_y_min"] >> search_area_y_min_;
-    if (!fs["search_area_y_max"].empty()) fs["search_area_y_max"] >> search_area_y_max_;
     if (!fs["x_scale"].empty()) fs["x_scale"] >> x_scale_; else x_scale_ = 1.0f;
     if (!fs["y_scale"].empty()) fs["y_scale"] >> y_scale_; else y_scale_ = 1.0f;
     if (!fs["x_offset_mm"].empty()) fs["x_offset_mm"] >> x_offset_mm_; else x_offset_mm_ = 0.0f;

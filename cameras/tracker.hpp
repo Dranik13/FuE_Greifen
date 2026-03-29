@@ -23,6 +23,9 @@ public:
     // Set fallback velocity for prediction of temporarily invisible objects.
     void setPredictionVelocity(float vy_mm_s) { prediction_velocity_y_ = vy_mm_s; }
 
+    // Force all active tracks to use the same y-velocity.
+    void setGlobalVelocity(float &vy_mm_s);
+
     // Current active tracks as object states (includes predicted invisible ones).
     std::vector<Object3D> getActiveObjects() const;
     
